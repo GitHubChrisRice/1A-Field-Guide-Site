@@ -1231,6 +1231,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#19-cross-category-validation-frontageaccess-path-and-doctrinal-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Cross-category validation: frontage/access path and doctrinal reset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Cross-category validation: frontage/access path and doctrinal reset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#address-frontage-and-public-access-path-are-separate-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Address, frontage, and public access path are separate facts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-facility-category-requires-a-doctrinal-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New facility category requires a doctrinal reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preserve-the-scope-of-agency-purpose-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preserve the scope of agency-purpose rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-category-validation-does-not-universalize-source-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-category validation does not universalize source adapters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1365,14 +1426,14 @@
 <p>Generated prototype output should remain outside the repository by default until reviewed. The current prototype writes to <code>facility-prep-output/</code>, which is git-ignored; GitHub Actions may upload that directory as a review artifact.</p>
 <h2 id="10-prototype-gate">10. Prototype gate<a class="headerlink" href="#10-prototype-gate" title="Permanent link">&para;</a></h2>
 <p>Before generalizing a Facility Prep component statewide, test it against at least two facilities in the same category and then a materially different facility type.</p>
-<p>The current development sequence is:</p>
+<p>Validation sequence completed to date:</p>
 <ol>
 <li>Concord Library — first parcel/boundary prototype;</li>
-<li>second Contra Costa library branch — reproducibility test;</li>
-<li>conventional government administrative facility — cross-category test;</li>
-<li>police facility and DMV/post-office-type facility — differing access/control regimes.</li>
+<li>Walnut Creek Library — same-category reproducibility test and modular-adapter validation;</li>
+<li>Concord DMV — first cross-category test against a State administrative-service facility.</li>
 </ol>
-<p>Only patterns that survive these tests should become generalized Registry automation.</p>
+<p>The Concord DMV test validates the reusable evidence-acquisition method across categories, but it does <strong>not</strong> make every source adapter, physical-area inference, or legal anchor universal. The next architecture tests should deliberately choose materially different access/control regimes rather than repeat a parcel pattern that has already been validated.</p>
+<p>Only patterns that survive the relevant source coverage, physical configuration, and legal-purpose tests should become generalized Registry automation.</p>
 <h2 id="11-assessor-map-and-image-only-source-handling">11. Assessor-map and image-only source handling<a class="headerlink" href="#11-assessor-map-and-image-only-source-handling" title="Permanent link">&para;</a></h2>
 <p>Facility Prep should follow an official parcel-map or assessor-map link automatically when the parcel source exposes one and the source can be downloaded reliably.</p>
 <p>For a material map, preserve when practical:</p>
@@ -1574,7 +1635,45 @@
 <p>The reusable output is therefore the <strong>area-specific comparator process</strong>, while the actual anchor and classification remain facts-and-authority dependent.</p>
 <h3 id="prototype-gate-consequence">Prototype-gate consequence<a class="headerlink" href="#prototype-gate-consequence" title="Permanent link">&para;</a></h3>
 <p>After two same-category facilities, the project may promote behaviors that survived both tests into the reusable architecture. Municipality-specific enrichments remain modular until independently validated elsewhere.</p>
-<p>The next meaningful architecture test should use a materially different facility category before the project treats the current pipeline as broadly reusable statewide.</p>
+<p>Cross-category validation has now been completed at Concord DMV. The reusable core may therefore be treated as cross-category validated for its evidence-acquisition method, while source coverage, municipality-specific enrichments, physical-area facts, and legal anchors remain modular and must be validated independently. Further facility categories test the breadth and limits of the architecture; they do not convert it into a universal statewide data source or a universal forum conclusion.</p>
+<h2 id="19-cross-category-validation-frontageaccess-path-and-doctrinal-reset">19. Cross-category validation: frontage/access path and doctrinal reset<a class="headerlink" href="#19-cross-category-validation-frontageaccess-path-and-doctrinal-reset" title="Permanent link">&para;</a></h2>
+<p>A materially different facility category requires two additional checks before Facility Prep findings are promoted into a Registry entry.</p>
+<h3 id="address-frontage-and-public-access-path-are-separate-facts">Address, frontage, and public access path are separate facts<a class="headerlink" href="#address-frontage-and-public-access-path-are-separate-facts" title="Permanent link">&para;</a></h3>
+<p>A facility's public mailing or street address does not prove that its parcel directly fronts that street, that the visible approach lies on the facility parcel, or that the public reaches the facility through a particular legal interest.</p>
+<p>If assessor, parcel, recorded-map, or current physical evidence shows that the public address and parcel frontage do not align, create an explicit:</p>
+<p><code>ADDRESS/FRONTAGE-MISMATCH</code></p>
+<p>Then separately identify, to the level needed by the legal question:</p>
+<ul>
+<li>the actual physical ingress/egress route used by the public;</li>
+<li>the parcel or ROW crossed by that route;</li>
+<li>whether the route is municipal ROW, facility-owned land, an easement, shared drive, license, leasehold, or another arrangement;</li>
+<li>the entity with operational control over the relevant subarea;</li>
+<li>current signs, barriers, circulation patterns, and public-use conditions.</li>
+</ul>
+<p>Do not infer ownership, control, forum status, or trespass authority for the approach from the facility address alone.</p>
+<p>The outcome-determinative boundary gate still applies. A modern easement/deed/site-plan/access instrument need not be reconstructed merely for completeness if every reasonably plausible answer would leave the legal result unchanged. It becomes high priority when the person's exact location or controller could change forum, removal, or criminal-trespass analysis.</p>
+<p>Concord DMV established this rule: the State/DMV parcel is strongly supported at 2070 Diamond Boulevard, but assessor and recorded-map evidence place an intervening parcel between the DMV parcel and Diamond Boulevard. The correct result is an unresolved modern Diamond access right, not an assumed State-owned approach.</p>
+<h3 id="new-facility-category-requires-a-doctrinal-reset">New facility category requires a doctrinal reset<a class="headerlink" href="#new-facility-category-requires-a-doctrinal-reset" title="Permanent link">&para;</a></h3>
+<p>When the governmental purpose materially changes, restart the anchor-authority analysis from the specific area and activity. Do not carry the previous facility category's cases or conclusions forward merely because the physical features look similar.</p>
+<p>Use:</p>
+<p><code>new facility purpose → defined subarea/activity → current access/control facts → fresh controlling/persuasive authority search → comparator analysis → confidence-qualified result</code></p>
+<p>For example, library exterior cases may remain useful background when facts genuinely overlap, but they are not the default anchors for a DMV administrative lobby, testing area, or customer parking lot. The comparator <strong>method</strong> is reusable; the comparator <strong>case</strong> is not presumed reusable.</p>
+<p>Federal and California forum analyses must continue to be separated when state constitutional doctrine may diverge. A federal nonpublic-forum conclusion must not be copied automatically into the California Speech Clause column.</p>
+<h3 id="preserve-the-scope-of-agency-purpose-rules">Preserve the scope of agency-purpose rules<a class="headerlink" href="#preserve-the-scope-of-agency-purpose-rules" title="Permanent link">&para;</a></h3>
+<p>A facility-specific privacy duty, examination-integrity rule, device-use rule, security procedure, or records practice is evidence only for the activity and area to which it actually applies unless a broader rule is independently established.</p>
+<p>Do not silently transform:</p>
+<ul>
+<li>a privacy obligation into a general camera ban;</li>
+<li>a knowledge-test cell-phone rule into a field-office-wide phone prohibition;</li>
+<li>a restricted employee-area rule into a lobby rule;</li>
+<li>a purpose-limited transaction requirement into a facility-wide expressive-activity rule.</li>
+</ul>
+<p>Record the exact text, source, scope, physical location, and asserted authority of any restriction before applying constitutional analysis.</p>
+<h3 id="cross-category-validation-does-not-universalize-source-adapters">Cross-category validation does not universalize source adapters<a class="headerlink" href="#cross-category-validation-does-not-universalize-source-adapters" title="Permanent link">&para;</a></h3>
+<p>A parcel core, map resolver, recorded-record workflow, or other acquisition module is reusable only within the geographic/source coverage actually established. Municipal road/ROW layers, address points, facility-control datasets, and agency policies remain modular.</p>
+<p>The project should therefore preserve this architecture:</p>
+<p><code>reusable evidence method + source-specific adapters + area/activity-specific facts + facility-purpose doctrinal reset</code></p>
+<p>rather than treating one successful cross-category run as proof of statewide technical or doctrinal uniformity.</p>
 
 
 

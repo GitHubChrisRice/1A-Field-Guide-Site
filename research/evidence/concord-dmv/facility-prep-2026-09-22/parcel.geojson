@@ -1,0 +1,14 @@
+{
+  "crs": {"properties": {"name": "EPSG:4326"}, "type": "name"},
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [[[-122.05576280811646, 37.975078511483396], [-122.05605954394804, 37.97540571429059], [-122.05710286631754, 37.97485696561607], [-122.05737878079871, 37.97518363475172], [-122.05773046050857, 37.974997022762764], [-122.05710855577206, 37.97425606852034], [-122.05693253731529, 37.97404635177813], [-122.05551969691635, 37.97478975217361], [-122.05576280811646, 37.975078511483396]]],
+        "type": "Polygon"
+      },
+      "properties": {"ACREAGE": null, "APN": "126490004", "APN2": "126-490-004", "PARCELMAP": "https://ccmap.cccounty.us/HTML5/assessorPDF/126p49x0.pdf", "P_OWNER_NM": "CALIFORNIA STATE OF", "assr_url": "gis.cccounty.us/HTML5/assessorPDF/126p49x0.pdf", "full_address_display": "2070  DIAMOND BLVD - CONCORD", "parcel_dashes": "126-490-004"},
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}
