@@ -1,0 +1,50 @@
+{
+  "research_note": "GIS polygon-intersection candidates only. Human review is required; returned features are not a legal adjacency determination.",
+  "target_apn": "178-300-039",
+  "candidates": [
+    {
+      "APN": "178-290-001",
+      "P_OWNER_NM": "THOMAS CREEKSIDE LLC",
+      "full_address_display": "1224 LINCOLN AVE - WALNUT CREEK",
+      "ACREAGE": 0.26,
+      "human_relevance": "candidate only; not promoted as material control parcel"
+    },
+    {
+      "APN": "178-290-003",
+      "P_OWNER_NM": "HARRIS GREG W & DEBORAH J",
+      "full_address_display": "1615 CARMEL DR - WALNUT CREEK",
+      "ACREAGE": 0.2,
+      "human_relevance": "candidate only; not promoted as material control parcel"
+    },
+    {
+      "APN": "178-290-004",
+      "P_OWNER_NM": "MITCHELL CAROL ROSE",
+      "full_address_display": "1617 CARMEL DR - WALNUT CREEK",
+      "ACREAGE": 0.2,
+      "human_relevance": "candidate only; not promoted as material control parcel"
+    },
+    {
+      "APN": "178-300-022",
+      "P_OWNER_NM": "MAXWELL JULIA C TRE",
+      "full_address_display": "1632 LIVE OAK WAY - WALNUT CREEK",
+      "ACREAGE": 0.629,
+      "human_relevance": "candidate only; not promoted as material control parcel"
+    },
+    {
+      "APN": "178-300-035",
+      "P_OWNER_NM": "UNKNOWN OWNERS",
+      "OWN_NM_2ND": "LEHRMAN PHILIP",
+      "full_address_display": "NO ADDRESS - WALNUT CREEK",
+      "ACREAGE": 0.03,
+      "human_relevance": "candidate only; tiny parcel requires separate relevance proof before use"
+    },
+    {
+      "APN": "178-300-040",
+      "P_OWNER_NM": "WALNUT CREEK CITY OF",
+      "full_address_display": "1375 CIVIC DR - WALNUT CREEK",
+      "full_n_address": "1666 N MAIN ST",
+      "ACREAGE": 7.548,
+      "human_relevance": "facility-relevant adjoining civic parcel; corroborated by assessor sheet and City Civic Park address sources"
+    }
+  ]
+}
