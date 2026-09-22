@@ -1,0 +1,25 @@
+{
+  "displayFieldName": "St_Name",
+  "features": [
+    {
+      "attributes": {
+        "Add_Number": 2900,
+        "Concord_APN": "111240006",
+        "Concord_FullAddr": "2900 SALVIO ST",
+        "Inc_Muni": "Concord",
+        "LandmkName": null,
+        "Lat": 37.98155445,
+        "Long": -122.02529236,
+        "OBJECTID": 107398,
+        "Post_Code": "94519",
+        "St_Name": "Salvio"
+      },
+      "geometry": {
+        "x": -122.02530554636013,
+        "y": 37.981559387367646
+      }
+    }
+  ],
+  "geometryType": "esriGeometryPoint",
+  "spatialReference": {"latestWkid": 4326, "wkid": 4326}
+}

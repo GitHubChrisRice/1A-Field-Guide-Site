@@ -1024,6 +1024,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#property-boundary-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Property / boundary evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor-case-comparator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anchor-case comparator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#source-preservation-and-link-rot" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1395,9 +1417,9 @@
 
 
 <h1 id="california-public-facility-1a-registry">California Public Facility 1A Registry<a class="headerlink" href="#california-public-facility-1a-registry" title="Permanent link">&para;</a></h1>
-<p><strong>Working methodology v0.4</strong><br />
+<p><strong>Working methodology v0.5</strong><br />
 <strong>Status:</strong> Working project methodology; initial pilot validation complete<br />
-<strong>Last revised:</strong> September 21, 2026</p>
+<strong>Last revised:</strong> September 22, 2026</p>
 <h2 id="1-purpose">1. Purpose<a class="headerlink" href="#1-purpose" title="Permanent link">&para;</a></h2>
 <p>The California Public Facility 1A Registry is a research and accountability index for publicly accessible government facilities in California.</p>
 <p>Its purpose is to document and organize:</p>
@@ -1467,6 +1489,41 @@
 <li>public parcel, right-of-way, GIS, mapping, or other official geographic information when relevant to determining public property boundaries or access;</li>
 <li>CPRA, FOIA, or other official records obtained after research or a field observation.</li>
 </ul>
+<h3 id="property-boundary-evidence">Property / boundary evidence<a class="headerlink" href="#property-boundary-evidence" title="Permanent link">&para;</a></h3>
+<p>When a facility's constitutional or access analysis depends materially on where one property regime ends and another begins, the Registry entry should maintain a <strong>Property / Boundary Evidence</strong> record rather than rely on an unlabeled map image or visual impression.</p>
+<p>The record should identify, when available:</p>
+<ul>
+<li>parcel/APN or equivalent identifier;</li>
+<li>record owner;</li>
+<li>operational controller if separately established;</li>
+<li>relevant public right-of-way, easement, lease, or joint-use information;</li>
+<li>the exact sidewalk, plaza, parking lot, approach, driveway, or other area affected;</li>
+<li>the official source and direct link;</li>
+<li>map/layer/document name and date or version;</li>
+<li>retrieval or verification date;</li>
+<li>what the source actually establishes;</li>
+<li>material limitations or unresolved conflicts; and</li>
+<li>boundary confidence: <strong>VERIFIED</strong>, <strong>PARTIALLY-VERIFIED</strong>, or <strong>UNRESOLVED</strong>.</li>
+</ul>
+<p>A live official source should be linked when available. When the material source is an interactive GIS viewer or other dynamic map, preserve an export, PDF, or screenshot when practical so the project can later show the view actually relied upon. Record enough information to reproduce the result, such as layer name, parcel/APN, selected feature, and retrieval date.</p>
+<p>When boundary evidence materially affects an entry, maintain a facility-specific evidence manifest. The current project convention is <code>docs/research/evidence/&lt;facility-slug&gt;/README.md</code>, with preserved exports/screenshots stored beside the manifest when practical. This keeps live-source links, preserved evidence, retrieval dates, and limitations tied to the specific facility rather than scattered through the handbook.</p>
+<p>Do not collapse <strong>ownership</strong>, <strong>operational control</strong>, <strong>public access</strong>, <strong>right-of-way status</strong>, and <strong>forum classification</strong> into one fact. They can point in different directions and may require different sources. GIS and assessor maps are evidence, not automatic legal conclusions about every easement, lease, right-of-way, or constitutional classification.</p>
+<h3 id="anchor-case-comparator">Anchor-case comparator<a class="headerlink" href="#anchor-case-comparator" title="Permanent link">&para;</a></h3>
+<p>For a material forum classification, the Registry should identify the best <strong>area-and-activity-specific anchor authority</strong> available rather than infer a result from the facility category alone.</p>
+<p>A useful comparison records:</p>
+<ul>
+<li>the exact area and expressive activity being analyzed;</li>
+<li>the anchor case or authority and whether it is binding or persuasive;</li>
+<li>the classification actually reached in that authority;</li>
+<li>the factual considerations that materially drove the classification;</li>
+<li>similarities and differences between the precedent and the local facility area;</li>
+<li>unresolved facts that could change the comparison;</li>
+<li>the resulting classification and confidence level; and</li>
+<li>any separate doctrine still required for the specific activity, such as recording, solicitation, leafleting, or removal/trespass.</li>
+</ul>
+<p>Different areas at one address may require different anchors. The project should not turn an anchor case into a facility-wide categorical rule. If no sufficiently analogous case exists, apply general forum doctrine directly and state that no closer anchor authority was located.</p>
+<p>Forum classification and activity-specific rights remain separate. For example, a leafleting case may strongly support the forum status of an exterior area without independently deciding whether a particular recording restriction there is lawful.</p>
+<p>The canonical working method is maintained in <code>docs/research/FACILITY-PREP-SOP.md</code>.</p>
 <p>Every substantive legal authority or facility policy relied on by the Registry should have a direct source link when a stable public source is available and a <code>last_verified</code> date.</p>
 <p>Primary sources are preferred. Secondary sources may be used for explanation or research leads but should not replace primary authority when primary authority is available.</p>
 <p>A statement such as <code>no supporting authority located as of [date]</code> means only that the project's documented research did not locate supporting authority by that date. Failure to locate supporting authority is not, by itself, proof that no such authority exists.</p>
@@ -1790,6 +1847,9 @@ AREA-BY-AREA ACCESS
 - Activity analyzed:
 - Forum classification:
 - Classification status / uncertainty:
+- Anchor authority:
+- Anchor authority binding level:
+- Comparator similarities / differences:
 
 POLICY AND IMPLEMENTATION
 - Current written policy:

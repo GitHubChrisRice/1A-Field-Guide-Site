@@ -1,0 +1,18 @@
+{
+  "displayFieldName": "APN",
+  "features": [
+    {
+      "attributes": {
+        "APN": "111240006",
+        "APN2": "111-240-006",
+        "BOUNDARYID": "Concord",
+        "OBJECTID": 5927749,
+        "PARCELMAP": "https://ccmap.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+        "P_OWNER_NM": "CONCORD CITY OF",
+        "assr_url": "gis.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+        "full_address_display": "2900  SALVIO ST   - CONCORD",
+        "parcel_dashes": "111-240-006"
+      }
+    }
+  ]
+}

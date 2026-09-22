@@ -1,0 +1,74 @@
+{
+  "address_point": {
+    "Add_Number": 2900,
+    "Concord_APN": "111240006",
+    "Concord_FullAddr": "2900 SALVIO ST",
+    "Inc_Muni": "Concord",
+    "LandmkName": null,
+    "Lat": 37.98155445,
+    "Long": -122.02529236,
+    "OBJECTID": 107398,
+    "Post_Code": "94519",
+    "St_Name": "Salvio"
+  },
+  "adjacent_parcels": [
+    {
+      "ACREAGE": 3.68,
+      "APN": "111240014",
+      "APN2": "111-240-014",
+      "PARCELMAP": "https://ccmap.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+      "P_OWNER_NM": "CONCORD CITY OF",
+      "assr_url": "gis.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+      "full_address_display": "1950  PARKSIDE DR   - CONCORD",
+      "parcel_dashes": "111-240-014"
+    }
+  ],
+  "city_owned": [
+    {
+      "APN": "111240006",
+      "APN2": "111-240-006",
+      "BOUNDARYID": "Concord",
+      "OBJECTID": 5927749,
+      "PARCELMAP": "https://ccmap.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+      "P_OWNER_NM": "CONCORD CITY OF",
+      "assr_url": "gis.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+      "full_address_display": "2900  SALVIO ST   - CONCORD",
+      "parcel_dashes": "111-240-006"
+    }
+  ],
+  "confidence": {
+    "apn_resolution": "OFFICIAL-GIS-RESOLVED",
+    "easements": "UNRESOLVED",
+    "forum_classification": "NOT-DETERMINED-BY-TOOL",
+    "legal_boundary": "REQUIRES-RECORDED-MAP-OR-SURVEY-REVIEW",
+    "operational_control": "SEPARATE-RESEARCH-REQUIRED",
+    "parcel_geometry": "OFFICIAL-GIS-RESOLVED",
+    "right_of_way": "UNRESOLVED"
+  },
+  "input_address": "2900 Salvio Street, Concord, CA 94519",
+  "parcel": {
+    "ACREAGE": 0.84,
+    "APN": "111240006",
+    "APN2": "111-240-006",
+    "BOUNDARYID": "Concord",
+    "OBJECTID": 5927749,
+    "OWN_NM_2ND": null,
+    "PARCELMAP": "https://ccmap.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+    "P_OWNER_NM": "CONCORD CITY OF",
+    "assr_url": "gis.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+    "full_address_display": "2900  SALVIO ST   - CONCORD",
+    "full_address_search": "2900  SALVIO ST  ",
+    "full_n_address": "1950 PARKSIDE DR",
+    "parcel_dashes": "111-240-006",
+    "s_city": "CONCORD"
+  },
+  "resolver_version": "0.1",
+  "retrieved_at": "2026-09-22T16:27:06.585053+00:00",
+  "service_url": "https://gis.cityofconcord.org/gsrv1/rest/services/BaseMap/MapServer",
+  "source_disclaimer": "City GIS data are research evidence/general-reference data, not a legal survey or final determination of boundaries, easements, right-of-way, ownership, operational control, or constitutional forum status.",
+  "source_layers": {
+    "address_point": 22,
+    "city_owned_parcels": 9,
+    "parcels": 10
+  }
+}

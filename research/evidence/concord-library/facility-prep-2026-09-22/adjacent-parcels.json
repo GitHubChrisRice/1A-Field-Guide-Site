@@ -1,0 +1,18 @@
+{
+  "displayFieldName": "APN",
+  "features": [
+    {
+      "attributes": {
+        "ACREAGE": 3.68,
+        "APN": "111240014",
+        "APN2": "111-240-014",
+        "PARCELMAP": "https://ccmap.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+        "P_OWNER_NM": "CONCORD CITY OF",
+        "assr_url": "gis.cccounty.us/HTML5/assessorPDF/111p24x0.pdf",
+        "full_address_display": "1950  PARKSIDE DR   - CONCORD",
+        "parcel_dashes": "111-240-014"
+      }
+    }
+  ],
+  "research_note": "These are GIS-intersection candidate neighbors. Human review is required; the result is not a legal adjacency determination."
+}
