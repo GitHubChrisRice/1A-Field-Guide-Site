@@ -132,12 +132,120 @@ body {
   color: var(--fg-accent);
 }
 
+/* Facility Registry preview */
+.md-content__inner:has(.registry-grid) {
+  max-width: 78rem;
+}
+
+.registry-hero {
+  margin: 1.2rem 0 2.2rem;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid #cfd8de;
+  border-radius: .45rem;
+  background: #f3f7f9;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.registry-hero > p:first-child {
+  margin-top: 0;
+}
+
+.registry-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem .65rem;
+  align-items: center;
+  margin-top: .9rem;
+  color: var(--fg-muted);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.registry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 2.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.registry-card {
+  border: 1px solid var(--fg-line);
+  border-radius: .5rem;
+  background: #fff;
+  padding: 1.15rem 1.2rem 1.25rem;
+  box-shadow: 0 .08rem .3rem rgba(20, 35, 45, .06);
+}
+
+.registry-card h3 {
+  margin: 0 0 .25rem;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.registry-card p,
+.registry-card li {
+  font-size: .82rem;
+  line-height: 1.55;
+}
+
+.registry-card ul {
+  margin-top: .45rem;
+  margin-bottom: .8rem;
+}
+
+.registry-card > p:last-child {
+  margin-bottom: 0;
+}
+
+.registry-pill {
+  display: inline-block;
+  margin: .18rem .22rem .35rem 0;
+  padding: .18rem .48rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: .01em;
+  vertical-align: middle;
+}
+
+.registry-pill--verified {
+  color: #264936;
+  background: #e8f3ec;
+  border-color: #bfd7c7;
+}
+
+.registry-pill--supported {
+  color: #27495b;
+  background: #e7f0f5;
+  border-color: #bfd1dc;
+}
+
+.registry-pill--unresolved {
+  color: #555d63;
+  background: #eff1f2;
+  border-color: #d1d5d8;
+}
+
+.registry-pill--field {
+  color: #674d18;
+  background: #f7f0df;
+  border-color: #dfcfaa;
+}
+
 @media (max-width: 59.984375em) {
   .md-content__inner {
     font-size: 1rem;
     line-height: 1.66;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .registry-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -157,5 +265,15 @@ body {
     max-width: none;
     font-size: 11pt;
     color: #000;
+  }
+
+  .registry-grid {
+    display: block;
+  }
+
+  .registry-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    box-shadow: none;
   }
 }
