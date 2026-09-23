@@ -277,3 +277,129 @@ body {
     box-shadow: none;
   }
 }
+
+
+/* Facility Registry v2 — county-scale index + detail pages */
+.md-content__inner:has(.registry-list),
+.md-content__inner:has(.registry-bottom-line) {
+  max-width: 82rem;
+}
+
+.registry-list {
+  display: grid;
+  gap: .65rem;
+  margin: 1rem 0 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.registry-row {
+  display: grid;
+  grid-template-columns: minmax(11rem, 1fr) minmax(24rem, 2.3fr) minmax(14rem, 1.15fr);
+  gap: 1rem;
+  align-items: start;
+  padding: .9rem 1rem;
+  border: 1px solid var(--fg-line);
+  border-radius: .42rem;
+  background: #fff;
+  box-shadow: 0 .05rem .22rem rgba(20, 35, 45, .045);
+}
+
+.registry-row h3 {
+  margin: 0 0 .25rem;
+  font-size: 1.02rem;
+  line-height: 1.25;
+}
+
+.registry-row p,
+.registry-row li {
+  margin-top: .25rem;
+  margin-bottom: .35rem;
+  font-size: .76rem;
+  line-height: 1.45;
+}
+
+.registry-row__classification {
+  border-left: 1px solid var(--fg-line);
+  border-right: 1px solid var(--fg-line);
+  padding: 0 .9rem;
+}
+
+.registry-row__status {
+  color: var(--fg-muted);
+}
+
+.registry-bottom-line {
+  margin: 1rem 0 1.8rem;
+  padding: 1rem 1.15rem;
+  border-left: .28rem solid var(--fg-accent);
+  background: var(--fg-accent-soft);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.registry-bottom-line p {
+  margin: 0;
+  max-width: none;
+}
+
+.registry-pill--tpf {
+  color: #264936;
+  background: #e8f3ec;
+  border-color: #bfd7c7;
+}
+
+.registry-pill--lpf {
+  color: #27495b;
+  background: #e7f0f5;
+  border-color: #bfd1dc;
+}
+
+.registry-pill--npf {
+  color: #444c52;
+  background: #edf0f2;
+  border-color: #cbd1d5;
+}
+
+.registry-pill--high {
+  color: #264936;
+  background: #f1f7f3;
+  border-color: #c9ddcf;
+}
+
+.registry-pill--medium {
+  color: #674d18;
+  background: #faf4e7;
+  border-color: #e4d5b4;
+}
+
+@media (max-width: 72em) {
+  .registry-row {
+    grid-template-columns: minmax(10rem, .9fr) minmax(20rem, 2fr);
+  }
+
+  .registry-row__status {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--fg-line);
+    padding-top: .55rem;
+  }
+}
+
+@media (max-width: 59.984375em) {
+  .registry-row {
+    grid-template-columns: 1fr;
+    gap: .55rem;
+  }
+
+  .registry-row__classification {
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid var(--fg-line);
+    border-bottom: 1px solid var(--fg-line);
+    padding: .55rem 0;
+  }
+
+  .registry-row__status {
+    grid-column: auto;
+    border-top: 0;
+    padding-top: 0;
+  }
+}
