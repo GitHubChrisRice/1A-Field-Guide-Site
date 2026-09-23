@@ -191,6 +191,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Ordinary public-place recording doctrine applies; exact conduct still matters."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S001"
         },
         {
@@ -215,6 +222,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "No general field-office camera rule was located online."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S002",
           "unresolved_reason": "Diamond ingress legal geometry/control remains unresolved."
         },
@@ -240,6 +254,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "No general field-office camera rule was located online."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S003",
           "unresolved_reason": "California Speech Clause treatment of the customer lot remains unresolved."
         },
@@ -265,6 +286,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "No general field-office camera rule was located online."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S004",
           "unresolved_reason": "Exact footprint and California classification remain open."
         },
@@ -290,6 +318,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "NPF status tells us the standard for an actual restriction; it does not create a camera ban."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S005",
           "unresolved_reason": "California Speech Clause classification remains genuinely unresolved."
         },
@@ -314,6 +349,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Privacy and exposed records can support narrower restrictions; the actual rule and exposed information must be identified."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S006",
           "unresolved_reason": "California interior classification remains unresolved."
         },
@@ -338,6 +380,14 @@
             "status": "ACTIVITY_SPECIFIC_RULE",
             "summary": "Current handbook prohibits use of a cell phone as a testing aid during the knowledge test."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "rule_source": "California DMV knowledge-test cell-phone/device rule described in the current driver handbook",
+              "status": "RULE_LOCATED_UNTESTED",
+              "summary": "An activity-specific device rule is documented here. The Registry records the rule but does not presume that it authorizes a broader camera/recording prohibition or that every application is constitutional."
+            }
+          ],
           "subarea_id": "S007",
           "unresolved_reason": "California forum label remains unresolved, but the activity-specific testing rule is verified."
         },
@@ -360,6 +410,13 @@
             "status": "NOT_APPLICABLE",
             "summary": "No public-lobby inference applies."
           },
+          "restriction_audits": [
+            {
+              "activity": "ACCESS_REMOVAL",
+              "status": "NOT_APPLICABLE",
+              "summary": "This subarea is classified outside the ordinary public-access channel. Any disputed exclusion still turns on the actual boundary and access authority; no public-forum permission is inferred."
+            }
+          ],
           "subarea_id": "S008"
         }
       ],
@@ -468,6 +525,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Ordinary public-place recording rules apply; exact conduct still matters."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S001"
         },
         {
@@ -491,6 +555,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "No branch-wide patron-camera rule was located online; a specific restriction would require separate analysis."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S002"
         },
         {
@@ -514,6 +585,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "No branch-wide patron-camera rule was located online."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S003"
         },
         {
@@ -537,6 +615,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Forum status does not eliminate traffic, obstruction, vehicle, privacy, or other valid rules."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S004"
         },
         {
@@ -560,6 +645,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Recording remains subject-specific and rule-specific."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S005"
         },
         {
@@ -585,6 +677,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "LPF status does not itself establish a right to film patrons, screens, staff interactions or private conversations."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S006",
           "unresolved_reason": "California Speech Clause treatment of the ordinary interior is not independently hardened."
         },
@@ -609,6 +708,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Meeting-room rules and the event context govern; the room does not inherit ordinary-library recording assumptions."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S007",
           "unresolved_reason": "California Speech Clause label is not necessary to the current federal LPF classification."
         },
@@ -634,6 +740,13 @@
             "status": "UNRESOLVED",
             "summary": "The agreement does not state a general camera ban, but incorporated rules and current signs may matter."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S008",
           "unresolved_reason": "Recording effect and California classification under the special access regime remain unresolved."
         },
@@ -656,6 +769,13 @@
             "status": "NOT_APPLICABLE",
             "summary": "No ordinary public-area inference applies."
           },
+          "restriction_audits": [
+            {
+              "activity": "ACCESS_REMOVAL",
+              "status": "NOT_APPLICABLE",
+              "summary": "This subarea is classified outside the ordinary public-access channel. Any disputed exclusion still turns on the actual boundary and access authority; no public-forum permission is inferred."
+            }
+          ],
           "subarea_id": "S009"
         }
       ],
@@ -765,6 +885,13 @@
             "status": "STRONG_ACTIVITY_PROTECTION",
             "summary": "Recording public police activity from an ordinary lawful public vantage receives strong protection, subject to noninterference and other valid rules."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material recording prohibition is established in the current record for this defined activity/location, and affirmative recording authority is identified. Any later claimed restriction must be tested rather than presumed valid."
+            }
+          ],
           "subarea_id": "S001"
         },
         {
@@ -788,6 +915,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Exact location/control and any actual rule matter."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S002",
           "unresolved_reason": "Exact footprint/control and California treatment remain open."
         },
@@ -816,6 +950,13 @@
             "status": "STRONG_ACTIVITY_PROTECTION",
             "summary": "For public-facing officers from a lawful, noninterfering vantage, Policy 423, §148(g), Fordyce and Wilson materially strengthen the recording analysis; no separate lobby-wide ban was located online."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material recording prohibition is established in the current record for this defined activity/location, and affirmative recording authority is identified. Any later claimed restriction must be tested rather than presumed valid."
+            }
+          ],
           "subarea_id": "S003",
           "unresolved_reason": "California Speech Clause classification remains genuinely unresolved."
         },
@@ -841,6 +982,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Protected records/screens and confidential interactions can support narrower restrictions; exact subject and rule matter."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S004",
           "unresolved_reason": "California interior classification remains unresolved."
         },
@@ -868,6 +1016,13 @@
             "status": "STRONG_ACTIVITY_PROTECTION",
             "summary": "Policy 423 + Penal Code §148(g) + Fordyce + local Wilson provide strong activity-specific support for lawful noninterfering recording."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material recording prohibition is established in the current record for this defined activity/location, and affirmative recording authority is identified. Any later claimed restriction must be tested rather than presumed valid."
+            }
+          ],
           "subarea_id": "S005",
           "unresolved_reason": "California forum label is unresolved but does not erase the separate statutory/policy/activity protections."
         },
@@ -892,6 +1047,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Penal Code §632 confidentiality and narrower privacy protections may materially alter the recording analysis depending on objective privacy facts."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S006",
           "unresolved_reason": "Recording result is fact-specific to privacy/acoustic circumstances and any actual restriction."
         },
@@ -916,6 +1078,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Meeting-room contract and event rules govern; the room does not inherit lobby treatment."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S007",
           "unresolved_reason": "California label and full contract terms remain unresolved, not the federal LPF project classification."
         },
@@ -938,6 +1107,13 @@
             "status": "NOT_APPLICABLE",
             "summary": "No public-lobby recording inference applies."
           },
+          "restriction_audits": [
+            {
+              "activity": "ACCESS_REMOVAL",
+              "status": "NOT_APPLICABLE",
+              "summary": "This subarea is classified outside the ordinary public-access channel. Any disputed exclusion still turns on the actual boundary and access authority; no public-forum permission is inferred."
+            }
+          ],
           "subarea_id": "S008"
         }
       ],
@@ -1048,6 +1224,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Ordinary public-place recording rules apply; exact conduct still matters."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S001"
         },
         {
@@ -1071,6 +1254,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "No branch-wide patron-camera rule was located online."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S002"
         },
         {
@@ -1095,6 +1285,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Ordinary park, event, privacy and conduct rules remain applicable."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S003"
         },
         {
@@ -1118,6 +1315,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Traffic and obstruction rules remain independent."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S004"
         },
         {
@@ -1142,6 +1346,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "Interior recording remains a distinct activity/rule/privacy question."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S005",
           "unresolved_reason": "California interior classification remains separately unresolved."
         },
@@ -1166,6 +1377,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Event-specific contract and room rules apply."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S006",
           "unresolved_reason": "California label remains separate from the strong federal LPF result."
         },
@@ -1190,6 +1408,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Current live booking/use rules govern."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S007",
           "unresolved_reason": "California label remains separate from the strong federal LPF result."
         },
@@ -1214,6 +1439,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Narrow purpose and room rules materially matter."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S008",
           "unresolved_reason": "No close California classification for these study-room rules has been hardened."
         },
@@ -1238,6 +1470,13 @@
             "status": "NO_GENERAL_BAN_LOCATED",
             "summary": "NPF status does not create a camera ban; an actual restriction still must be identified."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S009",
           "unresolved_reason": "California Speech Clause treatment of the public underground garage remains genuinely unresolved."
         },
@@ -1262,6 +1501,13 @@
             "status": "SEPARATE_ANALYSIS",
             "summary": "Exact segment and any specific rule matter."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S010",
           "unresolved_reason": "California classification and exact segment boundaries remain open."
         },
@@ -1284,6 +1530,13 @@
             "status": "UNRESOLVED",
             "summary": "Cafe-specific rules cannot be determined without control/access facts."
           },
+          "restriction_audits": [
+            {
+              "activity": "RECORDING",
+              "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+            }
+          ],
           "subarea_id": "S011",
           "unresolved_reason": "Operator/control/access facts are missing."
         }
