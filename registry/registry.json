@@ -35,6 +35,21 @@
       "level": "US_SUPREME_COURT",
       "topic": "ordinary public sidewalks"
     },
+    "hhs-media-public-areas": {
+      "citation": "HHS OCR, Film and Media guidance / FAQ",
+      "level": "FEDERAL_AGENCY_GUIDANCE",
+      "topic": "HIPAA does not require exclusion of media from areas otherwise generally accessible to the public; treatment-area PHI exposure requires authorization/safeguards"
+    },
+    "hipaa-covered-entity": {
+      "citation": "45 C.F.R. § 160.103",
+      "level": "FEDERAL_REGULATION",
+      "topic": "HIPAA covered-entity and business-associate definitions"
+    },
+    "hipaa-safeguards": {
+      "citation": "45 C.F.R. § 164.530(c); HHS OCR, Incidental Uses and Disclosures",
+      "level": "FEDERAL_REGULATION_AND_AGENCY_GUIDANCE",
+      "topic": "covered-entity reasonable safeguards and incidental disclosure framework"
+    },
     "jacobsen": {
       "citation": "Jacobsen v. U.S. Postal Service, 993 F.2d 649 (9th Cir. 1993)",
       "level": "NINTH_CIRCUIT",
@@ -75,6 +90,11 @@
       "level": "CALIFORNIA_COURT_OF_APPEAL",
       "topic": "library exterior forum analysis"
     },
+    "project-veritas": {
+      "citation": "Project Veritas v. Schmidt, 125 F.4th 929 (9th Cir. 2025) (en banc)",
+      "level": "NINTH_CIRCUIT_EN_BANC",
+      "topic": "recording as First Amendment-protected speech; content-neutral privacy regulation can still be tested under applicable scrutiny"
+    },
     "sammartano": {
       "citation": "Sammartano v. First Judicial District Court, 303 F.3d 959 (9th Cir. 2002)",
       "level": "NINTH_CIRCUIT",
@@ -102,7 +122,8 @@
         "kokinda",
         "jacobsen",
         "askins",
-        "camenzind"
+        "camenzind",
+        "project-veritas"
       ],
       "city": "Concord",
       "county": {
@@ -160,10 +181,11 @@
         ],
         "ownership_summary": "State-owned DMV parcel; Diamond address does not establish direct Diamond frontage"
       },
-      "recording_summary": "No dedicated public-facing California DMV field-office ordinary-patron photography/videography prohibition was located online. The knowledge-test cell-phone rule is activity-specific and must not be generalized into a branch-wide camera rule.",
+      "recording_summary": "Recording can constitute First Amendment-protected activity. No dedicated public-facing California DMV field-office ordinary-patron camera prohibition was located online. The knowledge-test phone rule is activity-specific and cannot be generalized into a branch-wide camera ban; any broader restriction requires its own legal and constitutional basis.",
       "research": {
         "evidence_path": "docs/research/evidence/concord-dmv/README.md",
         "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+        "indoor_hardening_path": "docs/research/REGISTRY-INDOOR-HARDENING-2026-09-23.md",
         "sweep_path": "docs/research/SWEEP-009-CONCORD-DMV.md"
       },
       "schema_version": 1,
@@ -300,7 +322,10 @@
           "access": "PUBLIC",
           "authority_ids": [
             "sammartano",
-            "freedom-foundation"
+            "freedom-foundation",
+            "askins",
+            "project-veritas",
+            "pc632"
           ],
           "california": {
             "classification": "UNRESOLVED",
@@ -312,6 +337,20 @@
             "confidence": "HIGH",
             "note": "Published Ninth Circuit government-building doctrine plus a close state-agency-lobby comparator support the result."
           },
+          "indoor_common_space": {
+            "authority_ids": [
+              "sammartano",
+              "askins",
+              "project-veritas",
+              "pc632"
+            ],
+            "facility_responsibility": "DMV retains responsibility for safeguarding driver, identity, transaction, and system information under laws and policies that apply to the agency. Public-facing design does not transfer that duty to ordinary visitors.",
+            "hipaa_posture": "NOT_INDICATED",
+            "privacy_context": "ROUTINE_SENSITIVE_INFORMATION_POSSIBLE",
+            "recording_effect": "The possibility of personal information in the lobby can support narrower safeguards, but it does not itself establish a general no-recording rule.",
+            "space_type": "WAITING_AREA",
+            "visitor_responsibility": "A lawful visitor does not assume DMV's confidentiality duties merely by waiting in the public lobby. Any direct restriction on the visitor must come from applicable law or a constitutionally valid rule."
+          },
           "name": "Ordinary lobby / waiting",
           "notes": "This classification is independent of the unresolved Diamond ingress geometry.",
           "recording": {
@@ -321,8 +360,12 @@
           "restriction_audits": [
             {
               "activity": "RECORDING",
+              "authority_ids": [
+                "askins",
+                "project-veritas"
+              ],
               "status": "NO_MATERIAL_RESTRICTION_LOCATED",
-              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+              "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis."
             }
           ],
           "subarea_id": "S005",
@@ -331,7 +374,10 @@
         {
           "access": "PUBLIC",
           "authority_ids": [
-            "sammartano"
+            "sammartano",
+            "askins",
+            "project-veritas",
+            "pc632"
           ],
           "california": {
             "classification": "UNRESOLVED",
@@ -343,6 +389,20 @@
             "confidence": "HIGH",
             "note": "Purpose-limited public transaction zone within an administrative service facility."
           },
+          "indoor_common_space": {
+            "authority_ids": [
+              "sammartano",
+              "askins",
+              "project-veritas",
+              "pc632"
+            ],
+            "facility_responsibility": "DMV remains responsible for protecting nonpublic records, screens, and transaction information from unnecessary exposure and for using appropriate operational safeguards.",
+            "hipaa_posture": "NOT_INDICATED",
+            "privacy_context": "CONFIDENTIAL_INTERACTION_POSSIBLE",
+            "recording_effect": "A counter-level privacy concern must be tied to the actual information or interaction at risk. That can justify a narrower restriction without establishing a lobby-wide camera ban.",
+            "space_type": "PUBLIC_SERVICE_COUNTER",
+            "visitor_responsibility": "A member of the public does not become responsible for enforcing DMV's confidentiality duties. Independent privacy law and a valid narrowly supported facility rule can still apply to particular recording conduct."
+          },
           "name": "Customer service counters / transaction zones",
           "notes": "Public access to transact business does not open employee workspace or records areas.",
           "recording": {
@@ -352,8 +412,12 @@
           "restriction_audits": [
             {
               "activity": "RECORDING",
+              "authority_ids": [
+                "askins",
+                "project-veritas"
+              ],
               "status": "NO_MATERIAL_RESTRICTION_LOCATED",
-              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+              "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis."
             }
           ],
           "subarea_id": "S006",
@@ -435,7 +499,8 @@
         "prigmore",
         "faith-center",
         "kreimer",
-        "neinast"
+        "neinast",
+        "project-veritas"
       ],
       "city": "Concord",
       "county": {
@@ -494,10 +559,11 @@
         ],
         "ownership_summary": "City-owned library parcel; adjoining Civic Center parcel also City-owned"
       },
-      "recording_summary": "No dedicated public-facing Concord-specific ordinary-patron photography/videography prohibition was located online. Interior recording remains a separate activity/rule/privacy question rather than a consequence of the LPF label.",
+      "recording_summary": "Recording can constitute First Amendment-protected activity. No dedicated public-facing Concord-specific ordinary-patron camera prohibition was located online. The library-purpose forum classification does not itself create a camera ban; any restriction must be tied to a valid privacy, disruption, safety, or other legal interest and constitutionally tested.",
       "research": {
         "evidence_path": "docs/research/evidence/concord-library/README.md",
         "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+        "indoor_hardening_path": "docs/research/REGISTRY-INDOOR-HARDENING-2026-09-23.md",
         "sweep_path": "docs/research/SWEEP-007-CONCORD-LIBRARY.md"
       },
       "schema_version": 1,
@@ -659,7 +725,10 @@
           "authority_ids": [
             "kreimer",
             "neinast",
-            "faith-center"
+            "faith-center",
+            "askins",
+            "project-veritas",
+            "pc632"
           ],
           "california": {
             "classification": "UNRESOLVED",
@@ -671,6 +740,19 @@
             "confidence": "MEDIUM",
             "note": "Library interiors are purpose-limited to reading, research, information access and related library activity; closest ordinary-interior holdings are persuasive rather than Ninth Circuit merits authority."
           },
+          "indoor_common_space": {
+            "authority_ids": [
+              "askins",
+              "project-veritas",
+              "pc632"
+            ],
+            "facility_responsibility": "The library retains responsibility for safeguarding patron records, account information, staff systems, and other confidential material under laws and policies that apply to the library.",
+            "hipaa_posture": "NOT_INDICATED",
+            "privacy_context": "ROUTINE_SENSITIVE_INFORMATION_POSSIBLE",
+            "recording_effect": "Possible screens, transactions, or private conversations may support targeted restrictions. They do not, by themselves, establish a blanket prohibition on recording the ordinary public interior.",
+            "space_type": "GENERAL_SHARED_INTERIOR",
+            "visitor_responsibility": "A lawful visitor does not assume the library's confidentiality or information-security duties merely by being present. Any duty imposed on the visitor must come from law or a constitutionally valid rule that applies directly to the visitor."
+          },
           "name": "Ordinary lobby, stacks, reading and service areas",
           "notes": "Public access is conditioned by library-purpose and patron-conduct rules.",
           "recording": {
@@ -680,8 +762,12 @@
           "restriction_audits": [
             {
               "activity": "RECORDING",
+              "authority_ids": [
+                "askins",
+                "project-veritas"
+              ],
               "status": "NO_MATERIAL_RESTRICTION_LOCATED",
-              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+              "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis."
             }
           ],
           "subarea_id": "S006",
@@ -722,7 +808,10 @@
           "access": "CONDITIONED_PUBLIC",
           "authority_ids": [
             "kreimer",
-            "neinast"
+            "neinast",
+            "askins",
+            "project-veritas",
+            "pc632"
           ],
           "california": {
             "classification": "UNRESOLVED",
@@ -734,6 +823,19 @@
             "confidence": "MEDIUM",
             "note": "The interior remains a library-purpose channel but access is conditioned on enrollment, card/PIN entry and agreement terms."
           },
+          "indoor_common_space": {
+            "authority_ids": [
+              "askins",
+              "project-veritas",
+              "pc632"
+            ],
+            "facility_responsibility": "The library remains responsible for safeguarding protected patron/account information during self-service access and for designing reasonable privacy controls around systems and records.",
+            "hipaa_posture": "NOT_INDICATED",
+            "privacy_context": "ROUTINE_SENSITIVE_INFORMATION_POSSIBLE",
+            "recording_effect": "The special access agreement and current signs must be checked, but privacy concerns do not automatically convert the self-service interior into a blanket no-camera zone.",
+            "space_type": "PURPOSE_LIMITED_INTERIOR",
+            "visitor_responsibility": "The visitor does not inherit the library's confidentiality duties merely by entering under the self-service access program, although valid agreement terms and independent privacy law can apply directly."
+          },
           "name": "Self-Service Sunday interior",
           "notes": "Separate access regime outside ordinary staffed hours.",
           "recording": {
@@ -743,8 +845,12 @@
           "restriction_audits": [
             {
               "activity": "RECORDING",
+              "authority_ids": [
+                "askins",
+                "project-veritas"
+              ],
               "status": "NO_MATERIAL_RESTRICTION_LOCATED",
-              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+              "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis."
             }
           ],
           "subarea_id": "S008",
@@ -798,7 +904,8 @@
         "pc148g",
         "pc6021",
         "pc632",
-        "cpd423"
+        "cpd423",
+        "project-veritas"
       ],
       "city": "Concord",
       "county": {
@@ -850,10 +957,11 @@
         ],
         "ownership_summary": "City-owned headquarters parcel with Galindo public frontage strongly supported"
       },
-      "recording_summary": "CPD Policy 423 recognizes lawful public recording of department members performing official duties. Penal Code § 148(g) separately protects recording-alone within its location conditions. No separate published lobby-wide ordinary-patron camera prohibition was located online.",
+      "recording_summary": "Recording public-facing police activity from a lawful, noninterfering vantage receives strong activity-specific support from CPD Policy 423, Penal Code § 148(g), Fordyce, Askins, Project Veritas, and the local Wilson comparator. No separate published lobby-wide ordinary-patron camera prohibition was located online. Privacy-sensitive subjects still require narrower, fact-specific analysis.",
       "research": {
         "evidence_path": "docs/research/evidence/concord-police/README.md",
         "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+        "indoor_hardening_path": "docs/research/REGISTRY-INDOOR-HARDENING-2026-09-23.md",
         "sweep_path": "docs/research/SWEEP-010-CONCORD-POLICE.md"
       },
       "schema_version": 1,
@@ -932,7 +1040,10 @@
             "fordyce",
             "wilson",
             "pc148g",
-            "cpd423"
+            "cpd423",
+            "askins",
+            "project-veritas",
+            "pc632"
           ],
           "california": {
             "classification": "UNRESOLVED",
@@ -944,6 +1055,23 @@
             "confidence": "HIGH",
             "note": "Documented transactional police-service purpose plus controlling municipal-building doctrine support nonpublic treatment."
           },
+          "indoor_common_space": {
+            "authority_ids": [
+              "sammartano",
+              "fordyce",
+              "askins",
+              "project-veritas",
+              "pc148g",
+              "pc632",
+              "cpd423"
+            ],
+            "facility_responsibility": "The department retains responsibility for safeguarding protected records, screens, victim/witness information, secure operations, and other confidential material under laws and policies that apply to the department.",
+            "hipaa_posture": "NOT_INDICATED",
+            "privacy_context": "CONFIDENTIAL_INTERACTION_POSSIBLE",
+            "recording_effect": "General privacy concerns do not override the strong officer-recording authorities or create a blanket lobby camera ban. The department must identify the actual privacy/security interest and connect any restriction to it.",
+            "space_type": "LOBBY",
+            "visitor_responsibility": "A lawful lobby visitor does not inherit the department's confidentiality duties merely by being present. Independent privacy law or a constitutionally valid targeted restriction can still apply directly to particular conduct."
+          },
           "name": "Ordinary public lobby / Community Service Desk",
           "notes": "NPF classification does not itself create a camera ban.",
           "recording": {
@@ -953,8 +1081,12 @@
           "restriction_audits": [
             {
               "activity": "RECORDING",
+              "authority_ids": [
+                "askins",
+                "project-veritas"
+              ],
               "status": "NO_MATERIAL_RESTRICTION_LOCATED",
-              "summary": "No material recording prohibition is established in the current record for this defined activity/location, and affirmative recording authority is identified. Any later claimed restriction must be tested rather than presumed valid."
+              "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis."
             }
           ],
           "subarea_id": "S003",
@@ -964,7 +1096,9 @@
           "access": "PUBLIC",
           "authority_ids": [
             "sammartano",
-            "pc632"
+            "pc632",
+            "askins",
+            "project-veritas"
           ],
           "california": {
             "classification": "UNRESOLVED",
@@ -976,6 +1110,20 @@
             "confidence": "HIGH",
             "note": "Purpose-limited public transaction area within the police facility."
           },
+          "indoor_common_space": {
+            "authority_ids": [
+              "sammartano",
+              "askins",
+              "project-veritas",
+              "pc632"
+            ],
+            "facility_responsibility": "The department is responsible for protecting records, screens, reports, and confidential interactions exposed at the counter and for using appropriate operational safeguards.",
+            "hipaa_posture": "NOT_INDICATED",
+            "privacy_context": "CONFIDENTIAL_INTERACTION_LIKELY",
+            "recording_effect": "The counter presents a stronger factual basis for targeted privacy restrictions than the open lobby generally, but the scope must track the actual protected information or interaction rather than automatically extend to all recording.",
+            "space_type": "PUBLIC_SERVICE_COUNTER",
+            "visitor_responsibility": "A visitor does not become the custodian of police records or confidential information merely by standing lawfully at the public counter. Laws that apply directly to the visitor, such as confidential-communication law where its elements are met, remain separate."
+          },
           "name": "Records counter",
           "notes": "Public counter access does not open records workspaces.",
           "recording": {
@@ -985,8 +1133,12 @@
           "restriction_audits": [
             {
               "activity": "RECORDING",
+              "authority_ids": [
+                "askins",
+                "project-veritas"
+              ],
               "status": "NO_MATERIAL_RESTRICTION_LOCATED",
-              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+              "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis."
             }
           ],
           "subarea_id": "S004",
@@ -1132,7 +1284,8 @@
         "prigmore",
         "faith-center",
         "kreimer",
-        "sammartano"
+        "sammartano",
+        "project-veritas"
       ],
       "city": "Walnut Creek",
       "county": {
@@ -1193,10 +1346,11 @@
         ],
         "ownership_summary": "City-owned library parcel adjoining City civic/park parcel"
       },
-      "recording_summary": "No dedicated public-facing Walnut Creek-specific ordinary-patron photography/videography prohibition was located online. Forum status and recording permission remain separate questions.",
+      "recording_summary": "Recording can constitute First Amendment-protected activity. No dedicated public-facing Walnut Creek-specific ordinary-patron camera prohibition was located online. The library-purpose forum classification does not itself create a camera ban; any restriction must be separately sourced and constitutionally tested.",
       "research": {
         "evidence_path": "docs/research/evidence/walnut-creek-library/README.md",
         "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+        "indoor_hardening_path": "docs/research/REGISTRY-INDOOR-HARDENING-2026-09-23.md",
         "sweep_path": "docs/research/SWEEP-008-WALNUT-CREEK-LIBRARY.md"
       },
       "schema_version": 1,
@@ -1328,7 +1482,10 @@
           "access": "PUBLIC",
           "authority_ids": [
             "kreimer",
-            "faith-center"
+            "faith-center",
+            "askins",
+            "project-veritas",
+            "pc632"
           ],
           "california": {
             "classification": "UNRESOLVED",
@@ -1340,6 +1497,19 @@
             "confidence": "MEDIUM",
             "note": "Library-purpose access supports LPF treatment; closest ordinary-interior holdings are persuasive."
           },
+          "indoor_common_space": {
+            "authority_ids": [
+              "askins",
+              "project-veritas",
+              "pc632"
+            ],
+            "facility_responsibility": "The library retains responsibility for safeguarding patron records, account information, staff systems, and other confidential material under laws and policies that apply to the library.",
+            "hipaa_posture": "NOT_INDICATED",
+            "privacy_context": "ROUTINE_SENSITIVE_INFORMATION_POSSIBLE",
+            "recording_effect": "Privacy around screens, transactions, or conversations may justify targeted restrictions; it does not itself establish a general camera prohibition in the ordinary public interior.",
+            "space_type": "GENERAL_SHARED_INTERIOR",
+            "visitor_responsibility": "A lawful visitor does not assume the library's confidentiality or information-security duties merely by being present. Any visitor duty must arise from law or a constitutionally valid rule that applies directly."
+          },
           "name": "Ordinary lobby, stacks, reading and service areas",
           "notes": "Library-purpose and patron-conduct rules define the channel.",
           "recording": {
@@ -1349,8 +1519,12 @@
           "restriction_audits": [
             {
               "activity": "RECORDING",
+              "authority_ids": [
+                "askins",
+                "project-veritas"
+              ],
               "status": "NO_MATERIAL_RESTRICTION_LOCATED",
-              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+              "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis."
             }
           ],
           "subarea_id": "S005",
@@ -1483,7 +1657,9 @@
         {
           "access": "PUBLIC",
           "authority_ids": [
-            "sammartano"
+            "sammartano",
+            "askins",
+            "project-veritas"
           ],
           "california": {
             "classification": "UNRESOLVED",
@@ -1495,6 +1671,19 @@
             "confidence": "MEDIUM",
             "note": "Ancillary circulation serving the purpose-built garage is best treated as nonpublic absent evidence of expressive opening."
           },
+          "indoor_common_space": {
+            "authority_ids": [
+              "sammartano",
+              "askins",
+              "project-veritas"
+            ],
+            "facility_responsibility": "The facility remains responsible for any protected information or secure operations it exposes to this public circulation route.",
+            "hipaa_posture": "NOT_INDICATED",
+            "privacy_context": "NO_SPECIAL_RISK_IDENTIFIED",
+            "recording_effect": "No special privacy rationale is established in the current record. Any claimed recording restriction must be identified and tested under the NPF standard and applicable recording law.",
+            "space_type": "SHARED_CORRIDOR",
+            "visitor_responsibility": "A lawful visitor does not acquire facility confidentiality duties merely by using the public circulation route; independent law may still regulate particular conduct."
+          },
           "name": "Garage stairs, elevators and connective corridors",
           "notes": "A materially different public-plaza transition could change a segment-specific result.",
           "recording": {
@@ -1504,8 +1693,12 @@
           "restriction_audits": [
             {
               "activity": "RECORDING",
+              "authority_ids": [
+                "askins",
+                "project-veritas"
+              ],
               "status": "NO_MATERIAL_RESTRICTION_LOCATED",
-              "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+              "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis."
             }
           ],
           "subarea_id": "S010",

@@ -459,6 +459,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#indoor-common-space-privacy-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indoor common-space / privacy fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#validation-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1453,6 +1464,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#indoor-common-space-privacy-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indoor common-space / privacy fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#validation-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1522,6 +1544,7 @@
 <li>California forum classification and confidence;</li>
 <li>recording posture;</li>
 <li>one or more <strong>Constitution First restriction audits</strong> identifying the activity, claimed restriction posture, and constitutional status;</li>
+<li>optional <strong>indoor common-space analysis</strong> for public lobbies, foyers, waiting areas, service counters, shared corridors, and similar interior areas;</li>
 <li>concise practical note;</li>
 <li>unresolved reason when one exists; and</li>
 <li>authority IDs supporting the result.</li>
@@ -1545,6 +1568,21 @@
 </ul>
 <p>A located rule is never automatically serialized as <code>PROHIBITED</code>. The data model distinguishes rule existence from constitutional validity.</p>
 <p>See <a href="../../constitution-first/">Constitution First</a> and <a href="../../california/restriction-audit/">Restriction Audit</a>.</p>
+<h2 id="indoor-common-space-privacy-fields">Indoor common-space / privacy fields<a class="headerlink" href="#indoor-common-space-privacy-fields" title="Permanent link">&para;</a></h2>
+<p>When an indoor public/common subarea has been hardened, <code>indoor_common_space</code> stores:</p>
+<ul>
+<li>the type of shared interior space;</li>
+<li>the privacy/confidentiality context actually identified;</li>
+<li>whether HIPAA is indicated, potentially applicable, established as a covered-entity context, or unknown;</li>
+<li>the facility's own safeguard responsibility;</li>
+<li>any duty that actually applies to the visitor;</li>
+<li>the effect of the privacy facts on recording analysis; and</li>
+<li>supporting authority IDs.</li>
+</ul>
+<p>This structure is intentionally separate from <code>recording</code> and <code>restriction_audits</code>.</p>
+<p>A privacy interest does not automatically become a recording prohibition, and a facility's confidentiality duty does not automatically become a visitor duty.</p>
+<p>The four pilot facilities currently use <code>HIPAA_POSTURE = NOT_INDICATED</code>; none has been established as a HIPAA covered-entity context in the Registry. Future health-related facilities must be researched before that status is promoted.</p>
+<p>See <a href="../../california/indoor-public-common-spaces/">Indoor Public Common Spaces</a>.</p>
 <h2 id="validation-rules">Validation rules<a class="headerlink" href="#validation-rules" title="Permanent link">&para;</a></h2>
 <p><code>tools/registry/build_registry.py</code> validates every record before generating public outputs. Among other checks, it rejects duplicate facility/subarea IDs, unknown classifications, invalid confidence combinations, unknown authority references, broken index-highlight references, and an unresolved result without an explicit <code>unresolved_reason</code>.</p>
 <h2 id="generated-outputs">Generated outputs<a class="headerlink" href="#generated-outputs" title="Permanent link">&para;</a></h2>
