@@ -10,6 +10,16 @@
       "level": "NINTH_CIRCUIT",
       "topic": "California Speech Clause / exterior spaces"
     },
+    "chp-hpm10070-ch10": {
+      "citation": "CHP HPM 100.70, ch. 10 — State Property Event Permits (2026)",
+      "level": "AGENCY_POLICY",
+      "topic": "CHP implementation of Title 13 state-property event permits, expressly including DMV field-office events"
+    },
+    "concord-solicitation": {
+      "citation": "Concord Municipal Code ch. 9.08",
+      "level": "MUNICIPAL_CODE",
+      "topic": "aggressive solicitation and location-based solicitation restrictions"
+    },
     "cpd423": {
       "citation": "Concord Police Department Policy 423 — Public Recording of Law Enforcement Activity",
       "level": "AGENCY_POLICY",
@@ -65,6 +75,11 @@
       "level": "THIRD_CIRCUIT_PERSUASIVE",
       "topic": "ordinary library interior"
     },
+    "la-alliance": {
+      "citation": "Los Angeles Alliance for Survival v. City of Los Angeles, 22 Cal.4th 352 (2000)",
+      "level": "CALIFORNIA_SUPREME_COURT",
+      "topic": "California Speech Clause / solicitation restrictions; Los Angeles parking-lot restriction addressed solicitation after dark"
+    },
     "neinast": {
       "citation": "Neinast v. Board of Trustees, 346 F.3d 585 (6th Cir. 2003)",
       "level": "SIXTH_CIRCUIT_PERSUASIVE",
@@ -99,6 +114,21 @@
       "citation": "Sammartano v. First Judicial District Court, 303 F.3d 959 (9th Cir. 2002)",
       "level": "NINTH_CIRCUIT",
       "topic": "government-building nonpublic forum"
+    },
+    "schaumburg": {
+      "citation": "Village of Schaumburg v. Citizens for a Better Environment, 444 U.S. 620 (1980)",
+      "level": "US_SUPREME_COURT",
+      "topic": "charitable solicitation is protected speech subject to constitutionally adequate regulation"
+    },
+    "title13-ch11": {
+      "citation": "13 Cal. Code Regs. §§ 1850–1862",
+      "level": "CALIFORNIA_REGULATION",
+      "topic": "conduct, event permits, removal criteria, and signs on California state property"
+    },
+    "wc-sign-code": {
+      "citation": "Walnut Creek Municipal Code ch. 10-8",
+      "level": "MUNICIPAL_CODE",
+      "topic": "sign placement/erection/attachment rules on public land and rights-of-way"
     },
     "wilson": {
       "citation": "Wilson v. County of Contra Costa, No. 14-cv-03491-SI (N.D. Cal. May 6, 2015)",
