@@ -1,0 +1,1298 @@
+{
+  "authorities": {
+    "askins": {
+      "citation": "Askins v. U.S. Department of Homeland Security, 899 F.3d 1035 (9th Cir. 2018)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "recording matters of public interest / location-sensitive analysis"
+    },
+    "camenzind": {
+      "citation": "Camenzind v. California Exposition & State Fair, 84 F.4th 1102 (9th Cir. 2023)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "California Speech Clause / exterior spaces"
+    },
+    "cpd423": {
+      "citation": "Concord Police Department Policy 423 — Public Recording of Law Enforcement Activity",
+      "level": "AGENCY_POLICY",
+      "topic": "recording officers"
+    },
+    "faith-center": {
+      "citation": "Faith Center Church Evangelistic Ministries v. Glover, 480 F.3d 891 (9th Cir. 2007)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "library meeting room"
+    },
+    "fordyce": {
+      "citation": "Fordyce v. City of Seattle, 55 F.3d 436 (9th Cir. 1995)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "recording police activity"
+    },
+    "freedom-foundation": {
+      "citation": "Freedom Foundation v. Washington Department of Ecology, No. 20-35007 (9th Cir. Dec. 21, 2020) (unpublished)",
+      "level": "NINTH_CIRCUIT_UNPUBLISHED",
+      "topic": "state-agency lobby comparator"
+    },
+    "grace": {
+      "citation": "United States v. Grace, 461 U.S. 171 (1983)",
+      "level": "US_SUPREME_COURT",
+      "topic": "ordinary public sidewalks"
+    },
+    "jacobsen": {
+      "citation": "Jacobsen v. U.S. Postal Service, 993 F.2d 649 (9th Cir. 1993)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "postal access route"
+    },
+    "kokinda": {
+      "citation": "United States v. Kokinda, 497 U.S. 720 (1990)",
+      "level": "US_SUPREME_COURT",
+      "topic": "purpose-built government access route"
+    },
+    "kreimer": {
+      "citation": "Kreimer v. Bureau of Police, 958 F.2d 1242 (3d Cir. 1992)",
+      "level": "THIRD_CIRCUIT_PERSUASIVE",
+      "topic": "ordinary library interior"
+    },
+    "neinast": {
+      "citation": "Neinast v. Board of Trustees, 346 F.3d 585 (6th Cir. 2003)",
+      "level": "SIXTH_CIRCUIT_PERSUASIVE",
+      "topic": "ordinary library interior"
+    },
+    "pc148g": {
+      "citation": "California Penal Code § 148(g)",
+      "level": "CALIFORNIA_STATUTE",
+      "topic": "recording peace officers"
+    },
+    "pc6021": {
+      "citation": "California Penal Code § 602.1",
+      "level": "CALIFORNIA_STATUTE",
+      "topic": "public-agency obstruction/removal"
+    },
+    "pc632": {
+      "citation": "California Penal Code § 632",
+      "level": "CALIFORNIA_STATUTE",
+      "topic": "confidential communications"
+    },
+    "prigmore": {
+      "citation": "Prigmore v. City of Redding, 211 Cal.App.4th 1322 (2012)",
+      "level": "CALIFORNIA_COURT_OF_APPEAL",
+      "topic": "library exterior forum analysis"
+    },
+    "sammartano": {
+      "citation": "Sammartano v. First Judicial District Court, 303 F.3d 959 (9th Cir. 2002)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "government-building nonpublic forum"
+    },
+    "wilson": {
+      "citation": "Wilson v. County of Contra Costa, No. 14-cv-03491-SI (N.D. Cal. May 6, 2015)",
+      "level": "FEDERAL_DISTRICT_PERSUASIVE",
+      "topic": "public sheriff-lobby recording comparator"
+    }
+  },
+  "facilities": [
+    {
+      "address": {
+        "city": "Concord",
+        "state": "CA",
+        "street": "2070 Diamond Boulevard",
+        "zip": "94520"
+      },
+      "agency": "California Department of Motor Vehicles",
+      "authorities": [
+        "grace",
+        "sammartano",
+        "freedom-foundation",
+        "kokinda",
+        "jacobsen",
+        "askins",
+        "camenzind"
+      ],
+      "city": "Concord",
+      "county": {
+        "fips": "013",
+        "name": "Contra Costa County"
+      },
+      "facility_id": "CA-013-F0003",
+      "facility_type": "STATE_ADMINISTRATIVE_SERVICE",
+      "field_items": [
+        "Actual Diamond ingress route and legal/control geometry",
+        "Current parking and exterior queue geometry",
+        "Entrance signs",
+        "Kiosk placement and physical subarea boundaries"
+      ],
+      "field_status": "PRE_FIELD",
+      "index_highlights": [
+        {
+          "label": "actual municipal sidewalks",
+          "subarea_ids": [
+            "S001"
+          ]
+        },
+        {
+          "label": "lobby/waiting · transaction counters · testing channel",
+          "scope_suffix": "federal",
+          "subarea_ids": [
+            "S005",
+            "S006",
+            "S007"
+          ]
+        },
+        {
+          "label": "customer parking · facility-specific approach/queue",
+          "scope_suffix": "federal",
+          "subarea_ids": [
+            "S003",
+            "S004"
+          ]
+        }
+      ],
+      "last_verified": "2026-09-23",
+      "name": "Concord DMV Field Office",
+      "open_legal_items": [
+        "California Speech Clause classification of the ordinary DMV lobby",
+        "California treatment of customer parking/approach",
+        "Any actual field-office recording restriction not located online"
+      ],
+      "property": {
+        "apns": [
+          "126-490-004"
+        ],
+        "flags": [
+          "ADDRESS/FRONTAGE-MISMATCH",
+          "DIAMOND-PUBLIC-ACCESS-LEGAL-GEOMETRY-UNRESOLVED"
+        ],
+        "ownership_summary": "State-owned DMV parcel; Diamond address does not establish direct Diamond frontage"
+      },
+      "recording_summary": "No dedicated public-facing California DMV field-office ordinary-patron photography/videography prohibition was located online. The knowledge-test cell-phone rule is activity-specific and must not be generalized into a branch-wide camera rule.",
+      "research": {
+        "evidence_path": "docs/research/evidence/concord-dmv/README.md",
+        "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+        "sweep_path": "docs/research/SWEEP-009-CONCORD-DMV.md"
+      },
+      "schema_version": 1,
+      "slug": "concord-dmv",
+      "state": "California",
+      "subareas": [
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "grace"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Public-forum treatment is high confidence for an independently established ordinary municipal sidewalk."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Ordinary municipal sidewalk doctrine applies once the physical strip is identified."
+          },
+          "name": "Actual Diamond / Meridian Park ordinary municipal sidewalk or ROW",
+          "notes": "The unresolved issue is locating the strip, not the doctrine once the strip is established.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Ordinary public-place recording doctrine applies; exact conduct still matters."
+          },
+          "subarea_id": "S001"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "kokinda",
+            "jacobsen"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Current California Speech Clause treatment is unresolved."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "MEDIUM",
+            "note": "Purpose-built access route to a government service facility is best treated as nonpublic if the segment is facility-controlled."
+          },
+          "name": "Facility-specific Diamond access drive / walk",
+          "notes": "Current legal geometry/control must be established before relying on this classification at a specific point.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "No general field-office camera rule was located online."
+          },
+          "subarea_id": "S002",
+          "unresolved_reason": "Diamond ingress legal geometry/control remains unresolved."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "sammartano",
+            "camenzind"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Broader California exterior doctrine makes the state result genuinely unresolved."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "MEDIUM",
+            "note": "Public customer parking is a special-purpose service area with no evidence of expressive opening."
+          },
+          "name": "Customer parking",
+          "notes": "Traffic, safety and customer-service function are material.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "No general field-office camera rule was located online."
+          },
+          "subarea_id": "S003",
+          "unresolved_reason": "California Speech Clause treatment of the customer lot remains unresolved."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "kokinda",
+            "sammartano"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "No sufficiently close state authority was located."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "MEDIUM",
+            "note": "Purpose-limited approach/queue function supports nonpublic treatment."
+          },
+          "name": "Exterior customer queue / immediate facility approach",
+          "notes": "Exact footprint and physical configuration can change the area-specific result.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "No general field-office camera rule was located online."
+          },
+          "subarea_id": "S004",
+          "unresolved_reason": "Exact footprint and California classification remain open."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "sammartano",
+            "freedom-foundation"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "No close California appellate DMV or administrative-lobby authority was located."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "HIGH",
+            "note": "Published Ninth Circuit government-building doctrine plus a close state-agency-lobby comparator support the result."
+          },
+          "name": "Ordinary lobby / waiting",
+          "notes": "This classification is independent of the unresolved Diamond ingress geometry.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "NPF status tells us the standard for an actual restriction; it does not create a camera ban."
+          },
+          "subarea_id": "S005",
+          "unresolved_reason": "California Speech Clause classification remains genuinely unresolved."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "sammartano"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Separate California interior classification remains unresolved."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "HIGH",
+            "note": "Purpose-limited public transaction zone within an administrative service facility."
+          },
+          "name": "Customer service counters / transaction zones",
+          "notes": "Public access to transact business does not open employee workspace or records areas.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Privacy and exposed records can support narrower restrictions; the actual rule and exposed information must be identified."
+          },
+          "subarea_id": "S006",
+          "unresolved_reason": "California interior classification remains unresolved."
+        },
+        {
+          "access": "CONDITIONED_PUBLIC",
+          "authority_ids": [
+            "sammartano"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Separate California interior classification remains unresolved."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "HIGH",
+            "note": "Purpose-limited examination channel inside the administrative facility."
+          },
+          "name": "Knowledge-test stations",
+          "notes": "The testing rule is not a field-office-wide no-phone or no-camera rule.",
+          "recording": {
+            "status": "ACTIVITY_SPECIFIC_RULE",
+            "summary": "Current handbook prohibits use of a cell phone as a testing aid during the knowledge test."
+          },
+          "subarea_id": "S007",
+          "unresolved_reason": "California forum label remains unresolved, but the activity-specific testing rule is verified."
+        },
+        {
+          "access": "RESTRICTED",
+          "authority_ids": [],
+          "california": {
+            "classification": "NOT_PUBLIC",
+            "confidence": "HIGH",
+            "note": "Same practical access result."
+          },
+          "federal": {
+            "classification": "NOT_PUBLIC",
+            "confidence": "HIGH",
+            "note": "Outside the ordinary public-access channel."
+          },
+          "name": "Employee / secure / records / equipment areas",
+          "notes": "Exact boundary only matters if a location is disputed.",
+          "recording": {
+            "status": "NOT_APPLICABLE",
+            "summary": "No public-lobby inference applies."
+          },
+          "subarea_id": "S008"
+        }
+      ],
+      "summary": "The ordinary customer lobby, waiting area, transaction counters and testing channel are NPF/HIGH federally; actual ordinary municipal sidewalks are TPF/HIGH; customer parking and facility-specific approach/queue areas are NPF/MEDIUM federally. California Speech Clause treatment remains separately unresolved for the administrative interior and several facility-specific exterior areas."
+    },
+    {
+      "address": {
+        "city": "Concord",
+        "state": "CA",
+        "street": "2900 Salvio Street",
+        "zip": "94519"
+      },
+      "agency": "Contra Costa County Library",
+      "authorities": [
+        "grace",
+        "prigmore",
+        "faith-center",
+        "kreimer",
+        "neinast"
+      ],
+      "city": "Concord",
+      "county": {
+        "fips": "013",
+        "name": "Contra Costa County"
+      },
+      "facility_id": "CA-013-F0001",
+      "facility_type": "PUBLIC_LIBRARY",
+      "field_items": [
+        "Current entrance and forecourt signs",
+        "Rear-lot reserved or employee-only zones",
+        "Exact ROW edge only where enforcement turns on a few feet",
+        "Current interior camera/conduct signage"
+      ],
+      "field_status": "PRE_FIELD",
+      "index_highlights": [
+        {
+          "label": "sidewalks · entrance/approach · civic walkway · front lot",
+          "subarea_ids": [
+            "S001",
+            "S002",
+            "S003",
+            "S004"
+          ]
+        },
+        {
+          "label": "ordinary interior for library-purpose activity",
+          "subarea_ids": [
+            "S006"
+          ]
+        },
+        {
+          "label": "meeting room",
+          "subarea_ids": [
+            "S007"
+          ]
+        },
+        {
+          "label": "rear Civic Center lot",
+          "subarea_ids": [
+            "S005"
+          ]
+        }
+      ],
+      "last_verified": "2026-09-23",
+      "name": "Concord Library",
+      "open_legal_items": [
+        "Specific interior recording restriction, if any",
+        "Self-Service Sunday recording effect",
+        "Concrete removal/trespass analysis only if a direction/rule/location is identified"
+      ],
+      "property": {
+        "apns": [
+          "111-240-006",
+          "111-240-014"
+        ],
+        "ownership_summary": "City-owned library parcel; adjoining Civic Center parcel also City-owned"
+      },
+      "recording_summary": "No dedicated public-facing Concord-specific ordinary-patron photography/videography prohibition was located online. Interior recording remains a separate activity/rule/privacy question rather than a consequence of the LPF label.",
+      "research": {
+        "evidence_path": "docs/research/evidence/concord-library/README.md",
+        "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+        "sweep_path": "docs/research/SWEEP-007-CONCORD-LIBRARY.md"
+      },
+      "schema_version": 1,
+      "slug": "concord-library",
+      "state": "California",
+      "subareas": [
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "grace"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "California public-forum protection is strongly established for ordinary municipal sidewalks."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Ordinary municipal sidewalk doctrine applies once the physical strip is identified."
+          },
+          "name": "Salvio / Parkside ordinary municipal sidewalks",
+          "notes": "Exact survey-grade edge is only outcome-determinative if a location dispute arises.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Ordinary public-place recording rules apply; exact conduct still matters."
+          },
+          "subarea_id": "S001"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "prigmore"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Prigmore strongly supports TPF treatment for this entrance/approach configuration."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Public entrance and civic circulation facts closely fit the library-exterior public-forum analysis."
+          },
+          "name": "Public entrance / immediate east approach",
+          "notes": "Current signs can regulate conduct without erasing the forum classification.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "No branch-wide patron-camera rule was located online; a specific restriction would require separate analysis."
+          },
+          "subarea_id": "S002"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "prigmore"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Prigmore and the civic-walkway setting strongly support TPF treatment."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Ordinary civic pedestrian circulation strongly supports public-forum treatment."
+          },
+          "name": "Library / Civic Center connective pedestrian walkway",
+          "notes": "Exact subarea boundary matters only if enforcement turns on the transition.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "No branch-wide patron-camera rule was located online."
+          },
+          "subarea_id": "S003"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "prigmore"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Prigmore directly supports library parking-lot public-forum treatment on comparable facts."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "For lawful pedestrian expressive use, the library-frontage lot is a close public-forum analogue."
+          },
+          "name": "Front Salvio public parking lot",
+          "notes": "Classification is for lawful pedestrian expressive use, not occupation of vehicle travel lanes.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Forum status does not eliminate traffic, obstruction, vehicle, privacy, or other valid rules."
+          },
+          "subarea_id": "S004"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "prigmore"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "MEDIUM",
+            "note": "Prigmore analogy is substantial; reserved zones or different circulation could narrow the result."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "MEDIUM",
+            "note": "Public access, civic ownership and integration support TPF treatment, but shared-lot use is more fact-sensitive."
+          },
+          "name": "Rear Parkside / Civic Center public lot",
+          "notes": "Reserved or employee-only subareas could have a different result.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Recording remains subject-specific and rule-specific."
+          },
+          "subarea_id": "S005"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "kreimer",
+            "neinast",
+            "faith-center"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "No equally close California appellate classification for the full ordinary interior has been established in the pilot record."
+          },
+          "federal": {
+            "classification": "LPF",
+            "confidence": "MEDIUM",
+            "note": "Library interiors are purpose-limited to reading, research, information access and related library activity; closest ordinary-interior holdings are persuasive rather than Ninth Circuit merits authority."
+          },
+          "name": "Ordinary lobby, stacks, reading and service areas",
+          "notes": "Public access is conditioned by library-purpose and patron-conduct rules.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "LPF status does not itself establish a right to film patrons, screens, staff interactions or private conversations."
+          },
+          "subarea_id": "S006",
+          "unresolved_reason": "California Speech Clause treatment of the ordinary interior is not independently hardened."
+        },
+        {
+          "access": "CONDITIONED_PUBLIC",
+          "authority_ids": [
+            "faith-center"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Separate California analysis is retained; the current Registry result relies on the strong federal Ninth Circuit anchor."
+          },
+          "federal": {
+            "classification": "LPF",
+            "confidence": "HIGH",
+            "note": "The room is intentionally opened to qualifying groups under defined reservation and use rules."
+          },
+          "name": "Concord meeting room",
+          "notes": "Faith Center is an unusually close Ninth Circuit / Contra Costa library-room authority.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Meeting-room rules and the event context govern; the room does not inherit ordinary-library recording assumptions."
+          },
+          "subarea_id": "S007",
+          "unresolved_reason": "California Speech Clause label is not necessary to the current federal LPF classification."
+        },
+        {
+          "access": "CONDITIONED_PUBLIC",
+          "authority_ids": [
+            "kreimer",
+            "neinast"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "State constitutional effect of the special access regime remains unresolved."
+          },
+          "federal": {
+            "classification": "LPF",
+            "confidence": "MEDIUM",
+            "note": "The interior remains a library-purpose channel but access is conditioned on enrollment, card/PIN entry and agreement terms."
+          },
+          "name": "Self-Service Sunday interior",
+          "notes": "Separate access regime outside ordinary staffed hours.",
+          "recording": {
+            "status": "UNRESOLVED",
+            "summary": "The agreement does not state a general camera ban, but incorporated rules and current signs may matter."
+          },
+          "subarea_id": "S008",
+          "unresolved_reason": "Recording effect and California classification under the special access regime remain unresolved."
+        },
+        {
+          "access": "RESTRICTED",
+          "authority_ids": [],
+          "california": {
+            "classification": "NOT_PUBLIC",
+            "confidence": "HIGH",
+            "note": "Same practical access result."
+          },
+          "federal": {
+            "classification": "NOT_PUBLIC",
+            "confidence": "HIGH",
+            "note": "Not part of the ordinary public-access channel."
+          },
+          "name": "Staff / restricted spaces",
+          "notes": "Exact door or boundary only matters if location is disputed.",
+          "recording": {
+            "status": "NOT_APPLICABLE",
+            "summary": "No ordinary public-area inference applies."
+          },
+          "subarea_id": "S009"
+        }
+      ],
+      "summary": "Most useful forum classifications can be assigned before a field visit: ordinary municipal sidewalks, the public entrance/approach, Civic Center walkway, and front public lot are TPF; the ordinary interior is LPF for library-purpose activity; the meeting room is LPF."
+    },
+    {
+      "address": {
+        "city": "Concord",
+        "state": "CA",
+        "street": "1350 Galindo Street",
+        "zip": "94520"
+      },
+      "agency": "City of Concord Police Department",
+      "authorities": [
+        "grace",
+        "sammartano",
+        "fordyce",
+        "askins",
+        "wilson",
+        "pc148g",
+        "pc6021",
+        "pc632",
+        "cpd423"
+      ],
+      "city": "Concord",
+      "county": {
+        "fips": "013",
+        "name": "Contra Costa County"
+      },
+      "facility_id": "CA-013-F0004",
+      "facility_type": "POLICE_HEADQUARTERS",
+      "field_items": [
+        "Current entrance/lobby signs",
+        "Counter privacy configuration",
+        "Controlled-door boundaries",
+        "Public-restroom limits",
+        "Exact front parking/pedestrian approach footprint"
+      ],
+      "field_status": "PRE_FIELD",
+      "index_highlights": [
+        {
+          "label": "ordinary Galindo municipal sidewalk",
+          "subarea_ids": [
+            "S001"
+          ]
+        },
+        {
+          "label": "public lobby / Community Service Desk · Records counter",
+          "scope_suffix": "federal",
+          "subarea_ids": [
+            "S003",
+            "S004"
+          ]
+        },
+        {
+          "label": "Community Meeting Room",
+          "subarea_ids": [
+            "S007"
+          ]
+        }
+      ],
+      "last_verified": "2026-09-23",
+      "name": "Concord Police Headquarters",
+      "open_legal_items": [
+        "California Speech Clause classification of the public police lobby",
+        "Any actual lobby recording restriction not located online",
+        "Privacy/confidentiality analysis for victim/witness/private-report subjects"
+      ],
+      "property": {
+        "apns": [
+          "126-124-036"
+        ],
+        "ownership_summary": "City-owned headquarters parcel with Galindo public frontage strongly supported"
+      },
+      "recording_summary": "CPD Policy 423 recognizes lawful public recording of department members performing official duties. Penal Code § 148(g) separately protects recording-alone within its location conditions. No separate published lobby-wide ordinary-patron camera prohibition was located online.",
+      "research": {
+        "evidence_path": "docs/research/evidence/concord-police/README.md",
+        "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+        "sweep_path": "docs/research/SWEEP-010-CONCORD-POLICE.md"
+      },
+      "schema_version": 1,
+      "slug": "concord-police",
+      "state": "California",
+      "subareas": [
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "grace",
+            "fordyce",
+            "askins",
+            "pc148g",
+            "cpd423"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Public-forum protection is strongly established."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Ordinary municipal sidewalk doctrine applies."
+          },
+          "name": "Ordinary Galindo municipal sidewalk",
+          "notes": "Exact strip matters only if location is disputed.",
+          "recording": {
+            "status": "STRONG_ACTIVITY_PROTECTION",
+            "summary": "Recording public police activity from an ordinary lawful public vantage receives strong protection, subject to noninterference and other valid rules."
+          },
+          "subarea_id": "S001"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "sammartano"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "No close California classification has been hardened."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "MEDIUM",
+            "note": "Facility-purpose access/parking is best treated as nonpublic if the exact segment is Police-controlled."
+          },
+          "name": "Facility-controlled front approach / parking",
+          "notes": "Confirm exact footprint/control before relying on this row at a specific point.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Exact location/control and any actual rule matter."
+          },
+          "subarea_id": "S002",
+          "unresolved_reason": "Exact footprint/control and California treatment remain open."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "sammartano",
+            "fordyce",
+            "wilson",
+            "pc148g",
+            "cpd423"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "No sufficiently close published California appellate police-lobby authority was located."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "HIGH",
+            "note": "Documented transactional police-service purpose plus controlling municipal-building doctrine support nonpublic treatment."
+          },
+          "name": "Ordinary public lobby / Community Service Desk",
+          "notes": "NPF classification does not itself create a camera ban.",
+          "recording": {
+            "status": "STRONG_ACTIVITY_PROTECTION",
+            "summary": "For public-facing officers from a lawful, noninterfering vantage, Policy 423, §148(g), Fordyce and Wilson materially strengthen the recording analysis; no separate lobby-wide ban was located online."
+          },
+          "subarea_id": "S003",
+          "unresolved_reason": "California Speech Clause classification remains genuinely unresolved."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "sammartano",
+            "pc632"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Separate California interior classification remains unresolved."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "HIGH",
+            "note": "Purpose-limited public transaction area within the police facility."
+          },
+          "name": "Records counter",
+          "notes": "Public counter access does not open records workspaces.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Protected records/screens and confidential interactions can support narrower restrictions; exact subject and rule matter."
+          },
+          "subarea_id": "S004",
+          "unresolved_reason": "California interior classification remains unresolved."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "fordyce",
+            "wilson",
+            "pc148g",
+            "cpd423"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "State forum label remains unresolved, while statutory/activity protections remain relevant."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "HIGH",
+            "note": "The physical lobby remains NPF; this row captures the distinct activity overlay."
+          },
+          "name": "Officer performing public-facing official duties from a lawful lobby vantage",
+          "notes": "This does not extend to deliberate capture of private reports, protected screens, undercover personnel or secure operations.",
+          "recording": {
+            "status": "STRONG_ACTIVITY_PROTECTION",
+            "summary": "Policy 423 + Penal Code §148(g) + Fordyce + local Wilson provide strong activity-specific support for lawful noninterfering recording."
+          },
+          "subarea_id": "S005",
+          "unresolved_reason": "California forum label is unresolved but does not erase the separate statutory/policy/activity protections."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "pc632"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "State forum classification remains unresolved."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "HIGH",
+            "note": "The physical lobby remains NPF."
+          },
+          "name": "Victim / witness / private-report interaction",
+          "notes": "Do not collapse officer recording and privacy-sensitive third-party recording into one rule.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Penal Code §632 confidentiality and narrower privacy protections may materially alter the recording analysis depending on objective privacy facts."
+          },
+          "subarea_id": "S006",
+          "unresolved_reason": "Recording result is fact-specific to privacy/acoustic circumstances and any actual restriction."
+        },
+        {
+          "access": "CONDITIONED_PUBLIC",
+          "authority_ids": [
+            "faith-center"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Separate state-law classification is retained."
+          },
+          "federal": {
+            "classification": "LPF",
+            "confidence": "HIGH",
+            "note": "Published opening to nonprofit community groups for community-issue discussion creates a defined opened channel."
+          },
+          "name": "Community Meeting Room",
+          "notes": "Contract details and current practice remain worth verifying.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Meeting-room contract and event rules govern; the room does not inherit lobby treatment."
+          },
+          "subarea_id": "S007",
+          "unresolved_reason": "California label and full contract terms remain unresolved, not the federal LPF project classification."
+        },
+        {
+          "access": "RESTRICTED",
+          "authority_ids": [],
+          "california": {
+            "classification": "NOT_PUBLIC",
+            "confidence": "HIGH",
+            "note": "Same practical access result."
+          },
+          "federal": {
+            "classification": "NOT_PUBLIC",
+            "confidence": "HIGH",
+            "note": "Outside the ordinary public-access channel."
+          },
+          "name": "Controlled doors / employee and operational areas",
+          "notes": "Includes dispatch, evidence, secure parking, holding/interview and other operational areas unless specifically opened.",
+          "recording": {
+            "status": "NOT_APPLICABLE",
+            "summary": "No public-lobby recording inference applies."
+          },
+          "subarea_id": "S008"
+        }
+      ],
+      "summary": "The ordinary public lobby / Community Service Desk and Records counter are NPF/HIGH federally; the ordinary Galindo municipal sidewalk is TPF/HIGH; the Community Meeting Room is LPF/HIGH. Recording public-facing officers from a lawful vantage receives strong activity-specific support, while privacy-sensitive subjects remain separate."
+    },
+    {
+      "address": {
+        "city": "Walnut Creek",
+        "state": "CA",
+        "street": "1644 North Broadway",
+        "zip": "94596"
+      },
+      "agency": "Contra Costa County Library",
+      "authorities": [
+        "grace",
+        "prigmore",
+        "faith-center",
+        "kreimer",
+        "sammartano"
+      ],
+      "city": "Walnut Creek",
+      "county": {
+        "fips": "013",
+        "name": "Contra Costa County"
+      },
+      "facility_id": "CA-013-F0002",
+      "facility_type": "PUBLIC_LIBRARY",
+      "field_items": [
+        "Current plaza and entrance signs",
+        "Underground-garage signs and pedestrian subareas",
+        "Cafe operator/control/access facts",
+        "Exact ambiguous exterior transitions only if enforcement turns on them"
+      ],
+      "field_status": "PRE_FIELD",
+      "index_highlights": [
+        {
+          "label": "sidewalks · civic plaza/approach · Civic Park · surface lot",
+          "subarea_ids": [
+            "S001",
+            "S002",
+            "S003",
+            "S004"
+          ]
+        },
+        {
+          "label": "ordinary interior for library-purpose activity",
+          "subarea_ids": [
+            "S005"
+          ]
+        },
+        {
+          "label": "Oak View · Las Trampas",
+          "subarea_ids": [
+            "S006",
+            "S007"
+          ]
+        },
+        {
+          "label": "underground garage",
+          "scope_suffix": "federal",
+          "subarea_ids": [
+            "S009"
+          ]
+        }
+      ],
+      "last_verified": "2026-09-23",
+      "name": "Walnut Creek Library",
+      "open_legal_items": [
+        "California Speech Clause treatment of the underground garage",
+        "Cafe forum/control classification",
+        "Specific interior recording restriction, if any"
+      ],
+      "property": {
+        "apns": [
+          "178-300-039",
+          "178-300-040"
+        ],
+        "ownership_summary": "City-owned library parcel adjoining City civic/park parcel"
+      },
+      "recording_summary": "No dedicated public-facing Walnut Creek-specific ordinary-patron photography/videography prohibition was located online. Forum status and recording permission remain separate questions.",
+      "research": {
+        "evidence_path": "docs/research/evidence/walnut-creek-library/README.md",
+        "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+        "sweep_path": "docs/research/SWEEP-008-WALNUT-CREEK-LIBRARY.md"
+      },
+      "schema_version": 1,
+      "slug": "walnut-creek-library",
+      "state": "California",
+      "subareas": [
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "grace"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "California public-forum protection is strongly established."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Ordinary municipal sidewalk doctrine applies."
+          },
+          "name": "North Broadway / Lincoln ordinary municipal sidewalks",
+          "notes": "Exact edge only matters if disputed.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Ordinary public-place recording rules apply; exact conduct still matters."
+          },
+          "subarea_id": "S001"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "prigmore"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Prigmore comparison strongly supports TPF treatment."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Open civic pedestrian and entrance use strongly supports TPF treatment."
+          },
+          "name": "Broadway-Lincoln civic plaza / formal exterior approach",
+          "notes": "Current signs remain verification items.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "No branch-wide patron-camera rule was located online."
+          },
+          "subarea_id": "S002"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "grace",
+            "prigmore"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Public park treatment strongly applies."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Public park and public pedestrian-route doctrine strongly apply."
+          },
+          "name": "Civic Park entrance / connective route and Civic Park proper",
+          "notes": "Reservation or special-event rules can regulate use without changing the baseline forum category.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Ordinary park, event, privacy and conduct rules remain applicable."
+          },
+          "subarea_id": "S003"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "prigmore"
+          ],
+          "california": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "Prigmore strongly supports the result."
+          },
+          "federal": {
+            "classification": "TPF",
+            "confidence": "HIGH",
+            "note": "For lawful pedestrian expressive use, the open library surface lot is a close public-forum analogue."
+          },
+          "name": "Library surface lot",
+          "notes": "Classification does not extend to unsafe occupation of drive aisles.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Traffic and obstruction rules remain independent."
+          },
+          "subarea_id": "S004"
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "kreimer",
+            "faith-center"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "No close California appellate ordinary-library-interior classification was hardened in this pilot."
+          },
+          "federal": {
+            "classification": "LPF",
+            "confidence": "MEDIUM",
+            "note": "Library-purpose access supports LPF treatment; closest ordinary-interior holdings are persuasive."
+          },
+          "name": "Ordinary lobby, stacks, reading and service areas",
+          "notes": "Library-purpose and patron-conduct rules define the channel.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "Interior recording remains a distinct activity/rule/privacy question."
+          },
+          "subarea_id": "S005",
+          "unresolved_reason": "California interior classification remains separately unresolved."
+        },
+        {
+          "access": "CONDITIONED_PUBLIC",
+          "authority_ids": [
+            "faith-center"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Separate California state-law classification is not hardened."
+          },
+          "federal": {
+            "classification": "LPF",
+            "confidence": "HIGH",
+            "note": "Intentionally opened meeting/event channel with defined eligible uses and rental/reservation rules."
+          },
+          "name": "Oak View Room",
+          "notes": "After-hours separate entrance reinforces that this is its own channel.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Event-specific contract and room rules apply."
+          },
+          "subarea_id": "S006",
+          "unresolved_reason": "California label remains separate from the strong federal LPF result."
+        },
+        {
+          "access": "CONDITIONED_PUBLIC",
+          "authority_ids": [
+            "faith-center"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Separate California analysis retained."
+          },
+          "federal": {
+            "classification": "LPF",
+            "confidence": "HIGH",
+            "note": "Opened to organizations/businesses/groups under reservation and operational rules."
+          },
+          "name": "Las Trampas Conference Room",
+          "notes": "Current live sources control over older booking-language discrepancies.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Current live booking/use rules govern."
+          },
+          "subarea_id": "S007",
+          "unresolved_reason": "California label remains separate from the strong federal LPF result."
+        },
+        {
+          "access": "CONDITIONED_PUBLIC",
+          "authority_ids": [
+            "faith-center"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Separate California analysis retained."
+          },
+          "federal": {
+            "classification": "LPF",
+            "confidence": "MEDIUM",
+            "note": "Narrow study/collaboration purpose and same-day use rules support a limited forum channel."
+          },
+          "name": "Group study rooms",
+          "notes": "Does not inherit the larger meeting-room purpose.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Narrow purpose and room rules materially matter."
+          },
+          "subarea_id": "S008",
+          "unresolved_reason": "No close California classification for these study-room rules has been hardened."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "sammartano"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "California Speech Clause can diverge for accessible spaces and no close garage authority was located."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "MEDIUM",
+            "note": "Enclosed purpose-built vehicle-storage/circulation facility with no evidence of an expressive opening."
+          },
+          "name": "Underground public garage",
+          "notes": "Federal classification is more defensible than the unresolved California result.",
+          "recording": {
+            "status": "NO_GENERAL_BAN_LOCATED",
+            "summary": "NPF status does not create a camera ban; an actual restriction still must be identified."
+          },
+          "subarea_id": "S009",
+          "unresolved_reason": "California Speech Clause treatment of the public underground garage remains genuinely unresolved."
+        },
+        {
+          "access": "PUBLIC",
+          "authority_ids": [
+            "sammartano"
+          ],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "No close state authority located."
+          },
+          "federal": {
+            "classification": "NPF",
+            "confidence": "MEDIUM",
+            "note": "Ancillary circulation serving the purpose-built garage is best treated as nonpublic absent evidence of expressive opening."
+          },
+          "name": "Garage stairs, elevators and connective corridors",
+          "notes": "A materially different public-plaza transition could change a segment-specific result.",
+          "recording": {
+            "status": "SEPARATE_ANALYSIS",
+            "summary": "Exact segment and any specific rule matter."
+          },
+          "subarea_id": "S010",
+          "unresolved_reason": "California classification and exact segment boundaries remain open."
+        },
+        {
+          "access": "UNKNOWN",
+          "authority_ids": [],
+          "california": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Same factual gap prevents classification."
+          },
+          "federal": {
+            "classification": "UNRESOLVED",
+            "confidence": "NONE",
+            "note": "Operator, lease/license, footprint and access/control facts are not established."
+          },
+          "name": "Cafe",
+          "notes": "Do not infer public-forum status merely from location inside the library facility.",
+          "recording": {
+            "status": "UNRESOLVED",
+            "summary": "Cafe-specific rules cannot be determined without control/access facts."
+          },
+          "subarea_id": "S011",
+          "unresolved_reason": "Operator/control/access facts are missing."
+        }
+      ],
+      "summary": "Ordinary sidewalks, civic plaza, exterior approach, Civic Park connection, Civic Park and the surface lot are TPF; the ordinary library interior is LPF for library-purpose activity; Oak View and Las Trampas are LPF; the underground garage is NPF federally with California treatment unresolved."
+    }
+  ],
+  "facility_count": 4,
+  "last_verified_max": "2026-09-23",
+  "schema_version": 1,
+  "state": "California"
+}
