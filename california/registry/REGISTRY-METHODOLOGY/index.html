@@ -1467,6 +1467,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rights-risk-signal-separate-from-registry-colorstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rights-Risk Signal — separate from Registry color/status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-enforcement-event-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical enforcement event assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mature-enforcement-history-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mature enforcement-history output
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1745,9 +1778,9 @@
 
 
 <h1 id="california-public-facility-1a-registry">California Public Facility 1A Registry<a class="headerlink" href="#california-public-facility-1a-registry" title="Permanent link">&para;</a></h1>
-<p><strong>Working methodology v0.5</strong><br />
+<p><strong>Working methodology v0.6</strong><br />
 <strong>Status:</strong> Working project methodology; initial pilot validation complete<br />
-<strong>Last revised:</strong> September 22, 2026</p>
+<strong>Last revised:</strong> September 24, 2026</p>
 <h2 id="1-purpose">1. Purpose<a class="headerlink" href="#1-purpose" title="Permanent link">&para;</a></h2>
 <p>The California Public Facility 1A Registry is a research and accountability index for publicly accessible government facilities in California.</p>
 <p>Its purpose is to document and organize:</p>
@@ -1944,6 +1977,58 @@
 <li><code>2026-10-15 — GREEN: correction independently verified.</code></li>
 </ul>
 <p>Similarly, a currently stale issue may be Gray while retaining a historical Red or Yellow event. The project should distinguish each issue's <strong>current scoped status</strong> from its <strong>status history</strong>.</p>
+<h3 id="rights-risk-signal-separate-from-registry-colorstatus">Rights-Risk Signal — separate from Registry color/status<a class="headerlink" href="#rights-risk-signal-separate-from-registry-colorstatus" title="Permanent link">&para;</a></h3>
+<p>The Registry may maintain a second, explicitly scoped <strong>Rights-Risk Signal</strong> describing the evidentiary state of possible historical or current burdens on protected activity.</p>
+<p>This signal is <strong>not</strong> a score, grade, blacklist, or substitute for the Gray/Green/Yellow/Red status system. It answers a different question:</p>
+<blockquote>
+<p><strong>How much reliable evidence currently exists that this area/activity has been subject to a potentially unlawful government restriction or enforcement practice?</strong></p>
+</blockquote>
+<p>Allowed values:</p>
+<ul>
+<li><strong>NONE</strong> — the completed review located no material rights-risk for the stated scope and period. This is not a guarantee that no historical event exists.</li>
+<li><strong>POSSIBLE</strong> — a policy, historical report, or partial record raises a concrete issue, but the evidence is not yet sufficient to document the relevant adverse enforcement or chilling event.</li>
+<li><strong>DOCUMENTED</strong> — reliable evidence documents a material warning, coercive action, enforcement event, or chilling/compliance event involving protected or potentially protected activity. This label <strong>does not mean a court has found the action unlawful</strong>.</li>
+<li><strong>ADJUDICATED</strong> — a court or competent tribunal actually held the relevant challenged policy or enforcement unlawful on the issue represented by the signal.</li>
+</ul>
+<p>Every signal must state:</p>
+<ul>
+<li>a stable facility-local signal ID;</li>
+<li>the canonical activity being evaluated;</li>
+<li>the exact area/activity or policy scope;</li>
+<li>exact subarea IDs when the signal is tied to defined Registry subareas;</li>
+<li>the time period reviewed;</li>
+<li>linked enforcement-history event IDs;</li>
+<li>the evidence on which the signal rests;</li>
+<li>the current legal assessment; and</li>
+<li>the date last reviewed.</li>
+</ul>
+<p>A <strong>DOCUMENTED</strong> or <strong>ADJUDICATED</strong> signal must link to the underlying enforcement-history event(s). An <strong>ADJUDICATED</strong> signal must link to an event whose historical assessment is <strong>ADJUDICATED_UNLAWFUL</strong>.</p>
+<p>A facility may have multiple scoped signals. Do not assign one facility-wide <strong>DOCUMENTED</strong> or <strong>ADJUDICATED</strong> label merely because one subarea or historical policy had a problem.</p>
+<h3 id="historical-enforcement-event-assessment">Historical enforcement event assessment<a class="headerlink" href="#historical-enforcement-event-assessment" title="Permanent link">&para;</a></h3>
+<p>Historical events should retain their own legal-assessment field rather than inherit the facility's current policy status.</p>
+<p>Use:</p>
+<ul>
+<li><strong>ADJUDICATED_UNLAWFUL</strong></li>
+<li><strong>APPARENTLY_INCONSISTENT_WITH_THEN_CONTROLLING_LAW</strong></li>
+<li><strong>CONSTITUTIONALLY_SUSPECT_NEEDS_RECORDS</strong></li>
+<li><strong>LATER_LAW_CHANGED_OR_CLARIFIED</strong></li>
+<li><strong>LAWFUL_OR_DISTINGUISHABLE</strong></li>
+<li><strong>UNRESOLVED</strong></li>
+</ul>
+<p>These classifications must be date-sensitive. A modern rule cannot silently be projected backward, and a later correction does not erase the historical event.</p>
+<h3 id="mature-enforcement-history-output">Mature enforcement-history output<a class="headerlink" href="#mature-enforcement-history-output" title="Permanent link">&para;</a></h3>
+<p>Where evidence exists, a mature Registry entry should make the following layers separately visible:</p>
+<ol>
+<li><strong>Current law</strong> — the presently governing constitutional/statutory/case framework.</li>
+<li><strong>Current policy</strong> — what the agency presently says.</li>
+<li><strong>Policy gap</strong> — any documented mismatch or unresolved authority question.</li>
+<li><strong>Enforcement history</strong> — warnings, removals, exclusions, police action, citations, arrests, prosecutions, or comparable official action.</li>
+<li><strong>Chilling history</strong> — documented cases where an official warning or threat caused activity to stop or materially change without an arrest or prosecution.</li>
+<li><strong>Litigation history</strong> — claims, suits, injunctions, adjudications, appeals, and relevant dispositions.</li>
+<li><strong>Remedial history</strong> — policy corrections, withdrawn signs, training changes, settlements, or other documented responses.</li>
+<li><strong>Open rights-risk</strong> — unresolved current or historical issue requiring more evidence or legal analysis.</li>
+</ol>
+<p>This structure is intended to surface possible unknown rights violations without converting every historical dispute into a conclusion of illegality.</p>
 <h2 id="7-status-is-evidence-based-not-emotion-based">7. Status is evidence-based, not emotion-based<a class="headerlink" href="#7-status-is-evidence-based-not-emotion-based" title="Permanent link">&para;</a></h2>
 <p>An area, policy, activity, or incident must not receive a Yellow or Red status because an encounter was unpleasant, rude, embarrassing, or unpopular.</p>
 <p>The status should be traceable to source material and the published methodology.</p>
@@ -2202,9 +2287,23 @@ EVIDENCE HISTORY
 - Field verification, if any:
 - Prior incidents:
 - Police/security involvement:
+- Warnings / cease orders:
+- Suspensions / trespass notices:
+- Citations / arrests / prosecutions:
+- Chilling / compliance events:
+- Litigation / claims / injunctions:
 - Post-visit records:
 - Agency response:
 - Corrections / policy changes:
+
+RIGHTS-RISK / HISTORICAL ASSESSMENT
+- Rights-Risk Signal:
+- Signal scope:
+- Time period reviewed:
+- Historical event assessment(s):
+- Then-controlling law:
+- Current relevance:
+- Evidence still needed:
 
 LEGAL ANALYSIS
 - Applicable Field Guide chapters:

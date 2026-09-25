@@ -434,6 +434,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Facility-level fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rights-risk-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rights-Risk Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement-history-assessments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcement-history assessments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1439,6 +1467,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Facility-level fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rights-risk-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rights-Risk Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement-history-assessments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcement-history assessments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1535,6 +1591,25 @@
 <p>where <code>013</code> is the county namespace and the final number is a stable facility serial.</p>
 <h2 id="facility-level-fields">Facility-level fields<a class="headerlink" href="#facility-level-fields" title="Permanent link">&para;</a></h2>
 <p>A facility record stores identity and location, agency and facility type, property summary, last verification date, field-verification status, concise legal and recording summaries, field-check items, unresolved legal items, research/evidence links, authority references, index highlights, and subareas.</p>
+<p>When historical research supports them, a facility record can also store:</p>
+<ul>
+<li><code>rights_risk_signals</code> — scoped evidence signals for a defined area/activity/policy and review period; and</li>
+<li><code>enforcement_history</code> — sourced warnings, removals, exclusions, police actions, prosecutions, chilling/compliance events, litigation, injunctions, policy changes, and related historical events.</li>
+</ul>
+<p>These fields are optional. An unresearched facility is not assigned <code>NONE</code> merely because no history has been entered.</p>
+<h3 id="rights-risk-signals">Rights-Risk Signals<a class="headerlink" href="#rights-risk-signals" title="Permanent link">&para;</a></h3>
+<p>Current signal values are:</p>
+<p><code>NONE</code> · <code>POSSIBLE</code> · <code>DOCUMENTED</code> · <code>ADJUDICATED</code></p>
+<p>The signal is separate from forum classification, restriction-audit status, and field verification.</p>
+<ul>
+<li><code>DOCUMENTED</code> means reliable evidence documents a relevant adverse enforcement or chilling event; it is <strong>not</strong> a judicial finding that the action was unlawful.</li>
+<li><code>ADJUDICATED</code> is reserved for an actual court or competent-tribunal holding on the represented issue.</li>
+</ul>
+<p>Signals must be scoped and include the period actually reviewed. Each signal has a stable <code>signal_id</code>, canonical <code>activity</code>, optional exact <code>subarea_ids</code>, a <code>current_legal_assessment</code>, and linked <code>event_ids</code>. A <code>DOCUMENTED</code> or <code>ADJUDICATED</code> signal cannot float free of the evidence history: it must point to at least one historical event.</p>
+<h3 id="enforcement-history-assessments">Enforcement-history assessments<a class="headerlink" href="#enforcement-history-assessments" title="Permanent link">&para;</a></h3>
+<p>Each historical event has a stable <code>event_id</code>, canonical activity, optional exact <code>subarea_ids</code>, one or more public/auditable source references, and a date-sensitive project assessment:</p>
+<p><code>ADJUDICATED_UNLAWFUL</code> · <code>APPARENTLY_INCONSISTENT_WITH_THEN_CONTROLLING_LAW</code> · <code>CONSTITUTIONALLY_SUSPECT_NEEDS_RECORDS</code> · <code>LATER_LAW_CHANGED_OR_CLARIFIED</code> · <code>LAWFUL_OR_DISTINGUISHABLE</code> · <code>UNRESOLVED</code></p>
+<p>This keeps historical evidence separate from modern law and prevents a later policy change from erasing what happened.</p>
 <h2 id="subareas-are-the-legal-unit">Subareas are the legal unit<a class="headerlink" href="#subareas-are-the-legal-unit" title="Permanent link">&para;</a></h2>
 <p>The building is not assigned one blanket forum label. Each <code>subarea</code> stores:</p>
 <ul>
