@@ -1324,6 +1324,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#requesteridentity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RequesterIdentity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#jurisdiction" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1471,6 +1482,39 @@
     <span class="md-ellipsis">
       
         InvestigationAssignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensitiveaccessgrant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SensitiveAccessGrant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sanitizationrecord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SanitizationRecord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retentioncontrol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RetentionControl
       
     </span>
   </a>
@@ -1728,6 +1772,22 @@
 <li><code>internal_notes_classification</code> - if administrative notes are supported</li>
 </ul>
 <p>Membership status does not itself grant research review or publication authority.</p>
+<h3 id="requesteridentity">RequesterIdentity<a class="headerlink" href="#requesteridentity" title="Permanent link">&para;</a></h3>
+<p>Identity-restricted contact/linkage record for a person who requests or initiates research without requiring that identity to be copied into investigation content.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>opaque_requester_ref</code> - stable internal reference suitable for use in investigation records</li>
+<li><code>contact_fields</code> - minimum contact information actually required</li>
+<li><code>verification/provenance_notes</code> - nullable and Identity-restricted</li>
+<li><code>created_at</code>, <code>updated_at</code></li>
+<li><code>retention_class</code>, <code>retention_basis</code></li>
+<li><code>review_after</code>, <code>retain_until</code> - nullable</li>
+<li><code>review_trigger</code> - nullable event-based retention review trigger</li>
+<li><code>legal_or_preservation_hold</code></li>
+<li><code>disposition_status</code>, <code>disposed_at</code> - nullable</li>
+</ul>
+<p>Requester identity is separate from Investigation. Ordinary collaborators use the opaque reference and do not receive the underlying identity by default.</p>
 <h3 id="jurisdiction">Jurisdiction<a class="headerlink" href="#jurisdiction" title="Permanent link">&para;</a></h3>
 <p>A legal/geographic scope.</p>
 <p>Minimum fields:</p>
@@ -1898,6 +1958,7 @@
 <li><code>reviewable_type</code>, <code>reviewable_id</code> - must identify the exact immutable review target, such as a ResearchSubmissionRevision or PublicationCandidateRevision</li>
 <li><code>reviewer_membership_id</code></li>
 <li><code>review_stage</code> - research, source verification, doctrinal/evidentiary, privacy, final publication, or approved extension</li>
+<li><code>governing_policy_version</code> - nullable generally; required for privacy/publication-safety review (for example <code>PRIVACY_V1</code>)</li>
 <li><code>decision</code> - approve, request_changes, reject, abstain</li>
 <li><code>comments</code></li>
 <li><code>created_at</code></li>
@@ -1917,7 +1978,7 @@
 <li><code>supersedes_publication_candidate_id</code> - nullable</li>
 <li><code>prepared_by</code>, <code>prepared_at</code></li>
 </ul>
-<p>A PublicationCandidate is separate from the internal submission so privacy sanitization, synthesis, formatting, and dependency resolution do not mutate the accepted research record. Exact supporting-revision provenance belongs to each immutable PublicationCandidateRevision.</p>
+<p>A PublicationCandidate is separate from the internal submission so privacy sanitization, synthesis, formatting, and dependency resolution do not mutate the accepted research record. Exact supporting-revision provenance belongs to each immutable PublicationCandidateRevision. A pre-export candidate remains non-Public while under review even when its payload is drafted for eventual public release.</p>
 <h3 id="publicationcandidaterevision">PublicationCandidateRevision<a class="headerlink" href="#publicationcandidaterevision" title="Permanent link">&para;</a></h3>
 <p>Immutable version of the derived publication artifact.</p>
 <p>Minimum fields:</p>
@@ -1941,6 +2002,7 @@
 <li><code>id</code></li>
 <li><code>jurisdiction_id</code></li>
 <li><code>facility_id</code> - nullable where not facility-specific</li>
+<li><code>requester_refs</code> - zero or more opaque RequesterIdentity references; never embeds requester contact data</li>
 <li><code>title</code></li>
 <li><code>status</code></li>
 <li><code>visibility_classification</code></li>
@@ -1960,6 +2022,54 @@
 <li><code>granted_by</code>, <code>granted_at</code></li>
 <li><code>revoked_by</code>, <code>revoked_at</code> - nullable</li>
 </ul>
+<h3 id="sensitiveaccessgrant">SensitiveAccessGrant<a class="headerlink" href="#sensitiveaccessgrant" title="Permanent link">&para;</a></h3>
+<p>Purpose-limited authorization for Restricted, Identity-restricted, or Administrative material not adequately covered by ordinary InvestigationAssignment.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>membership_id</code></li>
+<li><code>resource_type</code>, <code>resource_id</code></li>
+<li><code>access_level</code></li>
+<li><code>purpose_code</code></li>
+<li><code>reason</code></li>
+<li><code>granted_by</code>, <code>granted_at</code></li>
+<li><code>expires_at</code> - nullable</li>
+<li><code>revoked_by</code>, <code>revoked_at</code> - nullable</li>
+</ul>
+<p>SensitiveAccessGrant does not create substantive research/review authority.</p>
+<h3 id="sanitizationrecord">SanitizationRecord<a class="headerlink" href="#sanitizationrecord" title="Permanent link">&para;</a></h3>
+<p>Audit/provenance record describing privacy transformations applied to an immutable PublicationCandidateRevision.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>publication_candidate_revision_id</code></li>
+<li><code>source_refs</code></li>
+<li><code>transformation_types</code> - redact, blur, crop, omit, paraphrase, metadata_strip, replace_with_public_source, or approved extension</li>
+<li><code>visibility_classification</code> - Administrative or Restricted</li>
+<li><code>privacy_policy_version</code></li>
+<li><code>reason</code></li>
+<li><code>performed_by</code>, <code>performed_at</code></li>
+<li><code>verified_by</code>, <code>verified_at</code> - nullable</li>
+<li><code>notes</code></li>
+</ul>
+<p>Sanitization records explain the transformation without requiring the removed content itself to become public.</p>
+<h3 id="retentioncontrol">RetentionControl<a class="headerlink" href="#retentioncontrol" title="Permanent link">&para;</a></h3>
+<p>Lifecycle metadata for a sensitive object when retention cannot be represented directly on the source entity.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>resource_type</code>, <code>resource_id</code></li>
+<li><code>retention_class</code></li>
+<li><code>retention_basis</code></li>
+<li><code>review_after</code> - nullable</li>
+<li><code>review_trigger</code> - nullable event-based retention review trigger</li>
+<li><code>retain_until</code> - nullable</li>
+<li><code>legal_or_preservation_hold</code></li>
+<li><code>hold_reason</code> - nullable</li>
+<li><code>disposition_status</code></li>
+<li><code>disposed_at</code>, <code>disposition_actor</code> - nullable</li>
+</ul>
+<p>Detailed privacy, access, sanitization, and retention rules are defined in <a href="../PRIVACY_ATTRIBUTION_RETENTION/">Privacy, Identity, Attribution, and Retention Workflow</a>.</p>
 <h3 id="publicationevent">PublicationEvent<a class="headerlink" href="#publicationevent" title="Permanent link">&para;</a></h3>
 <p>Immutable record of a publication transition or attempted transition.</p>
 <p>Minimum fields:</p>
@@ -2017,6 +2127,10 @@ Membership 1---* ResearchSubmission
 Membership 1---* Review
 
 Investigation 1---* InvestigationAssignment *---1 Membership
+Membership 1---0..* SensitiveAccessGrant
+RequesterIdentity 0..*---0..* Investigation (via opaque requester refs)
+PublicationCandidateRevision 1---0..* SanitizationRecord
+RetentionControl *---1 sensitive resource
 
 ResearchSubmission 1---0..* ResearchSubmissionRevision
 ResearchSubmissionRevision 1---0..* Review
@@ -2137,6 +2251,16 @@ Membership 1---* AuditEvent
 <td>-</td>
 <td>V</td>
 <td>V</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Perform privacy/publication-safety review</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V/authorized access</td>
+<td>V/authorized access</td>
 <td>-</td>
 </tr>
 <tr>
@@ -2310,6 +2434,7 @@ Membership 1---* AuditEvent
 </ul>
 <h4 id="administrator-is-not-automatic-publication-authorship">Administrator is not automatic publication authorship<a class="headerlink" href="#administrator-is-not-automatic-publication-authorship" title="Permanent link">&para;</a></h4>
 <p>Administrative access exists to operate the platform. It does not convert administrative action into substantive legal review or eliminate required independent review stages. An Administrator who also performs substantive review must hold a separate active Reviewer, Senior Reviewer, or Division Lead grant in the applicable scope; the Administrator role alone cannot submit or satisfy substantive review/publication approval.</p>
+<p>Administrator status is also not blanket permission to read Restricted or Identity-restricted content. Sensitive access still requires an operational purpose, applicable assignment or SensitiveAccessGrant, and required auditing.</p>
 <h4 id="repository-authority-remains-external">Repository authority remains external<a class="headerlink" href="#repository-authority-remains-external" title="Permanent link">&para;</a></h4>
 <p>The Coalition authorization model records who may prepare or approve a publication candidate. Actual GitHub merge authority is separately controlled by repository credentials/settings. Initially, coalition members receive none merely from their Coalition role.</p>
 <h2 id="data-classifications">Data classifications<a class="headerlink" href="#data-classifications" title="Permanent link">&para;</a></h2>
@@ -2322,7 +2447,7 @@ Membership 1---* AuditEvent
 <li><strong>Administrative</strong> - membership decisions, internal notes, security/audit records, role administration.</li>
 <li><strong>Secret</strong> - credentials, tokens, signing material; stored outside ordinary application records wherever possible.</li>
 </ul>
-<p>Authorization checks use both role/scope and classification. Export/publication code must default-deny non-Public fields.</p>
+<p>Authorization checks use both role/scope and classification. Export/publication code must default-deny non-Public fields. Classification meanings, requester isolation, material-private-participant handling, sensitive-access rules, and retention lifecycle are defined in <a href="../PRIVACY_ATTRIBUTION_RETENTION/">Privacy, Identity, Attribution, and Retention Workflow</a>.</p>
 <h2 id="public-identity-separation">Public identity separation<a class="headerlink" href="#public-identity-separation" title="Permanent link">&para;</a></h2>
 <p>The platform should expose a public attribution object rather than directly rendering User or Membership identity.</p>
 <p>A publication can therefore be attributed to, for example:</p>
@@ -2353,7 +2478,21 @@ Membership 1---* AuditEvent
 <li>substantive revision changes invalidate affected review approvals;</li>
 <li>each PublicationCandidateRevision retains exact provenance to its supporting ResearchSubmissionRevisions;</li>
 <li>final-publication approvals reference immutable PublicationCandidateRevisions;</li>
-<li>restricted/identity-restricted records require explicit authorization beyond ordinary membership;</li>
+<li>restricted/identity-restricted records require explicit purpose-limited authorization beyond ordinary membership/role status;</li>
+<li>requester identity remains separate from Investigation and is referenced through zero or more opaque requester references;</li>
+<li>opaque requester references remain internal and are not public attribution identifiers;</li>
+<li>sensitive-access grants do not create substantive review/publication authority;</li>
+<li>privacy-sensitive public release occurs only through a derived immutable PublicationCandidateRevision;</li>
+<li>required privacy review applies to that exact PublicationCandidateRevision, records the governing privacy-policy version, and is performed independently from the final preparer/sanitizer by an authorized Senior Reviewer or Division Lead with necessary sensitive access under the initial model;</li>
+<li>sensitive publication transforms retain SanitizationRecord provenance and privacy-policy version;</li>
+<li>privacy-sensitive SanitizationRecords require independent verification before export;</li>
+<li>incidental private persons are minimized by default while material private participants may be published for documented evidentiary relevance rather than retaliation;</li>
+<li>unrelated sensitive personal information remains excluded even when a material participant is identified;</li>
+<li>minors receive heightened minimization;</li>
+<li>sensitive-read/bulk-export/break-glass access generates Administrative AuditEvents where required;</li>
+<li>research retention does not require indefinite retention of requester/member contact information;</li>
+<li>sensitive records require a documented long-lived retention class or a retention review date/event trigger rather than an undocumented keep-forever default;</li>
+<li>active preservation/legal holds prevent ordinary disposition;</li>
 <li>role grants cannot exceed the grantor's delegated authority;</li>
 <li>revoked/expired grants stop authorizing new actions;</li>
 <li>publication exports exclude non-Public data unless an explicit sanitization/review step permits a derived public field;</li>
@@ -2366,7 +2505,7 @@ Membership 1---* AuditEvent
 <li>contribution credit values, promotion eligibility floors, calibration, and promotion routing are defined by #41 in <code>docs/CONTRIBUTION_PROMOTION_WORKFLOW.md</code>;</li>
 <li>exact Field Guide qualification criteria, activation review procedure, and facility-research maturity thresholds (#40);</li>
 <li>detailed structured submission/review rules are defined by #42 in <code>docs/RESEARCH_SUBMISSION_WORKFLOW.md</code>;</li>
-<li>retention periods, identity verification requirements, or detailed privacy workflow (#43);</li>
+<li>detailed privacy, attribution, sensitive-access, and lifecycle retention rules are defined by #43 in <code>docs/PRIVACY_ATTRIBUTION_RETENTION.md</code>;</li>
 <li>UI design for the nationwide shell (#44);</li>
 <li>GitHub App/token implementation details (#45);</li>
 <li>whether future governance delegates final repository merge authority beyond the current operator.</li>

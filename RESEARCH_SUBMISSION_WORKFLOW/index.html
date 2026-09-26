@@ -2053,7 +2053,7 @@ Repository publication / merge
 <p>Submission-level privacy review may classify or restrict internal material, but it does not by itself authorize public release.</p>
 <p>When the question is whether material may appear publicly, the privacy/publication-safety decision must review the exact PublicationCandidateRevision proposed for release. That review does not rewrite the underlying evidence record.</p>
 <p>Access to Restricted or Identity-restricted material still requires the applicable assignment/need-to-know authorization; holding a Reviewer role alone does not grant that access.</p>
-<p>Detailed privacy/retention rules remain owned by #43.</p>
+<p>Detailed privacy/retention rules are defined in <a href="../PRIVACY_ATTRIBUTION_RETENTION/">Privacy, Identity, Attribution, and Retention Workflow</a>. Under PRIVACY_V1, required publication privacy review is performed by an authorized Senior Reviewer or Division Lead with the necessary sensitive-access authorization, and must be independent of the person who prepared the final candidate revision or final privacy-sensitive sanitization.</p>
 <h2 id="final-publication-review">Final publication review<a class="headerlink" href="#final-publication-review" title="Permanent link">&para;</a></h2>
 <p>Checks the <strong>derived PublicationCandidate</strong>, not merely the internal submission.</p>
 <p>It asks:</p>
@@ -2228,7 +2228,7 @@ Repository publication / merge
 <li><code>revision_number</code>;</li>
 <li><code>source_submission_revision_ids</code> - exact immutable research revisions supporting this publication revision;</li>
 <li><code>derived_public_payload</code>;</li>
-<li><code>visibility_classification</code> - Public before export approval;</li>
+<li><code>visibility_classification</code> - internal working-access classification; the candidate remains non-Public until the approved export/publication transition;</li>
 <li><code>dependency_refs</code> - canonical/jurisdiction/facility/publication dependencies affected by this exact revision;</li>
 <li><code>content_hash</code> or equivalent integrity reference where practical;</li>
 <li><code>created_by</code>, <code>created_at</code>;</li>
