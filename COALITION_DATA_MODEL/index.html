@@ -1401,10 +1401,43 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#researchsubmissionrevision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResearchSubmissionRevision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#review" class="md-nav__link">
     <span class="md-ellipsis">
       
         Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publicationcandidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PublicationCandidate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publicationcandidaterevision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PublicationCandidateRevision
       
     </span>
   </a>
@@ -1790,22 +1823,41 @@
 <li><code>id</code></li>
 <li><code>submitted_by_membership_id</code></li>
 <li><code>jurisdiction_id</code></li>
-<li><code>submission_type</code> - legal authority, facility research, records result, correction, investigation evidence, or approved extension</li>
+<li><code>submission_type</code> - legal authority, jurisdiction-overlay branch, facility research, records result, correction, investigation evidence, or approved extension</li>
 <li><code>title</code></li>
-<li><code>structured_payload</code> - schema-versioned content appropriate to submission type</li>
-<li><code>schema_version</code></li>
 <li><code>status</code> - draft, submitted, validation_failed, in_review, changes_requested, approved, rejected, withdrawn, superseded</li>
-<li><code>submitted_at</code></li>
+<li><code>current_revision_id</code> - nullable until a submitted revision exists</li>
+<li><code>approved_revision_id</code> - nullable until a specific revision is approved</li>
 <li><code>supersedes_submission_id</code> - nullable</li>
 <li><code>visibility_classification</code></li>
+<li><code>created_at</code>, <code>updated_at</code></li>
 </ul>
-<p>Approval makes a submission eligible for later publication processing; it does not itself make the submission authoritative published content.</p>
+<p>The ResearchSubmission is the workflow container. Schema-versioned substantive content lives in ResearchSubmissionRevision. Mutable draft storage is an implementation detail and is not a reviewed artifact until an immutable revision is created.</p>
+<p>Approval makes the exact <code>approved_revision_id</code> eligible for later publication processing; it does not itself make the submission authoritative published content.</p>
+<p>Detailed submission requirements, revision semantics, review routing, and publication-candidate boundaries are defined in <a href="../RESEARCH_SUBMISSION_WORKFLOW/">Structured Research Submission and Review Workflow</a>.</p>
+<h3 id="researchsubmissionrevision">ResearchSubmissionRevision<a class="headerlink" href="#researchsubmissionrevision" title="Permanent link">&para;</a></h3>
+<p>Immutable reviewed version of a ResearchSubmission.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>research_submission_id</code></li>
+<li><code>revision_number</code></li>
+<li><code>schema_version</code></li>
+<li><code>canonical_branch_refs</code> - zero or more immutable <code>{branch_id, branch_version}</code> references where applicable</li>
+<li><code>structured_payload</code></li>
+<li><code>visibility_classification</code></li>
+<li><code>created_by_membership_id</code></li>
+<li><code>created_at</code>, <code>submitted_at</code></li>
+<li><code>content_hash</code> or equivalent integrity reference where practical</li>
+<li><code>supersedes_revision_id</code> - nullable</li>
+</ul>
+<p>Review decisions attach to the exact immutable revision reviewed. A substantive edit produces a new revision and invalidates any review approvals affected by that change.</p>
 <h3 id="review">Review<a class="headerlink" href="#review" title="Permanent link">&para;</a></h3>
 <p>A review action on a ResearchSubmission or other reviewable entity.</p>
 <p>Minimum fields:</p>
 <ul>
 <li><code>id</code></li>
-<li><code>reviewable_type</code>, <code>reviewable_id</code></li>
+<li><code>reviewable_type</code>, <code>reviewable_id</code> - must identify the exact immutable review target, such as a ResearchSubmissionRevision or PublicationCandidateRevision</li>
 <li><code>reviewer_membership_id</code></li>
 <li><code>review_stage</code> - research, source verification, doctrinal/evidentiary, privacy, final publication, or approved extension</li>
 <li><code>decision</code> - approve, request_changes, reject, abstain</li>
@@ -1813,7 +1865,37 @@
 <li><code>created_at</code></li>
 <li><code>superseded_by_review_id</code> - nullable</li>
 </ul>
-<p>The later workflow design must define which stages and reviewer scopes are required for each submission type. The data model must not assume that one review is universally sufficient.</p>
+<p>Required stages, routing, independence, recusal, and elevated-impact rules are defined in <a href="../RESEARCH_SUBMISSION_WORKFLOW/">Structured Research Submission and Review Workflow</a>. The data model must not assume that one review is universally sufficient.</p>
+<h3 id="publicationcandidate">PublicationCandidate<a class="headerlink" href="#publicationcandidate" title="Permanent link">&para;</a></h3>
+<p>Workflow container for a derived artifact proposed for public/authoritative publication after one or more research revisions have been approved.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>target_type</code></li>
+<li><code>target_identifier</code></li>
+<li><code>status</code> - prepared, in_final_review, approved_for_export, changes_requested, rejected, superseded, exported</li>
+<li><code>current_revision_id</code></li>
+<li><code>approved_revision_id</code> - nullable</li>
+<li><code>supersedes_publication_candidate_id</code> - nullable</li>
+<li><code>prepared_by</code>, <code>prepared_at</code></li>
+</ul>
+<p>A PublicationCandidate is separate from the internal submission so privacy sanitization, synthesis, formatting, and dependency resolution do not mutate the accepted research record. Exact supporting-revision provenance belongs to each immutable PublicationCandidateRevision.</p>
+<h3 id="publicationcandidaterevision">PublicationCandidateRevision<a class="headerlink" href="#publicationcandidaterevision" title="Permanent link">&para;</a></h3>
+<p>Immutable version of the derived publication artifact.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>publication_candidate_id</code></li>
+<li><code>revision_number</code></li>
+<li><code>source_submission_revision_ids</code> - exact immutable research revisions supporting this publication revision</li>
+<li><code>derived_public_payload</code></li>
+<li><code>visibility_classification</code></li>
+<li><code>dependency_refs</code> - canonical/jurisdiction/facility/publication dependencies affected by this exact revision</li>
+<li><code>content_hash</code> or equivalent integrity reference where practical</li>
+<li><code>created_by</code>, <code>created_at</code></li>
+<li><code>supersedes_revision_id</code> - nullable</li>
+</ul>
+<p>Final-publication review attaches to the exact PublicationCandidateRevision reviewed. Substantive changes create a new revision and require new final-publication approval.</p>
 <h3 id="investigation">Investigation<a class="headerlink" href="#investigation" title="Permanent link">&para;</a></h3>
 <p>Restricted working container for facility/incident investigative work.</p>
 <p>Minimum fields:</p>
@@ -1897,8 +1979,12 @@ Membership 1---* Review
 
 Investigation 1---* InvestigationAssignment *---1 Membership
 
-ResearchSubmission 1---* Review
-ResearchSubmission 0..*---0..* PublicationEvent
+ResearchSubmission 1---0..* ResearchSubmissionRevision
+ResearchSubmissionRevision 1---0..* Review
+ResearchSubmissionRevision 0..*---0..* PublicationCandidateRevision
+PublicationCandidate 1---1..* PublicationCandidateRevision
+PublicationCandidateRevision 1---0..* Review
+PublicationCandidate 1---0..* PublicationEvent
 
 ServicePrincipal 1---* AuditEvent
 Membership 1---* AuditEvent
@@ -2206,6 +2292,10 @@ Membership 1---* AuditEvent
 <li><code>facility_research_status</code> remains null until <code>qualification_status</code> is Active;</li>
 <li>activation initializes facility research at Unresearched; facility activity cannot itself qualify or activate a jurisdiction;</li>
 <li>a submission status change to approved does not create a public artifact by itself;</li>
+<li>reviewable_type/reviewable_id reference the exact immutable revision being reviewed;</li>
+<li>substantive revision changes invalidate affected review approvals;</li>
+<li>each PublicationCandidateRevision retains exact provenance to its supporting ResearchSubmissionRevisions;</li>
+<li>final-publication approvals reference immutable PublicationCandidateRevisions;</li>
 <li>restricted/identity-restricted records require explicit authorization beyond ordinary membership;</li>
 <li>role grants cannot exceed the grantor's delegated authority;</li>
 <li>revoked/expired grants stop authorizing new actions;</li>
@@ -2218,7 +2308,7 @@ Membership 1---* AuditEvent
 <ul>
 <li>exact point values or promotion thresholds (#41);</li>
 <li>exact Field Guide qualification criteria, activation review procedure, and facility-research maturity thresholds (#40);</li>
-<li>exact submission schemas and required review stages (#42);</li>
+<li>detailed structured submission/review rules are defined by #42 in <code>docs/RESEARCH_SUBMISSION_WORKFLOW.md</code>;</li>
 <li>retention periods, identity verification requirements, or detailed privacy workflow (#43);</li>
 <li>UI design for the nationwide shell (#44);</li>
 <li>GitHub App/token implementation details (#45);</li>
