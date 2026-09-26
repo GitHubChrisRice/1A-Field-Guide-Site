@@ -1390,6 +1390,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#promotionassessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PromotionAssessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#researchsubmission" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1782,40 +1793,67 @@
 <li><code>expires_at</code> - nullable</li>
 <li><code>revoked_by</code>, <code>revoked_at</code> - nullable</li>
 <li><code>reason</code> - auditable administrative rationale</li>
+<li><code>grant_origin</code> - normal_promotion, scope_extension, bootstrap/founding, administrative, or approved extension</li>
 </ul>
 <p>A promotion creates or changes RoleGrants only after human approval. Points cannot write RoleGrants.</p>
 <h3 id="contribution">Contribution<a class="headerlink" href="#contribution" title="Permanent link">&para;</a></h3>
-<p>Ledger entry for accepted or otherwise dispositioned substantive work.</p>
+<p>Append-oriented ledger entry for accepted or otherwise recognized substantive work.</p>
 <p>Minimum fields:</p>
 <ul>
 <li><code>id</code></li>
 <li><code>membership_id</code></li>
-<li><code>jurisdiction_id</code> - nullable only where truly jurisdiction-neutral</li>
-<li><code>contribution_type</code></li>
+<li><code>jurisdiction_id</code> - nullable only for truly project-wide work</li>
+<li><code>contribution_class</code> - verification, standard research, substantive research, major integrated research, review, or approved extension</li>
+<li><code>credit_rule_code</code> - stable rule identifier for the applicable credit tier</li>
+<li><code>credit_policy_version</code></li>
+<li><code>credit_points</code></li>
 <li><code>source_entity_type</code>, <code>source_entity_id</code> - the submission/review/etc. that generated the credit</li>
-<li><code>status</code> - pending, accepted, rejected, reversed</li>
-<li><code>points</code></li>
+<li><code>source_revision_id</code> - nullable where the source has no immutable revision</li>
+<li><code>credit_scope_basis</code> - direct jurisdiction, applicable national core, applicable circuit/federal layer, or project-wide methodology</li>
+<li><code>credit_applicability_refs</code> - explicit national/circuit/jurisdiction/methodology applicability references used for target-scope eligibility</li>
+<li><code>status</code> - pending, accepted, reversed</li>
+<li><code>recommended_by</code> - nullable</li>
 <li><code>awarded_by</code></li>
 <li><code>awarded_at</code></li>
 <li><code>reversal_of_id</code> - nullable</li>
 <li><code>reason</code></li>
+<li><code>created_at</code></li>
 </ul>
-<p>Contribution history is a ledger. Corrections should normally be represented by reversal/adjustment records rather than silently rewriting history.</p>
+<p>Contribution history is a ledger. Point changes are represented by reversal/replacement records rather than silently rewriting history. Accepted work later becoming obsolete does not by itself reverse credit. Detailed credit classes, anti-gaming controls, and promotion use are defined in <a href="../CONTRIBUTION_PROMOTION_WORKFLOW/">Contribution Credit and Promotion Workflow</a>.</p>
 <h3 id="promotionrequest">PromotionRequest<a class="headerlink" href="#promotionrequest" title="Permanent link">&para;</a></h3>
-<p>Request for additional responsibility.</p>
+<p>Request for additional scoped responsibility.</p>
 <p>Minimum fields:</p>
 <ul>
 <li><code>id</code></li>
 <li><code>membership_id</code></li>
 <li><code>requested_role_definition_id</code></li>
 <li><code>requested_scope_type</code>, <code>requested_scope_id</code></li>
-<li><code>eligibility_snapshot</code> - contribution/readiness facts at request time</li>
+<li><code>request_kind</code> - normal_promotion or scope_extension</li>
+<li><code>eligibility_snapshot</code> - frozen contribution/breadth/current-role facts at request time</li>
+<li><code>eligibility_policy_version</code></li>
 <li><code>status</code> - submitted, under_review, approved, deferred, declined, withdrawn</li>
 <li><code>requested_at</code></li>
+<li><code>recommended_by</code> - nullable until the required recommendation exists</li>
+<li><code>recommended_at</code> - nullable</li>
 <li><code>decided_by</code>, <code>decided_at</code> - nullable</li>
 <li><code>decision_reason</code> - nullable</li>
 </ul>
-<p>Eligibility permits a request; approval is a separate human decision that may create a RoleGrant.</p>
+<p>Eligibility permits a normal promotion or scope-extension request to enter human assessment; approval is a separate Administrator decision under the initial governance model and may create a scoped RoleGrant.</p>
+<h3 id="promotionassessment">PromotionAssessment<a class="headerlink" href="#promotionassessment" title="Permanent link">&para;</a></h3>
+<p>Structured internal assessment supporting a PromotionRequest.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>promotion_request_id</code></li>
+<li><code>assessor_membership_id</code></li>
+<li><code>assessment_type</code> - eligibility verification, research competency, review calibration, scope knowledge, privacy/reliability, leadership, overall recommendation, or approved extension</li>
+<li><code>result</code> - pass, needs_work, recommend, defer, oppose, abstain</li>
+<li><code>evidence_refs</code></li>
+<li><code>comments</code></li>
+<li><code>created_at</code></li>
+<li><code>superseded_by_assessment_id</code> - nullable</li>
+</ul>
+<p>PromotionAssessment records are internal governance material. Calibration assessments do not create formal Review decisions or review points. Detailed promotion criteria and routing are defined in <a href="../CONTRIBUTION_PROMOTION_WORKFLOW/">Contribution Credit and Promotion Workflow</a>.</p>
 <h3 id="researchsubmission">ResearchSubmission<a class="headerlink" href="#researchsubmission" title="Permanent link">&para;</a></h3>
 <p>Structured proposal entering the research pipeline.</p>
 <p>Minimum fields:</p>
@@ -1974,6 +2012,7 @@ Jurisdiction 1---* Investigation
 
 Membership 1---* Contribution
 Membership 1---* PromotionRequest
+PromotionRequest 1---0..* PromotionAssessment
 Membership 1---* ResearchSubmission
 Membership 1---* Review
 
@@ -2108,7 +2147,7 @@ Membership 1---* AuditEvent
 <td>V</td>
 <td>V</td>
 <td>V</td>
-<td>V</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Award/reverse contribution credit</td>
@@ -2131,13 +2170,23 @@ Membership 1---* AuditEvent
 <td>C</td>
 </tr>
 <tr>
-<td>Decide promotion</td>
+<td>Recommend promotion</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V</td>
+<td>V</td>
+<td>V</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Decide promotion / create resulting RoleGrant</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
-<td>scoped V</td>
+<td>-</td>
 <td>A</td>
 </tr>
 <tr>
@@ -2287,6 +2336,14 @@ Membership 1---* AuditEvent
 <p>Database constraints and service-layer authorization should enforce, where technically practical:</p>
 <ul>
 <li>points cannot create/update RoleGrants;</li>
+<li>contribution awards/reversals cannot be self-awarded;</li>
+<li>contribution points must match the recorded credit-rule code and credit-policy version;</li>
+<li>normal promotion/scope-extension eligibility uses a frozen policy-versioned snapshot;</li>
+<li>target-scope points use recorded credit applicability rather than ad hoc promotion-time reclassification;</li>
+<li>Division Lead recommendation cannot create the resulting RoleGrant;</li>
+<li>final normal promotion approval is Administrator-only under the initial model;</li>
+<li>the candidate cannot make their own final promotion decision;</li>
+<li>Administrator status alone does not satisfy substantive contribution-credit or promotion recommendation requirements;</li>
 <li>only an authorized human decision can approve a PromotionRequest;</li>
 <li>readiness metrics cannot directly write <code>qualification_status</code>;</li>
 <li><code>facility_research_status</code> remains null until <code>qualification_status</code> is Active;</li>
@@ -2306,7 +2363,7 @@ Membership 1---* AuditEvent
 <h2 id="decisions-intentionally-deferred">Decisions intentionally deferred<a class="headerlink" href="#decisions-intentionally-deferred" title="Permanent link">&para;</a></h2>
 <p>Issue #39 does <strong>not</strong> decide:</p>
 <ul>
-<li>exact point values or promotion thresholds (#41);</li>
+<li>contribution credit values, promotion eligibility floors, calibration, and promotion routing are defined by #41 in <code>docs/CONTRIBUTION_PROMOTION_WORKFLOW.md</code>;</li>
 <li>exact Field Guide qualification criteria, activation review procedure, and facility-research maturity thresholds (#40);</li>
 <li>detailed structured submission/review rules are defined by #42 in <code>docs/RESEARCH_SUBMISSION_WORKFLOW.md</code>;</li>
 <li>retention periods, identity verification requirements, or detailed privacy workflow (#43);</li>
