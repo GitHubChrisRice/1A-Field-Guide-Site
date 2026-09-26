@@ -1,0 +1,2277 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Working public preview of the California field guide">
+      
+      
+      
+        <link rel="canonical" href="https://githubchrisrice.github.io/1A-Field-Guide-Site/COALITION_DATA_MODEL/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Coalition Data Model and Permission Matrix - California 1A Auditor's Field Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/field-guide.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#coalition-data-model-and-permission-matrix" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="California 1A Auditor&#39;s Field Guide" class="md-header__button md-logo" aria-label="California 1A Auditor's Field Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            California 1A Auditor's Field Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Coalition Data Model and Permission Matrix
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="California 1A Auditor&#39;s Field Guide" class="md-nav__button md-logo" aria-label="California 1A Auditor's Field Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    California 1A Auditor's Field Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constitution-first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitution First
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--governing-project-principle"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../registry/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facility Registry
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Facility Registry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registry/method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How classifications work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registry/data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registry data model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../california/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    California handbook
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    California handbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/standing-scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standing scenario
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--project-methodology"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/facility-investigation-methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facility research and field verification
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--project-methodology"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core doctrine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core doctrine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/constitutional-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constitutional foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/public-forum-doctrine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public-forum doctrine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--doctrine-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/indoor-public-common-spaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indoor public common spaces
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--doctrine-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/restriction-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restriction audit
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--project-methodology"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/forum-activity-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What can I do in each forum?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--doctrine-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/public-libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public libraries
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--doctrine-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/recording-public-officials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recording public officials
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/police-encounters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Police encounters
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--doctrine-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/trespass-removal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trespass and removal
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--doctrine-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/disorderly-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disorderly conduct
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/assembly-emergency-scenes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assemblies and emergency scenes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open government
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Open government
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/public-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public meetings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/public-records-evidence-preservation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    California public records and evidence preservation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--doctrine-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/records-request-retaliation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Records requests and retaliation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--doctrine-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../federal/foia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Federal FOIA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--primary-text-and-procedure-reviewed-in-part"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research map
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research map
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/AUTHORITY-INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authority index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jurisdiction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jurisdiction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#division" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Division
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roledefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RoleDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolegrant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RoleGrant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promotionrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PromotionRequest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#researchsubmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResearchSubmission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#investigationassignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InvestigationAssignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publicationevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PublicationEvent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serviceprincipal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServicePrincipal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auditevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuditEvent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authorization model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline-permission-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Baseline permission matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-permission-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important permission rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important permission rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-service-does-not-imply-self-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-service does not imply self-approval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope-does-not-automatically-cascade-everywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope does not automatically cascade everywhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#division-lead-is-not-administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Division Lead is not Administrator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrator-is-not-automatic-publication-authorship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Administrator is not automatic publication authorship
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-authority-remains-external" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository authority remains external
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-classifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data classifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-identity-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public identity separation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-invariants-for-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required invariants for implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decisions-intentionally-deferred" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisions intentionally deferred
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="coalition-data-model-and-permission-matrix">Coalition Data Model and Permission Matrix<a class="headerlink" href="#coalition-data-model-and-permission-matrix" title="Permanent link">&para;</a></h1>
+<p>Issue: #39</p>
+<p>This document defines the implementation-neutral data model and least-privilege authorization model for the Coalition platform. It refines the boundaries in <a href="../COALITION_ARCHITECTURE/">Coalition Architecture</a> without changing them.</p>
+<h2 id="design-principles">Design principles<a class="headerlink" href="#design-principles" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Identity is not authority.</strong> A user account, coalition membership, role grant, public profile, and GitHub identity are separate concepts.</li>
+<li><strong>Roles are scoped grants, not a single global rank.</strong> A member may hold different responsibilities in different jurisdictions.</li>
+<li><strong>Points are evidence of contribution, not permissions.</strong> No point total creates a role grant.</li>
+<li><strong>Submission is not publication.</strong> Research records retain disposition and review history separately from published artifacts.</li>
+<li><strong>Sensitive access is need-to-know.</strong> Investigation assignment and explicit administrative authority control restricted working material.</li>
+<li><strong>Public attribution is separable from internal provenance.</strong> Internal accountability does not require public disclosure of a person's identity.</li>
+<li><strong>Authorization is server-enforced and auditable.</strong> UI hiding is never the security boundary.</li>
+<li><strong>Destructive or authority-changing actions require stronger permission than ordinary editing.</strong></li>
+</ol>
+<h2 id="core-entities">Core entities<a class="headerlink" href="#core-entities" title="Permanent link">&para;</a></h2>
+<p>Names below are conceptual. Storage technology and exact field types are implementation decisions.</p>
+<h3 id="user">User<a class="headerlink" href="#user" title="Permanent link">&para;</a></h3>
+<p>Authentication identity.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>auth_subject</code> - stable identifier from the authentication provider</li>
+<li><code>email</code> - private; verification state stored separately or alongside it</li>
+<li><code>account_status</code> - invited, pending, active, suspended, disabled</li>
+<li><code>created_at</code>, <code>updated_at</code>, <code>last_login_at</code></li>
+</ul>
+<p>A User is not automatically a coalition member.</p>
+<p>Authentication secrets and password material should remain with the identity provider rather than the Coalition database where possible.</p>
+<h3 id="membership">Membership<a class="headerlink" href="#membership" title="Permanent link">&para;</a></h3>
+<p>Coalition relationship for a User.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>user_id</code></li>
+<li><code>membership_status</code> - applicant, approved, inactive, suspended, departed</li>
+<li><code>joined_at</code>, <code>ended_at</code></li>
+<li><code>public_attribution_mode</code> - institutional by default; pseudonymous/individual only when deliberately supported</li>
+<li><code>public_display_name</code> - nullable and never required to equal legal/authentication identity</li>
+<li><code>internal_notes_classification</code> - if administrative notes are supported</li>
+</ul>
+<p>Membership status does not itself grant research review or publication authority.</p>
+<h3 id="jurisdiction">Jurisdiction<a class="headerlink" href="#jurisdiction" title="Permanent link">&para;</a></h3>
+<p>A legal/geographic scope.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>kind</code> - federal, circuit, state, district, local, or other approved type</li>
+<li><code>code</code> - stable machine identifier</li>
+<li><code>name</code></li>
+<li><code>parent_jurisdiction_id</code> - nullable</li>
+<li><code>lifecycle_status</code> - Unresearched, Researching, Qualification Review, Active Division</li>
+<li><code>lifecycle_changed_at</code></li>
+<li><code>lifecycle_changed_by</code></li>
+<li><code>is_publicly_listed</code></li>
+</ul>
+<p>All 50 states and the District of Columbia may exist before activation. Federal circuits are an applicable legal dimension and must not be modeled merely as state children.</p>
+<p>Lifecycle status is human-controlled; computed readiness may inform but never write it automatically.</p>
+<h3 id="division">Division<a class="headerlink" href="#division" title="Permanent link">&para;</a></h3>
+<p>Operational organization attached to an activated or developing jurisdiction.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>jurisdiction_id</code></li>
+<li><code>operational_status</code></li>
+<li><code>created_at</code></li>
+<li><code>activated_at</code> - nullable</li>
+</ul>
+<p>A Jurisdiction may exist without a Division. An Active Division requires the separate qualification workflow defined by the jurisdiction-lifecycle design.</p>
+<h3 id="roledefinition">RoleDefinition<a class="headerlink" href="#roledefinition" title="Permanent link">&para;</a></h3>
+<p>Controlled vocabulary describing a type of responsibility.</p>
+<p>Initial role concepts:</p>
+<ul>
+<li>Member</li>
+<li>Contributor</li>
+<li>Researcher</li>
+<li>Reviewer</li>
+<li>Senior Reviewer</li>
+<li>Division Lead</li>
+<li>Administrator</li>
+</ul>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>code</code></li>
+<li><code>name</code></li>
+<li><code>description</code></li>
+<li><code>is_system_role</code></li>
+</ul>
+<p>Role names describe responsibility; permissions are defined by policy rather than inferred from numeric rank.</p>
+<h3 id="rolegrant">RoleGrant<a class="headerlink" href="#rolegrant" title="Permanent link">&para;</a></h3>
+<p>Assignment of a role to a Membership within a scope.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>membership_id</code></li>
+<li><code>role_definition_id</code></li>
+<li><code>scope_type</code> - global, jurisdiction, division, investigation, or other deliberately approved scope</li>
+<li><code>scope_id</code> - nullable only for global scope</li>
+<li><code>granted_by</code></li>
+<li><code>granted_at</code></li>
+<li><code>expires_at</code> - nullable</li>
+<li><code>revoked_by</code>, <code>revoked_at</code> - nullable</li>
+<li><code>reason</code> - auditable administrative rationale</li>
+</ul>
+<p>A promotion creates or changes RoleGrants only after human approval. Points cannot write RoleGrants.</p>
+<h3 id="contribution">Contribution<a class="headerlink" href="#contribution" title="Permanent link">&para;</a></h3>
+<p>Ledger entry for accepted or otherwise dispositioned substantive work.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>membership_id</code></li>
+<li><code>jurisdiction_id</code> - nullable only where truly jurisdiction-neutral</li>
+<li><code>contribution_type</code></li>
+<li><code>source_entity_type</code>, <code>source_entity_id</code> - the submission/review/etc. that generated the credit</li>
+<li><code>status</code> - pending, accepted, rejected, reversed</li>
+<li><code>points</code></li>
+<li><code>awarded_by</code></li>
+<li><code>awarded_at</code></li>
+<li><code>reversal_of_id</code> - nullable</li>
+<li><code>reason</code></li>
+</ul>
+<p>Contribution history is a ledger. Corrections should normally be represented by reversal/adjustment records rather than silently rewriting history.</p>
+<h3 id="promotionrequest">PromotionRequest<a class="headerlink" href="#promotionrequest" title="Permanent link">&para;</a></h3>
+<p>Request for additional responsibility.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>membership_id</code></li>
+<li><code>requested_role_definition_id</code></li>
+<li><code>requested_scope_type</code>, <code>requested_scope_id</code></li>
+<li><code>eligibility_snapshot</code> - contribution/readiness facts at request time</li>
+<li><code>status</code> - submitted, under_review, approved, deferred, declined, withdrawn</li>
+<li><code>requested_at</code></li>
+<li><code>decided_by</code>, <code>decided_at</code> - nullable</li>
+<li><code>decision_reason</code> - nullable</li>
+</ul>
+<p>Eligibility permits a request; approval is a separate human decision that may create a RoleGrant.</p>
+<h3 id="researchsubmission">ResearchSubmission<a class="headerlink" href="#researchsubmission" title="Permanent link">&para;</a></h3>
+<p>Structured proposal entering the research pipeline.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>submitted_by_membership_id</code></li>
+<li><code>jurisdiction_id</code></li>
+<li><code>submission_type</code> - legal authority, facility research, records result, correction, investigation evidence, or approved extension</li>
+<li><code>title</code></li>
+<li><code>structured_payload</code> - schema-versioned content appropriate to submission type</li>
+<li><code>schema_version</code></li>
+<li><code>status</code> - draft, submitted, validation_failed, in_review, changes_requested, approved, rejected, withdrawn, superseded</li>
+<li><code>submitted_at</code></li>
+<li><code>supersedes_submission_id</code> - nullable</li>
+<li><code>visibility_classification</code></li>
+</ul>
+<p>Approval makes a submission eligible for later publication processing; it does not itself make the submission authoritative published content.</p>
+<h3 id="review">Review<a class="headerlink" href="#review" title="Permanent link">&para;</a></h3>
+<p>A review action on a ResearchSubmission or other reviewable entity.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>reviewable_type</code>, <code>reviewable_id</code></li>
+<li><code>reviewer_membership_id</code></li>
+<li><code>review_stage</code> - research, source verification, doctrinal/evidentiary, privacy, final publication, or approved extension</li>
+<li><code>decision</code> - approve, request_changes, reject, abstain</li>
+<li><code>comments</code></li>
+<li><code>created_at</code></li>
+<li><code>superseded_by_review_id</code> - nullable</li>
+</ul>
+<p>The later workflow design must define which stages and reviewer scopes are required for each submission type. The data model must not assume that one review is universally sufficient.</p>
+<h3 id="investigation">Investigation<a class="headerlink" href="#investigation" title="Permanent link">&para;</a></h3>
+<p>Restricted working container for facility/incident investigative work.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>jurisdiction_id</code></li>
+<li><code>facility_id</code> - nullable where not facility-specific</li>
+<li><code>title</code></li>
+<li><code>status</code></li>
+<li><code>visibility_classification</code></li>
+<li><code>created_by_membership_id</code></li>
+<li><code>created_at</code>, <code>closed_at</code></li>
+<li><code>publication_summary_id</code> - nullable</li>
+</ul>
+<p>Private investigation content is not made accessible merely by holding a research role in the same state.</p>
+<h3 id="investigationassignment">InvestigationAssignment<a class="headerlink" href="#investigationassignment" title="Permanent link">&para;</a></h3>
+<p>Need-to-know access grant.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>investigation_id</code></li>
+<li><code>membership_id</code></li>
+<li><code>assignment_role</code> - contributor, researcher, reviewer, lead, or approved extension</li>
+<li><code>granted_by</code>, <code>granted_at</code></li>
+<li><code>revoked_by</code>, <code>revoked_at</code> - nullable</li>
+</ul>
+<h3 id="publicationevent">PublicationEvent<a class="headerlink" href="#publicationevent" title="Permanent link">&para;</a></h3>
+<p>Immutable record of a publication transition or attempted transition.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>source_type</code>, <code>source_id</code></li>
+<li><code>publication_target</code></li>
+<li><code>action</code> - prepared, approved_for_export, issue_created, branch_created, draft_pr_created, merged, published, withdrawn, corrected</li>
+<li><code>performed_by</code> - human membership or service principal</li>
+<li><code>external_reference</code> - nullable GitHub/public artifact reference</li>
+<li><code>created_at</code></li>
+<li><code>metadata</code></li>
+</ul>
+<p>PublicationEvents record what happened; they do not themselves authorize the next action.</p>
+<h3 id="serviceprincipal">ServicePrincipal<a class="headerlink" href="#serviceprincipal" title="Permanent link">&para;</a></h3>
+<p>Non-human system identity, including future GitHub integration.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>name</code></li>
+<li><code>purpose</code></li>
+<li><code>status</code></li>
+<li><code>credential_reference</code> - reference to secret storage, never the secret itself</li>
+<li><code>allowed_capabilities</code></li>
+</ul>
+<p>Service principals receive only the capabilities required for their function and cannot inherit member roles.</p>
+<h3 id="auditevent">AuditEvent<a class="headerlink" href="#auditevent" title="Permanent link">&para;</a></h3>
+<p>Append-oriented security/governance audit record.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>actor_type</code>, <code>actor_id</code></li>
+<li><code>action</code></li>
+<li><code>target_type</code>, <code>target_id</code></li>
+<li><code>occurred_at</code></li>
+<li><code>request/correlation_id</code></li>
+<li><code>result</code></li>
+<li><code>reason_or_metadata</code></li>
+</ul>
+<p>At minimum, audit role grants/revocations, promotion decisions, contribution awards/reversals, investigation access changes, lifecycle changes, review decisions, privacy-sensitive reads where practical, and publication/GitHub actions.</p>
+<p>Audit logs are administrative records and must not become a second public activity feed.</p>
+<h2 id="relationship-summary">Relationship summary<a class="headerlink" href="#relationship-summary" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>User 1---0..1 Membership
+Membership 1---* RoleGrant *---1 RoleDefinition
+RoleGrant *---scope---&gt; Jurisdiction / Division / Investigation / Global
+
+Jurisdiction 1---0..1 Division
+Jurisdiction 1---* ResearchSubmission
+Jurisdiction 1---* Investigation
+
+Membership 1---* Contribution
+Membership 1---* PromotionRequest
+Membership 1---* ResearchSubmission
+Membership 1---* Review
+
+Investigation 1---* InvestigationAssignment *---1 Membership
+
+ResearchSubmission 1---* Review
+ResearchSubmission 0..*---0..* PublicationEvent
+
+ServicePrincipal 1---* AuditEvent
+Membership 1---* AuditEvent
+</code></pre></div>
+<p>Facility, source, evidence, records-request, and publication-content entities already implied by the Field Guide methodology should be related to these entities rather than collapsed into Membership or Investigation. Their detailed schemas belong to the structured-research issue.</p>
+<h2 id="authorization-model">Authorization model<a class="headerlink" href="#authorization-model" title="Permanent link">&para;</a></h2>
+<p>Every protected operation evaluates:</p>
+<p><code>authenticated identity + active membership + active role grants + scope + resource classification + assignment + action</code></p>
+<p>A higher-sounding role does not automatically bypass resource classification or scope.</p>
+<h3 id="baseline-permission-matrix">Baseline permission matrix<a class="headerlink" href="#baseline-permission-matrix" title="Permanent link">&para;</a></h3>
+<p>Legend: <strong>R</strong> read, <strong>C</strong> create, <strong>E</strong> edit, <strong>V</strong> substantive review/decision, <strong>A</strong> administer/authority-changing. All permissions are limited to the role's granted scope unless explicitly marked global.</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Member</th>
+<th>Contributor</th>
+<th>Researcher</th>
+<th>Reviewer</th>
+<th>Senior Reviewer</th>
+<th>Division Lead</th>
+<th>Administrator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read public Field Guide/registry</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Read own private profile/contribution history</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Edit own non-authority profile fields</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Create research submission</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Edit own draft / changes-requested submission</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Read nonrestricted submissions in scope</td>
+<td>-</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Perform substantive research work in scope</td>
+<td>-</td>
+<td>C/E</td>
+<td>C/E</td>
+<td>C/E</td>
+<td>C/E</td>
+<td>C/E</td>
+<td>C/E</td>
+</tr>
+<tr>
+<td>Submit review decision</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V</td>
+<td>V</td>
+<td>V</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Perform senior/final delegated review</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V</td>
+<td>V</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Recommend contribution credit</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V</td>
+<td>V</td>
+<td>V</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Award/reverse contribution credit</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V</td>
+<td>V</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Request own promotion</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Decide promotion</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>scoped V</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Recommend jurisdiction lifecycle change</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V</td>
+<td>V</td>
+<td>V</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Change jurisdiction lifecycle</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Manage scoped division assignments</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Access restricted investigation</td>
+<td>assigned only</td>
+<td>assigned only</td>
+<td>assigned only</td>
+<td>assigned only</td>
+<td>assigned only</td>
+<td>assigned/need-to-know</td>
+<td>A/need-to-know</td>
+</tr>
+<tr>
+<td>Manage investigation assignments</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>scoped A</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Approve publication candidate</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V</td>
+<td>V</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Trigger controlled GitHub preparation</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>only if separately delegated</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Merge/publish to authoritative repository</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>separate repository authority</td>
+</tr>
+<tr>
+<td>Manage global roles/security policy</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+<p>This matrix is a ceiling for initial implementation, not a mandate to expose every listed capability immediately.</p>
+<h3 id="important-permission-rules">Important permission rules<a class="headerlink" href="#important-permission-rules" title="Permanent link">&para;</a></h3>
+<h4 id="self-service-does-not-imply-self-approval">Self-service does not imply self-approval<a class="headerlink" href="#self-service-does-not-imply-self-approval" title="Permanent link">&para;</a></h4>
+<p>A person cannot satisfy a required independent review of their own submission. The workflow design may require multiple reviewers for particular material.</p>
+<h4 id="scope-does-not-automatically-cascade-everywhere">Scope does not automatically cascade everywhere<a class="headerlink" href="#scope-does-not-automatically-cascade-everywhere" title="Permanent link">&para;</a></h4>
+<p>A state-scoped role may apply to ordinary research in that state but does not automatically reveal restricted investigations, private identities, administrative notes, or secrets.</p>
+<p>Circuit/federal authority may intersect multiple states. Authorization must evaluate the resource's explicit jurisdictional scopes rather than pretending circuit authority belongs to one state.</p>
+<h4 id="division-lead-is-not-administrator">Division Lead is not Administrator<a class="headerlink" href="#division-lead-is-not-administrator" title="Permanent link">&para;</a></h4>
+<p>A Division Lead can manage delegated operations within their division but cannot:</p>
+<ul>
+<li>activate their own jurisdiction;</li>
+<li>alter national standards;</li>
+<li>grant global roles;</li>
+<li>change global security/privacy policy;</li>
+<li>access unrelated restricted investigations;</li>
+<li>obtain repository credentials by virtue of the role.</li>
+</ul>
+<h4 id="administrator-is-not-automatic-publication-authorship">Administrator is not automatic publication authorship<a class="headerlink" href="#administrator-is-not-automatic-publication-authorship" title="Permanent link">&para;</a></h4>
+<p>Administrative access exists to operate the platform. It does not convert administrative action into substantive legal review or eliminate required independent review stages. An Administrator who also performs substantive review must hold a separate active Reviewer, Senior Reviewer, or Division Lead grant in the applicable scope; the Administrator role alone cannot submit or satisfy substantive review/publication approval.</p>
+<h4 id="repository-authority-remains-external">Repository authority remains external<a class="headerlink" href="#repository-authority-remains-external" title="Permanent link">&para;</a></h4>
+<p>The Coalition authorization model records who may prepare or approve a publication candidate. Actual GitHub merge authority is separately controlled by repository credentials/settings. Initially, coalition members receive none merely from their Coalition role.</p>
+<h2 id="data-classifications">Data classifications<a class="headerlink" href="#data-classifications" title="Permanent link">&para;</a></h2>
+<p>Initial classifications:</p>
+<ul>
+<li><strong>Public</strong> - intentionally published material.</li>
+<li><strong>Coalition</strong> - authenticated-member material safe for ordinary internal collaboration.</li>
+<li><strong>Restricted</strong> - investigation working material, unpublished sensitive evidence, or scoped internal research.</li>
+<li><strong>Identity-restricted</strong> - requester/member contact or identity-bearing records not needed for ordinary research.</li>
+<li><strong>Administrative</strong> - membership decisions, internal notes, security/audit records, role administration.</li>
+<li><strong>Secret</strong> - credentials, tokens, signing material; stored outside ordinary application records wherever possible.</li>
+</ul>
+<p>Authorization checks use both role/scope and classification. Export/publication code must default-deny non-Public fields.</p>
+<h2 id="public-identity-separation">Public identity separation<a class="headerlink" href="#public-identity-separation" title="Permanent link">&para;</a></h2>
+<p>The platform should expose a public attribution object rather than directly rendering User or Membership identity.</p>
+<p>A publication can therefore be attributed to, for example:</p>
+<ul>
+<li><code>California Division</code>;</li>
+<li><code>1A Field Guide Coalition</code>;</li>
+<li>a deliberately chosen public pseudonym/display name where later policy permits.</li>
+</ul>
+<p>Internal records still retain submitter and reviewer provenance. Changing public attribution does not rewrite internal history.</p>
+<h2 id="required-invariants-for-implementation">Required invariants for implementation<a class="headerlink" href="#required-invariants-for-implementation" title="Permanent link">&para;</a></h2>
+<p>Database constraints and service-layer authorization should enforce, where technically practical:</p>
+<ul>
+<li>points cannot create/update RoleGrants;</li>
+<li>only an authorized human decision can approve a PromotionRequest;</li>
+<li>jurisdiction readiness metrics cannot directly write <code>lifecycle_status</code>;</li>
+<li>a submission status change to approved does not create a public artifact by itself;</li>
+<li>restricted/identity-restricted records require explicit authorization beyond ordinary membership;</li>
+<li>role grants cannot exceed the grantor's delegated authority;</li>
+<li>revoked/expired grants stop authorizing new actions;</li>
+<li>publication exports exclude non-Public data unless an explicit sanitization/review step permits a derived public field;</li>
+<li>service credentials are never stored in contribution/submission/publication payloads;</li>
+<li>material authority-changing actions generate AuditEvents.</li>
+</ul>
+<h2 id="decisions-intentionally-deferred">Decisions intentionally deferred<a class="headerlink" href="#decisions-intentionally-deferred" title="Permanent link">&para;</a></h2>
+<p>Issue #39 does <strong>not</strong> decide:</p>
+<ul>
+<li>exact point values or promotion thresholds (#41);</li>
+<li>exact state-readiness dimensions or activation review procedure (#40);</li>
+<li>exact submission schemas and required review stages (#42);</li>
+<li>retention periods, identity verification requirements, or detailed privacy workflow (#43);</li>
+<li>UI design for the nationwide shell (#44);</li>
+<li>GitHub App/token implementation details (#45);</li>
+<li>whether future governance delegates final repository merge authority beyond the current operator.</li>
+</ul>
+<p>Those decisions must not be inferred from this schema.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
