@@ -1693,13 +1693,16 @@
 <li><code>code</code> - stable machine identifier</li>
 <li><code>name</code></li>
 <li><code>parent_jurisdiction_id</code> - nullable</li>
-<li><code>lifecycle_status</code> - Unresearched, Researching, Qualification Review, Active Division</li>
-<li><code>lifecycle_changed_at</code></li>
-<li><code>lifecycle_changed_by</code></li>
+<li><code>qualification_status</code> - Inactive, Field Guide Development, Active</li>
+<li><code>facility_research_status</code> - nullable until Active; then Unresearched, Researching, or Established</li>
+<li><code>qualification_changed_at</code></li>
+<li><code>qualification_changed_by</code></li>
+<li><code>facility_research_status_changed_at</code> - nullable</li>
+<li><code>facility_research_status_changed_by</code> - nullable</li>
 <li><code>is_publicly_listed</code></li>
 </ul>
 <p>All 50 states and the District of Columbia may exist before activation. Federal circuits are an applicable legal dimension and must not be modeled merely as state children.</p>
-<p>Lifecycle status is human-controlled; computed readiness may inform but never write it automatically.</p>
+<p>Field Guide/division qualification is human-controlled; computed readiness may inform but never write <code>qualification_status</code> automatically. <code>facility_research_status</code> must remain null until qualification is Active. Activating a jurisdiction initializes facility research at Unresearched; later facility-research maturity does not alter qualification.</p>
 <h3 id="division">Division<a class="headerlink" href="#division" title="Permanent link">&para;</a></h3>
 <p>Operational organization attached to an activated or developing jurisdiction.</p>
 <p>Minimum fields:</p>
@@ -2052,7 +2055,7 @@ Membership 1---* AuditEvent
 <td>A</td>
 </tr>
 <tr>
-<td>Recommend jurisdiction lifecycle change</td>
+<td>Recommend Field Guide qualification change</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -2062,13 +2065,23 @@ Membership 1---* AuditEvent
 <td>V</td>
 </tr>
 <tr>
-<td>Change jurisdiction lifecycle</td>
+<td>Change Field Guide qualification</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Update facility-research maturity after activation</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>V</td>
+<td>V</td>
 <td>A</td>
 </tr>
 <tr>
@@ -2189,7 +2202,9 @@ Membership 1---* AuditEvent
 <ul>
 <li>points cannot create/update RoleGrants;</li>
 <li>only an authorized human decision can approve a PromotionRequest;</li>
-<li>jurisdiction readiness metrics cannot directly write <code>lifecycle_status</code>;</li>
+<li>readiness metrics cannot directly write <code>qualification_status</code>;</li>
+<li><code>facility_research_status</code> remains null until <code>qualification_status</code> is Active;</li>
+<li>activation initializes facility research at Unresearched; facility activity cannot itself qualify or activate a jurisdiction;</li>
 <li>a submission status change to approved does not create a public artifact by itself;</li>
 <li>restricted/identity-restricted records require explicit authorization beyond ordinary membership;</li>
 <li>role grants cannot exceed the grantor's delegated authority;</li>
@@ -2202,7 +2217,7 @@ Membership 1---* AuditEvent
 <p>Issue #39 does <strong>not</strong> decide:</p>
 <ul>
 <li>exact point values or promotion thresholds (#41);</li>
-<li>exact state-readiness dimensions or activation review procedure (#40);</li>
+<li>exact Field Guide qualification criteria, activation review procedure, and facility-research maturity thresholds (#40);</li>
 <li>exact submission schemas and required review stages (#42);</li>
 <li>retention periods, identity verification requirements, or detailed privacy workflow (#43);</li>
 <li>UI design for the nationwide shell (#44);</li>
