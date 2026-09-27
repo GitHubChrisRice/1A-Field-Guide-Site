@@ -403,3 +403,44 @@ body {
     padding-top: 0;
   }
 }
+
+
+/* Nationwide jurisdiction shell */
+.md-content__inner:has(.jurisdiction-grid) { max-width: 82rem; }
+.jurisdiction-hero {
+  margin: 1.2rem 0 2rem; padding: 1.1rem 1.25rem; border: 1px solid #cfd8de;
+  border-radius: .45rem; background: #f3f7f9;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.jurisdiction-hero p { max-width: none; }
+.jurisdiction-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem;
+  margin: 1rem 0 2.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.jurisdiction-card {
+  display: flex; flex-direction: column; gap: .45rem; min-width: 0; padding: .85rem .9rem;
+  border: 1px solid var(--fg-line); border-radius: .45rem; background: #fff;
+  text-decoration: none !important; box-shadow: 0 .05rem .22rem rgba(20,35,45,.045);
+}
+.jurisdiction-card:hover { border-color: #aebdc7; box-shadow: 0 .12rem .35rem rgba(20,35,45,.08); }
+.jurisdiction-card__name { color: var(--fg-ink); font-size: .9rem; font-weight: 700; line-height: 1.25; }
+.jurisdiction-pill {
+  display: inline-block; width: fit-content; padding: .18rem .48rem; border: 1px solid transparent;
+  border-radius: 999px; font-size: .66rem; font-weight: 700; line-height: 1.35;
+}
+.jurisdiction-pill--inactive { color:#555d63; background:#eff1f2; border-color:#d1d5d8; }
+.jurisdiction-pill--development { color:#674d18; background:#f7f0df; border-color:#dfcfaa; }
+.jurisdiction-pill--active { color:#264936; background:#e8f3ec; border-color:#bfd7c7; }
+.jurisdiction-status {
+  display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:center; margin:.8rem 0 1.4rem;
+  padding:.75rem .9rem; border:1px solid var(--fg-line); border-left-width:.3rem;
+  border-radius:.35rem; background:#fff;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+.jurisdiction-status span { color:var(--fg-muted); font-size:.75rem; }
+.jurisdiction-status--inactive { border-left-color:#8a9298; }
+.jurisdiction-status--development { border-left-color:#a67a28; }
+.jurisdiction-status--active { border-left-color:#477a5a; }
+@media (max-width:72em){ .jurisdiction-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media (max-width:40em){ .jurisdiction-grid{grid-template-columns:1fr;} }

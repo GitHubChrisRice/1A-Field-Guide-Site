@@ -1,0 +1,536 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-09-26",
+  "qualification_statuses": [
+    "Inactive",
+    "Field Guide Development",
+    "Active"
+  ],
+  "facility_research_statuses": [
+    "Unresearched",
+    "Researching",
+    "Established"
+  ],
+  "jurisdictions": [
+    {
+      "code": "FED",
+      "name": "Federal",
+      "slug": "federal",
+      "kind": "federal",
+      "qualification_status": "Field Guide Development",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "Federal-premises and federal-records material exists, but the federal analytical framework has not yet completed formal qualification."
+    },
+    {
+      "code": "AL",
+      "name": "Alabama",
+      "slug": "alabama",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "AK",
+      "name": "Alaska",
+      "slug": "alaska",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "AZ",
+      "name": "Arizona",
+      "slug": "arizona",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "AR",
+      "name": "Arkansas",
+      "slug": "arkansas",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "CA",
+      "name": "California",
+      "slug": "california",
+      "kind": "state",
+      "qualification_status": "Field Guide Development",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "The California handbook contains substantial development material, but California is not grandfathered and has not yet completed formal qualification."
+    },
+    {
+      "code": "CO",
+      "name": "Colorado",
+      "slug": "colorado",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "CT",
+      "name": "Connecticut",
+      "slug": "connecticut",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "DE",
+      "name": "Delaware",
+      "slug": "delaware",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "FL",
+      "name": "Florida",
+      "slug": "florida",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "GA",
+      "name": "Georgia",
+      "slug": "georgia",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "HI",
+      "name": "Hawaii",
+      "slug": "hawaii",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "ID",
+      "name": "Idaho",
+      "slug": "idaho",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "IL",
+      "name": "Illinois",
+      "slug": "illinois",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "IN",
+      "name": "Indiana",
+      "slug": "indiana",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "IA",
+      "name": "Iowa",
+      "slug": "iowa",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "KS",
+      "name": "Kansas",
+      "slug": "kansas",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "KY",
+      "name": "Kentucky",
+      "slug": "kentucky",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "LA",
+      "name": "Louisiana",
+      "slug": "louisiana",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "ME",
+      "name": "Maine",
+      "slug": "maine",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "MD",
+      "name": "Maryland",
+      "slug": "maryland",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "MA",
+      "name": "Massachusetts",
+      "slug": "massachusetts",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "MI",
+      "name": "Michigan",
+      "slug": "michigan",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "MN",
+      "name": "Minnesota",
+      "slug": "minnesota",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "MS",
+      "name": "Mississippi",
+      "slug": "mississippi",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "MO",
+      "name": "Missouri",
+      "slug": "missouri",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "MT",
+      "name": "Montana",
+      "slug": "montana",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "NE",
+      "name": "Nebraska",
+      "slug": "nebraska",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "NV",
+      "name": "Nevada",
+      "slug": "nevada",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "NH",
+      "name": "New Hampshire",
+      "slug": "new-hampshire",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "NJ",
+      "name": "New Jersey",
+      "slug": "new-jersey",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "NM",
+      "name": "New Mexico",
+      "slug": "new-mexico",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "slug": "new-york",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "NC",
+      "name": "North Carolina",
+      "slug": "north-carolina",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "ND",
+      "name": "North Dakota",
+      "slug": "north-dakota",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "OH",
+      "name": "Ohio",
+      "slug": "ohio",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "OK",
+      "name": "Oklahoma",
+      "slug": "oklahoma",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "OR",
+      "name": "Oregon",
+      "slug": "oregon",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "PA",
+      "name": "Pennsylvania",
+      "slug": "pennsylvania",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "RI",
+      "name": "Rhode Island",
+      "slug": "rhode-island",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "SC",
+      "name": "South Carolina",
+      "slug": "south-carolina",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "SD",
+      "name": "South Dakota",
+      "slug": "south-dakota",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "TN",
+      "name": "Tennessee",
+      "slug": "tennessee",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "TX",
+      "name": "Texas",
+      "slug": "texas",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "UT",
+      "name": "Utah",
+      "slug": "utah",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "VT",
+      "name": "Vermont",
+      "slug": "vermont",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "VA",
+      "name": "Virginia",
+      "slug": "virginia",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "WA",
+      "name": "Washington",
+      "slug": "washington",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "WV",
+      "name": "West Virginia",
+      "slug": "west-virginia",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "WI",
+      "name": "Wisconsin",
+      "slug": "wisconsin",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "WY",
+      "name": "Wyoming",
+      "slug": "wyoming",
+      "kind": "state",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified state Field Guide overlay has been activated for this jurisdiction."
+    },
+    {
+      "code": "DC",
+      "name": "District of Columbia",
+      "slug": "district-of-columbia",
+      "kind": "district",
+      "qualification_status": "Inactive",
+      "facility_research_status": null,
+      "verified_date": "2026-09-26",
+      "summary": "No Coalition-qualified District of Columbia Field Guide overlay has been activated."
+    }
+  ]
+}
