@@ -2195,9 +2195,10 @@ AuditEvent
 <p>This issue defines promotion, not automatic demotion or role-expiration policy.</p>
 <p>The existing RoleGrant model permits expiration/revocation where later governance authorizes it, but points are not automatically decremented and roles are not automatically removed because a point total changes.</p>
 <p>Any future maintenance/renewal policy must be explicit.</p>
-<h1 id="bootstrap-and-founding-appointments">Bootstrap and founding appointments<a class="headerlink" href="#bootstrap-and-founding-appointments" title="Permanent link">&para;</a></h1>
+<h1 id="founder-bootstrap-and-founding-appointments">Founder, bootstrap, and founding appointments<a class="headerlink" href="#founder-bootstrap-and-founding-appointments" title="Permanent link">&para;</a></h1>
 <p>The normal promotion ladder cannot create the first Reviewers, Senior Reviewers, Division Leads, or Administrators because nobody initially exists to assess the next person.</p>
-<p>Therefore the initial repository/platform owner, or an existing Administrator once one exists, may make a <strong>bootstrap/founding RoleGrant</strong> when necessary to establish the initial governance structure. The first Administrator is established through the platform/repository owner's explicit founding authority rather than through the points ladder.</p>
+<p><strong>Founder</strong> is a separate project-origin governance role, not a points-based rank and not a rung in the Member -&gt; Division Lead progression. The Founder role itself may remain permanent as provenance/governance authority. It does not automatically create substantive review competence, unrestricted sensitive access, or repository authority.</p>
+<p>The initial repository/platform owner acting as Founder, or an existing Administrator once one exists, may make a <strong>bootstrap/founding RoleGrant</strong> when necessary to establish the initial governance structure. The first Administrator is established through the Founder's explicit founding authority rather than through the points ladder.</p>
 <p>Bootstrap grants:</p>
 <ul>
 <li>require an explicit <code>bootstrap</code>/founding reason;</li>
@@ -2207,8 +2208,9 @@ AuditEvent
 <li>do not fabricate Contribution points;</li>
 <li>must be distinguishable from normal promotion grants.</li>
 </ul>
-<p>Once enough qualified people exist for the normal workflow, bootstrap grants should be reviewed and either ratified under ordinary competency expectations, narrowed, replaced, or revoked as appropriate. Bootstrap status does not silently become permanent merely because it existed first.</p>
-<p>Bootstrap authority is an initialization mechanism, not a permanent shortcut around promotion standards.</p>
+<p>A bootstrap substantive RoleGrant is different from the permanent Founder role. Once enough qualified people exist for the normal workflow, bootstrap substantive grants should be reviewed and either ratified under ordinary competency expectations, narrowed, replaced, or revoked as appropriate. The existence of the permanent Founder role does not make a bootstrap Researcher/Reviewer/Division Lead grant permanently exempt from review.</p>
+<p>Bootstrap authority is an initialization mechanism, not a general shortcut around promotion standards.</p>
+<p>Jurisdiction activation has a related but separate founding exception. When no independent qualified human reviewer is reasonably available, the Founder may make a documented bootstrap activation decision under the requirements in <a href="../JURISDICTION_QUALIFICATION/">Jurisdiction Qualification and Field Guide Overlay Model</a>. That exception does not award points, create a promotion, or falsely count the Founder or an AI/service principal as an independent reviewer.</p>
 <h1 id="public-display">Public display<a class="headerlink" href="#public-display" title="Permanent link">&para;</a></h1>
 <p>Contribution points are private/internal by default.</p>
 <p>A member may see:</p>
@@ -2234,7 +2236,8 @@ AuditEvent
 <li>promotion recommendation;</li>
 <li>final promotion decision;</li>
 <li>RoleGrant creation/revocation related to promotion;</li>
-<li>bootstrap/founding RoleGrant.</li>
+<li>bootstrap/founding RoleGrant;</li>
+<li>Founder/bootstrap jurisdiction activation decision.</li>
 </ul>
 <p>The audit record must identify actor, target member, source work/request, scope, outcome, timestamp, and reason.</p>
 <h1 id="required-implementation-invariants">Required implementation invariants<a class="headerlink" href="#required-implementation-invariants" title="Permanent link">&para;</a></h1>
@@ -2260,6 +2263,7 @@ AuditEvent
 <li>Division Lead recommendation does not create the RoleGrant;</li>
 <li>final promotion approval is Administrator-only under the initial model;</li>
 <li>bootstrap grants are explicitly marked and audited;</li>
+<li>Founder/bootstrap jurisdiction activations are explicitly marked and audited and cannot be created by automation;</li>
 <li>no automated process approves promotion.</li>
 </ul>
 <h1 id="data-model-consequences">Data-model consequences<a class="headerlink" href="#data-model-consequences" title="Permanent link">&para;</a></h1>

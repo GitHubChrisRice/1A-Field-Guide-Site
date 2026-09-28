@@ -1709,6 +1709,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Activation gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-activation-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normal activation path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#founderbootstrap-activation-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Founder/bootstrap activation exception
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2142,6 +2170,7 @@ field-rule / facility conclusion
 </table>
 <p>The matrix is evidence for qualification. It does not activate the jurisdiction automatically.</p>
 <h2 id="activation-gate">Activation gate<a class="headerlink" href="#activation-gate" title="Permanent link">&para;</a></h2>
+<h3 id="normal-activation-path">Normal activation path<a class="headerlink" href="#normal-activation-path" title="Permanent link">&para;</a></h3>
 <p>A jurisdiction may be recommended for Active status only when:</p>
 <ol>
 <li>every canonical scenario and encounter family has been mapped to the jurisdiction;</li>
@@ -2155,8 +2184,28 @@ field-rule / facility conclusion
 <li>at least one independent qualified reviewer who is not the primary author/researcher for the qualification record has examined the coverage record; and</li>
 <li>an authorized human makes the activation decision.</li>
 </ol>
-<p>Under the current permission model, the authority-changing action <code>Change Field Guide qualification</code> belongs to the Administrator role; reviewers and Division Leads may recommend qualification but do not activate the jurisdiction by role alone. Any future delegation of that authority requires a deliberate governance change.</p>
+<p>Under the ordinary permission model, the authority-changing action <code>Change Field Guide qualification</code> belongs to the Administrator role; reviewers and Division Leads may recommend qualification but do not activate the jurisdiction by role alone.</p>
 <p>The exact reviewer count may be tightened by governance later. No automated score, point threshold, or completeness percentage can satisfy item 10.</p>
+<h3 id="founderbootstrap-activation-exception">Founder/bootstrap activation exception<a class="headerlink" href="#founderbootstrap-activation-exception" title="Permanent link">&para;</a></h3>
+<p>The project must not become permanently unable to activate its first or early jurisdictions merely because no independent qualified human reviewer exists or is reasonably available.</p>
+<p>When that condition is documented, the <strong>Founder may make a founding/bootstrap activation decision without satisfying item 9 above</strong>. This is an exception to the reviewer-independence requirement only. Items 1–8 remain mandatory, and the activation must still be a deliberate human decision.</p>
+<p>A reviewer is not reasonably available when, for example, the Coalition presently has no other suitably qualified independent human, or no such person is available and willing to perform the review within a practical project timeframe. No arbitrary waiting period or public recruitment campaign is required when the project objectively has no qualified independent reviewer. Convenience alone is not enough to invoke the exception when a suitable independent reviewer is actually available.</p>
+<p>Before a bootstrap activation, the record must show:</p>
+<ul>
+<li>a complete qualification matrix for the jurisdiction;</li>
+<li>a fresh material-Gap sweep confirming no activation-blocking Gap remains;</li>
+<li>current verification of primary legal text and controlling authority;</li>
+<li>preservation of contrary authority, meaningful limitations, and all Researched-Unresolved branches;</li>
+<li>a distinct adversarial review pass focused on overstatement, omitted contrary authority, unsupported inheritance from another jurisdiction, and changed-fact failure points;</li>
+<li>the objective basis for concluding that an independent qualified human reviewer is not reasonably available;</li>
+<li>the Founder as the accountable activation actor;</li>
+<li>the activation date, scope, qualification-record version, and any unresolved issues or review warnings; and</li>
+<li>an AuditEvent or equivalent immutable provenance record identifying the activation as <code>founding/bootstrap</code>.</li>
+</ul>
+<p>AI, automation, or a service principal may assist with source checking, adversarial review, gap detection, or drafting, but it <strong>does not count as the missing independent human reviewer</strong> and must not be represented as one.</p>
+<p>A bootstrap-activated jurisdiction is genuinely <strong>Active</strong>; it is not a temporary pseudo-status and does not expire merely because time passes. When a suitably qualified independent reviewer later becomes available, the jurisdiction should be queued for retrospective independent qualification review. That later availability does <strong>not</strong> automatically deactivate the jurisdiction. Normal correction/change-management rules apply if the retrospective review identifies a material defect.</p>
+<p>Once an independent qualified reviewer is reasonably available, the normal activation path should be used for future jurisdiction activations unless a separate documented bootstrap condition exists.</p>
+<p>The Founder/bootstrap exception is a deliberate governance exception, not permission for automated activation, self-described completeness, contribution points, or convenience to substitute for the substantive qualification gate.</p>
 <h2 id="local-dependencies-do-not-necessarily-block-state-activation">Local dependencies do not necessarily block state activation<a class="headerlink" href="#local-dependencies-do-not-necessarily-block-state-activation" title="Permanent link">&para;</a></h2>
 <p>Some questions cannot be answered statewide because they depend on a city's ordinance, an agency's regulation, a facility's purpose, a posted rule, an access configuration, or actual enforcement practice.</p>
 <p>The state overlay qualifies when it supplies the legal framework needed to analyze those local facts.</p>

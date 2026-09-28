@@ -2051,7 +2051,9 @@
 <li>Senior Reviewer</li>
 <li>Division Lead</li>
 <li>Administrator</li>
+<li>Founder</li>
 </ul>
+<p><code>Founder</code> is a project-origin governance role outside the points/merit ladder. It is not a numeric rank above Administrator and does not inherit every Administrator, Reviewer, or Division Lead permission. Its exceptional authorities are explicit founding/bootstrap actions defined by governance policy.</p>
 <p>Minimum fields:</p>
 <ul>
 <li><code>id</code></li>
@@ -2638,9 +2640,17 @@ Membership 1---* AuditEvent
 </tbody>
 </table>
 <p>This matrix is a ceiling for initial implementation, not a mandate to expose every listed capability immediately.</p>
+<p><strong>Founder is intentionally not represented as a broad superuser column in this baseline matrix.</strong> Founder is an additive governance role whose ordinary research, review, administrative, sensitive-access, and repository capabilities come from the member's other active grants or external repository authority. The Founder role itself authorizes only explicitly defined founding/bootstrap actions, including:</p>
+<ul>
+<li>establishing the first Administrator and issuing auditable bootstrap/founding RoleGrants needed to initialize governance;</li>
+<li>making a Founder/bootstrap jurisdiction-activation decision when the independent-review path is unavailable and every requirement in <code>JURISDICTION_QUALIFICATION.md</code> is satisfied; and</li>
+<li>recording those actions as founding/bootstrap governance events.</li>
+</ul>
+<p>Founder does not by itself authorize substantive review decisions, unrestricted Restricted/Identity-restricted access, contribution-credit self-awards, ordinary self-promotion, or repository merge access.</p>
 <h3 id="important-permission-rules">Important permission rules<a class="headerlink" href="#important-permission-rules" title="Permanent link">&para;</a></h3>
 <h4 id="self-service-does-not-imply-self-approval">Self-service does not imply self-approval<a class="headerlink" href="#self-service-does-not-imply-self-approval" title="Permanent link">&para;</a></h4>
 <p>A person cannot satisfy a required independent review of their own submission. The workflow design may require multiple reviewers for particular material.</p>
+<p>The Founder/bootstrap jurisdiction-activation exception does not convert self-review into independent review. It expressly records that the independent-review requirement could not be met because no qualified independent human was reasonably available, and it applies only through the documented qualification exception.</p>
 <h4 id="scope-does-not-automatically-cascade-everywhere">Scope does not automatically cascade everywhere<a class="headerlink" href="#scope-does-not-automatically-cascade-everywhere" title="Permanent link">&para;</a></h4>
 <p>A state-scoped role may apply to ordinary research in that state but does not automatically reveal restricted investigations, private identities, administrative notes, or secrets.</p>
 <p>Circuit/federal authority may intersect multiple states. Authorization must evaluate the resource's explicit jurisdictional scopes rather than pretending circuit authority belongs to one state.</p>
@@ -2693,6 +2703,10 @@ Membership 1---* AuditEvent
 <li>Administrator status alone does not satisfy substantive contribution-credit or promotion recommendation requirements;</li>
 <li>only an authorized human decision can approve a PromotionRequest;</li>
 <li>readiness metrics cannot directly write <code>qualification_status</code>;</li>
+<li>normal jurisdiction activation preserves the independent qualified-human review requirement;</li>
+<li>a Founder/bootstrap activation may bypass only that independent-review requirement, must preserve all other qualification requirements, must be explicitly marked <code>founding/bootstrap</code>, and must generate an AuditEvent;</li>
+<li>AI/automation/service principals cannot satisfy the independent-human-review requirement or create a Founder/bootstrap activation decision;</li>
+<li>later availability of an independent reviewer does not automatically deactivate a bootstrap-activated jurisdiction, but should queue retrospective review;</li>
 <li><code>facility_research_status</code> remains null until <code>qualification_status</code> is Active;</li>
 <li>activation initializes facility research at Unresearched; facility activity cannot itself qualify or activate a jurisdiction;</li>
 <li>a submission status change to approved does not create a public artifact by itself;</li>
