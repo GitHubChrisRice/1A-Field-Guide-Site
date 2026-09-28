@@ -616,6 +616,8 @@
       
         
       
+        
+      
     
     
     
@@ -663,6 +665,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../california/QUALIFICATION-MATRIX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qualification matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1568,6 +1598,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#countycoverageunit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CountyCoverageUnit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#division" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2029,6 +2070,27 @@
 </ul>
 <p>All 50 states and the District of Columbia may exist before activation. Federal circuits are an applicable legal dimension and must not be modeled merely as state children.</p>
 <p>Field Guide/division qualification is human-controlled; computed readiness may inform but never write <code>qualification_status</code> automatically. <code>facility_research_status</code> must remain null until qualification is Active. Activating a jurisdiction initializes facility research at Unresearched; later facility-research maturity does not alter qualification.</p>
+<p>County and county-equivalent inventory records are <strong>not</strong> modeled as independently qualified child Jurisdictions merely to obtain geographic coverage. Use <code>CountyCoverageUnit</code> for the complete inherited county-level research inventory defined below. A future local jurisdiction that genuinely requires its own legal qualification model would need an explicit governance/schema decision rather than silently reusing county coverage.</p>
+<h3 id="countycoverageunit">CountyCoverageUnit<a class="headerlink" href="#countycoverageunit" title="Permanent link">&para;</a></h3>
+<p>Inherited county-level research coverage beneath an Active state.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>state_jurisdiction_id</code></li>
+<li><code>stable_geographic_code</code> - authoritative stable county/county-equivalent identifier where available</li>
+<li><code>name</code></li>
+<li><code>unit_type</code> - county, county-equivalent, or approved extension</li>
+<li><code>coverage_status</code> - Unresearched, Researching, Established</li>
+<li><code>coverage_status_changed_at</code></li>
+<li><code>coverage_status_changed_by</code></li>
+<li><code>inventory_verified_at</code></li>
+<li><code>inventory_source_ref</code></li>
+<li><code>notes</code> - nullable</li>
+<li><code>is_publicly_listed</code></li>
+</ul>
+<p>A CountyCoverageUnit inherits the national core, applicable federal/circuit layer, and parent state's Active overlay. It does not receive a separate <code>qualification_status</code>.</p>
+<p>CountyCoverageUnit is a geographic/research index rather than a universal legal-parent relationship. Municipalities, special districts, state agencies, federal facilities, and other entities retain their actual governing authority even when geographically associated with a county unit. A resource may reference multiple CountyCoverageUnits when its geographic scope crosses county boundaries.</p>
+<p>State activation creates or validates the complete CountyCoverageUnit inventory. New county records begin Unresearched unless reconciled existing work supports a later human-reviewed coverage status. County research stores only local dependencies and applications rather than duplicating national/state doctrine.</p>
 <h3 id="division">Division<a class="headerlink" href="#division" title="Permanent link">&para;</a></h3>
 <p>Operational organization attached to an activated or developing jurisdiction.</p>
 <p>Minimum fields:</p>
@@ -2341,6 +2403,7 @@ Membership 1---* RoleGrant *---1 RoleDefinition
 RoleGrant *---scope---&gt; Jurisdiction / Division / Investigation / Global
 
 Jurisdiction 1---0..1 Division
+State Jurisdiction 1---* CountyCoverageUnit
 Jurisdiction 1---* ResearchSubmission
 Jurisdiction 1---* Investigation
 
@@ -2708,6 +2771,8 @@ Membership 1---* AuditEvent
 <li>AI/automation/service principals cannot satisfy the independent-human-review requirement or create a Founder/bootstrap activation decision;</li>
 <li>later availability of an independent reviewer does not automatically deactivate a bootstrap-activated jurisdiction, but should queue retrospective review;</li>
 <li><code>facility_research_status</code> remains null until <code>qualification_status</code> is Active;</li>
+<li>state activation creates or validates the complete CountyCoverageUnit inventory;</li>
+<li>CountyCoverageUnit records do not carry independent Field Guide qualification status and begin Unresearched unless reconciled prior work supports a later human-reviewed coverage status;</li>
 <li>activation initializes facility research at Unresearched; facility activity cannot itself qualify or activate a jurisdiction;</li>
 <li>a submission status change to approved does not create a public artifact by itself;</li>
 <li>reviewable_type/reviewable_id reference the exact immutable revision being reviewed;</li>
