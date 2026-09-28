@@ -388,6 +388,8 @@
       
         
       
+        
+      
     
     
     
@@ -443,6 +445,41 @@
     
   
     Complaint-driven police encounter
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--canonical-development"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../national-core/lawful-vantage-observation-recording/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lawful-vantage observation and recording
   
 
     
@@ -2003,9 +2040,15 @@ field-rule / facility conclusion
 <h2 id="canonical-scenario-and-encounter-coverage">Canonical scenario and encounter coverage<a class="headerlink" href="#canonical-scenario-and-encounter-coverage" title="Permanent link">&para;</a></h2>
 <p>The qualification matrix is derived from the functions demonstrated by the California reference implementation. At minimum, the overlay must support the ordinary facility-analysis branches implicated by the standing scenario and project methodology.</p>
 <p>Required coverage families are:</p>
-<p>The canonical encounter <strong>NC-COMPLAINT-01 — Complaint-Driven Police Encounter / Disputed Trespass and Immediately Available Exculpatory Evidence</strong> is a required qualification scenario for every jurisdiction. Its branch matrix is defined in <a href="../national-core/complaint-driven-police-encounter/">Complaint-Driven Police Encounter</a>. A jurisdiction may not satisfy the trespass or police-encounter families merely by locating a generic trespass statute; it must be able to run the disputed-entry, leave-on-request, current-remain, prospective-notice, caller-reliability, exculpatory-evidence, dissipation, retaliation, false-report, and evidence-preservation branches.</p>
-<ol>
-<li><strong>Lawful presence and area classification</strong></li>
+<p>Two canonical national-core scenarios are presently required for every jurisdiction:</p>
+<ul>
+<li><strong>NC-COMPLAINT-01 — Complaint-Driven Police Encounter / Disputed Trespass and Immediately Available Exculpatory Evidence</strong>, defined in <a href="../national-core/complaint-driven-police-encounter/">Complaint-Driven Police Encounter</a>. A jurisdiction may not satisfy the trespass or police-encounter families merely by locating a generic trespass statute; it must be able to run the disputed-entry, leave-on-request, current-remain, prospective-notice/identification, caller-reliability, exculpatory-evidence, dissipation, retaliation, false-report, evidence-preservation, and conditional-access/derivative-trespass branches.</li>
+<li>
+<p><strong>NC-VANTAGE-01 — Lawful-Vantage Observation and Recording / Matters Exposed to Public View</strong>, defined in <a href="../national-core/lawful-vantage-observation-recording/">Lawful-Vantage Observation and Recording</a>. A jurisdiction must be able to distinguish lawful vantage from unlawful presence, ordinary visual observation/recording from intrusion or manipulation, transparent-barrier observation from barrier defeat, visible sensitive information from unlawfully accessed information, visual recording from separately regulated audio/interception, and objection from an independently lawful restriction or exclusion basis.</p>
+</li>
+<li>
+<p><strong>Lawful presence and area classification</strong></p>
+</li>
 <li>public access versus forum status;</li>
 <li>traditional, designated, limited, and nonpublic forum analysis where applicable;</li>
 <li>area-specific classification rather than whole-building assumptions;</li>
@@ -2015,7 +2058,7 @@ field-rule / facility conclusion
 <li>
 <p><strong>Protected activity and recording</strong></p>
 </li>
-<li>peaceful observation, photography, video, audio, questioning, criticism, and information gathering;</li>
+<li>peaceful observation, photography, video, audio, questioning, criticism, and information gathering, including lawful-vantage/exposed-to-public-view analysis;</li>
 <li>recording public officials/police;</li>
 <li>privacy/confidential-communication rules and material exceptions;</li>
 <li>
@@ -2027,7 +2070,8 @@ field-rule / facility conclusion
 <li>content/viewpoint analysis;</li>
 <li>time/place/manner or applicable forum-specific reasonableness/tailoring tests;</li>
 <li>asserted safety, privacy, security, operational, or confidentiality interests;</li>
-<li>policy/sign/order versus actual legal authority;</li>
+<li>policy/sign/order versus actual legal authority, including conditional-access demands such as <code>stop recording or leave</code>;</li>
+<li>legality of an underlying restriction/exclusion before downstream trespass enforcement is treated as analytically independent;</li>
 <li>
 <p>delegated authority and state/federal preemption where material.</p>
 </li>
@@ -2039,7 +2083,8 @@ field-rule / facility conclusion
 <li>public-property/public-agency distinctions;</li>
 <li>disputed property boundary/current location;</li>
 <li>never-entered versus entered-and-left versus currently-remains versus prospective-no-entry notice;</li>
-<li>effect of a later removal order on an initially lawful presence;</li>
+<li>prospective no-entry notice versus any separate legal duty to identify;</li>
+<li>effect of a later removal order on an initially lawful presence, including whether the order itself rests on a lawful restriction/exclusion;</li>
 <li>
 <p>suspension/exclusion process where material.</p>
 </li>
@@ -2111,7 +2156,7 @@ field-rule / facility conclusion
 <li>contrary authority and changed facts preserved.</li>
 </ul>
 </li>
-</ol>
+</ul>
 <p>These are functional coverage families, not requirements that every jurisdiction use California filenames or identical statutes.</p>
 <h2 id="decision-tree-branch-statuses">Decision-tree branch statuses<a class="headerlink" href="#decision-tree-branch-statuses" title="Permanent link">&para;</a></h2>
 <p>Each material canonical branch receives one qualification status for the jurisdiction:</p>
