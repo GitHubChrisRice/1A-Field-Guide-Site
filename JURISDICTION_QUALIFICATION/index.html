@@ -786,7 +786,7 @@
     
   
   
-    <span class="md-status md-status--project-methodology"></span>
+    <span class="md-status md-status--jurisdiction-overlay"></span>
   
 
   
@@ -1658,10 +1658,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#canonicalizing-the-standing-scenario" class="md-nav__link">
+  <a href="#canonical-standing-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Canonicalizing the standing scenario
+        Canonical standing scenario
       
     </span>
   </a>
@@ -2064,14 +2064,17 @@ field-rule / facility conclusion
 </ul>
 <p>A new jurisdiction reuses the canonical structure and national authority. It replaces or supplements the circuit, state, and local layers rather than copying California-specific conclusions.</p>
 <p>California must ultimately be represented in the same qualification matrix used for every other jurisdiction. Existing California content seeds that matrix; it does not grandfather a branch as Supported or excuse a material Gap.</p>
-<h3 id="canonicalizing-the-standing-scenario">Canonicalizing the standing scenario<a class="headerlink" href="#canonicalizing-the-standing-scenario" title="Permanent link">&para;</a></h3>
-<p>The current source standing scenario lives under <code>docs/california/standing-scenario.md</code> and intentionally includes California Penal Code mappings. It is therefore the <strong>reference source</strong> for the future canonical scenario, not yet a jurisdiction-neutral artifact in its present form.</p>
-<p>Canonicalization must separate:</p>
+<h3 id="canonical-standing-scenario">Canonical standing scenario<a class="headerlink" href="#canonical-standing-scenario" title="Permanent link">&para;</a></h3>
+<p>The jurisdiction-neutral standing baseline is now:</p>
 <ul>
-<li>jurisdiction-neutral baseline facts and encounter assumptions that belong in the national core; from</li>
-<li>California-specific statutory/case-law mappings that remain in the California overlay.</li>
+<li><code>docs/national-core/standing-scenario.md</code></li>
+<li>canonical ID <code>NC-STANDING-01</code></li>
+<li>current version <code>v1</code></li>
 </ul>
-<p>Other jurisdictions must not copy California Penal Code mappings merely because the neutral factual baseline is reused.</p>
+<p>It contains facts and project methodology only. It intentionally does <strong>not</strong> import California Penal Code mappings, Brown Act rules, Ninth Circuit holdings, or any other jurisdiction-specific legal conclusion.</p>
+<p>Jurisdiction overlays may map the neutral facts to their own statutes, regulations, constitutional rules, and cases. California does so in <code>docs/california/standing-scenario.md</code>.</p>
+<p>Other jurisdictions must reuse the neutral baseline rather than copying California's overlay conclusions.</p>
+<p>If a branch needs different facts, the changed fact must be explicit and versioned in the relevant canonical scenario or encounter record rather than silently altering <code>NC-STANDING-01</code>.</p>
 <h2 id="qualification-statuses">Qualification statuses<a class="headerlink" href="#qualification-statuses" title="Permanent link">&para;</a></h2>
 <h3 id="inactive">Inactive<a class="headerlink" href="#inactive" title="Permanent link">&para;</a></h3>
 <p>The jurisdiction exists in the national system, but no qualified overlay is available for Coalition facility analysis.</p>
