@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_date": "2026-09-26",
+  "verified_date": "2026-09-30",
   "qualification_statuses": [
     "Inactive",
     "Field Guide Development",
@@ -67,10 +67,10 @@
       "name": "California",
       "slug": "california",
       "kind": "state",
-      "qualification_status": "Field Guide Development",
-      "facility_research_status": null,
-      "verified_date": "2026-09-26",
-      "summary": "The California handbook contains substantial development material, but California is not grandfathered and has not yet completed formal qualification."
+      "qualification_status": "Active",
+      "facility_research_status": "Unresearched",
+      "verified_date": "2026-09-30",
+      "summary": "California's statewide Field Guide overlay completed qualification and was activated on September 30, 2026; facility research begins at Unresearched."
     },
     {
       "code": "CO",
