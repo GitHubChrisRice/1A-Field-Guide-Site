@@ -1,0 +1,395 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-013-F0003",
+  "slug": "concord-dmv",
+  "last_verified": "2026-09-30",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "title": "California Driver's Handbook — Knowledge-Test Device Rule",
+      "source_type": "HANDBOOK",
+      "source": "https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/the-testing-process/",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "knowledge-test stations"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "test integrity"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "Applicants may not use testing aids during a knowledge test; a cell phone is expressly listed as an example. This is examination-specific and cannot be generalized into a branch-wide no-phone or no-camera rule.",
+      "constitutional_test": "Purpose-limited examination channel; any extension beyond test-taking requires separate authority and constitutional analysis.",
+      "enforcement_hook": "DMV test administration rules; no branch-wide recording hook established.",
+      "open_questions": [
+        "What branch instructions exist for phones/cameras outside an active test?"
+      ]
+    },
+    {
+      "rule_id": "R002",
+      "title": "DMV Privacy and Security Policy",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://www.dmv.ca.gov/portal/privacy-and-security/",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "DMV-held personal information",
+        "public service counters",
+        "records/systems"
+      ],
+      "activities": [
+        "RECORDING",
+        "PRESS_INFORMATION_GATHERING"
+      ],
+      "government_interest": [
+        "identity/privacy",
+        "record security"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Identifies DMV duties concerning sensitive personal information. It is not by itself a public camera prohibition.",
+      "constitutional_test": "Use as asserted privacy interest; any visitor restriction must be separately sourced and tested.",
+      "enforcement_hook": "Agency information-security obligations, not a visitor camera offense.",
+      "open_questions": [
+        "What physical safeguards and staff instructions govern exposed information at public counters?"
+      ]
+    },
+    {
+      "rule_id": "R003",
+      "title": "DMV Information Disclosure / Record-Protection Rules",
+      "source_type": "PUBLIC_GUIDANCE",
+      "source": "https://www.dmv.ca.gov/portal/privacy-and-security/how-your-information-is-shared/",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "DMV-held driver and identity information"
+      ],
+      "activities": [
+        "RECORDING",
+        "PRESS_INFORMATION_GATHERING"
+      ],
+      "government_interest": [
+        "statutory confidentiality",
+        "privacy"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Describes protected categories and disclosure limits. These obligations help identify legitimate privacy interests but do not themselves create a general customer camera ban.",
+      "constitutional_test": "Facility privacy duty must be separated from visitor conduct restrictions.",
+      "enforcement_hook": "Underlying privacy statutes/regulations govern DMV disclosure.",
+      "open_questions": []
+    },
+    {
+      "rule_id": "R004",
+      "title": "Vehicle Code §1808.5 — Physical/Mental Condition Records",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Veh. Code §1808.5",
+      "applies_to": [
+        "specified DMV medical/condition records"
+      ],
+      "activities": [
+        "RECORDING",
+        "PRESS_INFORMATION_GATHERING"
+      ],
+      "government_interest": [
+        "medical/condition confidentiality"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Makes specified DMV records confidential. It governs protected records; it does not by text create a general camera prohibition in the waiting room.",
+      "constitutional_test": "Privacy-context authority; a visitor restriction requires separate legal basis.",
+      "enforcement_hook": "Confidentiality of specified DMV records.",
+      "open_questions": []
+    },
+    {
+      "rule_id": "R005",
+      "title": "California Information Practices Act",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Civ. Code §1798 et seq.",
+      "applies_to": [
+        "state-agency personal information systems"
+      ],
+      "activities": [
+        "RECORDING",
+        "PRESS_INFORMATION_GATHERING"
+      ],
+      "government_interest": [
+        "personal-information protection"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Regulates state-agency collection/use/disclosure of personal information. It is context for DMV's safeguard duty, not a standalone visitor camera ban.",
+      "constitutional_test": "Separate agency privacy duty from visitor restriction.",
+      "enforcement_hook": "Information Practices Act remedies/obligations.",
+      "open_questions": []
+    },
+    {
+      "rule_id": "R006",
+      "title": "Driver's Privacy Protection Act",
+      "source_type": "STATUTE",
+      "source": "https://uscode.house.gov/",
+      "citation": "18 U.S.C. §§2721–2725",
+      "applies_to": [
+        "motor-vehicle record information"
+      ],
+      "activities": [
+        "PRESS_INFORMATION_GATHERING"
+      ],
+      "government_interest": [
+        "driver-record privacy"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Restricts disclosure/use of qualifying motor-vehicle record information. It does not itself establish a blanket no-recording rule for a DMV customer lobby.",
+      "constitutional_test": "Use as privacy/confidentiality context only unless conduct falls within statutory scope.",
+      "enforcement_hook": "Federal DPPA remedies/prohibitions.",
+      "open_questions": []
+    },
+    {
+      "rule_id": "R007",
+      "title": "California Penal Code §632 — Confidential Communications",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=632.",
+      "citation": "Cal. Penal Code §632",
+      "applies_to": [
+        "audio capture of confidential conversations"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "confidential communications"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "Can directly restrict recording where the communication is objectively confidential and statutory elements are met. It is not a blanket indoor-audio rule.",
+      "constitutional_test": "Statutory elements + First Amendment analysis where protected recording is burdened.",
+      "enforcement_hook": "Penal Code §632.",
+      "open_questions": [
+        "Which counter interactions, if any, objectively satisfy confidentiality requirements?"
+      ],
+      "authority_ids": [
+        "pc632"
+      ]
+    },
+    {
+      "rule_id": "R008",
+      "title": "California Trespass / Public-Agency Obstruction Statutes",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Penal Code §§602, 602.1",
+      "applies_to": [
+        "removal/exclusion disputes"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL"
+      ],
+      "government_interest": [
+        "agency operations",
+        "property control"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "The statewide California removal, trespass, and public-agency-obstruction framework is now researched. At this facility, the live question is which actual rule, Title 13 predicate, order, and statutory branch apply to the specific facts.",
+      "constitutional_test": "Exact statutory elements + constitutional savings clause + validity of underlying restriction/exclusion",
+      "enforcement_hook": "Penal Code §§602/602.1 only where their elements are satisfied.",
+      "open_questions": [
+        "Which subsection/policy does DMV/security actually invoke in recording-related removals?"
+      ],
+      "authority_ids": [
+        "pc6021"
+      ]
+    },
+    {
+      "rule_id": "R009",
+      "title": "Title 13 CCR ch. 11 — Applicability to State Property",
+      "source_type": "REGULATION",
+      "source": "https://capitolpermits.chp.ca.gov/Content/CHAPTER%2011%20CCR.pdf",
+      "citation": "13 Cal. Code Regs. §§1850–1851",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "state-owned/leased/controlled property, including DMV field-office property unless an exclusion applies"
+      ],
+      "activities": [
+        "GENERAL_EXPRESSION",
+        "ASSEMBLY_DEMONSTRATION",
+        "SIGNS_DISPLAY",
+        "TABLING_SETUP",
+        "ACCESS_REMOVAL"
+      ],
+      "government_interest": [
+        "state-property operations",
+        "safety",
+        "access"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Chapter 11 expressly applies to individuals/groups using broadly defined state property. CHP's current State Property Event Permits manual expressly gives DMV field-office events as an implementation example. This is a previously missing statewide rule layer for the Concord DMV.",
+      "constitutional_test": "Use Chapter 11 as the actual regulatory source, then test each substantive restriction under the exact forum/activity standard.",
+      "enforcement_hook": "Substantive enforcement depends on the specific Chapter 11 provision and other statutory authority.",
+      "open_questions": [
+        "Which CHP field Division/Area SOP governs permit processing for Concord DMV?",
+        "Which exact DMV parcel/subareas are treated as state property for Chapter 11 purposes?"
+      ],
+      "authority_ids": [
+        "title13-ch11",
+        "chp-hpm10070-ch10"
+      ]
+    },
+    {
+      "rule_id": "R010",
+      "title": "Title 13 CCR §§1855 & 1860 — Demonstration/Gathering and Structure Permit",
+      "source_type": "REGULATION",
+      "source": "https://capitolpermits.chp.ca.gov/Content/CHAPTER%2011%20CCR.pdf",
+      "citation": "13 Cal. Code Regs. §§1855, 1860",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "state-property demonstrations/gatherings",
+        "tables/booths/platforms/sound systems and other listed structures"
+      ],
+      "activities": [
+        "ASSEMBLY_DEMONSTRATION",
+        "TABLING_SETUP",
+        "LEAFLETS_LITERATURE",
+        "PETITIONING"
+      ],
+      "government_interest": [
+        "safety",
+        "conflict avoidance",
+        "uninterrupted public business",
+        "property protection"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "Chapter 11 requires a permit for a defined 'demonstration' or 'gathering' on state property and for listed structures/equipment. Applications are directed to CHP at least ten business days in advance. The definitions cover expressive activity capable of drawing a crowd and gatherings of more than two persons meeting the stated criteria. At DMV's NPF-classified facility-controlled areas this receives more governmental latitude than a TPF, but the advance-permit requirement and its application to spontaneous or low-impact expression still require constitutional testing.",
+      "constitutional_test": "NPF reasonableness + viewpoint neutrality for DMV-controlled NPF areas; do not export this rule to independently established municipal TPF sidewalk/ROW",
+      "enforcement_hook": "Title 13 permit requirements; implementation through CHP state-property permit process.",
+      "open_questions": [
+        "Whether CHP/DMV treats small or spontaneous expressive activity at Concord DMV as requiring a permit.",
+        "What local SOP, alternative location, or expedited practice exists when ten-business-day advance application is impossible.",
+        "Whether the regulation is ever applied to a single peaceful recorder rather than a defined demonstration/gathering."
+      ],
+      "authority_ids": [
+        "title13-ch11",
+        "chp-hpm10070-ch10",
+        "sammartano"
+      ]
+    },
+    {
+      "rule_id": "R011",
+      "title": "Title 13 CCR §1861 — Grounds for Order to Leave State Property",
+      "source_type": "REGULATION",
+      "source": "https://capitolpermits.chp.ca.gov/Content/CHAPTER%2011%20CCR.pdf",
+      "citation": "13 Cal. Code Regs. §1861",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "state property",
+        "entrances",
+        "foyers",
+        "corridors",
+        "offices",
+        "elevators",
+        "stairs",
+        "garages",
+        "parking lots"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL",
+        "GENERAL_EXPRESSION",
+        "RECORDING"
+      ],
+      "government_interest": [
+        "uninterrupted state business",
+        "safe access",
+        "closed-hours control",
+        "emergency management"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "This regulation is important because it does not say an employee may order a lawful visitor off state property for any reason. Its text conditions the leave order on enumerated findings: disruptive loud/unusual noise, obstruction/interference or a health/safety hazard, presence when closed without lawful reason, or refusal of an emergency order. That is a materially narrower public rule than 'staff told you to leave, therefore trespass.'",
+      "constitutional_test": "First determine whether a listed §1861 predicate actually exists; then test any expressive application under the governing forum and activity doctrine.",
+      "enforcement_hook": "Order to leave under §1861 only after the regulation's stated predicate determination.",
+      "open_questions": [
+        "What DMV/CHP training defines 'person having charge of the facility' and documents the required determination?",
+        "What additional statute is used for citation/arrest after refusal?"
+      ],
+      "authority_ids": [
+        "title13-ch11"
+      ]
+    },
+    {
+      "rule_id": "R012",
+      "title": "Title 13 CCR §1862 — Signs, Posters, Placards, Banners",
+      "source_type": "REGULATION",
+      "source": "https://capitolpermits.chp.ca.gov/Content/CHAPTER%2011%20CCR.pdf",
+      "citation": "13 Cal. Code Regs. §1862",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "state property"
+      ],
+      "activities": [
+        "SIGNS_DISPLAY"
+      ],
+      "government_interest": [
+        "passage",
+        "safety",
+        "property protection"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "The rule requires prior written permission for signs larger than 30 by 30 inches, restricts supports, requires signs to be hand-carried rather than affixed/self-supporting/leaned, and prohibits carrying signs that obstruct passage. Permission review for oversized signs is expressly stated not to be content-based. This is the actual statewide sign rule to analyze at DMV-controlled state property.",
+      "constitutional_test": "NPF reasonableness + viewpoint neutrality at DMV-controlled NPF areas; separate TPF analysis if activity occurs on a true municipal sidewalk/ROW outside state property",
+      "enforcement_hook": "Title 13 state-property regulation.",
+      "open_questions": [
+        "How CHP/DMV communicates or enforces §1862 at Concord DMV.",
+        "Whether any local sign rule adds restrictions beyond §1862."
+      ],
+      "authority_ids": [
+        "title13-ch11"
+      ]
+    },
+    {
+      "rule_id": "R013",
+      "title": "California Driver's Handbook — Behind-the-Wheel Recording-Device Prohibition",
+      "source_type": "HANDBOOK",
+      "source": "https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/the-testing-process/",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "behind-the-wheel drive test in progress"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "test integrity",
+        "examiner/test conditions",
+        "operational safety"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "DMV expressly prohibits use of a video/audio recording device during a behind-the-wheel drive test and requires a device that cannot be disabled to be blocked. This is a real current recording restriction, but it is test-specific; it does not establish a field-office lobby, waiting-area, counter, parking-lot, or general customer camera ban.",
+      "constitutional_test": "Purpose-limited examination activity + First Amendment recording analysis; scope must remain tied to the drive test rather than generalized to unrelated public-facing areas",
+      "enforcement_hook": "DMV drive-test administration rule; consequences beyond test administration require separate authority.",
+      "open_questions": [
+        "What legal/policy source underlies the handbook restriction and what consequence is imposed for refusal?",
+        "Whether any local staff instruction improperly generalizes this test-only rule beyond the drive test."
+      ]
+    }
+  ],
+  "cpra_targets": [
+    {
+      "priority": "HIGH",
+      "target": "DMV statewide and Concord-specific internal directives, security instructions, training, customer-conduct guidance, or staff scripts governing public photography, video/audio recording, phone use, information gathering, privacy at counters, and requests to stop recording.",
+      "why": "No dedicated public-facing field-office camera rule was located. Internal implementation remains the most important gap for recording.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Current sign templates/orders and Concord field-office sign inventory for entrance, waiting area, counters, knowledge-test stations, kiosk, parking, and approaches relating to cameras, phones, demonstrations, signs, privacy, conduct, or removal.",
+      "why": "The completeness sweep found substantial statewide rules but physical/local posted mandates remain unverified.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "DMV and/or responsible CHP Area guidance for implementing 13 CCR §§1855, 1860, 1861, and 1862 at DMV field offices, including the applicable field Division/Area SOP, who may act as 'person having charge,' and the citation/arrest authority used after a §1861 order.",
+      "why": "The regulation is now public and directly applicable, so CPRA should target implementation rather than asking whether a rule exists.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "MEDIUM",
+      "target": "Complaints/incidents during the last three years involving photography, recording, demonstrations, leafleting, petitioning, signs, or refusal to stop/leave at California DMV field offices, with the policy/regulation cited and disposition.",
+      "why": "Would show how Chapter 11 and any unpublished camera rules are actually used, including whether protected low-impact activity is being treated as prohibited.",
+      "only_if_gap_remains": true
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GitHubChrisRice/1A-Field-Guide/registry/schema-v1.json",
+  "title": "1A Field Guide Facility Registry v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "facility_id",
+    "slug",
+    "name",
+    "state",
+    "county",
+    "city",
+    "agency",
+    "facility_type",
+    "address",
+    "last_verified",
+    "field_status",
+    "summary",
+    "recording_summary",
+    "research",
+    "subareas",
+    "index_highlights"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "facility_id": {
+      "type": "string",
+      "pattern": "^CA-[0-9]{3}-F[0-9]{4}$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "const": "California"
+    },
+    "county": {
+      "type": "object",
+      "required": [
+        "name",
+        "fips"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "fips": {
+          "type": "string",
+          "pattern": "^[0-9]{3}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "city": {
+      "type": "string"
+    },
+    "agency": {
+      "type": "string"
+    },
+    "facility_type": {
+      "type": "string"
+    },
+    "address": {
+      "type": "object",
+      "required": [
+        "street",
+        "city",
+        "state",
+        "zip"
+      ],
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "const": "CA"
+        },
+        "zip": {
+          "type": "string",
+          "pattern": "^[0-9]{5}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "property": {
+      "type": "object"
+    },
+    "last_verified": {
+      "type": "string",
+      "format": "date"
+    },
+    "field_status": {
+      "enum": [
+        "PRE_FIELD",
+        "PARTIAL_FIELD",
+        "FIELD_VERIFIED"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recording_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "field_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_legal_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "research": {
+      "type": "object",
+      "required": [
+        "sweep_path",
+        "evidence_path"
+      ],
+      "properties": {
+        "sweep_path": {
+          "type": "string"
+        },
+        "evidence_path": {
+          "type": "string"
+        },
+        "hardening_path": {
+          "type": "string"
+        },
+        "indoor_hardening_path": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "index_highlights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "subarea_ids",
+          "label"
+        ],
+        "properties": {
+          "subarea_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "label": {
+            "type": "string"
+          },
+          "scope_suffix": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "subareas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "subarea_id",
+          "name",
+          "access",
+          "federal",
+          "california",
+          "recording",
+          "restriction_audits"
+        ],
+        "properties": {
+          "subarea_id": {
+            "type": "string",
+            "pattern": "^S[0-9]{3}$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "access": {
+            "enum": [
+              "PUBLIC",
+              "CONDITIONED_PUBLIC",
+              "RESTRICTED",
+              "UNKNOWN"
+            ]
+          },
+          "federal": {
+            "$ref": "#/$defs/forumResult"
+          },
+          "california": {
+            "$ref": "#/$defs/forumResult"
+          },
+          "recording": {
+            "type": "object",
+            "required": [
+              "status",
+              "summary"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "NO_GENERAL_BAN_LOCATED",
+                  "STRONG_ACTIVITY_PROTECTION",
+                  "ACTIVITY_SPECIFIC_RULE",
+                  "SEPARATE_ANALYSIS",
+                  "UNRESOLVED",
+                  "NOT_APPLICABLE"
+                ]
+              },
+              "summary": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "notes": {
+            "type": "string"
+          },
+          "unresolved_reason": {
+            "type": "string"
+          },
+          "authority_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "restriction_audits": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/restrictionAudit"
+            }
+          },
+          "indoor_common_space": {
+            "$ref": "#/$defs/indoorCommonSpace"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "forumResult": {
+      "type": "object",
+      "required": [
+        "classification",
+        "confidence",
+        "note"
+      ],
+      "properties": {
+        "classification": {
+          "enum": [
+            "TPF",
+            "LPF",
+            "NPF",
+            "NOT_PUBLIC",
+            "UNRESOLVED"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW",
+            "NONE"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "restrictionAudit": {
+      "type": "object",
+      "required": [
+        "activity",
+        "status",
+        "summary"
+      ],
+      "properties": {
+        "activity": {
+          "enum": [
+            "GENERAL_EXPRESSION",
+            "SPEECH_CONVERSATION",
+            "SIGNS_DISPLAY",
+            "LEAFLETS_LITERATURE",
+            "PETITIONING",
+            "ASSEMBLY_DEMONSTRATION",
+            "SOLICITATION",
+            "RECORDING",
+            "PUBLIC_COMMENT",
+            "TABLING_SETUP",
+            "EXPRESSIVE_CLOTHING",
+            "PRESS_INFORMATION_GATHERING",
+            "ACCESS_REMOVAL"
+          ]
+        },
+        "status": {
+          "enum": [
+            "NO_MATERIAL_RESTRICTION_LOCATED",
+            "RULE_LOCATED_UNTESTED",
+            "CONSTITUTIONALLY_SUPPORTED",
+            "CONSTITUTIONALITY_UNRESOLVED",
+            "FACIALLY_SUSPECT",
+            "AS_APPLIED_SUSPECT",
+            "LIKELY_INVALID",
+            "UPHELD_BINDING",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rule_source": {
+          "type": "string"
+        },
+        "constitutional_test": {
+          "type": "string"
+        },
+        "unresolved_reason": {
+          "type": "string"
+        },
+        "authority_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "indoorCommonSpace": {
+      "type": "object",
+      "required": [
+        "space_type",
+        "privacy_context",
+        "hipaa_posture",
+        "facility_responsibility",
+        "visitor_responsibility",
+        "recording_effect"
+      ],
+      "properties": {
+        "space_type": {
+          "enum": [
+            "LOBBY",
+            "FOYER",
+            "WAITING_AREA",
+            "PUBLIC_SERVICE_COUNTER",
+            "GENERAL_SHARED_INTERIOR",
+            "SHARED_CORRIDOR",
+            "PURPOSE_LIMITED_INTERIOR"
+          ]
+        },
+        "privacy_context": {
+          "enum": [
+            "NO_SPECIAL_RISK_IDENTIFIED",
+            "ROUTINE_SENSITIVE_INFORMATION_POSSIBLE",
+            "CONFIDENTIAL_INTERACTION_POSSIBLE",
+            "CONFIDENTIAL_INTERACTION_LIKELY",
+            "HIPAA_CONTEXT",
+            "UNKNOWN"
+          ]
+        },
+        "hipaa_posture": {
+          "enum": [
+            "NOT_INDICATED",
+            "POTENTIALLY_APPLICABLE",
+            "COVERED_ENTITY_CONTEXT",
+            "UNKNOWN"
+          ]
+        },
+        "facility_responsibility": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visitor_responsibility": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recording_effect": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

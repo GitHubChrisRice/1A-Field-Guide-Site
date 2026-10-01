@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-013-F0002",
+  "slug": "walnut-creek-library",
+  "last_verified": "2026-09-30",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "title": "CCCL Patron Conduct Policy (2026)",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/Patron-Conduct-Policy_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "ordinary library interior"
+      ],
+      "activities": [
+        "GENERAL_EXPRESSION",
+        "SPEECH_CONVERSATION",
+        "RECORDING",
+        "ACCESS_REMOVAL"
+      ],
+      "government_interest": [
+        "library purpose",
+        "quiet/use by patrons",
+        "staff operations",
+        "safety"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "Same system policy as Concord. It regulates library-purpose activity and disruptive conduct but does not expressly resolve peaceful recording.",
+      "constitutional_test": "LPF purpose/reasonableness + viewpoint neutrality; separate recording doctrine",
+      "enforcement_hook": "Removal/suspension under library policy; criminal enforcement requires separate statutory authority.",
+      "open_questions": [
+        "How Walnut Creek staff interpret recording/information gathering.",
+        "Any branch-specific conduct instructions."
+      ],
+      "authority_ids": [
+        "kreimer",
+        "faith-center",
+        "askins",
+        "project-veritas"
+      ]
+    },
+    {
+      "rule_id": "R002",
+      "title": "CCCL Suspension Policy (2026)",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/Suspension-Policy_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "CCCL areas under County control"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL"
+      ],
+      "government_interest": [
+        "safety",
+        "order",
+        "rule enforcement"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "Creates escalating suspensions and generic trespass escalation. Exact statutory bridge and process remain separate.",
+      "constitutional_test": "Due process + validity of underlying rule + exact trespass elements",
+      "enforcement_hook": "Generic Penal Code §602 reference.",
+      "open_questions": [
+        "How City-controlled rooms interact with County suspension authority."
+      ]
+    },
+    {
+      "rule_id": "R003",
+      "title": "CCCL Meeting Room Rules",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/LP-RMS-MeetingRoomRules_2025E_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "CCCL-controlled rooms where applicable"
+      ],
+      "activities": [
+        "SPEECH_CONVERSATION",
+        "ASSEMBLY_DEMONSTRATION",
+        "RECORDING"
+      ],
+      "government_interest": [
+        "meeting purpose",
+        "scheduling"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "System meeting-room rules are relevant but Walnut Creek includes City-managed rooms, so controller-specific rules must be separated.",
+      "constitutional_test": "LPF purpose/reasonableness + viewpoint neutrality",
+      "enforcement_hook": "Reservation/use terms.",
+      "open_questions": [
+        "Which CCCL rules remain incorporated into City-managed Oak View/Las Trampas use?"
+      ],
+      "authority_ids": [
+        "faith-center"
+      ]
+    },
+    {
+      "rule_id": "R004",
+      "title": "Walnut Creek Oak View / Las Trampas Facility Rental Rules",
+      "source_type": "FACILITY_RULE",
+      "source": "https://www.walnutcreekartsrec.org/parks-facilities/facility-rentals/walnut-creek-library-oak-view-room",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "Oak View Room",
+        "Las Trampas Conference Room"
+      ],
+      "activities": [
+        "ASSEMBLY_DEMONSTRATION",
+        "SPEECH_CONVERSATION",
+        "TABLING_SETUP",
+        "RECORDING"
+      ],
+      "government_interest": [
+        "facility scheduling",
+        "capacity",
+        "event operations"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "City rental program controls room use through reservation/operational terms. Exact live terms and recording implications must be evaluated separately from the ordinary library interior.",
+      "constitutional_test": "LPF purpose/reasonableness + viewpoint neutrality",
+      "enforcement_hook": "City rental/use agreement.",
+      "open_questions": [
+        "Obtain current complete rental contract/terms and any recording restrictions."
+      ]
+    },
+    {
+      "rule_id": "R005",
+      "title": "Rules for Exhibits / Display / Distribution of Non-Library Materials",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2024/10/LP-rulesforexhibitsdisplay-October2024E.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "opened library display/distribution channels"
+      ],
+      "activities": [
+        "SIGNS_DISPLAY",
+        "LEAFLETS_LITERATURE",
+        "PETITIONING"
+      ],
+      "government_interest": [
+        "channel purpose",
+        "space limits"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "The County intentionally opens exhibit/display/distribution channels while imposing subject/content limits, including restrictions on religious-service material and party/candidate advocacy. Those rules require a channel-specific LPF reasonableness/viewpoint-neutrality analysis and can be stress-tested from the public text now.",
+      "constitutional_test": "LPF purpose/reasonableness + viewpoint neutrality",
+      "enforcement_hook": "Authorization process.",
+      "open_questions": [
+        "Whether each subject restriction is reasonable in light of the opened channel and viewpoint neutral.",
+        "Whether Walnut Creek has adopted branch-specific additions."
+      ],
+      "authority_ids": [
+        "faith-center"
+      ]
+    },
+    {
+      "rule_id": "R006",
+      "title": "California Government Code §7927.105 — Library Patron Records",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Gov. Code §7927.105",
+      "applies_to": [
+        "library-maintained patron records"
+      ],
+      "activities": [
+        "PRESS_INFORMATION_GATHERING",
+        "RECORDING"
+      ],
+      "government_interest": [
+        "patron confidentiality"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Confidentiality rule for library-maintained records, not a visitor camera statute.",
+      "constitutional_test": "Privacy context only unless another rule directly regulates visitor conduct.",
+      "enforcement_hook": "Records confidentiality rule.",
+      "open_questions": []
+    },
+    {
+      "rule_id": "R007",
+      "title": "California Penal Code §632 — Confidential Communications",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=632.",
+      "citation": "Cal. Penal Code §632",
+      "applies_to": [
+        "audio capture of communications"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "confidential communications"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "Applies only where statutory confidentiality elements are met; not a blanket interior-audio ban.",
+      "constitutional_test": "Statutory elements + First Amendment analysis",
+      "enforcement_hook": "Penal Code §632.",
+      "open_questions": [
+        "Which counter/private-room interactions satisfy the confidentiality test?"
+      ],
+      "authority_ids": [
+        "pc632"
+      ]
+    },
+    {
+      "rule_id": "R008",
+      "title": "California Trespass / Public-Agency Obstruction Statutes",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Penal Code §§602, 602.1",
+      "applies_to": [
+        "removal/exclusion disputes"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL"
+      ],
+      "government_interest": [
+        "property control",
+        "agency operations"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "California trespass and public-agency-obstruction doctrine is now researched at the statewide level. A particular removal remains element- and fact-specific; a library policy violation alone does not establish the criminal-law branch.",
+      "constitutional_test": "Exact elements + constitutional savings clause + validity of underlying exclusion",
+      "enforcement_hook": "Penal Code §§602/602.1 as applicable.",
+      "open_questions": [
+        "Which controller—City or County—asserts exclusion authority in each room/area?"
+      ],
+      "authority_ids": [
+        "pc6021"
+      ]
+    },
+    {
+      "rule_id": "R009",
+      "title": "CCCL Patron Conduct Policy — Panhandling / Soliciting Donations",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/Patron-Conduct-Policy_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "library property, including potentially exterior areas covered by the policy"
+      ],
+      "activities": [
+        "SOLICITATION"
+      ],
+      "government_interest": [
+        "patron comfort",
+        "order",
+        "library operations"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "The County policy prohibits panhandling and soliciting donations or contributions on library property. Walnut Creek's Registry includes exterior plaza/park/lot subareas with strong TPF classifications as well as a purpose-limited interior, so the policy cannot be given one building-wide constitutional answer.",
+      "constitutional_test": "TPF exterior: applicable solicitation/time-place-manner scrutiny; LPF interior: purpose/reasonableness + viewpoint neutrality",
+      "enforcement_hook": "Library removal/suspension policy; criminal enforcement requires independent statutory authority.",
+      "open_questions": [
+        "Whether the rule is actually enforced on the civic plaza, Civic Park connection, or surface lot.",
+        "What justification supports any exterior application."
+      ],
+      "authority_ids": [
+        "schaumburg",
+        "prigmore"
+      ]
+    },
+    {
+      "rule_id": "R010",
+      "title": "Walnut Creek Municipal Code ch. 10-8 — Public-Land Sign Placement",
+      "source_type": "ORDINANCE",
+      "source": "https://ecode360.com/48496878",
+      "citation": "Walnut Creek Mun. Code §§ 10-8.107–10-8.108",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "publicly owned/maintained land",
+        "public rights-of-way",
+        "objects in public rights-of-way"
+      ],
+      "activities": [
+        "SIGNS_DISPLAY"
+      ],
+      "government_interest": [
+        "traffic safety",
+        "visual clutter",
+        "property control"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "The current code restricts signs erected without property-owner permission and prohibits temporary signs from being attached to public objects or erected on publicly owned/maintained land. On its face, this is a placement/erection/attachment regime; it should not be silently converted into a ban on a person lawfully hand-carrying an expressive sign.",
+      "constitutional_test": "Exact conduct first: erected/placed/attached sign versus hand-carried expression; then forum and applicable sign/time-place-manner doctrine",
+      "enforcement_hook": "Municipal sign-code enforcement for signs within the chapter's scope.",
+      "open_questions": [
+        "Whether City staff distinguish hand-carried signs from signs placed or erected on public property.",
+        "Whether any library-specific signage or guidance broadens the published code."
+      ],
+      "authority_ids": [
+        "wc-sign-code"
+      ]
+    }
+  ],
+  "cpra_targets": [
+    {
+      "priority": "HIGH",
+      "target": "Current CCCL internal staff/security guidance, training, scripts, supervisor instructions, and sign templates addressing photography, recording, observation, information gathering, solicitation, or the 'library-purpose activity' clause, including Walnut Creek-specific material.",
+      "why": "This should be combined with the Concord Library request at the system level rather than duplicated by branch.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Current City of Walnut Creek Oak View and Las Trampas rental agreements, incorporated use rules, staff enforcement guidance, and any photography/recording or expressive-use restrictions.",
+      "why": "The City controls important LPF room channels whose complete live terms remain a material gap.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "MEDIUM",
+      "target": "Current City/Library signage orders or templates for the Walnut Creek Library plaza, entrances, garage/circulation, and interior addressing signs, solicitation, recording, assembly, or removal.",
+      "why": "The municipal sign code is public, but facility-specific posted mandates and their authority remain unverified.",
+      "only_if_gap_remains": true
+    }
+  ]
+}

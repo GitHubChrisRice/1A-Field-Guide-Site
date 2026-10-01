@@ -1,0 +1,14 @@
+# Local documentation preview
+.venv-preview/
+site-preview/
+
+# Facility Prep generated evidence packets
+facility-prep-output/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS/editor
+.DS_Store
+Thumbs.db

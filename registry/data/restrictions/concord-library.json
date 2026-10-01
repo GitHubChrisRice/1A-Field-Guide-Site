@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-013-F0001",
+  "slug": "concord-library",
+  "last_verified": "2026-09-30",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "title": "CCCL Patron Conduct Policy (2026)",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/Patron-Conduct-Policy_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "ordinary public library interior",
+        "public circulation/service areas"
+      ],
+      "activities": [
+        "GENERAL_EXPRESSION",
+        "SPEECH_CONVERSATION",
+        "RECORDING",
+        "ACCESS_REMOVAL"
+      ],
+      "government_interest": [
+        "library purpose",
+        "quiet/use by patrons",
+        "staff operations",
+        "safety"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "Requires patrons to be engaged in activities associated with public-library use and regulates disruption, obstruction, harassment, noise, and staff-directed compliance. It does not expressly resolve peaceful recording. Whether recording/information gathering may be excluded under the library-purpose clause remains activity-specific.",
+      "constitutional_test": "LPF purpose/reasonableness + viewpoint neutrality; separate recording doctrine where recording is restricted",
+      "enforcement_hook": "Policy allows removal/suspension; criminal enforcement requires separate statutory authority.",
+      "open_questions": [
+        "Does CCCL interpret peaceful recording/information gathering as library-purpose activity?",
+        "What staff training governs camera encounters?"
+      ],
+      "authority_ids": [
+        "kreimer",
+        "faith-center",
+        "askins",
+        "project-veritas"
+      ]
+    },
+    {
+      "rule_id": "R002",
+      "title": "CCCL Suspension Policy (2026)",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/Suspension-Policy_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "all CCCL facilities covered by suspension"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL",
+        "GENERAL_EXPRESSION"
+      ],
+      "government_interest": [
+        "safety",
+        "order",
+        "rule enforcement"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "Creates escalating suspension periods and states that return during suspension may lead to law-enforcement contact and arrest for trespass under Penal Code §602. The policy does not itself identify the exact criminal subsection/elements.",
+      "constitutional_test": "Due process + underlying validity of the conduct rule + element-specific trespass analysis",
+      "enforcement_hook": "Generic reference to Penal Code §602; exact subsection and predicates unresolved.",
+      "open_questions": [
+        "What internal criteria govern one-day versus longer suspensions?",
+        "What notice/appeal records exist?",
+        "What exact §602 subsection is used in practice?"
+      ],
+      "authority_ids": [
+        "pc6021"
+      ]
+    },
+    {
+      "rule_id": "R003",
+      "title": "Children and Teen Area Policy",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/LP-Children-Teen-Area-Policy_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "designated children areas",
+        "designated teen areas"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL",
+        "GENERAL_EXPRESSION",
+        "RECORDING"
+      ],
+      "government_interest": [
+        "age/purpose allocation",
+        "child safety",
+        "collection use"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "Reserves designated children/teen areas primarily to intended age groups and accompanying or collection-using patrons at staff discretion. The policy does not itself create a systemwide camera ban.",
+      "constitutional_test": "Area-purpose reasonableness + viewpoint neutrality; recording restrictions require separate analysis",
+      "enforcement_hook": "Staff may redirect access; downstream removal authority depends on applicable policy/statute.",
+      "open_questions": [
+        "How is staff discretion constrained and trained?",
+        "Are any branch-specific camera rules layered onto these areas?"
+      ]
+    },
+    {
+      "rule_id": "R004",
+      "title": "CCCL Meeting Room Rules",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/LP-RMS-MeetingRoomRules_2025E_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "Concord meeting room"
+      ],
+      "activities": [
+        "SPEECH_CONVERSATION",
+        "ASSEMBLY_DEMONSTRATION",
+        "PUBLIC_COMMENT",
+        "RECORDING"
+      ],
+      "government_interest": [
+        "meeting-room purpose",
+        "scheduling",
+        "facility operations"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "Opens meeting rooms for defined educational/cultural/community uses under reservation rules. Individual subject/use restrictions must be tested within the limited public forum rather than assumed valid from the existence of the room rules.",
+      "constitutional_test": "LPF purpose/reasonableness + viewpoint neutrality",
+      "enforcement_hook": "Reservation/use terms; removal requires independent access/enforcement authority where disputed.",
+      "open_questions": [
+        "What Concord-specific room terms are currently imposed in practice?",
+        "Are recording rules imposed on room users?"
+      ],
+      "authority_ids": [
+        "faith-center"
+      ]
+    },
+    {
+      "rule_id": "R005",
+      "title": "Rules for Exhibits / Display / Distribution of Non-Library Materials",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2024/10/LP-rulesforexhibitsdisplay-October2024E.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "opened display/distribution channels"
+      ],
+      "activities": [
+        "SIGNS_DISPLAY",
+        "LEAFLETS_LITERATURE",
+        "PETITIONING"
+      ],
+      "government_interest": [
+        "channel purpose",
+        "space limits",
+        "library neutrality/operations"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "The County intentionally opens exhibit/display/distribution channels for cultural, educational, or civic material while expressly excluding religious services/activities and advocacy or support for a political party or candidate, and requiring authorization. Those subject/content restrictions require a channel-specific limited-public-forum analysis; the policy text itself supplies enough information to begin that constitutional test without CPRA.",
+      "constitutional_test": "LPF purpose/reasonableness + viewpoint neutrality",
+      "enforcement_hook": "Display/distribution authorization process.",
+      "open_questions": [
+        "Whether each subject restriction is reasonable in light of the specific opened channel and viewpoint neutral under current Ninth Circuit doctrine.",
+        "How the restrictions are applied at Concord in practice.",
+        "Whether any branch-specific additional rules have been adopted."
+      ],
+      "authority_ids": [
+        "faith-center"
+      ]
+    },
+    {
+      "rule_id": "R006",
+      "title": "Self-Service Sundays Access Agreement / Program Conditions",
+      "source_type": "CONTRACT_TERMS",
+      "source": "https://cdn-web-main.bibliocms.com/wp-content/uploads/sites/72/2026/03/SSS-Agreement-13-and-older-FINAL2_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "Concord Self-Service Sunday interior"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL",
+        "RECORDING",
+        "GENERAL_EXPRESSION"
+      ],
+      "government_interest": [
+        "after-hours access control",
+        "security",
+        "library-purpose use"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "The current June 2026 agreement is public. It requires compliance with all library policies and with announcements/directions from library staff, security, County agents, or the PA system; refusal to leave if asked may lead to suspension. It also states that some interior/exterior areas may be monitored by security cameras and encourages patrons to carry a phone. The direction/refusal clauses cannot be treated as self-validating authority for an otherwise unconstitutional command.",
+      "constitutional_test": "Conditioned-access/LPF analysis + unconstitutional-conditions concerns where expressive rights are burdened",
+      "enforcement_hook": "Conditioned-access agreement and library suspension process; any criminal enforcement still requires independent legal authority.",
+      "open_questions": [
+        "What internal guidance limits or interprets directions given by security/County agents during Self-Service Sundays?",
+        "What rule, if any, governs patron photography/recording during the program?"
+      ]
+    },
+    {
+      "rule_id": "R007",
+      "title": "California Government Code §7927.105 — Library Patron Records",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Gov. Code §7927.105",
+      "applies_to": [
+        "library-maintained patron registration/use records"
+      ],
+      "activities": [
+        "PRESS_INFORMATION_GATHERING",
+        "RECORDING"
+      ],
+      "government_interest": [
+        "patron-record confidentiality"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Protects qualifying library-maintained patron records from disclosure. It is a confidentiality duty governing records, not by its text a categorical camera prohibition on ordinary patrons.",
+      "constitutional_test": "Use as privacy-context authority; any visitor recording restriction still requires independent legal basis.",
+      "enforcement_hook": "Public-records confidentiality rule, not a general patron camera offense.",
+      "open_questions": []
+    },
+    {
+      "rule_id": "R008",
+      "title": "California Penal Code §632 — Confidential Communications",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=632.",
+      "citation": "Cal. Penal Code §632",
+      "applies_to": [
+        "audio capture of communications"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "confidential communications"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "Can directly regulate intentional recording of a confidential communication; applicability depends on objective circumstances and statutory exclusions. It is not a blanket indoor-audio prohibition.",
+      "constitutional_test": "Statutory elements + First Amendment analysis where protected recording is burdened",
+      "enforcement_hook": "Penal Code §632 where elements are met.",
+      "open_questions": [
+        "Which library interactions, if any, objectively qualify as confidential communications?"
+      ],
+      "authority_ids": [
+        "pc632"
+      ]
+    },
+    {
+      "rule_id": "R009",
+      "title": "California Trespass / Public-Agency Obstruction Statutes",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Penal Code §§602, 602.1",
+      "applies_to": [
+        "removal/exclusion disputes"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL"
+      ],
+      "government_interest": [
+        "property control",
+        "unobstructed agency operations"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "California trespass and public-agency-obstruction doctrine is now researched at the statewide level. Facility application remains element- and fact-specific; a policy violation or leave demand does not by itself establish the applicable statutory predicates.",
+      "constitutional_test": "Exact statutory elements + constitutional savings clause + validity of underlying exclusion",
+      "enforcement_hook": "Penal Code §§602/602.1 only when the selected subsection/elements are satisfied.",
+      "open_questions": [
+        "Which subsection does CCCL actually request police to use after suspension/refusal?"
+      ],
+      "authority_ids": [
+        "pc6021"
+      ]
+    },
+    {
+      "rule_id": "R010",
+      "title": "CCCL Patron Conduct Policy — Panhandling / Soliciting Donations",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://ccclib.org/wp-content/uploads/sites/72/2026/03/Patron-Conduct-Policy_ADA.pdf",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "library property, including potentially exterior areas covered by the policy"
+      ],
+      "activities": [
+        "SOLICITATION"
+      ],
+      "government_interest": [
+        "patron comfort",
+        "order",
+        "library operations"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "The current policy prohibits panhandling and soliciting donations or contributions on library property, and the Suspension Policy places this conduct in the one-day-to-one-week category. That breadth creates an immediate area-specific constitutional question because Concord's Registry includes exterior subareas classified TPF/HIGH, while the ordinary interior is purpose-limited. The same words may therefore face materially different scrutiny depending on where they are enforced.",
+      "constitutional_test": "TPF: applicable speech/solicitation time-place-manner scrutiny; LPF interior: purpose/reasonableness + viewpoint neutrality",
+      "enforcement_hook": "Library removal/suspension policy; any arrest requires separate statutory authority.",
+      "open_questions": [
+        "Whether CCCL applies this prohibition to peaceful charitable solicitation on exterior TPF-classified areas.",
+        "Whether the County distinguishes passive requests/signs from direct solicitation.",
+        "What factual justification supports the property-wide scope."
+      ],
+      "authority_ids": [
+        "schaumburg",
+        "prigmore"
+      ]
+    },
+    {
+      "rule_id": "R011",
+      "title": "Concord Municipal Code ch. 9.08 — Solicitation Location Restrictions",
+      "source_type": "ORDINANCE",
+      "source": "https://www.codepublishing.com/CA/Concord/html/Concord09/Concord0908.html",
+      "citation": "Concord Mun. Code §§ 9.08.020–9.08.050",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "public parking lots/structures in Concord",
+        "within 30 feet of qualifying queues",
+        "other enumerated locations"
+      ],
+      "activities": [
+        "SOLICITATION"
+      ],
+      "government_interest": [
+        "public safety",
+        "captive-audience concerns",
+        "access"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "Concord prohibits solicitation in any public parking lot or structure and within 30 feet of a queue of five or more persons, among other locations. This is directly material to the Library's public lots and potentially entrance queues. The California Supreme Court upheld a different Los Angeles solicitation scheme whose parking-lot restriction applied after dark; Concord's all-times parking-lot text is broader and requires its own analysis rather than borrowing that result.",
+      "constitutional_test": "California Speech Clause + First Amendment forum/time-place-manner analysis, mapped to each exact Library subarea",
+      "enforcement_hook": "Infraction; three or more violations within one year may be charged as a misdemeanor under the ordinance.",
+      "open_questions": [
+        "How §9.08.040 is applied to peaceful solicitation in the Library's TPF-classified exterior areas.",
+        "Whether passive signs or responses to inquiries fall outside the ordinance's definition of solicitation."
+      ],
+      "authority_ids": [
+        "la-alliance",
+        "schaumburg",
+        "concord-solicitation",
+        "prigmore"
+      ]
+    }
+  ],
+  "cpra_targets": [
+    {
+      "priority": "HIGH",
+      "target": "Current CCCL internal staff/security guidance, training, scripts, supervisor instructions, and sign templates addressing photography, video/audio recording, observation, information gathering, solicitation, or the 'library-purpose activity' clause, including Concord-specific material.",
+      "why": "The public rules expose constitutional questions but do not show how staff are trained to apply them. This single system-level request can replace several narrower duplicate requests.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Current implementation guidance for suspensions/removals, including the Penal Code subsection(s) or law-enforcement instructions relied on when a suspended patron refuses to leave, and any instructions for one-day through one-week suspensions.",
+      "why": "The public policy cites Penal Code §602 generically and provides an express appeal only for suspensions longer than one week; implementation records could clarify the enforcement and process actually used.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "MEDIUM",
+      "target": "Records from the last three years identifying incidents or complaints in which recording, photography, peaceful solicitation, or non-disruptive information gathering was cited as a basis for removal or suspension at Concord Library, including the policy cited and disposition.",
+      "why": "Would test actual interpretation, selective enforcement, and whether the newly identified solicitation/recording issues are merely theoretical.",
+      "only_if_gap_remains": true
+    }
+  ]
+}
