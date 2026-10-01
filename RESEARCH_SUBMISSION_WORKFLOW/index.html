@@ -2635,6 +2635,7 @@ Repository publication / merge
 <li>dependency/impact references.</li>
 </ul>
 <p>Each PublicationCandidateRevision must retain links back to every research revision materially supporting that exact public version.</p>
+<p><code>exported</code> means the approved revision has been handed to a controlled external preparation artifact with a recorded external reference. It does not mean the repository change was merged or that the public artifact was published; those are later repository/publication transitions.</p>
 <h3 id="publicationcandidaterevision">PublicationCandidateRevision<a class="headerlink" href="#publicationcandidaterevision" title="Permanent link">&para;</a></h3>
 <p>Final-publication review attaches to an immutable PublicationCandidateRevision.</p>
 <p>Minimum conceptual fields:</p>
@@ -2738,14 +2739,14 @@ Repository publication / merge
 <h1 id="relationship-to-current-repository-contributions">Relationship to current repository contributions<a class="headerlink" href="#relationship-to-current-repository-contributions" title="Permanent link">&para;</a></h1>
 <p>Direct GitHub Pull Requests from trusted repository maintainers may continue during development, but they should follow the same substantive evidence and review principles.</p>
 <p>The future Coalition portal is the ordinary-member path. Once implemented, ordinary members should not need repository access to contribute.</p>
-<p>The repository remains the authoritative publication source until governance deliberately changes that boundary.</p>
+<p>After the repository split, <code>GitHubChrisRice/1A-Field-Guide-Site</code> protected <code>main</code> is the authoritative public-source repository, while <code>GitHubChrisRice/1A-Field-Guide</code> remains the private internal research/workspace repository. Generated website output is deployed separately from authoritative source, normally to <code>gh-pages</code> or an equivalent Pages deployment target.</p>
+<p>Controlled export from an approved PublicationCandidateRevision into GitHub is defined in <a href="../GITHUB_PUBLICATION_INTEGRATION/">Controlled GitHub Publication Integration</a>. Under that design, issue-only preparation remains available during migration; branch + draft-PR automation begins only after the public authoritative <code>main</code> branch is technically protected and never includes service-principal merge authority. See <a href="../PUBLIC_PRIVATE_REPOSITORY_SPLIT/">Public/Private Repository Split</a>.</p>
 <h1 id="decisions-intentionally-deferred">Decisions intentionally deferred<a class="headerlink" href="#decisions-intentionally-deferred" title="Permanent link">&para;</a></h1>
 <p>This workflow does not decide:</p>
 <ul>
 <li>contribution point values or promotion thresholds (#41);</li>
 <li>detailed identity verification, retention, and privacy policy (#43);</li>
 <li>national UI design (#44);</li>
-<li>exact GitHub export/integration mechanics (#45);</li>
 <li>final database technology;</li>
 <li>whether any future role receives direct repository merge authority.</li>
 </ul>

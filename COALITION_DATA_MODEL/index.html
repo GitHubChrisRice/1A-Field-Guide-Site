@@ -1960,6 +1960,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#repositoryexport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RepositoryExport
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#serviceprincipal" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2527,13 +2538,39 @@
 <li><code>id</code></li>
 <li><code>source_type</code>, <code>source_id</code></li>
 <li><code>publication_target</code></li>
-<li><code>action</code> - prepared, approved_for_export, issue_created, branch_created, draft_pr_created, merged, published, withdrawn, corrected</li>
+<li><code>action</code> - prepared, approved_for_export, export_requested, export_validation_failed, issue_created, branch_created, draft_pr_created, export_failed, diverged, reconciled, merged, published, withdrawn, corrected</li>
 <li><code>performed_by</code> - human membership or service principal</li>
 <li><code>external_reference</code> - nullable GitHub/public artifact reference</li>
 <li><code>created_at</code></li>
 <li><code>metadata</code></li>
 </ul>
 <p>PublicationEvents record what happened; they do not themselves authorize the next action.</p>
+<h3 id="repositoryexport">RepositoryExport<a class="headerlink" href="#repositoryexport" title="Permanent link">&para;</a></h3>
+<p>Operational mapping from one exact approved PublicationCandidateRevision to one controlled external repository-preparation attempt.</p>
+<p>Minimum fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>publication_candidate_revision_id</code></li>
+<li><code>approved_content_hash</code></li>
+<li><code>export_mode</code> - ISSUE, BRANCH_DRAFT_PR, or approved extension</li>
+<li><code>target_repository</code></li>
+<li><code>target_base_ref</code></li>
+<li><code>target_path_allowlist</code></li>
+<li><code>requested_by_membership_id</code></li>
+<li><code>service_principal_id</code></li>
+<li><code>status</code></li>
+<li><code>request_correlation_id</code></li>
+<li><code>base_sha_at_start</code> - nullable</li>
+<li><code>branch_ref</code> - nullable</li>
+<li><code>head_sha</code> - nullable</li>
+<li><code>issue_number</code> - nullable</li>
+<li><code>pull_request_number</code> - nullable</li>
+<li><code>external_url</code> - nullable</li>
+<li><code>attempt_count</code></li>
+<li><code>last_error_code</code> - nullable</li>
+<li><code>created_at</code>, <code>updated_at</code>, <code>completed_at</code> - completed_at nullable</li>
+</ul>
+<p>RepositoryExport is operational state, not substantive authority. It must remain tied to the exact approved revision/hash and follows the controls in <a href="../GITHUB_PUBLICATION_INTEGRATION/">Controlled GitHub Publication Integration</a>.</p>
 <h3 id="serviceprincipal">ServicePrincipal<a class="headerlink" href="#serviceprincipal" title="Permanent link">&para;</a></h3>
 <p>Non-human system identity, including future GitHub integration.</p>
 <p>Minimum fields:</p>
@@ -2589,6 +2626,8 @@ ResearchSubmissionRevision 0..*---0..* PublicationCandidateRevision
 PublicationCandidate 1---1..* PublicationCandidateRevision
 PublicationCandidateRevision 1---0..* Review
 PublicationCandidate 1---0..* PublicationEvent
+PublicationCandidateRevision 1---0..* RepositoryExport
+RepositoryExport *---1 ServicePrincipal
 
 ServicePrincipal 1---* AuditEvent
 Membership 1---* AuditEvent
@@ -2972,7 +3011,7 @@ Membership 1---* AuditEvent
 <li>detailed structured submission/review rules are defined by #42 in <code>docs/RESEARCH_SUBMISSION_WORKFLOW.md</code>;</li>
 <li>detailed privacy, attribution, sensitive-access, and lifecycle retention rules are defined by #43 in <code>docs/PRIVACY_ATTRIBUTION_RETENTION.md</code>;</li>
 <li>UI design for the nationwide shell (#44);</li>
-<li>GitHub App/token implementation details (#45);</li>
+<li>controlled GitHub export mechanics are defined by #45 in <code>docs/GITHUB_PUBLICATION_INTEGRATION.md</code>; future credential/provider implementation choices remain implementation details;</li>
 <li>whether future governance delegates final repository merge authority beyond the current operator.</li>
 </ul>
 <p>Those decisions must not be inferred from this schema.</p>

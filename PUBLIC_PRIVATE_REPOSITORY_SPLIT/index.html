@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://githubchrisrice.github.io/1A-Field-Guide-Site/COALITION_ARCHITECTURE/">
+        <link rel="canonical" href="https://githubchrisrice.github.io/1A-Field-Guide-Site/PUBLIC_PRIVATE_REPOSITORY_SPLIT/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Coalition Architecture - 1A Field Guide</title>
+        <title>Public/Private Repository Split - 1A Field Guide</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#coalition-architecture" class="md-skip">
+        <a href="#publicprivate-repository-split" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Coalition Architecture
+              Public/Private Repository Split
             
           </span>
         </div>
@@ -1695,10 +1695,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+  <a href="#decision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Purpose
+        Decision
       
     </span>
   </a>
@@ -1706,60 +1706,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jurisdiction-model" class="md-nav__link">
+  <a href="#why-this-split" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Jurisdiction model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Jurisdiction model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#field-guide-and-division-qualification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Field Guide and division qualification
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#facility-research-maturity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Facility-research maturity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#countycounty-equivalent-coverage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        County/county-equivalent coverage
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#member-progression" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Member progression
+        Why this split
       
     </span>
   </a>
@@ -1767,10 +1717,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contribution-model" class="md-nav__link">
+  <a href="#publication-boundary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contribution model
+        Publication boundary
       
     </span>
   </a>
@@ -1778,10 +1728,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#research-pipeline" class="md-nav__link">
+  <a href="#public-source-inclusion-rule" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Research pipeline
+        Public-source inclusion rule
       
     </span>
   </a>
@@ -1789,10 +1739,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-boundary" class="md-nav__link">
+  <a href="#private-workspace-retention-rule" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitHub boundary
+        Private-workspace retention rule
       
     </span>
   </a>
@@ -1800,10 +1750,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#research-integrity" class="md-nav__link">
+  <a href="#project-origin-and-license" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Research integrity
+        Project origin and license
       
     </span>
   </a>
@@ -1811,10 +1761,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#privacy-and-attribution" class="md-nav__link">
+  <a href="#migration-safety-rule" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Privacy and attribution
+        Migration safety rule
       
     </span>
   </a>
@@ -1822,10 +1772,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#division-autonomy" class="md-nav__link">
+  <a href="#current-operational-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Division autonomy
+        Current operational status
       
     </span>
   </a>
@@ -1833,10 +1783,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#human-decision-boundaries" class="md-nav__link">
+  <a href="#rollback" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Human decision boundaries
+        Rollback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success criteria
       
     </span>
   </a>
@@ -1860,107 +1821,151 @@
 
 
 
-<h1 id="coalition-architecture">Coalition Architecture<a class="headerlink" href="#coalition-architecture" title="Permanent link">&para;</a></h1>
-<p>This document records durable boundaries for the nationwide 1A Field Guide Coalition platform. Implementation details may evolve, but changes to these boundaries require deliberate review.</p>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>The Coalition is a standards-governed research network supporting the 1A Field Guide. California is the reference implementation for research rigor; nationwide expansion must preserve or strengthen that standard.</p>
-<p>The platform separates contribution from publication. Members may submit research without receiving repository access or authority to publish Field Guide conclusions.</p>
-<h2 id="jurisdiction-model">Jurisdiction model<a class="headerlink" href="#jurisdiction-model" title="Permanent link">&para;</a></h2>
-<p>The platform represents:</p>
+<h1 id="publicprivate-repository-split">Public/Private Repository Split<a class="headerlink" href="#publicprivate-repository-split" title="Permanent link">&para;</a></h1>
+<p>This document records the repository architecture selected for the 1A Field Guide publication system.</p>
+<h2 id="decision">Decision<a class="headerlink" href="#decision" title="Permanent link">&para;</a></h2>
+<p>The project will <strong>not</strong> make the existing <code>GitHubChrisRice/1A-Field-Guide</code> repository public merely to obtain free branch-protection features.</p>
+<p>Instead:</p>
+<table>
+<thead>
+<tr>
+<th>Repository / branch</th>
+<th>Visibility</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GitHubChrisRice/1A-Field-Guide</code></td>
+<td>Private</td>
+<td>Internal research/workspace, investigations, raw or unpublished evidence, requester/member-sensitive material, Coalition administration, pre-publication work</td>
+</tr>
+<tr>
+<td><code>GitHubChrisRice/1A-Field-Guide-Site/main</code></td>
+<td>Public</td>
+<td>Authoritative reviewed public source for the Field Guide, public Registry, approved public methodology/research, licensing/origin notices, and site build configuration</td>
+</tr>
+<tr>
+<td><code>GitHubChrisRice/1A-Field-Guide-Site/gh-pages</code></td>
+<td>Public generated output</td>
+<td>Built MkDocs website served through GitHub Pages</td>
+</tr>
+</tbody>
+</table>
+<p>The public repository is therefore both the canonical public-source repository and the host for generated Pages output, but source and generated output occupy separate branches and have separate authority paths.</p>
+<h2 id="why-this-split">Why this split<a class="headerlink" href="#why-this-split" title="Permanent link">&para;</a></h2>
+<p>The private repository contains material that should not become public merely to obtain repository protections.</p>
+<p>The public repository can use GitHub's public-repository branch/ruleset protections without requiring a paid plan. This lets the future Coalition exporter prepare draft pull requests against protected public <code>main</code> while preserving a separate human merge gate.</p>
+<p>The split also makes publication intentional. Internal existence does not imply public release.</p>
+<h2 id="publication-boundary">Publication boundary<a class="headerlink" href="#publication-boundary" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>PRIVATE 1A-Field-Guide
+internal research / evidence / review
+        |
+        | approved immutable PublicationCandidateRevision
+        v
+controlled export
+        |
+        v
+PUBLIC 1A-Field-Guide-Site
+protected main
+        |
+        | draft PR + checks + human merge
+        v
+authoritative public source
+        |
+        | deterministic MkDocs build
+        v
+gh-pages
+        |
+        v
+public website
+</code></pre></div>
+<h2 id="public-source-inclusion-rule">Public-source inclusion rule<a class="headerlink" href="#public-source-inclusion-rule" title="Permanent link">&para;</a></h2>
+<p>A file belongs in public-source <code>main</code> only when it is deliberately appropriate for public inspection and publication.</p>
+<p>Likely public-source categories include:</p>
 <ul>
-<li>Federal/national material;</li>
-<li>federal judicial circuits as an applicable legal dimension;</li>
-<li>all 50 states and the District of Columbia from inception;</li>
-<li>subordinate regional/local organization where useful;</li>
-<li>facility-specific records and investigations.</li>
+<li>national and state Field Guide doctrine;</li>
+<li>public jurisdiction status and qualification summaries;</li>
+<li>approved public Registry entries and public-safe structured Registry data;</li>
+<li>public methodology and source-provenance material intended for readers;</li>
+<li>approved public research/evidence derivatives;</li>
+<li>MkDocs configuration and public build tooling;</li>
+<li>README, license, contribution guidance, project-origin notice, and other public governance needed to understand the published project.</li>
 </ul>
-<p>Jurisdiction readiness has two separate dimensions that must not be collapsed into one status.</p>
-<h3 id="field-guide-and-division-qualification">Field Guide and division qualification<a class="headerlink" href="#field-guide-and-division-qualification" title="Permanent link">&para;</a></h3>
-<p>A state or other jurisdiction intended to support facility analysis may be:</p>
+<p>A file does <strong>not</strong> become public merely because it currently exists under <code>docs/</code> in the private repository or because the current MkDocs build happens to render it.</p>
+<h2 id="private-workspace-retention-rule">Private-workspace retention rule<a class="headerlink" href="#private-workspace-retention-rule" title="Permanent link">&para;</a></h2>
+<p>The following remain private by default unless an exact derived publication artifact later passes the publication workflow:</p>
+<ul>
+<li>investigations and investigation dashboard data;</li>
+<li>requester identity/contact information;</li>
+<li>member/authentication/private attribution information;</li>
+<li>raw records productions or unpublished evidence;</li>
+<li>sensitive attachments and metadata;</li>
+<li>internal review discussion not intended for publication;</li>
+<li>administrative audit/security records;</li>
+<li>credentials/secrets;</li>
+<li>draft or rejected material;</li>
+<li>pre-publication research whose release has not been deliberately approved.</li>
+</ul>
+<p>Where public material depends on a private source, publish an approved derivative, citation, excerpt, summary, or sanitized evidence artifact rather than copying the private working record wholesale.</p>
+<h2 id="project-origin-and-license">Project origin and license<a class="headerlink" href="#project-origin-and-license" title="Permanent link">&para;</a></h2>
+<p>The public source repository should contain, at minimum:</p>
+<ul>
+<li><code>LICENSE.md</code>;</li>
+<li><code>PROJECT_ORIGIN.md</code>;</li>
+<li>a README identifying the canonical repository/site; and</li>
+<li>a site footer or equivalent public notice identifying the canonical project.</li>
+</ul>
+<p>The existing handbook/documentation license is CC BY-SA 4.0. The project-origin notice is intended to make canonical provenance clear; it is not represented as an undeletable file in third-party clones.</p>
+<p>The canonical repository should protect origin/license files through normal branch protections and, where useful, CODEOWNERS/review rules. A signed release/tag may additionally provide tamper-evident historical evidence of the public launch state.</p>
+<p>Executable software/build tooling should receive an appropriate software license rather than relying silently on the documentation license.</p>
+<h2 id="migration-safety-rule">Migration safety rule<a class="headerlink" href="#migration-safety-rule" title="Permanent link">&para;</a></h2>
+<p>Do not replace the current public repository <code>main</code> until the current generated site has first been preserved and GitHub Pages has been pointed at the intended deployment branch/workflow.</p>
+<p>The migration sequence is:</p>
 <ol>
-<li><strong>Inactive</strong> - no qualified jurisdiction-specific Field Guide exists yet.</li>
-<li><strong>Field Guide Development</strong> - the jurisdiction's legal/doctrinal framework is being built or reviewed against Coalition standards.</li>
-<li><strong>Active</strong> - the Field Guide has passed human qualification and is approved for use as the analytical framework for facility research. The corresponding division may operate under Coalition standards.</li>
+<li>Audit current private source into <strong>public / private / needs-review</strong> categories.</li>
+<li>Create <code>gh-pages</code> from the current generated public-site state.</li>
+<li>Configure GitHub Pages/deployment to serve <code>gh-pages</code> or an equivalent Pages deployment target.</li>
+<li>Verify the existing public URL still renders correctly.</li>
+<li>Prepare a new public-source <code>main</code> containing only approved public material.</li>
+<li>Add <code>PROJECT_ORIGIN.md</code>, license notices, README, build configuration, and public-source contribution guidance.</li>
+<li>Configure public <code>main</code> branch protection/rulesets:</li>
+<li>pull requests required;</li>
+<li>required validation/build checks;</li>
+<li>no force push;</li>
+<li>no branch deletion;</li>
+<li>Coalition export integration is not a bypass actor;</li>
+<li>final merge remains with separately authorized human repository operators.</li>
+<li>Change the site build workflow to build from public <code>main</code> and deploy generated output to <code>gh-pages</code>.</li>
+<li>Remove the old private-repository workflow that overwrites public <code>main</code>.</li>
+<li>Verify source build, deployment, public URL, branch protection, and rollback path.</li>
+<li>Only then enable Phase 2 Coalition branch/draft-PR export.</li>
 </ol>
-<p>A jurisdiction may be publicly represented while Inactive. Contributors may research and develop its Field Guide, but Coalition facility conclusions must not be generated against an unqualified framework.</p>
-<p>Qualification is a human decision. Coverage metrics, contribution points, or automated completeness checks may support review but never activate a jurisdiction automatically.</p>
-<p>Independent qualified human review is the normal activation path. During bootstrap governance, when no independent qualified human reviewer is reasonably available, the Founder may use the documented founding/bootstrap activation exception defined in <a href="../JURISDICTION_QUALIFICATION/">Jurisdiction Qualification and Field Guide Overlay Model</a>. A bootstrap activation does not pretend that independent review occurred; it records the exception and the Founder assumes responsibility for the activation decision.</p>
-<h3 id="facility-research-maturity">Facility-research maturity<a class="headerlink" href="#facility-research-maturity" title="Permanent link">&para;</a></h3>
-<p>Facility-research status applies only after the jurisdiction is Active and its Field Guide is qualified:</p>
-<ol>
-<li><strong>Unresearched</strong> - the qualified framework exists, but no facility research program has materially begun.</li>
-<li><strong>Researching</strong> - facility investigations or registry analysis are underway using the qualified Field Guide.</li>
-<li><strong>Established</strong> - a meaningful facility-research body exists and is maintained as continuing work.</li>
-</ol>
-<p>Facility-research maturity describes application of the qualified framework; it does not qualify the Field Guide itself and does not confer organizational authority.</p>
-<h3 id="countycounty-equivalent-coverage">County/county-equivalent coverage<a class="headerlink" href="#countycounty-equivalent-coverage" title="Permanent link">&para;</a></h3>
-<p>Formal county research coverage begins <strong>after</strong> the parent state Field Guide is Active. Pre-activation county/facility work may still exist as development or test material under the jurisdiction-qualification rules, but it does not receive county coverage maturity until it is reconciled against the qualified state framework. Counties and county-equivalents are not independently activated miniature state Field Guides.</p>
-<p>As part of state activation, the system creates or validates a complete inventory of the state's counties/county-equivalents. Each coverage unit inherits the national core, applicable federal/circuit layer, and Active state overlay, then tracks only the local law, policy, agency/facility, enforcement, records-practice, and other local dependencies that vary below the state layer.</p>
-<p>County coverage uses <strong>Unresearched / Researching / Established</strong> as research-coverage labels, not qualification statuses. Existing pre-activation work may seed a county record only after it is reconciled against the newly qualified state framework.</p>
-<p>A CountyCoverageUnit is a geographic/research index, <strong>not a claim that every municipality, special district, state agency, federal facility, or other entity within its boundaries is legally subordinate to county government</strong>. Local authority must still be traced to the actual governing entity. Cross-county entities or facilities may reference more than one coverage unit where necessary.</p>
-<p>California is the reference pattern: establish the legal/research framework first, then use that framework to measure county/local law, facility policies, access conditions, enforcement evidence, and resulting findings.</p>
-<p>Nationwide expansion uses a canonical Field Guide structure rather than independent state wikis. National methodology and nationally controlling authority are reused; applicable circuit, state, and local authority are layered onto the canonical scenario and encounter decision trees. Qualification measures whether the jurisdiction-specific overlay can run those trees without material research gaps. See <a href="../JURISDICTION_QUALIFICATION/">Jurisdiction Qualification and Field Guide Overlay Model</a>.</p>
-<h2 id="member-progression">Member progression<a class="headerlink" href="#member-progression" title="Permanent link">&para;</a></h2>
-<p>Member roles and jurisdiction scope are separate. Initial role concepts are:</p>
+<h2 id="current-operational-status">Current operational status<a class="headerlink" href="#current-operational-status" title="Permanent link">&para;</a></h2>
+<p>At the time this decision was recorded:</p>
 <ul>
-<li>Member;</li>
-<li>Contributor;</li>
-<li>Researcher;</li>
-<li>Reviewer;</li>
-<li>Senior Reviewer;</li>
-<li>Division Lead;</li>
-<li>Administrator;</li>
-<li>Founder.</li>
+<li><code>GitHubChrisRice/1A-Field-Guide</code> is private and remains the active source/workspace;</li>
+<li><code>GitHubChrisRice/1A-Field-Guide-Site</code> is public, but its <code>main</code> currently contains generated website output rather than authoritative source;</li>
+<li>the existing private-repository Actions workflow publishes generated output by replacing the public site's <code>main</code>;</li>
+<li>the current ChatGPT GitHub integration can read the public site repository but cannot create refs there, so it cannot perform the branch migration itself from this connection;</li>
+<li>no live-site branch or Pages setting should be changed until a repository operator performs the preservation/configuration steps above.</li>
 </ul>
-<p>Roles represent trust and responsibility. Contribution points represent accepted work. A point threshold may establish eligibility to request promotion but must never grant authority automatically.</p>
-<p>The normal merit/trust progression is Member -&gt; Contributor -&gt; Researcher -&gt; Reviewer -&gt; Senior Reviewer -&gt; Division Lead. Administrator is a separate platform/governance appointment, not a points-based top rung.</p>
-<p><strong>Founder</strong> is also separate from the merit ladder. It records project-origin governance authority and is not earned through points or normal promotion. Founder is not a universal superuser and does not automatically supply substantive Reviewer competence, unrestricted sensitive-data access, or repository credentials. Its exceptional authority is limited to deliberately documented founding/bootstrap actions, including establishing initial governance and, when the normal independent-review path is unavailable, making a bootstrap jurisdiction-activation decision under the qualification rules. The permanent Founder role is distinct from temporary or reviewable bootstrap substantive RoleGrants.</p>
-<p>A person may contribute to multiple jurisdictions without leading them. Leadership requires demonstrated jurisdiction-specific work and human approval. Initial credit values, scope-aware eligibility floors, review calibration, and promotion routing are defined in <a href="../CONTRIBUTION_PROMOTION_WORKFLOW/">Contribution Credit and Promotion Workflow</a>.</p>
-<h2 id="contribution-model">Contribution model<a class="headerlink" href="#contribution-model" title="Permanent link">&para;</a></h2>
-<p>Points should reward accepted, useful work rather than raw activity. Eligible work may include authoritative-source research, facility research, public-records results, corrections, source verification, substantive peer review, and other approved contributions.</p>
-<p>The system should reward accurate contrary findings and well-supported uncertainty as strongly as findings favorable to a contributor's initial theory. Incentives must not depend on reaching a preferred legal or factual conclusion.</p>
-<p>Each accepted contribution should retain provenance sufficient to identify its submitter internally, review history, disposition, jurisdiction, and relationship to published material.</p>
-<p>Contribution credit is an internal ledger rather than a public ranking system by default. Credit must not reward fragmentation, submission volume, dramatic outcomes, or viewpoint alignment.</p>
-<h2 id="research-pipeline">Research pipeline<a class="headerlink" href="#research-pipeline" title="Permanent link">&para;</a></h2>
-<p>The authoritative publication path is:</p>
-<p><code>submission -&gt; validation -&gt; research review -&gt; applicable doctrinal/evidentiary review -&gt; approval -&gt; publication candidate -&gt; final publication decision</code></p>
-<p>Rejected, returned, unresolved, or superseded work remains distinguishable from authoritative Field Guide content.</p>
-<p>Structured submissions should require the fields needed by the applicable methodology. Software may validate completeness and consistency, but automated validation does not supply substantive approval. The type-specific schemas, immutable-revision model, review stages, independence rules, and publication-candidate boundary are defined in <a href="../RESEARCH_SUBMISSION_WORKFLOW/">Structured Research Submission and Review Workflow</a>.</p>
-<h2 id="github-boundary">GitHub boundary<a class="headerlink" href="#github-boundary" title="Permanent link">&para;</a></h2>
-<p>Coalition membership does not imply GitHub access.</p>
-<p>For the initial system, members submit through the Coalition platform. Only an exact immutable <code>PublicationCandidateRevision</code> that has completed all required publication/privacy review may become eligible for controlled GitHub preparation. Repository publication and merge remain separate human-controlled actions.</p>
-<p>The GitHub integration runs as a dedicated least-privilege service principal. It receives only the approved public derivative and public-safe metadata needed for the requested export operation; it does not inherit Coalition roles, obtain broad investigation access, or reuse a human maintainer/public-site deployment credential.</p>
-<p>The initial deployment is phased. Issue-only preparation may operate with no Contents write permission. Branch + draft-Pull-Request preparation is enabled only after the authoritative branch is technically protected from direct update/merge by the integration identity. The export service never marks its PR ready, approves it, enables auto-merge, or merges it.</p>
-<p>Detailed preconditions, service-principal boundaries, export state, divergence handling, audit requirements, and repository-split prerequisites are defined in <a href="../GITHUB_PUBLICATION_INTEGRATION/">Controlled GitHub Publication Integration</a> and <a href="../PUBLIC_PRIVATE_REPOSITORY_SPLIT/">Public/Private Repository Split</a>.</p>
-<p>The platform must not expose repository credentials or broad GitHub permissions to ordinary members.</p>
-<p>The intended repository boundary is explicit: <code>1A-Field-Guide</code> remains private for internal research/workflow material, while <code>1A-Field-Guide-Site</code> becomes the public authoritative-source repository after migration. Generated website output belongs on a deployment branch such as <code>gh-pages</code>, not on the authoritative public-source <code>main</code> branch.</p>
-<h2 id="research-integrity">Research integrity<a class="headerlink" href="#research-integrity" title="Permanent link">&para;</a></h2>
-<p>A government policy is evidence that the government claims or applies a rule; it is not by itself proof that the rule is constitutional.</p>
-<p>Facility research must distinguish the facility, specific area, access status, restriction, source, claimed authority, applicable doctrine, evidence of enforcement, and resulting finding.</p>
-<p>Legal and factual propositions must preserve authority level, jurisdiction, binding/persuasive status where applicable, verification date, limitations, contrary authority, and unresolved questions.</p>
-<p><code>Unresolved</code> is an acceptable conclusion.</p>
-<h2 id="privacy-and-attribution">Privacy and attribution<a class="headerlink" href="#privacy-and-attribution" title="Permanent link">&para;</a></h2>
-<p>Public identity and internal accountability are separate.</p>
-<p>The system may retain internal authorship, review, and audit records while public materials use institutional or division attribution. Member/requester identity, contact information, unpublished investigative material, credentials, and other restricted information must not be exposed merely because related research is published.</p>
-<p>Founder or administrator identity is not required to be part of public-facing attribution.</p>
-<p>Requester identity is Identity-restricted and should be separated from ordinary investigation content. Public release uses a sanitized PublicationCandidateRevision rather than exposing the internal working record.</p>
-<p>For private persons appearing in incident evidence, the project distinguishes incidental people from material participants. Incidental private people are minimized by default. A person who voluntarily becomes materially involved in the documented incident may have relevant identity, statements, image, and conduct retained or published when necessary to accurately document the event; this is an evidentiary decision, not a retaliation exception, and unrelated sensitive personal information remains excluded.</p>
-<p>Detailed rules are defined in <a href="../PRIVACY_ATTRIBUTION_RETENTION/">Privacy, Identity, Attribution, and Retention Workflow</a>.</p>
-<h2 id="division-autonomy">Division autonomy<a class="headerlink" href="#division-autonomy" title="Permanent link">&para;</a></h2>
-<p>Active divisions may coordinate local research, prioritize facility work, recommend promotions, and perform delegated review within their scope.</p>
-<p>Division autonomy does not include authority to lower national research, sourcing, evidentiary, privacy, or publication standards.</p>
-<h2 id="human-decision-boundaries">Human decision boundaries<a class="headerlink" href="#human-decision-boundaries" title="Permanent link">&para;</a></h2>
-<p>Implementation agents and automated systems must not silently change:</p>
+<h2 id="rollback">Rollback<a class="headerlink" href="#rollback" title="Permanent link">&para;</a></h2>
+<p>Before changing the public repository's default/source branch behavior, preserve the current generated-site commit on a dedicated branch/tag. If the new source/build/deployment path fails, Pages can be pointed back to the preserved generated branch while the migration is corrected.</p>
+<h2 id="success-criteria">Success criteria<a class="headerlink" href="#success-criteria" title="Permanent link">&para;</a></h2>
+<p>The split is complete when:</p>
 <ul>
-<li>legal conclusions or authority classifications;</li>
-<li>research/evidence standards;</li>
-<li>publication criteria;</li>
-<li>privacy or attribution boundaries;</li>
-<li>role permissions or promotion authority;</li>
-<li>Field Guide qualification or division activation requirements;</li>
-<li>organizational governance.</li>
+<li>the live site remains reachable at its existing public URL;</li>
+<li>public <code>main</code> contains human-readable authoritative source rather than generated HTML;</li>
+<li>generated site output is isolated to the Pages deployment branch/workflow;</li>
+<li>public <code>main</code> is technically protected;</li>
+<li>the private workspace is no longer the publication target;</li>
+<li>private-only material cannot enter public source without the publication-candidate process;</li>
+<li>the public build is reproducible from public <code>main</code>;</li>
+<li>project-origin and licensing notices are present;</li>
+<li>the old workflow that overwrites public <code>main</code> is retired; and</li>
+<li>Phase 2 export can create draft PRs without any integration authority to merge protected <code>main</code>.</li>
 </ul>
-<p>When implementation exposes a genuine question in one of these areas, record the question for human decision rather than inventing a rule.</p>
 
 
 
