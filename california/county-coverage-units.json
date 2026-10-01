@@ -3,7 +3,7 @@
   "jurisdiction_code": "CA",
   "jurisdiction_name": "California",
   "qualification_status": "Active",
-  "facility_research_status": "Unresearched",
+  "facility_research_status": "Researching",
   "inventory_verified_at": "2026-09-30",
   "inventory_source_ref": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_county_ca.html",
   "inventory_source_description": "U.S. Census Bureau TIGERweb — State of California Counties, Current/ACS26, data as of January 1, 2026",
@@ -98,12 +98,12 @@
       "stable_geographic_code": "06013",
       "name": "Contra Costa County",
       "unit_type": "county",
-      "coverage_status": "Unresearched",
+      "coverage_status": "Researching",
       "coverage_status_changed_at": "2026-09-30",
       "coverage_status_changed_by": "Founder",
       "inventory_verified_at": "2026-09-30",
       "inventory_source_ref": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_county_ca.html",
-      "notes": "Pre-activation Contra Costa research exists and must be reconciled against the Active California framework before any coverage-status promotion.",
+      "notes": "Post-activation reconciliation completed for the four Contra Costa pilot Registry facilities. Structured facility, ordinance, records-request, boundary, restriction, and investigation work is active; county coverage is Researching, not Established.",
       "is_publicly_listed": true
     },
     {

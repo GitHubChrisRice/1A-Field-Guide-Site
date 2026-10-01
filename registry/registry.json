@@ -194,12 +194,13 @@
           ]
         }
       ],
-      "last_verified": "2026-09-23",
+      "last_verified": "2026-09-30",
       "name": "Concord DMV Field Office",
       "open_legal_items": [
-        "California Speech Clause classification of the ordinary DMV lobby",
-        "California treatment of customer parking/approach",
-        "Any actual field-office recording restriction not located online"
+        "California Speech Clause classification of the ordinary DMV lobby, counters, testing channel, customer parking, and facility-specific approach remains facility-specific",
+        "Actual Diamond ingress route and legal/control geometry",
+        "Any field-office recording restriction not located in the public record",
+        "As-applied validity and implementation of the Title 13 event-permit/removal rules where invoked"
       ],
       "property": {
         "apns": [
@@ -282,7 +283,7 @@
             }
           ],
           "subarea_id": "S002",
-          "unresolved_reason": "Diamond ingress legal geometry/control remains unresolved."
+          "unresolved_reason": "Diamond ingress legal geometry/control remains unresolved. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts."
         },
         {
           "access": "PUBLIC",
@@ -314,7 +315,7 @@
             }
           ],
           "subarea_id": "S003",
-          "unresolved_reason": "California Speech Clause treatment of the customer lot remains unresolved."
+          "unresolved_reason": "California Speech Clause treatment of the customer lot remains unresolved. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts."
         },
         {
           "access": "PUBLIC",
@@ -346,7 +347,7 @@
             }
           ],
           "subarea_id": "S004",
-          "unresolved_reason": "Exact footprint and California classification remain open."
+          "unresolved_reason": "Exact footprint and California classification remain open. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts."
         },
         {
           "access": "PUBLIC",
@@ -399,7 +400,7 @@
             }
           ],
           "subarea_id": "S005",
-          "unresolved_reason": "California Speech Clause classification remains genuinely unresolved."
+          "unresolved_reason": "California Speech Clause classification remains genuinely unresolved. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts."
         },
         {
           "access": "PUBLIC",
@@ -451,7 +452,7 @@
             }
           ],
           "subarea_id": "S006",
-          "unresolved_reason": "California interior classification remains unresolved."
+          "unresolved_reason": "California interior classification remains unresolved. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts."
         },
         {
           "access": "CONDITIONED_PUBLIC",
@@ -483,7 +484,7 @@
             }
           ],
           "subarea_id": "S007",
-          "unresolved_reason": "California forum label remains unresolved, but the activity-specific testing rule is verified."
+          "unresolved_reason": "California forum label remains unresolved, but the activity-specific testing rule is verified. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts."
         },
         {
           "access": "RESTRICTED",
@@ -514,7 +515,7 @@
           "subarea_id": "S008"
         }
       ],
-      "summary": "The ordinary customer lobby, waiting area, transaction counters and testing channel are NPF/HIGH federally; actual ordinary municipal sidewalks are TPF/HIGH; customer parking and facility-specific approach/queue areas are NPF/MEDIUM federally. California Speech Clause treatment remains separately unresolved for the administrative interior and several facility-specific exterior areas."
+      "summary": "Post-activation rerun confirms the federal classifications remain usable: the customer lobby/waiting area, transaction counters and testing channel are NPF/HIGH federally; actual ordinary municipal sidewalks are TPF/HIGH; customer parking and facility-specific approach/queue areas are NPF/MEDIUM federally. Separate California Speech Clause labels remain facility-specific, while the now-qualified California overlay supplies the recording, privacy, removal, obstruction, and enforcement framework."
     },
     {
       "address": {
@@ -575,12 +576,13 @@
           ]
         }
       ],
-      "last_verified": "2026-09-23",
+      "last_verified": "2026-09-30",
       "name": "Concord Library",
       "open_legal_items": [
+        "California Speech Clause classification of the ordinary interior and conditioned Self-Service Sunday interior remains facility-specific",
         "Specific interior recording restriction, if any",
-        "Self-Service Sunday recording effect",
-        "Concrete removal/trespass analysis only if a direction/rule/location is identified"
+        "Self-Service Sunday incorporated rules/current signage and recording effect",
+        "Concrete removal/trespass application only when an actual direction, rule, location, and enforcement theory are identified"
       ],
       "property": {
         "apns": [
@@ -801,7 +803,7 @@
             }
           ],
           "subarea_id": "S006",
-          "unresolved_reason": "California Speech Clause treatment of the ordinary interior is not independently hardened."
+          "unresolved_reason": "California Speech Clause treatment of the ordinary interior is not independently hardened. Post-activation rerun confirms this is a facility-specific/local question rather than a statewide California qualification gap."
         },
         {
           "access": "CONDITIONED_PUBLIC",
@@ -832,7 +834,7 @@
             }
           ],
           "subarea_id": "S007",
-          "unresolved_reason": "California Speech Clause label is not necessary to the current federal LPF classification."
+          "unresolved_reason": "California Speech Clause label is not necessary to the current federal LPF classification. Post-activation rerun confirms this is a facility-specific/local question rather than a statewide California qualification gap."
         },
         {
           "access": "CONDITIONED_PUBLIC",
@@ -884,7 +886,7 @@
             }
           ],
           "subarea_id": "S008",
-          "unresolved_reason": "Recording effect and California classification under the special access regime remain unresolved."
+          "unresolved_reason": "Recording effect and California classification under the special access regime remain unresolved. Post-activation rerun confirms this is a facility-specific/local question rather than a statewide California qualification gap."
         },
         {
           "access": "RESTRICTED",
@@ -915,7 +917,7 @@
           "subarea_id": "S009"
         }
       ],
-      "summary": "Most useful forum classifications can be assigned before a field visit: ordinary municipal sidewalks, the public entrance/approach, Civic Center walkway, and front public lot are TPF; the ordinary interior is LPF for library-purpose activity; the meeting room is LPF."
+      "summary": "Post-activation rerun confirms the existing area-specific results: ordinary municipal sidewalks, the public entrance/approach, Civic Center walkway, and front public lot are TPF; the ordinary interior remains federally LPF for library-purpose activity; the meeting room is federally LPF. Remaining California interior labels are facility-specific state-constitutional questions rather than statewide qualification gaps."
     },
     {
       "address": {
@@ -974,12 +976,13 @@
           ]
         }
       ],
-      "last_verified": "2026-09-23",
+      "last_verified": "2026-09-30",
       "name": "Concord Police Headquarters",
       "open_legal_items": [
-        "California Speech Clause classification of the public police lobby",
+        "California Speech Clause classification of the public police lobby, Records counter, facility-controlled approach/parking, and meeting room remains facility-specific",
         "Any actual lobby recording restriction not located online",
-        "Privacy/confidentiality analysis for victim/witness/private-report subjects"
+        "Privacy/confidentiality analysis for victim/witness/private-report subjects and exposed records",
+        "Current Community Meeting Room contract terms"
       ],
       "property": {
         "apns": [
@@ -987,7 +990,7 @@
         ],
         "ownership_summary": "City-owned headquarters parcel with Galindo public frontage strongly supported"
       },
-      "recording_summary": "Recording public-facing police activity from a lawful, noninterfering vantage receives strong activity-specific support from CPD Policy 423, Penal Code § 148(g), Fordyce, Askins, Project Veritas, and the local Wilson comparator. No separate published lobby-wide ordinary-patron camera prohibition was located online. Privacy-sensitive subjects still require narrower, fact-specific analysis.",
+      "recording_summary": "Recording public-facing police activity from a lawful, noninterfering vantage retains strong activity-specific support from CPD Policy 423, Penal Code §148(g), Fordyce, Askins, Project Veritas, and the local Wilson comparator. The 2026 Second Circuit Massimino decision is a useful noncontrolling lawful-vantage comparator for publicly visible police-facility areas from a public sidewalk. The 2026 Reyes decisions concern New York statutory/trespass issues and do not establish that a California police-lobby recording ban is constitutional.",
       "research": {
         "evidence_path": "docs/research/evidence/concord-police/README.md",
         "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
@@ -1018,7 +1021,7 @@
             "note": "Ordinary municipal sidewalk doctrine applies."
           },
           "name": "Ordinary Galindo municipal sidewalk",
-          "notes": "Exact strip matters only if location is disputed.",
+          "notes": "Exact strip matters only if location is disputed. 2026 comparative check: Massimino v. Benoit reinforces the physical-access versus lawful-vantage recording distinction, but Ninth Circuit/California authority remains controlling here.",
           "recording": {
             "status": "STRONG_ACTIVITY_PROTECTION",
             "summary": "Recording public police activity from an ordinary lawful public vantage receives strong protection, subject to noninterference and other valid rules."
@@ -1061,7 +1064,7 @@
             }
           ],
           "subarea_id": "S002",
-          "unresolved_reason": "Exact footprint/control and California treatment remain open."
+          "unresolved_reason": "Exact footprint/control and California treatment remain open. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap."
         },
         {
           "access": "PUBLIC",
@@ -1103,7 +1106,7 @@
             "visitor_responsibility": "A lawful lobby visitor does not inherit the department's confidentiality duties merely by being present. Independent privacy law or a constitutionally valid targeted restriction can still apply directly to particular conduct."
           },
           "name": "Ordinary public lobby / Community Service Desk",
-          "notes": "NPF classification does not itself create a camera ban.",
+          "notes": "NPF classification does not itself create a camera ban. 2026 comparative check: Reyes does not resolve the California constitutional question; its state-law holding and later vacatur are not a merits First Amendment ruling.",
           "recording": {
             "status": "STRONG_ACTIVITY_PROTECTION",
             "summary": "For public-facing officers from a lawful, noninterfering vantage, Policy 423, §148(g), Fordyce and Wilson materially strengthen the recording analysis; no separate lobby-wide ban was located online."
@@ -1120,7 +1123,7 @@
             }
           ],
           "subarea_id": "S003",
-          "unresolved_reason": "California Speech Clause classification remains genuinely unresolved."
+          "unresolved_reason": "California Speech Clause classification remains genuinely unresolved. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap."
         },
         {
           "access": "PUBLIC",
@@ -1172,7 +1175,7 @@
             }
           ],
           "subarea_id": "S004",
-          "unresolved_reason": "California interior classification remains unresolved."
+          "unresolved_reason": "California interior classification remains unresolved. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap."
         },
         {
           "access": "PUBLIC",
@@ -1206,7 +1209,7 @@
             }
           ],
           "subarea_id": "S005",
-          "unresolved_reason": "California forum label is unresolved but does not erase the separate statutory/policy/activity protections."
+          "unresolved_reason": "California forum label is unresolved but does not erase the separate statutory/policy/activity protections. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap."
         },
         {
           "access": "PUBLIC",
@@ -1224,7 +1227,7 @@
             "note": "The physical lobby remains NPF."
           },
           "name": "Victim / witness / private-report interaction",
-          "notes": "Do not collapse officer recording and privacy-sensitive third-party recording into one rule.",
+          "notes": "Do not collapse officer recording and privacy-sensitive third-party recording into one rule. The New York Court of Appeals' Reyes privacy discussion is comparative evidence of possible lobby privacy/safety interests only, not California governing law.",
           "recording": {
             "status": "SEPARATE_ANALYSIS",
             "summary": "Penal Code §632 confidentiality and narrower privacy protections may materially alter the recording analysis depending on objective privacy facts."
@@ -1237,7 +1240,7 @@
             }
           ],
           "subarea_id": "S006",
-          "unresolved_reason": "Recording result is fact-specific to privacy/acoustic circumstances and any actual restriction."
+          "unresolved_reason": "Recording result is fact-specific to privacy/acoustic circumstances and any actual restriction. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap."
         },
         {
           "access": "CONDITIONED_PUBLIC",
@@ -1268,7 +1271,7 @@
             }
           ],
           "subarea_id": "S007",
-          "unresolved_reason": "California label and full contract terms remain unresolved, not the federal LPF project classification."
+          "unresolved_reason": "California label and full contract terms remain unresolved, not the federal LPF project classification. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap."
         },
         {
           "access": "RESTRICTED",
@@ -1299,7 +1302,7 @@
           "subarea_id": "S008"
         }
       ],
-      "summary": "The ordinary public lobby / Community Service Desk and Records counter are NPF/HIGH federally; the ordinary Galindo municipal sidewalk is TPF/HIGH; the Community Meeting Room is LPF/HIGH. Recording public-facing officers from a lawful vantage receives strong activity-specific support, while privacy-sensitive subjects remain separate."
+      "summary": "Post-activation rerun confirms the ordinary public lobby / Community Service Desk and Records counter remain NPF/HIGH federally; the ordinary Galindo municipal sidewalk remains TPF/HIGH; the Community Meeting Room remains LPF/HIGH federally. California forum labels for the lobby/approach remain facility-specific unresolved questions, while noninterfering recording of public-facing officers retains strong activity-specific support."
     },
     {
       "address": {
@@ -1362,12 +1365,13 @@
           ]
         }
       ],
-      "last_verified": "2026-09-23",
+      "last_verified": "2026-09-30",
       "name": "Walnut Creek Library",
       "open_legal_items": [
-        "California Speech Clause treatment of the underground garage",
-        "Cafe forum/control classification",
-        "Specific interior recording restriction, if any"
+        "California Speech Clause treatment of the ordinary interior, reservable rooms, underground garage, and garage circulation remains facility-specific",
+        "Cafe operator/control/access facts",
+        "Specific interior recording restriction, if any",
+        "Current City-controlled room terms where they affect the activity being analyzed"
       ],
       "property": {
         "apns": [
@@ -1558,7 +1562,7 @@
             }
           ],
           "subarea_id": "S005",
-          "unresolved_reason": "California interior classification remains separately unresolved."
+          "unresolved_reason": "California interior classification remains separately unresolved. Post-activation rerun confirms this remains facility-specific or fact-dependent rather than a statewide qualification gap."
         },
         {
           "access": "CONDITIONED_PUBLIC",
@@ -1589,7 +1593,7 @@
             }
           ],
           "subarea_id": "S006",
-          "unresolved_reason": "California label remains separate from the strong federal LPF result."
+          "unresolved_reason": "California label remains separate from the strong federal LPF result. Post-activation rerun confirms this remains facility-specific or fact-dependent rather than a statewide qualification gap."
         },
         {
           "access": "CONDITIONED_PUBLIC",
@@ -1620,7 +1624,7 @@
             }
           ],
           "subarea_id": "S007",
-          "unresolved_reason": "California label remains separate from the strong federal LPF result."
+          "unresolved_reason": "California label remains separate from the strong federal LPF result. Post-activation rerun confirms this remains facility-specific or fact-dependent rather than a statewide qualification gap."
         },
         {
           "access": "CONDITIONED_PUBLIC",
@@ -1651,7 +1655,7 @@
             }
           ],
           "subarea_id": "S008",
-          "unresolved_reason": "No close California classification for these study-room rules has been hardened."
+          "unresolved_reason": "No close California classification for these study-room rules has been hardened. Post-activation rerun confirms this remains facility-specific or fact-dependent rather than a statewide qualification gap."
         },
         {
           "access": "PUBLIC",
@@ -1682,7 +1686,7 @@
             }
           ],
           "subarea_id": "S009",
-          "unresolved_reason": "California Speech Clause treatment of the public underground garage remains genuinely unresolved."
+          "unresolved_reason": "California Speech Clause treatment of the public underground garage remains genuinely unresolved. Post-activation rerun confirms this remains facility-specific or fact-dependent rather than a statewide qualification gap."
         },
         {
           "access": "PUBLIC",
@@ -1732,7 +1736,7 @@
             }
           ],
           "subarea_id": "S010",
-          "unresolved_reason": "California classification and exact segment boundaries remain open."
+          "unresolved_reason": "California classification and exact segment boundaries remain open. Post-activation rerun confirms this remains facility-specific or fact-dependent rather than a statewide qualification gap."
         },
         {
           "access": "UNKNOWN",
@@ -1761,14 +1765,14 @@
             }
           ],
           "subarea_id": "S011",
-          "unresolved_reason": "Operator/control/access facts are missing."
+          "unresolved_reason": "Operator/control/access facts are missing. Post-activation rerun confirms this remains facility-specific or fact-dependent rather than a statewide qualification gap."
         }
       ],
-      "summary": "Ordinary sidewalks, civic plaza, exterior approach, Civic Park connection, Civic Park and the surface lot are TPF; the ordinary library interior is LPF for library-purpose activity; Oak View and Las Trampas are LPF; the underground garage is NPF federally with California treatment unresolved."
+      "summary": "Post-activation rerun confirms the existing area-specific results: sidewalks, civic plaza/approach, Civic Park and the surface lot are TPF; the ordinary interior and reservable rooms remain federally limited-purpose channels; the underground garage is federally NPF. Remaining California interior/garage labels and cafe control are facility-specific questions, not statewide qualification gaps."
     }
   ],
   "facility_count": 4,
-  "last_verified_max": "2026-09-23",
+  "last_verified_max": "2026-09-30",
   "schema_version": 1,
   "state": "California"
 }
