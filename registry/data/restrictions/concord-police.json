@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-013-F0004",
+  "slug": "concord-police",
+  "last_verified": "2026-09-30",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "title": "CPD Policy 423 — Public Recording of Law Enforcement Activity",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://www.cityofconcord.org/1196/Department-Policy-Manual",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "public-facing officer activity",
+        "lawful public/private vantage"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "officer safety",
+        "noninterference",
+        "lawful recording"
+      ],
+      "project_status": "CONSTITUTIONALLY_SUPPORTED",
+      "summary": "Affirmatively recognizes lawful recording of officers performing official duties and directs officers not to prohibit or intentionally interfere with lawful recording. It separates recording alone from interference.",
+      "constitutional_test": "First Amendment recording doctrine + lawful-vantage/noninterference limits",
+      "enforcement_hook": "Policy itself constrains officer response; other enforcement requires independent legal basis.",
+      "open_questions": [
+        "Exact application to privacy-sensitive lobby subjects remains fact-specific."
+      ],
+      "authority_ids": [
+        "fordyce",
+        "askins",
+        "project-veritas",
+        "pc148g",
+        "cpd423"
+      ]
+    },
+    {
+      "rule_id": "R002",
+      "title": "CPD Policy 803 — Records Unit",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://www.cityofconcord.org/1196/Department-Policy-Manual",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "records workspaces",
+        "case files",
+        "sensitive reports"
+      ],
+      "activities": [
+        "RECORDING",
+        "PRESS_INFORMATION_GATHERING"
+      ],
+      "government_interest": [
+        "record confidentiality",
+        "records security"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Requires secure handling/access controls for police records. It governs department custody of records and is not by itself a rule forbidding ordinary lobby patrons from operating cameras.",
+      "constitutional_test": "Use as privacy/security interest; any patron restriction must be separately sourced and tested.",
+      "enforcement_hook": "Internal records-security obligations.",
+      "open_questions": [
+        "What counter-layout/signage safeguards implement this policy at the public Records counter?"
+      ]
+    },
+    {
+      "rule_id": "R003",
+      "title": "CPD Policy 806 — Protected Information",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://www.cityofconcord.org/1196/Department-Policy-Manual",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "protected law-enforcement information",
+        "criminal-justice systems"
+      ],
+      "activities": [
+        "RECORDING",
+        "PRESS_INFORMATION_GATHERING"
+      ],
+      "government_interest": [
+        "protected information",
+        "system security"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Creates department-side handling/access obligations for protected information. It does not create a building-wide public camera prohibition.",
+      "constitutional_test": "Specific exposed information + actual visitor rule + NPF reasonableness/viewpoint neutrality.",
+      "enforcement_hook": "Internal information-security rules.",
+      "open_questions": [
+        "Any public-facing derivative rule or sign based on this policy?"
+      ]
+    },
+    {
+      "rule_id": "R004",
+      "title": "CPD Policy 422 — Body-Worn Cameras",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://www.cityofconcord.org/1196/Department-Policy-Manual",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "officer BWC use",
+        "specified confidential/private conversations"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "privacy",
+        "confidential communications",
+        "evidence"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Officer-side BWC policy distinguishes ordinary official recording from certain private/confidential contexts. It is useful privacy-comparator evidence, not a patron-camera rule.",
+      "constitutional_test": "Context evidence only; public restriction must be independently sourced.",
+      "enforcement_hook": "Internal BWC policy.",
+      "open_questions": []
+    },
+    {
+      "rule_id": "R005",
+      "title": "Community Meeting Room Use Restrictions / Contract",
+      "source_type": "CONTRACT_TERMS",
+      "source": "https://www.cityofconcord.org/facilities/facility/details/Police-Department-Community-Rooms-33",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "Police Department Community Meeting Room"
+      ],
+      "activities": [
+        "ASSEMBLY_DEMONSTRATION",
+        "SPEECH_CONVERSATION",
+        "RECORDING"
+      ],
+      "government_interest": [
+        "community-room purpose",
+        "scheduling",
+        "facility operations"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "City publicly opens the room to qualifying nonprofit community groups for community/quality-of-life discussion, subject to restrictions and a contract. The full current contract was not located online.",
+      "constitutional_test": "LPF purpose/reasonableness + viewpoint neutrality",
+      "enforcement_hook": "Reservation/use contract; full terms unresolved.",
+      "open_questions": [
+        "Obtain complete current contract and incorporated restrictions.",
+        "Identify any recording/press limitations."
+      ]
+    },
+    {
+      "rule_id": "R006",
+      "title": "California Penal Code §148(g) — Recording Officers",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=148.",
+      "citation": "Cal. Penal Code §148(g)",
+      "applies_to": [
+        "recording public/peace officers where statutory location condition is met"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "distinguishing recording from obstruction"
+      ],
+      "project_status": "CONSTITUTIONALLY_SUPPORTED",
+      "summary": "Provides that recording an officer, by itself, does not constitute §148(a) obstruction and does not by itself create reasonable suspicion or probable cause when the statutory location condition is satisfied.",
+      "constitutional_test": "Statutory protection layered on First Amendment recording doctrine.",
+      "enforcement_hook": "Limits use of §148(a), reasonable suspicion, and probable cause based on recording alone.",
+      "open_questions": [
+        "Independent conduct beyond recording must still be analyzed."
+      ],
+      "authority_ids": [
+        "pc148g",
+        "fordyce",
+        "askins"
+      ]
+    },
+    {
+      "rule_id": "R007",
+      "title": "California Penal Code §632 — Confidential Communications",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=632.",
+      "citation": "Cal. Penal Code §632",
+      "applies_to": [
+        "audio capture of confidential communications"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "government_interest": [
+        "confidential communications"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "May directly regulate audio recording where objective confidentiality and statutory elements are present. It does not make all police-lobby audio confidential.",
+      "constitutional_test": "Statutory elements + First Amendment analysis",
+      "enforcement_hook": "Penal Code §632 where elements are met.",
+      "open_questions": [
+        "Which lobby/counter interactions objectively qualify as confidential?"
+      ],
+      "authority_ids": [
+        "pc632"
+      ]
+    },
+    {
+      "rule_id": "R008",
+      "title": "California Penal Code §602.1 — Public-Agency/Business Obstruction and Savings Clause",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Penal Code §602.1",
+      "applies_to": [
+        "removal/obstruction disputes"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL",
+        "GENERAL_EXPRESSION"
+      ],
+      "government_interest": [
+        "unobstructed public-agency operations"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "The statewide public-agency interference framework is now researched. Facility application still depends on the actual conduct, request to leave, and statutory elements.",
+      "constitutional_test": "Protected activity → savings clause → additional obstruction/intimidation conduct → refusal → enforcement",
+      "enforcement_hook": "Penal Code §602.1 where elements are met.",
+      "open_questions": [
+        "What CPD training or local practice governs §602.1 in public-lobby recording encounters?"
+      ],
+      "authority_ids": [
+        "pc6021",
+        "wilson"
+      ]
+    },
+    {
+      "rule_id": "R009",
+      "title": "California Penal Code §602 — Trespass",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/",
+      "citation": "Cal. Penal Code §602",
+      "applies_to": [
+        "removal/trespass disputes"
+      ],
+      "activities": [
+        "ACCESS_REMOVAL"
+      ],
+      "government_interest": [
+        "property/access control"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "The statewide trespass framework is now researched as subsection-specific. Facility application still depends on access status, the basis and scope of any exclusion, and the later conduct.",
+      "constitutional_test": "Exact subsection/elements + lawful exclusion + constitutional limits",
+      "enforcement_hook": "Only the applicable §602 subsection, if any.",
+      "open_questions": [
+        "Which subsection is used by CPD for public-lobby refusal-to-leave scenarios?"
+      ]
+    },
+    {
+      "rule_id": "R010",
+      "title": "Concord Municipal Code ch. 9.08 — Solicitation Location Restrictions",
+      "source_type": "ORDINANCE",
+      "source": "https://www.codepublishing.com/CA/Concord/html/Concord09/Concord0908.html",
+      "citation": "Concord Mun. Code §§9.08.020–9.08.050",
+      "current_as_of": "2026-09-23",
+      "applies_to": [
+        "public parking lots/structures in Concord",
+        "within 30 feet of qualifying queues",
+        "other enumerated locations"
+      ],
+      "activities": [
+        "SOLICITATION"
+      ],
+      "government_interest": [
+        "public safety",
+        "captive-audience concerns",
+        "access"
+      ],
+      "project_status": "CONSTITUTIONALITY_UNRESOLVED",
+      "summary": "The citywide ordinance prohibits solicitation in public parking lots/structures and within 30 feet of a queue of five or more persons, among other places. It may affect the Police Headquarters public parking/approach only where the exact location falls within the ordinance. Its constitutionality must be analyzed area-by-area rather than inferred from the ordinance's own findings.",
+      "constitutional_test": "California Speech Clause + federal forum/time-place-manner analysis mapped to the exact Police property subarea",
+      "enforcement_hook": "Infraction; repeated violations may be charged as a misdemeanor under the ordinance.",
+      "open_questions": [
+        "Whether the Headquarters public parking/approach is treated as a 'public parking lot' under the ordinance.",
+        "Whether passive signs or responses to inquiries fall outside the ordinance's definition of solicitation."
+      ],
+      "authority_ids": [
+        "concord-solicitation",
+        "la-alliance",
+        "schaumburg"
+      ]
+    }
+  ],
+  "cpra_targets": [
+    {
+      "priority": "HIGH",
+      "target": "Any internal Concord Police Headquarters visitor/security directive, post order, roll-call bulletin, training, or supervisor guidance governing public recording, observation, solicitation, privacy, or information gathering in the lobby, Records counter, entrance, or public parking/approach.",
+      "why": "Policy 423 is public and protective; the key remaining question is whether narrower unpublished headquarters rules exist and how they are reconciled with Policy 423 and §148(g).",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Current lobby/Records/entrance signage orders, templates, installation records, and policy source for camera, phone, privacy, identification, waiting, solicitation, or restricted-area signs.",
+      "why": "The public-source sweep still cannot establish what is physically posted or the authority behind any sign.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Training/guidance on Policy 423, Penal Code §§148, 602, and 602.1, including removal/exclusion of persons recording or refusing to stop recording in public-facing areas.",
+      "why": "Needed to test whether actual training preserves the distinction between protected recording and independent interference/trespass predicates.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "MEDIUM",
+      "target": "Incidents/complaints during the last three years involving public recording in the Headquarters lobby or Records counter, including CAD, body-worn-camera, incident reports, cited policy, and disposition.",
+      "why": "Would reveal actual application, comparator treatment, and any conflict between Policy 423 and local practice.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "MEDIUM",
+      "target": "Current complete Police Department Community Meeting Room contract and incorporated use restrictions if it cannot be obtained through ordinary public web channels.",
+      "why": "The room is a distinct LPF channel and the complete terms remain a public-source gap.",
+      "only_if_gap_remains": true
+    }
+  ]
+}

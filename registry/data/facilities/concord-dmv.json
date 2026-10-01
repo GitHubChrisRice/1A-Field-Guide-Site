@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-013-F0003",
+  "slug": "concord-dmv",
+  "name": "Concord DMV Field Office",
+  "state": "California",
+  "county": {
+    "name": "Contra Costa County",
+    "fips": "013"
+  },
+  "city": "Concord",
+  "agency": "California Department of Motor Vehicles",
+  "facility_type": "STATE_ADMINISTRATIVE_SERVICE",
+  "address": {
+    "street": "2070 Diamond Boulevard",
+    "city": "Concord",
+    "state": "CA",
+    "zip": "94520"
+  },
+  "property": {
+    "ownership_summary": "State-owned DMV parcel; Diamond address does not establish direct Diamond frontage",
+    "apns": [
+      "126-490-004"
+    ],
+    "flags": [
+      "ADDRESS/FRONTAGE-MISMATCH",
+      "DIAMOND-PUBLIC-ACCESS-LEGAL-GEOMETRY-UNRESOLVED"
+    ]
+  },
+  "last_verified": "2026-09-30",
+  "field_status": "PRE_FIELD",
+  "summary": "Post-activation rerun confirms the federal classifications remain usable: the customer lobby/waiting area, transaction counters and testing channel are NPF/HIGH federally; actual ordinary municipal sidewalks are TPF/HIGH; customer parking and facility-specific approach/queue areas are NPF/MEDIUM federally. Separate California Speech Clause labels remain facility-specific, while the now-qualified California overlay supplies the recording, privacy, removal, obstruction, and enforcement framework.",
+  "recording_summary": "Recording can constitute First Amendment-protected activity. No dedicated public-facing California DMV field-office ordinary-patron camera prohibition was located online. The knowledge-test phone rule is activity-specific and cannot be generalized into a branch-wide camera ban; any broader restriction requires its own legal and constitutional basis.",
+  "field_items": [
+    "Actual Diamond ingress route and legal/control geometry",
+    "Current parking and exterior queue geometry",
+    "Entrance signs",
+    "Kiosk placement and physical subarea boundaries"
+  ],
+  "open_legal_items": [
+    "California Speech Clause classification of the ordinary DMV lobby, counters, testing channel, customer parking, and facility-specific approach remains facility-specific",
+    "Actual Diamond ingress route and legal/control geometry",
+    "Any field-office recording restriction not located in the public record",
+    "As-applied validity and implementation of the Title 13 event-permit/removal rules where invoked"
+  ],
+  "research": {
+    "sweep_path": "docs/research/SWEEP-009-CONCORD-DMV.md",
+    "evidence_path": "docs/research/evidence/concord-dmv/README.md",
+    "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+    "indoor_hardening_path": "docs/research/REGISTRY-INDOOR-HARDENING-2026-09-23.md"
+  },
+  "authorities": [
+    "grace",
+    "sammartano",
+    "freedom-foundation",
+    "kokinda",
+    "jacobsen",
+    "askins",
+    "camenzind",
+    "project-veritas"
+  ],
+  "index_highlights": [
+    {
+      "subarea_ids": [
+        "S001"
+      ],
+      "label": "actual municipal sidewalks"
+    },
+    {
+      "subarea_ids": [
+        "S005",
+        "S006",
+        "S007"
+      ],
+      "label": "lobby/waiting · transaction counters · testing channel",
+      "scope_suffix": "federal"
+    },
+    {
+      "subarea_ids": [
+        "S003",
+        "S004"
+      ],
+      "label": "customer parking · facility-specific approach/queue",
+      "scope_suffix": "federal"
+    }
+  ],
+  "subareas": [
+    {
+      "subarea_id": "S001",
+      "name": "Actual Diamond / Meridian Park ordinary municipal sidewalk or ROW",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Ordinary municipal sidewalk doctrine applies once the physical strip is identified."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Public-forum treatment is high confidence for an independently established ordinary municipal sidewalk."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Ordinary public-place recording doctrine applies; exact conduct still matters."
+      },
+      "notes": "The unresolved issue is locating the strip, not the doctrine once the strip is established.",
+      "authority_ids": [
+        "grace"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S002",
+      "name": "Facility-specific Diamond access drive / walk",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "MEDIUM",
+        "note": "Purpose-built access route to a government service facility is best treated as nonpublic if the segment is facility-controlled."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Current California Speech Clause treatment is unresolved."
+      },
+      "recording": {
+        "status": "NO_GENERAL_BAN_LOCATED",
+        "summary": "No general field-office camera rule was located online."
+      },
+      "notes": "Current legal geometry/control must be established before relying on this classification at a specific point.",
+      "unresolved_reason": "Diamond ingress legal geometry/control remains unresolved. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts.",
+      "authority_ids": [
+        "kokinda",
+        "jacobsen"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S003",
+      "name": "Customer parking",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "MEDIUM",
+        "note": "Public customer parking is a special-purpose service area with no evidence of expressive opening."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Broader California exterior doctrine makes the state result genuinely unresolved."
+      },
+      "recording": {
+        "status": "NO_GENERAL_BAN_LOCATED",
+        "summary": "No general field-office camera rule was located online."
+      },
+      "notes": "Traffic, safety and customer-service function are material.",
+      "unresolved_reason": "California Speech Clause treatment of the customer lot remains unresolved. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts.",
+      "authority_ids": [
+        "sammartano",
+        "camenzind"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S004",
+      "name": "Exterior customer queue / immediate facility approach",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "MEDIUM",
+        "note": "Purpose-limited approach/queue function supports nonpublic treatment."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "No sufficiently close state authority was located."
+      },
+      "recording": {
+        "status": "NO_GENERAL_BAN_LOCATED",
+        "summary": "No general field-office camera rule was located online."
+      },
+      "notes": "Exact footprint and physical configuration can change the area-specific result.",
+      "unresolved_reason": "Exact footprint and California classification remain open. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts.",
+      "authority_ids": [
+        "kokinda",
+        "sammartano"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S005",
+      "name": "Ordinary lobby / waiting",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "HIGH",
+        "note": "Published Ninth Circuit government-building doctrine plus a close state-agency-lobby comparator support the result."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "No close California appellate DMV or administrative-lobby authority was located."
+      },
+      "recording": {
+        "status": "NO_GENERAL_BAN_LOCATED",
+        "summary": "NPF status tells us the standard for an actual restriction; it does not create a camera ban."
+      },
+      "notes": "This classification is independent of the unresolved Diamond ingress geometry.",
+      "unresolved_reason": "California Speech Clause classification remains genuinely unresolved. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts.",
+      "authority_ids": [
+        "sammartano",
+        "freedom-foundation",
+        "askins",
+        "project-veritas",
+        "pc632"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis.",
+          "authority_ids": [
+            "askins",
+            "project-veritas"
+          ]
+        }
+      ],
+      "indoor_common_space": {
+        "space_type": "WAITING_AREA",
+        "privacy_context": "ROUTINE_SENSITIVE_INFORMATION_POSSIBLE",
+        "hipaa_posture": "NOT_INDICATED",
+        "facility_responsibility": "DMV retains responsibility for safeguarding driver, identity, transaction, and system information under laws and policies that apply to the agency. Public-facing design does not transfer that duty to ordinary visitors.",
+        "visitor_responsibility": "A lawful visitor does not assume DMV's confidentiality duties merely by waiting in the public lobby. Any direct restriction on the visitor must come from applicable law or a constitutionally valid rule.",
+        "recording_effect": "The possibility of personal information in the lobby can support narrower safeguards, but it does not itself establish a general no-recording rule.",
+        "authority_ids": [
+          "sammartano",
+          "askins",
+          "project-veritas",
+          "pc632"
+        ]
+      }
+    },
+    {
+      "subarea_id": "S006",
+      "name": "Customer service counters / transaction zones",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "HIGH",
+        "note": "Purpose-limited public transaction zone within an administrative service facility."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Separate California interior classification remains unresolved."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Privacy and exposed records can support narrower restrictions; the actual rule and exposed information must be identified."
+      },
+      "notes": "Public access to transact business does not open employee workspace or records areas.",
+      "unresolved_reason": "California interior classification remains unresolved. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts.",
+      "authority_ids": [
+        "sammartano",
+        "askins",
+        "project-veritas",
+        "pc632"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis.",
+          "authority_ids": [
+            "askins",
+            "project-veritas"
+          ]
+        }
+      ],
+      "indoor_common_space": {
+        "space_type": "PUBLIC_SERVICE_COUNTER",
+        "privacy_context": "CONFIDENTIAL_INTERACTION_POSSIBLE",
+        "hipaa_posture": "NOT_INDICATED",
+        "facility_responsibility": "DMV remains responsible for protecting nonpublic records, screens, and transaction information from unnecessary exposure and for using appropriate operational safeguards.",
+        "visitor_responsibility": "A member of the public does not become responsible for enforcing DMV's confidentiality duties. Independent privacy law and a valid narrowly supported facility rule can still apply to particular recording conduct.",
+        "recording_effect": "A counter-level privacy concern must be tied to the actual information or interaction at risk. That can justify a narrower restriction without establishing a lobby-wide camera ban.",
+        "authority_ids": [
+          "sammartano",
+          "askins",
+          "project-veritas",
+          "pc632"
+        ]
+      }
+    },
+    {
+      "subarea_id": "S007",
+      "name": "Knowledge-test stations",
+      "access": "CONDITIONED_PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "HIGH",
+        "note": "Purpose-limited examination channel inside the administrative facility."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Separate California interior classification remains unresolved."
+      },
+      "recording": {
+        "status": "ACTIVITY_SPECIFIC_RULE",
+        "summary": "Current handbook prohibits use of a cell phone as a testing aid during the knowledge test."
+      },
+      "notes": "The testing rule is not a field-office-wide no-phone or no-camera rule.",
+      "unresolved_reason": "California forum label remains unresolved, but the activity-specific testing rule is verified. Post-activation rerun confirms the statewide legal framework is qualified; this subarea result still depends on facility-specific state-law classification or control facts.",
+      "authority_ids": [
+        "sammartano"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "summary": "An activity-specific device rule is documented here. The Registry records the rule but does not presume that it authorizes a broader camera/recording prohibition or that every application is constitutional.",
+          "rule_source": "California DMV knowledge-test cell-phone/device rule described in the current driver handbook"
+        }
+      ]
+    },
+    {
+      "subarea_id": "S008",
+      "name": "Employee / secure / records / equipment areas",
+      "access": "RESTRICTED",
+      "federal": {
+        "classification": "NOT_PUBLIC",
+        "confidence": "HIGH",
+        "note": "Outside the ordinary public-access channel."
+      },
+      "california": {
+        "classification": "NOT_PUBLIC",
+        "confidence": "HIGH",
+        "note": "Same practical access result."
+      },
+      "recording": {
+        "status": "NOT_APPLICABLE",
+        "summary": "No public-lobby inference applies."
+      },
+      "notes": "Exact boundary only matters if a location is disputed.",
+      "authority_ids": [],
+      "restriction_audits": [
+        {
+          "activity": "ACCESS_REMOVAL",
+          "status": "NOT_APPLICABLE",
+          "summary": "This subarea is classified outside the ordinary public-access channel. Any disputed exclusion still turns on the actual boundary and access authority; no public-forum permission is inferred."
+        }
+      ]
+    }
+  ]
+}

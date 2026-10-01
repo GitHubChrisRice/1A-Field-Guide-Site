@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "authorities": {
+    "grace": {
+      "citation": "United States v. Grace, 461 U.S. 171 (1983)",
+      "level": "US_SUPREME_COURT",
+      "topic": "ordinary public sidewalks"
+    },
+    "prigmore": {
+      "citation": "Prigmore v. City of Redding, 211 Cal.App.4th 1322 (2012)",
+      "level": "CALIFORNIA_COURT_OF_APPEAL",
+      "topic": "library exterior forum analysis"
+    },
+    "faith-center": {
+      "citation": "Faith Center Church Evangelistic Ministries v. Glover, 480 F.3d 891 (9th Cir. 2007)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "library meeting room"
+    },
+    "kreimer": {
+      "citation": "Kreimer v. Bureau of Police, 958 F.2d 1242 (3d Cir. 1992)",
+      "level": "THIRD_CIRCUIT_PERSUASIVE",
+      "topic": "ordinary library interior"
+    },
+    "neinast": {
+      "citation": "Neinast v. Board of Trustees, 346 F.3d 585 (6th Cir. 2003)",
+      "level": "SIXTH_CIRCUIT_PERSUASIVE",
+      "topic": "ordinary library interior"
+    },
+    "sammartano": {
+      "citation": "Sammartano v. First Judicial District Court, 303 F.3d 959 (9th Cir. 2002)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "government-building nonpublic forum"
+    },
+    "freedom-foundation": {
+      "citation": "Freedom Foundation v. Washington Department of Ecology, No. 20-35007 (9th Cir. Dec. 21, 2020) (unpublished)",
+      "level": "NINTH_CIRCUIT_UNPUBLISHED",
+      "topic": "state-agency lobby comparator"
+    },
+    "kokinda": {
+      "citation": "United States v. Kokinda, 497 U.S. 720 (1990)",
+      "level": "US_SUPREME_COURT",
+      "topic": "purpose-built government access route"
+    },
+    "jacobsen": {
+      "citation": "Jacobsen v. U.S. Postal Service, 993 F.2d 649 (9th Cir. 1993)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "postal access route"
+    },
+    "askins": {
+      "citation": "Askins v. U.S. Department of Homeland Security, 899 F.3d 1035 (9th Cir. 2018)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "recording matters of public interest / location-sensitive analysis"
+    },
+    "fordyce": {
+      "citation": "Fordyce v. City of Seattle, 55 F.3d 436 (9th Cir. 1995)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "recording police activity"
+    },
+    "wilson": {
+      "citation": "Wilson v. County of Contra Costa, No. 14-cv-03491-SI (N.D. Cal. May 6, 2015)",
+      "level": "FEDERAL_DISTRICT_PERSUASIVE",
+      "topic": "public sheriff-lobby recording comparator"
+    },
+    "camenzind": {
+      "citation": "Camenzind v. California Exposition & State Fair, 84 F.4th 1102 (9th Cir. 2023)",
+      "level": "NINTH_CIRCUIT",
+      "topic": "California Speech Clause / exterior spaces"
+    },
+    "pc148g": {
+      "citation": "California Penal Code § 148(g)",
+      "level": "CALIFORNIA_STATUTE",
+      "topic": "recording peace officers"
+    },
+    "pc6021": {
+      "citation": "California Penal Code § 602.1",
+      "level": "CALIFORNIA_STATUTE",
+      "topic": "public-agency obstruction/removal"
+    },
+    "pc632": {
+      "citation": "California Penal Code § 632",
+      "level": "CALIFORNIA_STATUTE",
+      "topic": "confidential communications"
+    },
+    "cpd423": {
+      "citation": "Concord Police Department Policy 423 — Public Recording of Law Enforcement Activity",
+      "level": "AGENCY_POLICY",
+      "topic": "recording officers"
+    },
+    "project-veritas": {
+      "citation": "Project Veritas v. Schmidt, 125 F.4th 929 (9th Cir. 2025) (en banc)",
+      "level": "NINTH_CIRCUIT_EN_BANC",
+      "topic": "recording as First Amendment-protected speech; content-neutral privacy regulation can still be tested under applicable scrutiny"
+    },
+    "hipaa-covered-entity": {
+      "citation": "45 C.F.R. § 160.103",
+      "level": "FEDERAL_REGULATION",
+      "topic": "HIPAA covered-entity and business-associate definitions"
+    },
+    "hipaa-safeguards": {
+      "citation": "45 C.F.R. § 164.530(c); HHS OCR, Incidental Uses and Disclosures",
+      "level": "FEDERAL_REGULATION_AND_AGENCY_GUIDANCE",
+      "topic": "covered-entity reasonable safeguards and incidental disclosure framework"
+    },
+    "hhs-media-public-areas": {
+      "citation": "HHS OCR, Film and Media guidance / FAQ",
+      "level": "FEDERAL_AGENCY_GUIDANCE",
+      "topic": "HIPAA does not require exclusion of media from areas otherwise generally accessible to the public; treatment-area PHI exposure requires authorization/safeguards"
+    },
+    "schaumburg": {
+      "citation": "Village of Schaumburg v. Citizens for a Better Environment, 444 U.S. 620 (1980)",
+      "level": "US_SUPREME_COURT",
+      "topic": "charitable solicitation is protected speech subject to constitutionally adequate regulation"
+    },
+    "la-alliance": {
+      "citation": "Los Angeles Alliance for Survival v. City of Los Angeles, 22 Cal.4th 352 (2000)",
+      "level": "CALIFORNIA_SUPREME_COURT",
+      "topic": "California Speech Clause / solicitation restrictions; Los Angeles parking-lot restriction addressed solicitation after dark"
+    },
+    "title13-ch11": {
+      "citation": "13 Cal. Code Regs. §§ 1850–1862",
+      "level": "CALIFORNIA_REGULATION",
+      "topic": "conduct, event permits, removal criteria, and signs on California state property"
+    },
+    "chp-hpm10070-ch10": {
+      "citation": "CHP HPM 100.70, ch. 10 — State Property Event Permits (2026)",
+      "level": "AGENCY_POLICY",
+      "topic": "CHP implementation of Title 13 state-property event permits, expressly including DMV field-office events"
+    },
+    "wc-sign-code": {
+      "citation": "Walnut Creek Municipal Code ch. 10-8",
+      "level": "MUNICIPAL_CODE",
+      "topic": "sign placement/erection/attachment rules on public land and rights-of-way"
+    },
+    "concord-solicitation": {
+      "citation": "Concord Municipal Code ch. 9.08",
+      "level": "MUNICIPAL_CODE",
+      "topic": "aggressive solicitation and location-based solicitation restrictions"
+    }
+  }
+}

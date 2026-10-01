@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-013-F0001",
+  "slug": "concord-library",
+  "name": "Concord Library",
+  "state": "California",
+  "county": {
+    "name": "Contra Costa County",
+    "fips": "013"
+  },
+  "city": "Concord",
+  "agency": "Contra Costa County Library",
+  "facility_type": "PUBLIC_LIBRARY",
+  "address": {
+    "street": "2900 Salvio Street",
+    "city": "Concord",
+    "state": "CA",
+    "zip": "94519"
+  },
+  "property": {
+    "ownership_summary": "City-owned library parcel; adjoining Civic Center parcel also City-owned",
+    "apns": [
+      "111-240-006",
+      "111-240-014"
+    ]
+  },
+  "last_verified": "2026-09-30",
+  "field_status": "PRE_FIELD",
+  "summary": "Post-activation rerun confirms the existing area-specific results: ordinary municipal sidewalks, the public entrance/approach, Civic Center walkway, and front public lot are TPF; the ordinary interior remains federally LPF for library-purpose activity; the meeting room is federally LPF. Remaining California interior labels are facility-specific state-constitutional questions rather than statewide qualification gaps.",
+  "recording_summary": "Recording can constitute First Amendment-protected activity. No dedicated public-facing Concord-specific ordinary-patron camera prohibition was located online. The library-purpose forum classification does not itself create a camera ban; any restriction must be tied to a valid privacy, disruption, safety, or other legal interest and constitutionally tested.",
+  "field_items": [
+    "Current entrance and forecourt signs",
+    "Rear-lot reserved or employee-only zones",
+    "Exact ROW edge only where enforcement turns on a few feet",
+    "Current interior camera/conduct signage"
+  ],
+  "open_legal_items": [
+    "California Speech Clause classification of the ordinary interior and conditioned Self-Service Sunday interior remains facility-specific",
+    "Specific interior recording restriction, if any",
+    "Self-Service Sunday incorporated rules/current signage and recording effect",
+    "Concrete removal/trespass application only when an actual direction, rule, location, and enforcement theory are identified"
+  ],
+  "research": {
+    "sweep_path": "docs/research/SWEEP-007-CONCORD-LIBRARY.md",
+    "evidence_path": "docs/research/evidence/concord-library/README.md",
+    "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+    "indoor_hardening_path": "docs/research/REGISTRY-INDOOR-HARDENING-2026-09-23.md"
+  },
+  "authorities": [
+    "grace",
+    "prigmore",
+    "faith-center",
+    "kreimer",
+    "neinast",
+    "project-veritas"
+  ],
+  "index_highlights": [
+    {
+      "subarea_ids": [
+        "S001",
+        "S002",
+        "S003",
+        "S004"
+      ],
+      "label": "sidewalks · entrance/approach · civic walkway · front lot"
+    },
+    {
+      "subarea_ids": [
+        "S006"
+      ],
+      "label": "ordinary interior for library-purpose activity"
+    },
+    {
+      "subarea_ids": [
+        "S007"
+      ],
+      "label": "meeting room"
+    },
+    {
+      "subarea_ids": [
+        "S005"
+      ],
+      "label": "rear Civic Center lot"
+    }
+  ],
+  "subareas": [
+    {
+      "subarea_id": "S001",
+      "name": "Salvio / Parkside ordinary municipal sidewalks",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Ordinary municipal sidewalk doctrine applies once the physical strip is identified."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "California public-forum protection is strongly established for ordinary municipal sidewalks."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Ordinary public-place recording rules apply; exact conduct still matters."
+      },
+      "notes": "Exact survey-grade edge is only outcome-determinative if a location dispute arises.",
+      "authority_ids": [
+        "grace"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S002",
+      "name": "Public entrance / immediate east approach",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Public entrance and civic circulation facts closely fit the library-exterior public-forum analysis."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Prigmore strongly supports TPF treatment for this entrance/approach configuration."
+      },
+      "recording": {
+        "status": "NO_GENERAL_BAN_LOCATED",
+        "summary": "No branch-wide patron-camera rule was located online; a specific restriction would require separate analysis."
+      },
+      "notes": "Current signs can regulate conduct without erasing the forum classification.",
+      "authority_ids": [
+        "prigmore"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S003",
+      "name": "Library / Civic Center connective pedestrian walkway",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Ordinary civic pedestrian circulation strongly supports public-forum treatment."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Prigmore and the civic-walkway setting strongly support TPF treatment."
+      },
+      "recording": {
+        "status": "NO_GENERAL_BAN_LOCATED",
+        "summary": "No branch-wide patron-camera rule was located online."
+      },
+      "notes": "Exact subarea boundary matters only if enforcement turns on the transition.",
+      "authority_ids": [
+        "prigmore"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S004",
+      "name": "Front Salvio public parking lot",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "For lawful pedestrian expressive use, the library-frontage lot is a close public-forum analogue."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Prigmore directly supports library parking-lot public-forum treatment on comparable facts."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Forum status does not eliminate traffic, obstruction, vehicle, privacy, or other valid rules."
+      },
+      "notes": "Classification is for lawful pedestrian expressive use, not occupation of vehicle travel lanes.",
+      "authority_ids": [
+        "prigmore"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S005",
+      "name": "Rear Parkside / Civic Center public lot",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "MEDIUM",
+        "note": "Public access, civic ownership and integration support TPF treatment, but shared-lot use is more fact-sensitive."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "MEDIUM",
+        "note": "Prigmore analogy is substantial; reserved zones or different circulation could narrow the result."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Recording remains subject-specific and rule-specific."
+      },
+      "notes": "Reserved or employee-only subareas could have a different result.",
+      "authority_ids": [
+        "prigmore"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S006",
+      "name": "Ordinary lobby, stacks, reading and service areas",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "LPF",
+        "confidence": "MEDIUM",
+        "note": "Library interiors are purpose-limited to reading, research, information access and related library activity; closest ordinary-interior holdings are persuasive rather than Ninth Circuit merits authority."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "No equally close California appellate classification for the full ordinary interior has been established in the pilot record."
+      },
+      "recording": {
+        "status": "NO_GENERAL_BAN_LOCATED",
+        "summary": "LPF status does not itself establish a right to film patrons, screens, staff interactions or private conversations."
+      },
+      "notes": "Public access is conditioned by library-purpose and patron-conduct rules.",
+      "unresolved_reason": "California Speech Clause treatment of the ordinary interior is not independently hardened. Post-activation rerun confirms this is a facility-specific/local question rather than a statewide California qualification gap.",
+      "authority_ids": [
+        "kreimer",
+        "neinast",
+        "faith-center",
+        "askins",
+        "project-veritas",
+        "pc632"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis.",
+          "authority_ids": [
+            "askins",
+            "project-veritas"
+          ]
+        }
+      ],
+      "indoor_common_space": {
+        "space_type": "GENERAL_SHARED_INTERIOR",
+        "privacy_context": "ROUTINE_SENSITIVE_INFORMATION_POSSIBLE",
+        "hipaa_posture": "NOT_INDICATED",
+        "facility_responsibility": "The library retains responsibility for safeguarding patron records, account information, staff systems, and other confidential material under laws and policies that apply to the library.",
+        "visitor_responsibility": "A lawful visitor does not assume the library's confidentiality or information-security duties merely by being present. Any duty imposed on the visitor must come from law or a constitutionally valid rule that applies directly to the visitor.",
+        "recording_effect": "Possible screens, transactions, or private conversations may support targeted restrictions. They do not, by themselves, establish a blanket prohibition on recording the ordinary public interior.",
+        "authority_ids": [
+          "askins",
+          "project-veritas",
+          "pc632"
+        ]
+      }
+    },
+    {
+      "subarea_id": "S007",
+      "name": "Concord meeting room",
+      "access": "CONDITIONED_PUBLIC",
+      "federal": {
+        "classification": "LPF",
+        "confidence": "HIGH",
+        "note": "The room is intentionally opened to qualifying groups under defined reservation and use rules."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Separate California analysis is retained; the current Registry result relies on the strong federal Ninth Circuit anchor."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Meeting-room rules and the event context govern; the room does not inherit ordinary-library recording assumptions."
+      },
+      "notes": "Faith Center is an unusually close Ninth Circuit / Contra Costa library-room authority.",
+      "unresolved_reason": "California Speech Clause label is not necessary to the current federal LPF classification. Post-activation rerun confirms this is a facility-specific/local question rather than a statewide California qualification gap.",
+      "authority_ids": [
+        "faith-center"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S008",
+      "name": "Self-Service Sunday interior",
+      "access": "CONDITIONED_PUBLIC",
+      "federal": {
+        "classification": "LPF",
+        "confidence": "MEDIUM",
+        "note": "The interior remains a library-purpose channel but access is conditioned on enrollment, card/PIN entry and agreement terms."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "State constitutional effect of the special access regime remains unresolved."
+      },
+      "recording": {
+        "status": "UNRESOLVED",
+        "summary": "The agreement does not state a general camera ban, but incorporated rules and current signs may matter."
+      },
+      "notes": "Separate access regime outside ordinary staffed hours.",
+      "unresolved_reason": "Recording effect and California classification under the special access regime remain unresolved. Post-activation rerun confirms this is a facility-specific/local question rather than a statewide California qualification gap.",
+      "authority_ids": [
+        "kreimer",
+        "neinast",
+        "askins",
+        "project-veritas",
+        "pc632"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis.",
+          "authority_ids": [
+            "askins",
+            "project-veritas"
+          ]
+        }
+      ],
+      "indoor_common_space": {
+        "space_type": "PURPOSE_LIMITED_INTERIOR",
+        "privacy_context": "ROUTINE_SENSITIVE_INFORMATION_POSSIBLE",
+        "hipaa_posture": "NOT_INDICATED",
+        "facility_responsibility": "The library remains responsible for safeguarding protected patron/account information during self-service access and for designing reasonable privacy controls around systems and records.",
+        "visitor_responsibility": "The visitor does not inherit the library's confidentiality duties merely by entering under the self-service access program, although valid agreement terms and independent privacy law can apply directly.",
+        "recording_effect": "The special access agreement and current signs must be checked, but privacy concerns do not automatically convert the self-service interior into a blanket no-camera zone.",
+        "authority_ids": [
+          "askins",
+          "project-veritas",
+          "pc632"
+        ]
+      }
+    },
+    {
+      "subarea_id": "S009",
+      "name": "Staff / restricted spaces",
+      "access": "RESTRICTED",
+      "federal": {
+        "classification": "NOT_PUBLIC",
+        "confidence": "HIGH",
+        "note": "Not part of the ordinary public-access channel."
+      },
+      "california": {
+        "classification": "NOT_PUBLIC",
+        "confidence": "HIGH",
+        "note": "Same practical access result."
+      },
+      "recording": {
+        "status": "NOT_APPLICABLE",
+        "summary": "No ordinary public-area inference applies."
+      },
+      "notes": "Exact door or boundary only matters if location is disputed.",
+      "authority_ids": [],
+      "restriction_audits": [
+        {
+          "activity": "ACCESS_REMOVAL",
+          "status": "NOT_APPLICABLE",
+          "summary": "This subarea is classified outside the ordinary public-access channel. Any disputed exclusion still turns on the actual boundary and access authority; no public-forum permission is inferred."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-013-F0004",
+  "slug": "concord-police",
+  "name": "Concord Police Headquarters",
+  "state": "California",
+  "county": {
+    "name": "Contra Costa County",
+    "fips": "013"
+  },
+  "city": "Concord",
+  "agency": "City of Concord Police Department",
+  "facility_type": "POLICE_HEADQUARTERS",
+  "address": {
+    "street": "1350 Galindo Street",
+    "city": "Concord",
+    "state": "CA",
+    "zip": "94520"
+  },
+  "property": {
+    "ownership_summary": "City-owned headquarters parcel with Galindo public frontage strongly supported",
+    "apns": [
+      "126-124-036"
+    ]
+  },
+  "last_verified": "2026-09-30",
+  "field_status": "PRE_FIELD",
+  "summary": "Post-activation rerun confirms the ordinary public lobby / Community Service Desk and Records counter remain NPF/HIGH federally; the ordinary Galindo municipal sidewalk remains TPF/HIGH; the Community Meeting Room remains LPF/HIGH federally. California forum labels for the lobby/approach remain facility-specific unresolved questions, while noninterfering recording of public-facing officers retains strong activity-specific support.",
+  "recording_summary": "Recording public-facing police activity from a lawful, noninterfering vantage retains strong activity-specific support from CPD Policy 423, Penal Code §148(g), Fordyce, Askins, Project Veritas, and the local Wilson comparator. The 2026 Second Circuit Massimino decision is a useful noncontrolling lawful-vantage comparator for publicly visible police-facility areas from a public sidewalk. The 2026 Reyes decisions concern New York statutory/trespass issues and do not establish that a California police-lobby recording ban is constitutional.",
+  "field_items": [
+    "Current entrance/lobby signs",
+    "Counter privacy configuration",
+    "Controlled-door boundaries",
+    "Public-restroom limits",
+    "Exact front parking/pedestrian approach footprint"
+  ],
+  "open_legal_items": [
+    "California Speech Clause classification of the public police lobby, Records counter, facility-controlled approach/parking, and meeting room remains facility-specific",
+    "Any actual lobby recording restriction not located online",
+    "Privacy/confidentiality analysis for victim/witness/private-report subjects and exposed records",
+    "Current Community Meeting Room contract terms"
+  ],
+  "research": {
+    "sweep_path": "docs/research/SWEEP-010-CONCORD-POLICE.md",
+    "evidence_path": "docs/research/evidence/concord-police/README.md",
+    "hardening_path": "docs/research/REGISTRY-CLASSIFICATION-HARDENING-2026-09-23.md",
+    "indoor_hardening_path": "docs/research/REGISTRY-INDOOR-HARDENING-2026-09-23.md"
+  },
+  "authorities": [
+    "grace",
+    "sammartano",
+    "fordyce",
+    "askins",
+    "wilson",
+    "pc148g",
+    "pc6021",
+    "pc632",
+    "cpd423",
+    "project-veritas"
+  ],
+  "index_highlights": [
+    {
+      "subarea_ids": [
+        "S001"
+      ],
+      "label": "ordinary Galindo municipal sidewalk"
+    },
+    {
+      "subarea_ids": [
+        "S003",
+        "S004"
+      ],
+      "label": "public lobby / Community Service Desk · Records counter",
+      "scope_suffix": "federal"
+    },
+    {
+      "subarea_ids": [
+        "S007"
+      ],
+      "label": "Community Meeting Room"
+    }
+  ],
+  "subareas": [
+    {
+      "subarea_id": "S001",
+      "name": "Ordinary Galindo municipal sidewalk",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Ordinary municipal sidewalk doctrine applies."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Public-forum protection is strongly established."
+      },
+      "recording": {
+        "status": "STRONG_ACTIVITY_PROTECTION",
+        "summary": "Recording public police activity from an ordinary lawful public vantage receives strong protection, subject to noninterference and other valid rules."
+      },
+      "notes": "Exact strip matters only if location is disputed. 2026 comparative check: Massimino v. Benoit reinforces the physical-access versus lawful-vantage recording distinction, but Ninth Circuit/California authority remains controlling here.",
+      "authority_ids": [
+        "grace",
+        "fordyce",
+        "askins",
+        "pc148g",
+        "cpd423"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material recording prohibition is established in the current record for this defined activity/location, and affirmative recording authority is identified. Any later claimed restriction must be tested rather than presumed valid."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S002",
+      "name": "Facility-controlled front approach / parking",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "MEDIUM",
+        "note": "Facility-purpose access/parking is best treated as nonpublic if the exact segment is Police-controlled."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "No close California classification has been hardened."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Exact location/control and any actual rule matter."
+      },
+      "notes": "Confirm exact footprint/control before relying on this row at a specific point.",
+      "unresolved_reason": "Exact footprint/control and California treatment remain open. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap.",
+      "authority_ids": [
+        "sammartano"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S003",
+      "name": "Ordinary public lobby / Community Service Desk",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "HIGH",
+        "note": "Documented transactional police-service purpose plus controlling municipal-building doctrine support nonpublic treatment."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "No sufficiently close published California appellate police-lobby authority was located."
+      },
+      "recording": {
+        "status": "STRONG_ACTIVITY_PROTECTION",
+        "summary": "For public-facing officers from a lawful, noninterfering vantage, Policy 423, §148(g), Fordyce and Wilson materially strengthen the recording analysis; no separate lobby-wide ban was located online."
+      },
+      "notes": "NPF classification does not itself create a camera ban. 2026 comparative check: Reyes does not resolve the California constitutional question; its state-law holding and later vacatur are not a merits First Amendment ruling.",
+      "unresolved_reason": "California Speech Clause classification remains genuinely unresolved. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap.",
+      "authority_ids": [
+        "sammartano",
+        "fordyce",
+        "wilson",
+        "pc148g",
+        "cpd423",
+        "askins",
+        "project-veritas",
+        "pc632"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis.",
+          "authority_ids": [
+            "askins",
+            "project-veritas"
+          ]
+        }
+      ],
+      "indoor_common_space": {
+        "space_type": "LOBBY",
+        "privacy_context": "CONFIDENTIAL_INTERACTION_POSSIBLE",
+        "hipaa_posture": "NOT_INDICATED",
+        "facility_responsibility": "The department retains responsibility for safeguarding protected records, screens, victim/witness information, secure operations, and other confidential material under laws and policies that apply to the department.",
+        "visitor_responsibility": "A lawful lobby visitor does not inherit the department's confidentiality duties merely by being present. Independent privacy law or a constitutionally valid targeted restriction can still apply directly to particular conduct.",
+        "recording_effect": "General privacy concerns do not override the strong officer-recording authorities or create a blanket lobby camera ban. The department must identify the actual privacy/security interest and connect any restriction to it.",
+        "authority_ids": [
+          "sammartano",
+          "fordyce",
+          "askins",
+          "project-veritas",
+          "pc148g",
+          "pc632",
+          "cpd423"
+        ]
+      }
+    },
+    {
+      "subarea_id": "S004",
+      "name": "Records counter",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "HIGH",
+        "note": "Purpose-limited public transaction area within the police facility."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Separate California interior classification remains unresolved."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Protected records/screens and confidential interactions can support narrower restrictions; exact subject and rule matter."
+      },
+      "notes": "Public counter access does not open records workspaces.",
+      "unresolved_reason": "California interior classification remains unresolved. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap.",
+      "authority_ids": [
+        "sammartano",
+        "pc632",
+        "askins",
+        "project-veritas"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "Recording can be First Amendment-protected activity in this public-access indoor subarea. No material general recording prohibition is established in the current record; any later claimed restriction must identify its legal source and survive the applicable forum, privacy, and activity-specific constitutional analysis.",
+          "authority_ids": [
+            "askins",
+            "project-veritas"
+          ]
+        }
+      ],
+      "indoor_common_space": {
+        "space_type": "PUBLIC_SERVICE_COUNTER",
+        "privacy_context": "CONFIDENTIAL_INTERACTION_LIKELY",
+        "hipaa_posture": "NOT_INDICATED",
+        "facility_responsibility": "The department is responsible for protecting records, screens, reports, and confidential interactions exposed at the counter and for using appropriate operational safeguards.",
+        "visitor_responsibility": "A visitor does not become the custodian of police records or confidential information merely by standing lawfully at the public counter. Laws that apply directly to the visitor, such as confidential-communication law where its elements are met, remain separate.",
+        "recording_effect": "The counter presents a stronger factual basis for targeted privacy restrictions than the open lobby generally, but the scope must track the actual protected information or interaction rather than automatically extend to all recording.",
+        "authority_ids": [
+          "sammartano",
+          "askins",
+          "project-veritas",
+          "pc632"
+        ]
+      }
+    },
+    {
+      "subarea_id": "S005",
+      "name": "Officer performing public-facing official duties from a lawful lobby vantage",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "HIGH",
+        "note": "The physical lobby remains NPF; this row captures the distinct activity overlay."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "State forum label remains unresolved, while statutory/activity protections remain relevant."
+      },
+      "recording": {
+        "status": "STRONG_ACTIVITY_PROTECTION",
+        "summary": "Policy 423 + Penal Code §148(g) + Fordyce + local Wilson provide strong activity-specific support for lawful noninterfering recording."
+      },
+      "notes": "This does not extend to deliberate capture of private reports, protected screens, undercover personnel or secure operations.",
+      "unresolved_reason": "California forum label is unresolved but does not erase the separate statutory/policy/activity protections. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap.",
+      "authority_ids": [
+        "fordyce",
+        "wilson",
+        "pc148g",
+        "cpd423"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material recording prohibition is established in the current record for this defined activity/location, and affirmative recording authority is identified. Any later claimed restriction must be tested rather than presumed valid."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S006",
+      "name": "Victim / witness / private-report interaction",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "HIGH",
+        "note": "The physical lobby remains NPF."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "State forum classification remains unresolved."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Penal Code §632 confidentiality and narrower privacy protections may materially alter the recording analysis depending on objective privacy facts."
+      },
+      "notes": "Do not collapse officer recording and privacy-sensitive third-party recording into one rule. The New York Court of Appeals' Reyes privacy discussion is comparative evidence of possible lobby privacy/safety interests only, not California governing law.",
+      "unresolved_reason": "Recording result is fact-specific to privacy/acoustic circumstances and any actual restriction. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap.",
+      "authority_ids": [
+        "pc632"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S007",
+      "name": "Community Meeting Room",
+      "access": "CONDITIONED_PUBLIC",
+      "federal": {
+        "classification": "LPF",
+        "confidence": "HIGH",
+        "note": "Published opening to nonprofit community groups for community-issue discussion creates a defined opened channel."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Separate state-law classification is retained."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Meeting-room contract and event rules govern; the room does not inherit lobby treatment."
+      },
+      "notes": "Contract details and current practice remain worth verifying.",
+      "unresolved_reason": "California label and full contract terms remain unresolved, not the federal LPF project classification. Post-activation rerun confirms this remains a facility-specific state-law or factual question rather than a statewide qualification gap.",
+      "authority_ids": [
+        "faith-center"
+      ],
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "No material general recording prohibition has been established in the current record for this subarea. Any future claimed restriction must be separately sourced and constitutionally tested."
+        }
+      ]
+    },
+    {
+      "subarea_id": "S008",
+      "name": "Controlled doors / employee and operational areas",
+      "access": "RESTRICTED",
+      "federal": {
+        "classification": "NOT_PUBLIC",
+        "confidence": "HIGH",
+        "note": "Outside the ordinary public-access channel."
+      },
+      "california": {
+        "classification": "NOT_PUBLIC",
+        "confidence": "HIGH",
+        "note": "Same practical access result."
+      },
+      "recording": {
+        "status": "NOT_APPLICABLE",
+        "summary": "No public-lobby recording inference applies."
+      },
+      "notes": "Includes dispatch, evidence, secure parking, holding/interview and other operational areas unless specifically opened.",
+      "authority_ids": [],
+      "restriction_audits": [
+        {
+          "activity": "ACCESS_REMOVAL",
+          "status": "NOT_APPLICABLE",
+          "summary": "This subarea is classified outside the ordinary public-access channel. Any disputed exclusion still turns on the actual boundary and access authority; no public-forum permission is inferred."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GitHubChrisRice/1A-Field-Guide/registry/restriction-corpus-schema-v1.json",
+  "title": "1A Field Guide Restriction Corpus v1",
+  "type": "object",
+  "required": ["schema_version","facility_id","slug","last_verified","rules","cpra_targets"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "facility_id": {"type": "string"},
+    "slug": {"type": "string"},
+    "last_verified": {"type": "string","format":"date"},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id","title","source_type","source","applies_to","activities","project_status","summary"],
+        "properties": {
+          "rule_id": {"type":"string","pattern":"^R[0-9]{3}$"},
+          "title": {"type":"string"},
+          "source_type": {"enum":["STATUTE","REGULATION","ORDINANCE","AGENCY_POLICY","FACILITY_RULE","CONTRACT_TERMS","HANDBOOK","PUBLIC_GUIDANCE","POSTED_SIGN","CASE_AUTHORITY"]},
+          "source": {"type":"string"},
+          "citation": {"type":"string"},
+          "current_as_of": {"type":"string"},
+          "applies_to": {"type":"array","items":{"type":"string"}},
+          "activities": {"type":"array","items":{"type":"string"}},
+          "government_interest": {"type":"array","items":{"type":"string"}},
+          "project_status": {"enum":["RULE_LOCATED_UNTESTED","CONSTITUTIONALLY_SUPPORTED","CONSTITUTIONALITY_UNRESOLVED","FACIALLY_SUSPECT","AS_APPLIED_SUSPECT","LIKELY_INVALID","UPHELD_BINDING","NONRESTRICTION_CONTEXT"]},
+          "summary": {"type":"string"},
+          "constitutional_test": {"type":"string"},
+          "enforcement_hook": {"type":"string"},
+          "open_questions": {"type":"array","items":{"type":"string"}},
+          "authority_ids": {"type":"array","items":{"type":"string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "cpra_targets": {
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["priority","target","why"],
+        "properties":{
+          "priority":{"enum":["HIGH","MEDIUM","LOW"]},
+          "target":{"type":"string"},
+          "why":{"type":"string"},
+          "only_if_gap_remains":{"type":"boolean"}
+        },
+        "additionalProperties":false
+      }
+    }
+  },
+  "additionalProperties": false
+}
