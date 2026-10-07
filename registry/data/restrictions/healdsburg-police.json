@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-097-F0001",
+  "slug": "healdsburg-police",
+  "last_verified": "2026-10-07",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "title": "HPD Policy 463 — Public Recording of Law Enforcement Activity",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://healdsburg.gov/DocumentCenter/View/11325/Healdsburg_PD_Policy_Manual",
+      "applies_to": [
+        "lawful public or legally present private vantage",
+        "official law-enforcement activity"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "HPD recognizes lawful recording of law-enforcement activity and distinguishes recording from actual interference. The full implementation and any separate visitor rule remain to be tested; this policy does not establish a building-wide camera ban.",
+      "open_questions": [
+        "Any separate lobby/visitor recording rule, sign, post order, or implementation guidance?",
+        "What revisions and effective dates control?"
+      ],
+      "citation": "HPD Policy 463, pp. 374–376",
+      "current_as_of": "2026-10-07"
+    },
+    {
+      "rule_id": "R002",
+      "title": "HPD identification — requested ID-card display and uniform identification",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://healdsburg.gov/DocumentCenter/View/11325/Healdsburg_PD_Policy_Manual",
+      "applies_to": [
+        "on-duty or official-capacity department members",
+        "uniformed members"
+      ],
+      "activities": [
+        "PRESS_INFORMATION_GATHERING",
+        "SPEECH_CONVERSATION"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "Section 1045.2.1 directs courteous display of the department ID card on request as soon as practical, with commander-directed specialized-assignment exceptions. Section 1045.2.3 separately requires a visible badge and worn nameplate. The card contains a member identification number; do not assume it equals the badge number. The text does not expressly require oral recitation of both identifiers.",
+      "open_questions": [
+        "Policy-specific effective dates and implementation guidance on requests for an officer’s name or badge number."
+      ],
+      "citation": "HPD §§1045.2.1, 1045.2.3, p. 653",
+      "current_as_of": "2026-10-07"
+    },
+    {
+      "rule_id": "R003",
+      "title": "HPD Policy 1019 — complaint intake",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://healdsburg.gov/DocumentCenter/View/11325/Healdsburg_PD_Policy_Manual",
+      "applies_to": [
+        "personnel-complaint intake"
+      ],
+      "activities": [
+        "PRESS_INFORMATION_GATHERING",
+        "ACCESS_REMOVAL"
+      ],
+      "project_status": "NONRESTRICTION_CONTEXT",
+      "summary": "The policy provides oral and written complaint intake and supervisory routing. Reconcile complaint-form availability with published lobby hours. These staff obligations are not visitor restrictions.",
+      "open_questions": [],
+      "citation": "HPD §§1019.3–1019.4.2, pp. 597–598",
+      "current_as_of": "2026-10-07"
+    }
+  ],
+  "cpra_targets": [
+    {
+      "priority": "HIGH",
+      "target": "Unpublished current headquarters visitor/recording directives, signage authority, public-access plans, and implementation guidance for Policies 463, 1045, and 1019.",
+      "why": "The full manual is already public; seek implementation gaps and version history rather than duplicate it.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Facility parcel/title/control, entrance/public-parking plan, frontage/ROW records, and public lobby/complaint access schedule.",
+      "why": "Operation, ownership, public access, and constitutional forum are separate questions.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Retention schedules for dispatch/CAD, official video, and vehicle-location information actually maintained.",
+      "why": "Supports later event-specific preservation without assuming a deployment or identifiable incident.",
+      "only_if_gap_remains": true
+    }
+  ]
+}

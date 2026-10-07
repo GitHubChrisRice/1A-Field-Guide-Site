@@ -65,7 +65,7 @@ Existing pre-activation facility work does not automatically promote a county. C
 | CA-06091 | 06091 | Sierra County | Unresearched |  |
 | CA-06093 | 06093 | Siskiyou County | Unresearched |  |
 | CA-06095 | 06095 | Solano County | Unresearched |  |
-| CA-06097 | 06097 | Sonoma County | Unresearched |  |
+| CA-06097 | 06097 | Sonoma County | Researching | Healdsburg documentary pilot under the Active California framework; property, policy validity, field, and enforcement gaps remain. |
 | CA-06099 | 06099 | Stanislaus County | Unresearched |  |
 | CA-06101 | 06101 | Sutter County | Unresearched |  |
 | CA-06103 | 06103 | Tehama County | Unresearched |  |

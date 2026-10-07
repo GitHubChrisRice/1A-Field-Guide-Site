@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-097-F0002",
+  "slug": "healdsburg-city-hall",
+  "name": "Healdsburg City Hall / Council Chamber",
+  "state": "California",
+  "county": {
+    "name": "Sonoma County",
+    "fips": "097"
+  },
+  "city": "Healdsburg",
+  "agency": "City of Healdsburg",
+  "facility_type": "CITY_HALL",
+  "address": {
+    "street": "401 Grove Street",
+    "city": "Healdsburg",
+    "state": "CA",
+    "zip": "95448"
+  },
+  "property": {
+    "ownership_summary": "Official City directory establishes the City Hall location and municipal operation; title/parcel/right-of-way remain unverified.",
+    "boundary_status": "UNRESOLVED",
+    "parcel_candidate_note": "Rejected the address-only results in El Verano/Sonoma because they do not match Healdsburg.",
+    "parcel_source": "https://socogis.sonomacounty.ca.gov/map/rest/services/CRAPublic/ParcelsPublic/MapServer/0"
+  },
+  "last_verified": "2026-10-07",
+  "field_status": "PRE_FIELD",
+  "summary": "Separate the ordinary service lobby from a covered public meeting. The service lobby is a federal NPF project inference. A council meeting opened to public participation is a federal LPF for its defined meeting channel; room access outside meetings, California labels, and exact exterior boundaries remain open.",
+  "recording_summary": "Covered Brown Act meetings have statutory recording protection subject to the disruption standard. That meeting-specific rule does not determine recording in service counters, hallways, closed sessions, or the chamber outside an open meeting.",
+  "field_items": [
+    "Record public entry/counter layout, posted hours, visitor and recording signs, and controlled-area transitions.",
+    "For a scheduled open meeting, preserve the agenda, posted comment/recording procedures, room layout, and actual access conditions.",
+    "Verify the Grove Street sidewalk, entry approach, and parking/right-of-way transitions against official property records."
+  ],
+  "open_legal_items": [
+    "Address-only GIS matches were in El Verano/Sonoma, not the Healdsburg facility; resolve the correct parcel before assigning APNs.",
+    "Obtain current Council rules, any chamber-use policy, and service-lobby visitor/recording directives.",
+    "Separate covered open meetings, closed sessions, and room reservations; review local restrictions against the existing Brown Act chapter."
+  ],
+  "research": {
+    "sweep_path": "docs/research/SWEEP-020-HEALDSBURG-FACILITY-BASELINE.md",
+    "evidence_path": "docs/research/evidence/healdsburg-city-hall/README.md"
+  },
+  "authorities": [
+    "brown-recording",
+    "grace",
+    "norse",
+    "sammartano"
+  ],
+  "index_highlights": [
+    {
+      "subarea_ids": [
+        "S003"
+      ],
+      "label": "covered open-meeting channel"
+    },
+    {
+      "subarea_ids": [
+        "S002"
+      ],
+      "label": "public service lobby"
+    },
+    {
+      "subarea_ids": [
+        "S004"
+      ],
+      "label": "chamber outside open meetings"
+    }
+  ],
+  "subareas": [
+    {
+      "subarea_id": "S001",
+      "name": "Grove Street ordinary municipal sidewalk — exact strip pending",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Ordinary municipal sidewalk doctrine applies to the defined street-side sidewalk, once distinguished from a purpose-built facility approach."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "The ordinary municipal sidewalk receives the traditional public-forum baseline; this is not a classification of every adjoining paved area."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Forum protection and recording analysis remain separate. Identify the lawful street-side vantage before extending this row to a particular position."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "This limited baseline has not established a material restriction for this activity. The local-rule and enforcement sweep is incomplete; this status is not clearance or a finding that no restriction exists."
+        }
+      ],
+      "authority_ids": [
+        "grace"
+      ],
+      "notes": "No survey-grade boundary or right-of-way edge is established. This row defines the ordinary municipal sidewalk category, not an unmapped forecourt, driveway, or parking area."
+    },
+    {
+      "subarea_id": "S002",
+      "name": "Ordinary public service lobby / counters during business hours",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "MEDIUM",
+        "note": "The City Clerk identifies public city-records and administrative services at City Hall. The project infers a service-purpose nonpublic forum; an intentional broader opening could change this result."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "The ordinary service function is documented, but California Speech Clause classification and any broader civic opening of this exact area need facility-specific research."
+      },
+      "recording": {
+        "status": "UNRESOLVED",
+        "summary": "Current patron-facing signs and complete visitor rules have not been verified."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "This limited baseline has not established a material restriction for this activity. The local-rule and enforcement sweep is incomplete; this status is not clearance or a finding that no restriction exists."
+        }
+      ],
+      "authority_ids": [
+        "sammartano"
+      ],
+      "unresolved_reason": "The ordinary service function is documented, but California Speech Clause classification and any broader civic opening of this exact area need facility-specific research.",
+      "notes": "Access is limited to the published public-service channel and hours. NPF does not itself justify a camera prohibition, suppress criticism, or establish removal authority."
+    },
+    {
+      "subarea_id": "S003",
+      "name": "Council chamber — covered open meeting / public-participation channel",
+      "access": "CONDITIONED_PUBLIC",
+      "federal": {
+        "classification": "LPF",
+        "confidence": "HIGH",
+        "note": "The classification is limited to a council meeting opened to public participation under Norse; it is not a room-wide or all-hours designation."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Separate California forum classification remains open; the Brown Act protections do not depend on completing that label."
+      },
+      "recording": {
+        "status": "STRONG_ACTIVITY_PROTECTION",
+        "summary": "Government Code §54953.5 protects recording of covered open meetings subject to its persistent-disruption standard. Check the actual meeting agenda and current local procedures."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=54953.5",
+          "summary": "The Brown Act recording/disruption framework applies to covered open meetings. Current local equipment, sign-in, decorum, and removal practices still need reconciliation.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        },
+        {
+          "activity": "PUBLIC_COMMENT",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=54954.3.",
+          "summary": "Covered meetings must provide statutory comment opportunities and permit criticism within the law’s scope; current local procedures and their application remain to be reviewed.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [
+        "norse",
+        "brown-recording"
+      ],
+      "unresolved_reason": "California forum label and current local meeting rules remain unreviewed; identify the body, session, and actual public-participation channel."
+    },
+    {
+      "subarea_id": "S004",
+      "name": "Chamber outside a covered open meeting / reserved use",
+      "access": "UNKNOWN",
+      "federal": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "No ordinary all-hours chamber access or general community-use opening has been established."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "No ordinary all-hours chamber access or general community-use opening has been established."
+      },
+      "recording": {
+        "status": "UNRESOLVED",
+        "summary": "Area-specific recording and access facts remain to be established."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "This limited baseline has not established a material restriction for this activity. The local-rule and enforcement sweep is incomplete; this status is not clearance or a finding that no restriction exists."
+        }
+      ],
+      "authority_ids": [],
+      "unresolved_reason": "No ordinary all-hours chamber access or general community-use opening has been established."
+    }
+  ]
+}

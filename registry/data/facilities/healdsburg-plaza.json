@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-097-F0004",
+  "slug": "healdsburg-plaza",
+  "name": "Healdsburg Plaza",
+  "state": "California",
+  "county": {
+    "name": "Sonoma County",
+    "fips": "097"
+  },
+  "city": "Healdsburg",
+  "agency": "City of Healdsburg Community Services",
+  "facility_type": "PUBLIC_PARK",
+  "address": {
+    "street": "Matheson Street and Healdsburg Avenue",
+    "city": "Healdsburg",
+    "state": "CA",
+    "zip": "95448"
+  },
+  "property": {
+    "ownership_summary": "Official City facility page and adopted permit program establish municipal park administration; title and exact perimeter/ROW have not been independently verified.",
+    "boundary_status": "UNRESOLVED",
+    "parcel_source": "https://socogis.sonomacounty.ca.gov/map/rest/services/CRAPublic/ParcelsPublic/MapServer/0"
+  },
+  "last_verified": "2026-10-07",
+  "field_status": "PRE_FIELD",
+  "summary": "The City describes the Plaza as a public park with walking, gathering, and community-event uses, supporting a TPF project classification for ordinary park space. Its adopted performance permit rules remain untested; a permit program does not erase the park baseline. Exact surrounding boundaries and event-specific exclusive use remain open.",
+  "recording_summary": "Ordinary public-place recording and the conditions attached to a performance permit require separate treatment. Resolution 116-2023 includes a commercial-film-permit condition for permit holders; the complete film-permit framework and its reach to ordinary visitors have not been established.",
+  "field_items": [
+    "Document posted park/performance/film signs, the gazebo, ordinary pedestrian paths, and event occupation without inferring a general closure.",
+    "Identify municipal sidewalk and curb boundaries separately from park paths, roadways, adjoining businesses, and event footprints.",
+    "Preserve current permit criteria and any actual official direction; document the activity, exact location, stated rule, and response."
+  ],
+  "open_legal_items": [
+    "Confirm park title/control and perimeter/right-of-way using property records; no APN is assigned from the intersection alone.",
+    "Review the two-week lead time, one-performance-per-day cap, one-hour limit, gazebo-only condition, language restrictions, revocation, and appeal under the TPF framework.",
+    "Locate the current Film Permit rules and exemptions before treating §3.8.7 as a general visitor filming requirement.",
+    "Review current park, solicitation, obstruction, event, and public-property provisions; ordinary filming, leafleting, and criticism are not automatically performances."
+  ],
+  "research": {
+    "sweep_path": "docs/research/SWEEP-020-HEALDSBURG-FACILITY-BASELINE.md",
+    "evidence_path": "docs/research/evidence/healdsburg-plaza/README.md"
+  },
+  "authorities": [
+    "grace",
+    "perry"
+  ],
+  "index_highlights": [
+    {
+      "subarea_ids": [
+        "S001"
+      ],
+      "label": "ordinary public park"
+    },
+    {
+      "subarea_ids": [
+        "S002"
+      ],
+      "label": "gazebo / performance conditions"
+    },
+    {
+      "subarea_ids": [
+        "S003"
+      ],
+      "label": "ordinary municipal sidewalks"
+    }
+  ],
+  "subareas": [
+    {
+      "subarea_id": "S001",
+      "name": "Ordinary public park lawns / paths / gathering space",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Official park, walking, picnic, and community-gathering descriptions fit the traditional public-park baseline under Perry."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "The ordinary public-park facts fit the California framework’s traditional-forum baseline; this is a project classification, not a site-specific court holding."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "TPF protection does not alone resolve recording, valid conduct limits, or commercial-permit scope."
+      },
+      "restriction_audits": [
+        {
+          "activity": "ASSEMBLY_DEMONSTRATION",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://healdsburg.gov/DocumentCenter/View/17222 — Resolution 116-2023, Exhibit A",
+          "summary": "The City requires a permit for Plaza performances, with advance application, time, location, frequency, and conduct conditions. The definition of performance and application to ordinary spontaneous expression require review.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        },
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://healdsburg.gov/DocumentCenter/View/17222 — Exhibit A §3.8.7",
+          "summary": "Performance permit holders are directed not to create commercial recordings without a Healdsburg Film Permit. Whether a separate film policy governs an ordinary visitor, and its scope and validity, remain unresolved.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [
+        "perry"
+      ]
+    },
+    {
+      "subarea_id": "S002",
+      "name": "Gazebo / performance channel while ordinary park remains open",
+      "access": "CONDITIONED_PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "The gazebo lies in the public park. The performance permit regulates activity; it is not by itself a forum reclassification."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Same ordinary-park baseline; event-specific occupation or exclusion requires its own factual and legal analysis."
+      },
+      "recording": {
+        "status": "ACTIVITY_SPECIFIC_RULE",
+        "summary": "Resolution 116-2023 §3.8.7 attaches a commercial-recording condition to performance permits."
+      },
+      "restriction_audits": [
+        {
+          "activity": "ASSEMBLY_DEMONSTRATION",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://healdsburg.gov/DocumentCenter/View/17222 — Resolution 116-2023, Exhibit A",
+          "summary": "The City requires a permit for Plaza performances, with advance application, time, location, frequency, and conduct conditions. The definition of performance and application to ordinary spontaneous expression require review.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        },
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://healdsburg.gov/DocumentCenter/View/17222 — Exhibit A §3.8.7",
+          "summary": "Performance permit holders are directed not to create commercial recordings without a Healdsburg Film Permit. Whether a separate film policy governs an ordinary visitor, and its scope and validity, remain unresolved.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [
+        "perry"
+      ]
+    },
+    {
+      "subarea_id": "S003",
+      "name": "Surrounding street-side ordinary municipal sidewalk — exact strip pending",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Ordinary municipal sidewalk doctrine applies to the defined street-side sidewalk, once distinguished from a purpose-built facility approach."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "The ordinary municipal sidewalk receives the traditional public-forum baseline; this is not a classification of every adjoining paved area."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Forum protection and recording analysis remain separate. Identify the lawful street-side vantage before extending this row to a particular position."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "This limited baseline has not established a material restriction for this activity. The local-rule and enforcement sweep is incomplete; this status is not clearance or a finding that no restriction exists."
+        }
+      ],
+      "authority_ids": [
+        "grace"
+      ],
+      "notes": "No survey-grade boundary or right-of-way edge is established. This row defines the ordinary municipal sidewalk category, not an unmapped forecourt, driveway, or parking area."
+    }
+  ]
+}

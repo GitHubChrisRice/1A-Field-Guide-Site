@@ -135,6 +135,26 @@
       "citation": "Concord Municipal Code ch. 9.08",
       "level": "MUNICIPAL_CODE",
       "topic": "aggressive solicitation and location-based solicitation restrictions"
+    },
+    "perry": {
+      "citation": "Perry Education Association v. Perry Local Educators’ Association, 460 U.S. 37, 45–46 (1983)",
+      "level": "US_SUPREME_COURT",
+      "topic": "traditional public parks and public-forum framework"
+    },
+    "norse": {
+      "citation": "Norse v. City of Santa Cruz, 629 F.3d 966 (9th Cir. 2010) (en banc)",
+      "level": "NINTH_CIRCUIT_EN_BANC",
+      "topic": "city-council meeting public-participation channel"
+    },
+    "brown-recording": {
+      "citation": "California Government Code §54953.5",
+      "level": "CALIFORNIA_STATUTE",
+      "topic": "recording covered open local legislative-body meetings"
+    },
+    "scl8001": {
+      "citation": "Sonoma County Library Policy 8001 — Photography and Filming (effective February 4, 2026)",
+      "level": "AGENCY_POLICY",
+      "topic": "Library interior/exterior filming conditions; validity not inferred from adoption"
     }
   }
 }

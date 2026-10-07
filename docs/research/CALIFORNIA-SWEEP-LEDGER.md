@@ -903,3 +903,11 @@ Substantive controls CA-GATE-01 through CA-GATE-08 are therefore recorded as met
 - specialized CPRA exemption families beyond the ordinary Sweep 018 law-enforcement evidence branch.
 - controlling case-law sweep for remaining constitutional/public-peace/trespass authorities.
 - additional police/sheriff-lobby validation at a second site, plus federal/postal-premises validation, without carrying over Concord Police, DMV, or library anchor conclusions.
+
+## Sweep 020 — Healdsburg facility baseline
+
+**Research date:** October 7, 2026.
+
+Four official-source documentary facility records apply the Active California framework to HPD, City Hall/Council Chamber, Healdsburg Regional Library, and the Plaza. The review distinguishes agency operation from title/control/ROW, ordinary service from meeting/library/park channels, and published rules from constitutional validity. Parcel-search conflicts, field gaps, and incomplete enforcement history remain explicit. No incident allegation or field observation is asserted in this sweep.
+
+[Detailed source review](SWEEP-020-HEALDSBURG-FACILITY-BASELINE.md)

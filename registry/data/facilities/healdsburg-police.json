@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-097-F0001",
+  "slug": "healdsburg-police",
+  "name": "Healdsburg Police Department",
+  "state": "California",
+  "county": {
+    "name": "Sonoma County",
+    "fips": "097"
+  },
+  "city": "Healdsburg",
+  "agency": "City of Healdsburg Police Department",
+  "facility_type": "POLICE_HEADQUARTERS",
+  "address": {
+    "street": "238 Center Street",
+    "city": "Healdsburg",
+    "state": "CA",
+    "zip": "95448"
+  },
+  "property": {
+    "ownership_summary": "City-operated police facility confirmed by the official directory; parcel ownership and legal boundaries are not verified.",
+    "boundary_status": "UNRESOLVED",
+    "parcel_candidate_note": "Address-only GIS search returned 238 CENTER DR with a CABLE TV use description. Do not assign that APN as verified police property without reconciling the mismatch.",
+    "parcel_source": "https://socogis.sonomacounty.ca.gov/map/rest/services/CRAPublic/ParcelsPublic/MapServer/0"
+  },
+  "last_verified": "2026-10-07",
+  "field_status": "PRE_FIELD",
+  "summary": "Documentary baseline for the public police service channel. Ordinary street-side sidewalk doctrine is distinct from the unresolved approach/parking area. The service lobby is a federal NPF project inference; California interior analysis and exact boundaries remain open. No field verification or enforcement-history finding is asserted.",
+  "recording_summary": "Policy 463 recognizes lawful recording of officer activity. That protection, lobby access, third-party privacy, and any actual restriction require separate analysis. Policies 1045.2.1 and 1045.2.3 separately address requested ID-card display and uniform identification; neither is a public filming ban.",
+  "field_items": [
+    "Document posted lobby hours and reconcile the complaint page’s 24/7 form-access statement with the daily 7:30 a.m.–7:00 p.m. lobby schedule.",
+    "Record public entrance, accessible complaint/records information, current camera/phone signs, and where controlled doors begin.",
+    "Distinguish the street-side sidewalk from the facility approach, driveway, public parking, and secure vehicle areas; obtain maps for disputed boundaries."
+  ],
+  "open_legal_items": [
+    "Confirm title/control and exact frontage/right-of-way; the address-only parcel candidate conflicts with official street naming and assessment use.",
+    "Obtain current visitor directives, signage authority, policy revision/effective-date history, and complaint-access implementation.",
+    "Test any actual recording/removal rule under the qualified California framework; an NPF label is not a camera ban.",
+    "Historical enforcement research is incomplete; no facility-wide rights-risk clearance is inferred."
+  ],
+  "research": {
+    "sweep_path": "docs/research/SWEEP-020-HEALDSBURG-FACILITY-BASELINE.md",
+    "evidence_path": "docs/research/evidence/healdsburg-police/README.md"
+  },
+  "authorities": [
+    "grace",
+    "sammartano"
+  ],
+  "index_highlights": [
+    {
+      "subarea_ids": [
+        "S001"
+      ],
+      "label": "ordinary municipal sidewalk"
+    },
+    {
+      "subarea_ids": [
+        "S003"
+      ],
+      "label": "public police-service lobby"
+    },
+    {
+      "subarea_ids": [
+        "S002"
+      ],
+      "label": "approach / parking boundaries"
+    }
+  ],
+  "subareas": [
+    {
+      "subarea_id": "S001",
+      "name": "Center Street ordinary municipal sidewalk — exact strip pending",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Ordinary municipal sidewalk doctrine applies to the defined street-side sidewalk, once distinguished from a purpose-built facility approach."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "The ordinary municipal sidewalk receives the traditional public-forum baseline; this is not a classification of every adjoining paved area."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Forum protection and recording analysis remain separate. Identify the lawful street-side vantage before extending this row to a particular position."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "NO_MATERIAL_RESTRICTION_LOCATED",
+          "summary": "This limited baseline has not established a material restriction for this activity. The local-rule and enforcement sweep is incomplete; this status is not clearance or a finding that no restriction exists."
+        }
+      ],
+      "authority_ids": [
+        "grace"
+      ],
+      "notes": "No survey-grade boundary or right-of-way edge is established. This row defines the ordinary municipal sidewalk category, not an unmapped forecourt, driveway, or parking area."
+    },
+    {
+      "subarea_id": "S002",
+      "name": "Entrance approach and public/operational parking transitions",
+      "access": "UNKNOWN",
+      "federal": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Parcel title, right-of-way limits, access pattern, and any separate purpose-built approach have not been reconciled."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Parcel title, right-of-way limits, access pattern, and any separate purpose-built approach have not been reconciled."
+      },
+      "recording": {
+        "status": "UNRESOLVED",
+        "summary": "Area-specific recording and access facts remain to be established."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://healdsburg.gov/DocumentCenter/View/11325/Healdsburg_PD_Policy_Manual — Policy 463, pp. 374–376",
+          "summary": "HPD recognizes lawful recording of law-enforcement activity and distinguishes recording from actual interference. The full implementation and any separate visitor rule remain to be tested; this policy does not establish a building-wide camera ban.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [],
+      "unresolved_reason": "Parcel title, right-of-way limits, access pattern, and any separate purpose-built approach have not been reconciled."
+    },
+    {
+      "subarea_id": "S003",
+      "name": "Ordinary public lobby during published lobby hours",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "MEDIUM",
+        "note": "The City publishes daily lobby hours and identifies police service functions. The project infers a service-purpose nonpublic forum; an intentional broader opening could change this result."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "The ordinary service function is documented, but California Speech Clause classification and any broader civic opening of this exact area need facility-specific research."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Policy 463 applies to lawful officer recording. Current lobby signage, layout, third-party interactions, and any narrower restriction remain unverified."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://healdsburg.gov/DocumentCenter/View/11325/Healdsburg_PD_Policy_Manual — Policy 463, pp. 374–376",
+          "summary": "HPD recognizes lawful recording of law-enforcement activity and distinguishes recording from actual interference. The full implementation and any separate visitor rule remain to be tested; this policy does not establish a building-wide camera ban.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [
+        "sammartano"
+      ],
+      "unresolved_reason": "The ordinary service function is documented, but California Speech Clause classification and any broader civic opening of this exact area need facility-specific research.",
+      "notes": "Access is limited to the published public-service channel and hours. NPF does not itself justify a camera prohibition, suppress criticism, or establish removal authority."
+    },
+    {
+      "subarea_id": "S004",
+      "name": "Public records / complaint interaction",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "NPF",
+        "confidence": "MEDIUM",
+        "note": "The City provides police-records and civilian-complaint intake channels. The project infers a service-purpose nonpublic forum; an intentional broader opening could change this result."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "The ordinary service function is documented, but California Speech Clause classification and any broader civic opening of this exact area need facility-specific research."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Officer accountability recording is separate from capturing objectively confidential third-party communications or protected records; actual layout and conduct matter."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://healdsburg.gov/DocumentCenter/View/11325/Healdsburg_PD_Policy_Manual — Policy 463, pp. 374–376",
+          "summary": "HPD recognizes lawful recording of law-enforcement activity and distinguishes recording from actual interference. The full implementation and any separate visitor rule remain to be tested; this policy does not establish a building-wide camera ban.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [
+        "sammartano"
+      ],
+      "unresolved_reason": "The ordinary service function is documented, but California Speech Clause classification and any broader civic opening of this exact area need facility-specific research.",
+      "notes": "Access is limited to the published public-service channel and hours. NPF does not itself justify a camera prohibition, suppress criticism, or establish removal authority."
+    }
+  ]
+}

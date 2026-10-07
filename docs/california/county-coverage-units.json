@@ -686,12 +686,12 @@
       "stable_geographic_code": "06097",
       "name": "Sonoma County",
       "unit_type": "county",
-      "coverage_status": "Unresearched",
-      "coverage_status_changed_at": "2026-09-30",
-      "coverage_status_changed_by": "Founder",
+      "coverage_status": "Researching",
+      "coverage_status_changed_at": "2026-10-07",
+      "coverage_status_changed_by": "Founder-directed research; publication review via PR",
       "inventory_verified_at": "2026-09-30",
       "inventory_source_ref": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_county_ca.html",
-      "notes": null,
+      "notes": "Healdsburg documentary pilot under the Active California framework: police, City Hall, regional library, and Plaza; property/control, local-rule validity, field verification, and enforcement research remain open.",
       "is_publicly_listed": true
     },
     {

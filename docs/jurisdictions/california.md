@@ -11,7 +11,7 @@ title: California
   <span>Verified 2026-09-30</span>
 </div>
 
-California's statewide Field Guide overlay is Active; post-activation reconciliation of the Contra Costa pilot entries has moved facility research maturity to Researching.
+California’s statewide Field Guide overlay is Active; facility research is Researching through the reconciled Contra Costa pilots and the documentary Healdsburg pilot in Sonoma County.
 
 ## What this status means
 
@@ -33,7 +33,7 @@ Activation initialized the complete 58-county `CountyCoverageUnit` inventory at 
 
 See the [California County Coverage Inventory](../california/COUNTY-COVERAGE-INVENTORY.md).
 
-The Contra Costa pilot set has now been reconciled against the Active framework. Contra Costa is Researching; the remaining counties stay Unresearched until their own local work begins.
+The Contra Costa pilot set has now been reconciled against the Active framework. Contra Costa and Sonoma are Researching. Sonoma’s initial scope is the Healdsburg documentary pilot; other Sonoma facilities and countywide dependencies are not established. The remaining counties stay Unresearched until their own local work begins.
 
 ## Federal and circuit authority
 
