@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-097-F0003",
+  "slug": "healdsburg-library",
+  "last_verified": "2026-10-07",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "title": "Sonoma County Library Policy 8001 — Photography and Filming",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://www.sonomalibrary.org/sites/default/files/attachments/governance/policies/Policy_8001_Photography_and_Filming_Policy_Approved_2.4.26.pdf",
+      "applies_to": [
+        "inside and outside Library facilities",
+        "Library events",
+        "meeting-room groups"
+      ],
+      "activities": [
+        "RECORDING",
+        "PRESS_INFORMATION_GATHERING"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "The policy addresses interior and exterior filming, objections by subjects, operational interference, meeting-room filming, and advance authorization for professional/commercial projects. Its scope and constitutional validity are not presumed from adoption.",
+      "open_questions": [
+        "How are subject objections, paid social-media content, professional projects, media notice, and exterior boundaries interpreted?",
+        "What branch-specific directives and enforcement records exist?",
+        "How do the cited statutes actually apply to the recorded subject and communication?"
+      ],
+      "citation": "Policy 8001, §§III.A–D",
+      "current_as_of": "2026-02-04"
+    }
+  ],
+  "cpra_targets": [
+    {
+      "priority": "HIGH",
+      "target": "Healdsburg-specific filming/conduct signage, implementation guidance, and current incorporated meeting-room and exclusion rules, after reviewing public policy sources.",
+      "why": "The photography policy is available; the remaining gap is its local application and incorporated terms.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "139 Piper Street title/control, facility-use agreement, site plan, and frontage/ROW records.",
+      "why": "GIS supplies a plausible candidate parcel but does not establish title or legal boundaries.",
+      "only_if_gap_remains": true
+    }
+  ]
+}

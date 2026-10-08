@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-097-F0002",
+  "slug": "healdsburg-city-hall",
+  "last_verified": "2026-10-07",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "title": "Brown Act — covered open-meeting recording",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=54953.5",
+      "applies_to": [
+        "covered local legislative-body open meetings"
+      ],
+      "activities": [
+        "RECORDING"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "Existing qualified California meeting research addresses recording protection and the statutory persistent-disruption standard. This is not an all-hours room-access or lobby rule.",
+      "open_questions": [
+        "Current Council implementation, equipment rules, and actual meeting venue."
+      ],
+      "citation": "Cal. Gov. Code §54953.5"
+    },
+    {
+      "rule_id": "R002",
+      "title": "Brown Act — public comment and criticism",
+      "source_type": "STATUTE",
+      "source": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=54954.3.",
+      "applies_to": [
+        "covered local legislative-body public participation"
+      ],
+      "activities": [
+        "PUBLIC_COMMENT"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "Statutory comment and criticism protection must be reconciled with current local timing, subject, sign-in, decorum, and removal procedures.",
+      "open_questions": [],
+      "citation": "Cal. Gov. Code §54954.3"
+    }
+  ],
+  "cpra_targets": [
+    {
+      "priority": "HIGH",
+      "target": "Current City Hall visitor/recording directives, Council procedures, chamber reservation rules, and incorporated signage policies not available online.",
+      "why": "Meeting-specific rights must remain distinct from service-lobby and nonmeeting uses.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Correct City Hall parcel/title/control documents and Grove Street frontage/right-of-way and entrance plans.",
+      "why": "Address-only GIS results were in the wrong locality and cannot establish this property.",
+      "only_if_gap_remains": true
+    }
+  ]
+}

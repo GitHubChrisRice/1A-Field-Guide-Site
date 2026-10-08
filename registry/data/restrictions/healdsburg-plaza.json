@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-097-F0004",
+  "slug": "healdsburg-plaza",
+  "last_verified": "2026-10-07",
+  "rules": [
+    {
+      "rule_id": "R001",
+      "title": "Plaza Special Performance Permit — Resolution 116-2023",
+      "source_type": "AGENCY_POLICY",
+      "source": "https://healdsburg.gov/DocumentCenter/View/17222",
+      "applies_to": [
+        "Plaza performances",
+        "gazebo/performance permit holders"
+      ],
+      "activities": [
+        "ASSEMBLY_DEMONSTRATION",
+        "SPEECH_CONVERSATION",
+        "RECORDING"
+      ],
+      "project_status": "RULE_LOCATED_UNTESTED",
+      "summary": "Exhibit A sets permit, scheduling, location, conduct, commercial-recording, revocation, and appeal conditions. Review the adopted text rather than treating staff’s constitutional assurances as a holding.",
+      "open_questions": [
+        "Meaning of performance and treatment of spontaneous or small-scale expression.",
+        "Current film-permit framework and exemptions; §3.8.7 concerns performance permit holders.",
+        "Constitutional fit of lead time, daily cap, language restrictions, discretion, and appeal."
+      ],
+      "citation": "Resolution 116-2023, Exhibit A §§3–6",
+      "current_as_of": "2023-09-18"
+    }
+  ],
+  "cpra_targets": [
+    {
+      "priority": "HIGH",
+      "target": "Current Plaza, special-event, and film-permit policies, amendments, exemptions, written staff guidance, and existing permit/denial/revocation index.",
+      "why": "Resolve actual rule scope and implementation before assigning constitutional or historical enforcement findings.",
+      "only_if_gap_remains": true
+    },
+    {
+      "priority": "HIGH",
+      "target": "Park title/control and perimeter/street-side right-of-way plans.",
+      "why": "Official park identity is established; exact parcel and ROW edges are not.",
+      "only_if_gap_remains": true
+    }
+  ]
+}

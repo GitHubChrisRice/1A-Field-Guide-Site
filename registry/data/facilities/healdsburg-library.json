@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "facility_id": "CA-097-F0003",
+  "slug": "healdsburg-library",
+  "name": "Healdsburg Regional Library",
+  "state": "California",
+  "county": {
+    "name": "Sonoma County",
+    "fips": "097"
+  },
+  "city": "Healdsburg",
+  "agency": "Sonoma County Library",
+  "facility_type": "LIBRARY",
+  "address": {
+    "street": "139 Piper Street",
+    "city": "Healdsburg",
+    "state": "CA",
+    "zip": "95448"
+  },
+  "property": {
+    "ownership_summary": "Sonoma County Library operates the branch. County GIS lists a matching parcel as miscellaneous city property; that assessment description is not a verified deed or control agreement.",
+    "boundary_status": "PARTIAL_DOCUMENTARY",
+    "candidate_apns": [
+      "002-111-003"
+    ],
+    "parcel_source": "https://socogis.sonomacounty.ca.gov/map/rest/services/CRAPublic/ParcelsPublic/MapServer/0"
+  },
+  "last_verified": "2026-10-07",
+  "field_status": "PRE_FIELD",
+  "summary": "Sonoma County Library’s current branch and public library services are documented at 139 Piper Street. The ordinary library-purpose interior is a federal LPF project classification; California interior and meeting-room scope remain open. Policy 8001 supplies actual filming restrictions to review rather than assuming the CCCL policy applies.",
+  "recording_summary": "Policy 8001, effective February 4, 2026, permits casual amateur filming with conditions and imposes additional requirements for subject objections, meeting-room groups, and professional/commercial projects. Its exterior reach, consent requirements, media distinctions, and implementation require separate constitutional analysis.",
+  "field_items": [
+    "Document current entrance/conduct/camera signs and public circulation following the branch’s return to full service at 139 Piper Street.",
+    "Distinguish Piper Street sidewalk, entrance approach, grounds, parking, lockers, and any controlled/service areas.",
+    "Verify available meeting room, posted reservation rules, ordinary interior layout, and public/private interaction areas."
+  ],
+  "open_legal_items": [
+    "GIS candidate APN 002-111-003 matches 139 PIPER ST, HEALDSBURG; confirm with the assessor map and title/control or facility agreement.",
+    "Review Policy 8001 exterior scope, subject-objection language, professional/paid-content distinction, seven-day authorization, media-notice rule, and discretion.",
+    "Obtain current Standards of Behavior, exclusion/suspension and meeting-room policies plus branch-specific implementation/signage.",
+    "The policy’s summary of Penal Code §632 is not a substitute for the statute’s confidential-communication elements; do not infer that every public recording requires consent."
+  ],
+  "research": {
+    "sweep_path": "docs/research/SWEEP-020-HEALDSBURG-FACILITY-BASELINE.md",
+    "evidence_path": "docs/research/evidence/healdsburg-library/README.md"
+  },
+  "authorities": [
+    "grace",
+    "kreimer",
+    "neinast",
+    "scl8001"
+  ],
+  "index_highlights": [
+    {
+      "subarea_ids": [
+        "S003"
+      ],
+      "label": "ordinary library-purpose interior"
+    },
+    {
+      "subarea_ids": [
+        "S002"
+      ],
+      "label": "entrance / exterior boundaries"
+    },
+    {
+      "subarea_ids": [
+        "S004"
+      ],
+      "label": "meeting-room channel"
+    }
+  ],
+  "subareas": [
+    {
+      "subarea_id": "S001",
+      "name": "Piper Street ordinary municipal sidewalk — exact strip pending",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "Ordinary municipal sidewalk doctrine applies to the defined street-side sidewalk, once distinguished from a purpose-built facility approach."
+      },
+      "california": {
+        "classification": "TPF",
+        "confidence": "HIGH",
+        "note": "The ordinary municipal sidewalk receives the traditional public-forum baseline; this is not a classification of every adjoining paved area."
+      },
+      "recording": {
+        "status": "SEPARATE_ANALYSIS",
+        "summary": "Forum protection and recording analysis remain separate. Identify the lawful street-side vantage before extending this row to a particular position."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://www.sonomalibrary.org/sites/default/files/attachments/governance/policies/Policy_8001_Photography_and_Filming_Policy_Approved_2.4.26.pdf — Policy 8001, §§III.A–B and III.C(iv)",
+          "summary": "The policy addresses interior and exterior filming, objections by subjects, operational interference, meeting-room filming, and advance authorization for professional/commercial projects. Its scope and constitutional validity are not presumed from adoption.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [
+        "grace"
+      ],
+      "notes": "No survey-grade boundary or right-of-way edge is established. This row defines the ordinary municipal sidewalk category, not an unmapped forecourt, driveway, or parking area."
+    },
+    {
+      "subarea_id": "S002",
+      "name": "Library entrance approach / exterior grounds / parking",
+      "access": "UNKNOWN",
+      "federal": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "The exact public circulation, property-control, and right-of-way facts needed for a Prigmore comparison are not yet established."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "The exact public circulation, property-control, and right-of-way facts needed for a Prigmore comparison are not yet established."
+      },
+      "recording": {
+        "status": "UNRESOLVED",
+        "summary": "Area-specific recording and access facts remain to be established."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://www.sonomalibrary.org/sites/default/files/attachments/governance/policies/Policy_8001_Photography_and_Filming_Policy_Approved_2.4.26.pdf — Policy 8001, §§III.A–B and III.C(iv)",
+          "summary": "The policy addresses interior and exterior filming, objections by subjects, operational interference, meeting-room filming, and advance authorization for professional/commercial projects. Its scope and constitutional validity are not presumed from adoption.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [],
+      "unresolved_reason": "The exact public circulation, property-control, and right-of-way facts needed for a Prigmore comparison are not yet established."
+    },
+    {
+      "subarea_id": "S003",
+      "name": "Ordinary interior for library-purpose activity during service hours",
+      "access": "PUBLIC",
+      "federal": {
+        "classification": "LPF",
+        "confidence": "HIGH",
+        "note": "The branch is open for library services, not unrestricted unrelated expression; the existing library doctrine supports a defined library-purpose forum."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "Separate California Speech Clause analysis of the ordinary interior remains facility-specific."
+      },
+      "recording": {
+        "status": "ACTIVITY_SPECIFIC_RULE",
+        "summary": "Policy 8001 supplies actual interior filming conditions; the existence of those rules does not establish validity."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://www.sonomalibrary.org/sites/default/files/attachments/governance/policies/Policy_8001_Photography_and_Filming_Policy_Approved_2.4.26.pdf — Policy 8001, §§III.A–B and III.C(iv)",
+          "summary": "The policy addresses interior and exterior filming, objections by subjects, operational interference, meeting-room filming, and advance authorization for professional/commercial projects. Its scope and constitutional validity are not presumed from adoption.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [
+        "kreimer",
+        "neinast",
+        "scl8001"
+      ],
+      "unresolved_reason": "California interior classification and the validity/application of Policy 8001 remain open."
+    },
+    {
+      "subarea_id": "S004",
+      "name": "Reservable meeting room — actual opened channel pending",
+      "access": "CONDITIONED_PUBLIC",
+      "federal": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "The branch advertises meeting-room requests, but current eligibility, permitted subjects, reservation terms, and actual practice have not been reviewed."
+      },
+      "california": {
+        "classification": "UNRESOLVED",
+        "confidence": "NONE",
+        "note": "The branch advertises meeting-room requests, but current eligibility, permitted subjects, reservation terms, and actual practice have not been reviewed."
+      },
+      "recording": {
+        "status": "ACTIVITY_SPECIFIC_RULE",
+        "summary": "Policy 8001 separately addresses filming by meeting-room groups. Obtain the reservation terms before defining the complete forum or recording result."
+      },
+      "restriction_audits": [
+        {
+          "activity": "RECORDING",
+          "status": "RULE_LOCATED_UNTESTED",
+          "rule_source": "https://www.sonomalibrary.org/sites/default/files/attachments/governance/policies/Policy_8001_Photography_and_Filming_Policy_Approved_2.4.26.pdf — Policy 8001, §§III.A–B and III.C(iv)",
+          "summary": "The policy addresses interior and exterior filming, objections by subjects, operational interference, meeting-room filming, and advance authorization for professional/commercial projects. Its scope and constitutional validity are not presumed from adoption.",
+          "constitutional_test": "Apply the Active California framework to the actual rule, defined area, activity, and enforcement facts; publication alone does not establish validity."
+        }
+      ],
+      "authority_ids": [],
+      "unresolved_reason": "The branch advertises meeting-room requests, but current eligibility, permitted subjects, reservation terms, and actual practice have not been reviewed."
+    }
+  ]
+}
