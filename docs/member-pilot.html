@@ -4,25 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-gp+ozNQ7WUi8VqUh3gmryTavi2sw6AxLx3Q8gsX1UJA='; style-src 'sha256-XHyZzjXVRWopIkC+zI1gN44nRKC62g/el+nM0NoxUCE='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-CSgLIB6b/arxkCqnaqD9yORUVgRwNCcFR7Cnla+C1Gc='; style-src 'sha256-RN8EB++wabOZ4+IA9/kGnwWmH149PfvO8VL6X6PeFU8='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Join · Public Oversight Coalition</title>
-<style>body{margin:0;font-family:system-ui,sans-serif;background:#f4f6f9;color:#182033}header{background:#101827;color:#fff;padding:16px 5vw;display:flex;justify-content:space-between}main{max-width:860px;margin:auto;padding:48px 20px}h1{font-size:clamp(2rem,5vw,3.3rem);margin:.2em 0}.note,section{background:white;border:1px solid #dce2ea;border-radius:14px;padding:22px;margin:20px 0;box-shadow:0 8px 24px rgba(20,30,45,.05)}#auth{display:grid;grid-template-columns:1fr 1fr;gap:28px}form{display:grid;gap:14px}label{display:grid;gap:6px;font-weight:700}input,select,button{font:inherit;padding:11px 12px;border-radius:8px;border:1px solid #bfc8d5}button{background:#244a78;color:white;font-weight:700;cursor:pointer}.link{background:none;color:#345e91;border:0;text-decoration:underline;padding-left:0}.check{grid-template-columns:auto 1fr;align-items:start;font-weight:500}.check input{width:18px;height:18px}small{color:#6b7280;font-weight:500}#message{font-weight:700;min-height:1.5em}@media(max-width:680px){#auth{grid-template-columns:1fr}}</style>
+<style>
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;font:15px/1.6 system-ui,sans-serif;background:#f3f5f8;color:#202e40}
+a{color:#245c76}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer}button:disabled{opacity:.6;cursor:wait}button,input,select{border:1px solid #c9d3df;border-radius:8px;padding:10px 14px}button{background:#204d66;color:white;font-weight:650}button:hover{background:#163d53}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #e9ae46;outline-offset:3px}
+header{height:72px;background:white;border-bottom:1px solid #dce3eb;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:16px}header strong{font-size:16px}header small{display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#64748b}.shell{display:flex;min-height:calc(100vh - 72px)}
+#sidebar{width:244px;flex-shrink:0;background:#142c3e;color:#dbe6ef;padding:28px 18px;display:flex;flex-direction:column;gap:28px}#sidebar nav{display:grid;gap:5px}.nav-label{margin:0 12px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#9bb2c4}#sidebar a,#sidebar button{display:block;text-align:left;text-decoration:none;border:0;border-radius:7px;padding:11px 14px;background:transparent;color:#dae5ef;font-weight:500}#sidebar a:hover,#sidebar button:hover{background:#233f54}#sidebar [aria-current=page]{background:#31536b;color:white;box-shadow:inset 3px 0 #e7b86b}.sidebar-note{margin-top:auto;padding:12px;color:#a8bdcd;font-size:12px}
+main{width:100%;max-width:1120px;margin:0 auto;padding:40px 44px}h1{font-size:clamp(28px,4vw,38px);letter-spacing:-.04em;line-height:1.2;margin:8px 0 12px}h2{font-size:21px;margin:0 0 12px;letter-spacing:-.02em}h3{margin:0 0 8px;font-size:17px}p{margin:8px 0 16px}.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#657487;font-weight:700}.subtitle{color:#607084;max-width:650px;margin-bottom:26px}.note,section{background:#fff;border:1px solid #dce3eb;border-radius:12px;padding:24px;margin:18px 0}section section{box-shadow:none;padding:18px;background:#f9fbfd}#auth{display:grid;grid-template-columns:1fr 1fr;gap:32px}form{display:grid;gap:14px}label{display:grid;gap:6px;font-weight:650}input,select{min-width:0;width:100%;background:white;color:#202e40}.link{background:none;color:#245c76;border:0;text-decoration:underline;padding-left:0}.link:hover{background:#edf3f7;color:#163d53}.check{grid-template-columns:auto 1fr;align-items:start;font-weight:400}.check input{width:18px;height:18px;margin-top:4px}small{color:#68778a;font-weight:400}#message{position:sticky;bottom:16px;background:#e8f2ef;color:#234d43;border-radius:8px;padding:12px 16px;font-weight:600}#message:empty{display:none}.resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}.resource-card{padding:24px;background:white;border:1px solid #dce3eb;border-radius:12px;display:block;text-decoration:none;color:#202e40}.resource-card:hover{border-color:#7294aa;background:#f8fbfd}.resource-card p{color:#607084;margin-bottom:22px}.resource-card span{color:#245c76;font-weight:650}.welcome{background:#e9f0f4;border:0;padding:28px}.badge{display:inline-block;background:#dcece4;color:#286047;border-radius:30px;padding:4px 10px;font-size:12px;margin-bottom:12px}#account-email{overflow-wrap:anywhere}#mobile-menu{display:none}#application-queue,#member-access-list{margin-top:18px}#application-queue label,#member-access-list label{margin-bottom:14px}
+@media(max-width:760px){header{padding:12px 18px;height:auto;min-height:72px}header strong{font-size:14px}main{padding:24px 18px}.shell{display:block}#mobile-menu{display:block}#sidebar{width:100%;padding:18px}#sidebar:not(.mobile-open){display:none}.sidebar-note{display:none}#auth,.resource-grid{grid-template-columns:1fr}#auth{gap:28px}section{padding:20px}header small{font-size:9px}}
+</style>
 </head>
 <body>
-<header><strong>Public Oversight Coalition</strong><button id="signout" hidden>Sign out</button></header>
+<header><div><strong>Public Oversight Coalition</strong><small>Member workspace · controlled pilot</small></div><button id="mobile-menu" type="button" hidden aria-controls="sidebar" aria-expanded="false">Menu</button><button id="signout" hidden>Sign out</button></header><div class="shell">
+<aside id="sidebar" hidden aria-label="Workspace navigation">
+<nav aria-label="Your workspace"><p class="nav-label">Workspace</p><button type="button" data-view="member-area" aria-current="page">Overview</button><button type="button" data-view="account">My account</button></nav>
+<nav aria-label="Field resources"><p class="nav-label">Explore</p><a href="/1A-Field-Guide-Site/">Field Guide ↗</a><a href="/1A-Field-Guide-Site/registry/">Facility Registry ↗</a><a href="/1A-Field-Guide-Site/jurisdictions/">Jurisdictions ↗</a><a href="/1A-Field-Guide-Site/california/public-records-evidence-preservation/">Public records guide ↗</a></nav>
+<nav id="admin-nav" hidden aria-label="Administration"><p class="nav-label">Administration</p><button type="button" data-view="admin-review">Applications</button><button type="button" data-view="admin-access">Member access</button></nav>
+<p class="sidebar-note">Explore at your own pace.<br>Contributing is always optional.</p></aside>
 <main>
-<h1>Join / Contribute</h1>
-<p>This is a controlled pilot of the coalition membership flow.</p>
-<p>Email and password are the only required personal account inputs. Alias, interests, and starting preference are optional. Applying does not obligate you to accept work.</p>
-<p class="note"><strong>Your email is private.</strong> It stays in Supabase Auth for confirmation, sign-in, recovery, and necessary membership communication; it is not copied into the application record.</p>
+<div class="eyebrow" id="page-eyebrow">Welcome to the coalition</div><h1 id="page-title" tabindex="-1">Join / Contribute</h1><p id="page-description" class="subtitle">Explore the guide, learn about public access, and contribute when you choose.</p>
+<div id="join-intro"><p>Email and password are the only required personal account inputs. Alias, interests, and starting preference are optional. Applying does not obligate you to accept work.</p><p class="note"><strong>Your email is private.</strong> Used for sign-in, recovery, and necessary account communication. It is not included in your application or shown in the member list.</p></div>
 <section id="recovery" hidden><h2>Choose a new password</h2><form id="recovery-form"><label>New password<input id="new-password" type="password" autocomplete="new-password" minlength="8" required></label><label>Confirm new password<input id="confirm-password" type="password" autocomplete="new-password" minlength="8" required></label><button>Update password</button></form></section>
 <section id="auth">
 <div><h2>Create account</h2><form id="signup"><label>Email<input id="signup-email" type="email" autocomplete="email" required></label><label>Password<input id="signup-password" type="password" autocomplete="new-password" minlength="8" required></label><button>Create account</button></form></div>
 <div><h2>Sign in</h2><form id="signin"><label>Email<input id="signin-email" type="email" autocomplete="email" required></label><label>Password<input id="signin-password" type="password" autocomplete="current-password" required></label><button>Sign in</button></form><button id="reset" class="link" type="button">Send password reset email</button></div>
 </section>
 <section id="account" hidden><h2 id="account-email"></h2><p id="account-state"></p></section>
-<section id="member-area" hidden><h2>Member area</h2><p><strong>Welcome — your membership is approved.</strong></p><p>You can explore without taking on any work. Contributions remain optional.</p><p><a href="/1A-Field-Guide-Site/">Open the 1A Field Guide</a> · <a href="/1A-Field-Guide-Site/registry/">Browse the Facility Registry</a></p></section>
+<div id="member-area" hidden><section class="welcome"><span class="badge">Membership approved</span><h2>A place to explore. A way to contribute.</h2><p>Start with the Field Guide or look up a facility. There are no assignments to accept and no obligation to contribute.</p></section><div class="resource-grid"><a class="resource-card" href="/1A-Field-Guide-Site/"><h2>Field Guide</h2><p>Explore recording rights, public access, and the sources behind the guidance.</p><span>Read the guide →</span></a><a class="resource-card" href="/1A-Field-Guide-Site/registry/"><h2>Facility Registry</h2><p>Browse facilities, access classifications, and location-specific research.</p><span>Explore facilities →</span></a><a class="resource-card" href="/1A-Field-Guide-Site/jurisdictions/"><h2>Jurisdictions</h2><p>See geographic coverage and where the guide is active.</p><span>View coverage →</span></a><a class="resource-card" href="/1A-Field-Guide-Site/california/public-records-evidence-preservation/"><h2>Public records</h2><p>Read the California guide to records requests and evidence preservation.</p><span>Explore the guidance →</span></a></div></div>
 <section id="admin-review" hidden><h2>Application review</h2><p>Open applications are shown without login email or contact data.</p><button id="refresh-applications" type="button">Refresh applications</button><div id="application-queue"></div></section>
 <section id="admin-access" hidden><h2>Member access</h2><p>Administrator access controls preserve role history. Suspending access does not delete membership, submissions, or prior audit history.</p><button id="refresh-members" type="button">Refresh members</button><div id="member-access-list"></div></section>
 <section id="application" hidden><h2>Private application</h2><form id="application-form">
@@ -33,12 +44,22 @@
 <button>Submit private application</button>
 </form></section>
 <p id="message" role="status" aria-live="polite"></p>
-</main>
+</main></div>
 <script type="module">const SUPABASE_URL='https://bpmvkdblgpnpooxadhjc.supabase.co';
 const KEY='sb_publishable__mZKy1dcx8OjzF1Q2nl0qg_t6I6bkys';
 const SESSION_KEY='coalition-membership-session-v1';
 const $=id=>document.getElementById(id);
-let session=null,recoveryMode=false;
+let session=null,recoveryMode=false,dashboardReady=false,isAdministrator=false;
+const viewTitles={'member-area':['Overview','Your starting point for the coalition.'],'account':['My account','Your sign-in and membership status.'],'admin-review':['Applications','Review requests to join the coalition.'],'admin-access':['Member access','Manage access while preserving membership history.']};
+function setHeading(title,description){$('page-title').textContent=title;$('page-description').textContent=description;document.title=title+' · Public Oversight Coalition'}
+function showView(view,focus=false){
+  if(!dashboardReady||!Object.hasOwn(viewTitles,view)||((view==='admin-review'||view==='admin-access')&&!isAdministrator))return;
+  for(const id of Object.keys(viewTitles))$(id).hidden=id!==view;
+  for(const button of document.querySelectorAll('[data-view]')){if(button.dataset.view===view)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')}
+  setHeading(...viewTitles[view]);$('sidebar').classList.remove('mobile-open');$('mobile-menu').setAttribute('aria-expanded','false');if(focus)$('page-title').focus();
+}
+for(const button of document.querySelectorAll('[data-view]'))button.addEventListener('click',()=>showView(button.dataset.view,true));
+$('mobile-menu').addEventListener('click',()=>{$('mobile-menu').setAttribute('aria-expanded',String($('sidebar').classList.toggle('mobile-open')))});
 function say(t){$('message').textContent=t}
 function clean(){const u=new URL(location.href);u.hash='';u.search='';return u.toString()}
 function headers(token,extra={}){return{apikey:KEY,...(token?{Authorization:'Bearer '+token}:{}),...extra}}
@@ -115,7 +136,13 @@ async function loadAdministration(){
   await Promise.all([loadApplicationQueue(),loadMemberAccess()]);
 }
 async function refresh(){
+  dashboardReady=false;isAdministrator=false;
+  $('sidebar').hidden=true;$('mobile-menu').hidden=true;$('admin-nav').hidden=true;
+  $('sidebar').classList.remove('mobile-open');$('mobile-menu').setAttribute('aria-expanded','false');
   session=await current();const u=session?.user;
+  $('join-intro').hidden=!!u||recoveryMode;
+  $('page-eyebrow').textContent=u?'Your coalition workspace':'Welcome to the coalition';
+  setHeading(recoveryMode?'Reset password':u?'My account':'Join / Contribute',recoveryMode?'Choose a new password to return to your account.':u?'Your membership and application status.':'Explore the guide, learn about public access, and contribute when you choose.');
   $('auth').hidden=recoveryMode||!!u;$('account').hidden=recoveryMode||!u;$('signout').hidden=!u;
   $('application').hidden=true;$('member-area').hidden=true;$('admin-review').hidden=true;$('admin-access').hidden=true;
   $('recovery').hidden=!(u&&recoveryMode);$('application-queue').textContent='';$('member-access-list').textContent='';
@@ -131,8 +158,10 @@ async function refresh(){
     const membership=statusRows?.[0]||null,roles=membership?.role_codes||[];
     if(membership?.membership_status==='approved'&&roles.includes('member')){
       $('account-state').textContent='Membership approved.';
-      $('member-area').hidden=false;
-      if(roles.includes('administrator')){$('admin-review').hidden=false;$('admin-access').hidden=false;await loadAdministration()}
+      dashboardReady=true;isAdministrator=roles.includes('administrator');
+      $('sidebar').hidden=false;$('mobile-menu').hidden=false;$('admin-nav').hidden=!isAdministrator;
+      showView('member-area');
+      if(isAdministrator)await loadAdministration();
       return
     }
     if(membership?.membership_status==='suspended'){$('account-state').textContent='Membership access is suspended.';return}
@@ -142,7 +171,7 @@ async function refresh(){
 }
 const rs=returned();if(rs){save(rs);recoveryMode=rs.type==='recovery';history.replaceState(null,'',clean())}
 $('signup').addEventListener('submit',async e=>{e.preventDefault();try{await req('/auth/v1/signup?redirect_to='+encodeURIComponent(clean()),{method:'POST',body:{email:$('signup-email').value.trim(),password:$('signup-password').value,data:{}}});say('Account created. Check your email for the confirmation link.')}catch{say('Account creation could not be completed. Check the address and password, then try again.')}})
-$('signin').addEventListener('submit',async e=>{e.preventDefault();try{const s=await req('/auth/v1/token?grant_type=password',{method:'POST',body:{email:$('signin-email').value.trim(),password:$('signin-password').value}});save({...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)});recoveryMode=false;say('Signed in.');await refresh()}catch{say('Sign-in failed. Check the email/password or confirm the account first.')}})
+$('signin').addEventListener('submit',async e=>{e.preventDefault();try{const s=await req('/auth/v1/token?grant_type=password',{method:'POST',body:{email:$('signin-email').value.trim(),password:$('signin-password').value}});save({...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)});recoveryMode=false;$('signin-password').value='';say('Signed in.');await refresh()}catch{say('Sign-in failed. Check the email/password or confirm the account first.')}})
 $('reset').addEventListener('click',async()=>{const email=$('signin-email').value.trim();if(!email)return say('Enter your email in the sign-in box first.');try{await req('/auth/v1/recover?redirect_to='+encodeURIComponent(clean()),{method:'POST',body:{email}})}catch{}say('If that address has an account, check its inbox for recovery instructions.')})
 $('recovery-form').addEventListener('submit',async e=>{e.preventDefault();if(!session?.access_token||!recoveryMode)return say('Open the recovery link from your email again.');const p=$('new-password').value,c=$('confirm-password').value;if(p!==c)return say('The new passwords do not match.');try{await req('/auth/v1/user',{method:'PUT',token:session.access_token,body:{password:p}});recoveryMode=false;$('new-password').value='';$('confirm-password').value='';say('Password updated. You are signed in.');await refresh()}catch{say('The password could not be updated. Request a new recovery email and try again.')}})
 $('signout').addEventListener('click',async()=>{if(session?.access_token){try{await req('/auth/v1/logout',{method:'POST',token:session.access_token})}catch{}}clear();session=null;recoveryMode=false;say('Signed out.');await refresh()})
