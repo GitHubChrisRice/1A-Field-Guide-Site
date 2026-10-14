@@ -1,16 +1,16 @@
 # Project Origin and Canonical Source
 
-The **1A Field Guide** project was initiated by **Chris Rice** under the GitHub account **GitHubChrisRice**.
+The **1A Field Guide** is maintained under the **Public Oversight Coalition** GitHub organization.
 
 Canonical public-source repository:
 
-https://github.com/GitHubChrisRice/1A-Field-Guide-Site
+https://github.com/PublicOversightCoalition/1A-Field-Guide-Site
 
 Canonical public website:
 
-https://githubchrisrice.github.io/1A-Field-Guide-Site/
+https://publicoversightcoalition.github.io/1A-Field-Guide-Site/
 
-This repository is the project's authoritative public-source repository. Its Git history records the development and publication history of the public Field Guide.
+This repository is the project's authoritative public-source repository. Its Git history records the development and publication history of the public Field Guide, including earlier repository ownership and attribution.
 
 The handbook and documentation are licensed as described in [LICENSE.md](LICENSE.md), currently CC BY-SA 4.0 except where otherwise noted. Original executable tooling covered by [LICENSE-SOFTWARE.md](LICENSE-SOFTWARE.md) is licensed separately.
 
