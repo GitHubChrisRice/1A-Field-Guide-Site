@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-TvT3+RI2GiS+RBx7Jg+pmfpz86d4jCHpuFo7C/1jEfY='; style-src 'sha256-XHyZzjXVRWopIkC+zI1gN44nRKC62g/el+nM0NoxUCE='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-6WSdlnA9YfXwhL89JpEJS4pLKm4UW4N7plHU8GPBcuQ='; style-src 'sha256-XHyZzjXVRWopIkC+zI1gN44nRKC62g/el+nM0NoxUCE='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Join · Public Oversight Coalition</title>
 <style>body{margin:0;font-family:system-ui,sans-serif;background:#f4f6f9;color:#182033}header{background:#101827;color:#fff;padding:16px 5vw;display:flex;justify-content:space-between}main{max-width:860px;margin:auto;padding:48px 20px}h1{font-size:clamp(2rem,5vw,3.3rem);margin:.2em 0}.note,section{background:white;border:1px solid #dce2ea;border-radius:14px;padding:22px;margin:20px 0;box-shadow:0 8px 24px rgba(20,30,45,.05)}#auth{display:grid;grid-template-columns:1fr 1fr;gap:28px}form{display:grid;gap:14px}label{display:grid;gap:6px;font-weight:700}input,select,button{font:inherit;padding:11px 12px;border-radius:8px;border:1px solid #bfc8d5}button{background:#244a78;color:white;font-weight:700;cursor:pointer}.link{background:none;color:#345e91;border:0;text-decoration:underline;padding-left:0}.check{grid-template-columns:auto 1fr;align-items:start;font-weight:500}.check input{width:18px;height:18px}small{color:#6b7280;font-weight:500}#message{font-weight:700;min-height:1.5em}@media(max-width:680px){#auth{grid-template-columns:1fr}}</style>
@@ -48,7 +48,6 @@ function load(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'nul
 function returned(){const u=new URL(location.href),p=new URLSearchParams(u.hash.startsWith('#')?u.hash.slice(1):u.hash),a=p.get('access_token'),r=p.get('refresh_token');if(!a||!r)return null;return{access_token:a,refresh_token:r,expires_in:Number(p.get('expires_in')||3600),expires_at:Math.floor(Date.now()/1000)+Number(p.get('expires_in')||3600),token_type:p.get('token_type')||'bearer',type:p.get('type')||null}}
 async function refreshToken(r){const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:r}});return{...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)}}
 async function current(){let s=load();if(!s)return null;if(!s.expires_at||s.expires_at<=Math.floor(Date.now()/1000)+60){try{s=await refreshToken(s.refresh_token);save(s)}catch{clear();return null}}try{return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch(e){if(e.status!==401)throw e;try{s=await refreshToken(s.refresh_token);save(s);return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch{clear();return null}}}
-function roleMap(defs){return new Map((defs||[]).map(r=>[r.id,r.code]))}
 async function loadOwnerQueue(){
   if(!session?.access_token)return;
   const box=$('application-queue');box.textContent='Loading applications…';
@@ -89,13 +88,11 @@ async function refresh(){
   $('account-email').textContent=u.email||'Signed in';
   if(!u.email_confirmed_at){$('account-state').textContent='Confirm your email before applying.';return}
   try{
-    const [apps,memberships,grants,defs]=await Promise.all([
+    const [apps,statusRows]=await Promise.all([
       req('/rest/v1/coalition_applications?select=status,submitted_at&order=submitted_at.desc&limit=1',{token:session.access_token}),
-      req('/rest/v1/coalition_memberships?select=id,membership_status,joined_at&limit=1',{token:session.access_token}),
-      req('/rest/v1/coalition_role_grants?select=role_definition_id,scope_type,scope_id,expires_at,revoked_at&revoked_at=is.null',{token:session.access_token}),
-      req('/rest/v1/coalition_role_definitions?select=id,code,name',{token:session.access_token})
+      req('/rest/v1/rpc/coalition_self_membership_status',{method:'POST',token:session.access_token,body:{}})
     ]);
-    const membership=memberships?.[0]||null,map=roleMap(defs),roles=(grants||[]).map(g=>map.get(g.role_definition_id)).filter(Boolean);
+    const membership=statusRows?.[0]||null,roles=membership?.role_codes||[];
     if(membership?.membership_status==='approved'&&roles.includes('member')){
       $('account-state').textContent='Membership approved.';
       $('member-area').hidden=false;
