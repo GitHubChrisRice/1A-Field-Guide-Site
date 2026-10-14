@@ -36,10 +36,10 @@ These assumptions keep the guide focused on the government's actual authority in
 
 ## Repository architecture
 
-This repository is the **canonical public-source repository** for the 1A Field Guide.
+This repository is the **canonical public-source repository** for the 1A Field Guide under the **Public Oversight Coalition** organization.
 
-Canonical source: https://github.com/GitHubChrisRice/1A-Field-Guide-Site  
-Public site: https://githubchrisrice.github.io/1A-Field-Guide-Site/
+Canonical source: https://github.com/PublicOversightCoalition/1A-Field-Guide-Site  
+Public site: https://publicoversightcoalition.github.io/1A-Field-Guide-Site/
 
 Reviewed public doctrine, Registry material, public methodology, and the source used to build the website live here. Internal investigations, requester/member-sensitive material, unpublished evidence, and pre-publication Coalition work are maintained in a separate private workspace and are intentionally not mirrored here.
 
