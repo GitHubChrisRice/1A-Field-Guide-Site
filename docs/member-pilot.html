@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-mKoQL67nWH0Mxu5WjpH/dvUKfPzomd4AKD8Mkl9zNq8='; style-src 'sha256-pT9NQLmuOWrlIJyVxWgaZGbjHrR9RXQ4w2dOTLfFNgQ='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-mKoQL67nWH0Mxu5WjpH/dvUKfPzomd4AKD8Mkl9zNq8='; style-src 'sha256-pT9NQLmuOWrlIJyVxWgaZGbjHrR9RXQ4w2dOTLfFNgQ='; connect-src __COALITION_SUPABASE_URL__; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Join · Public Oversight Coalition</title>
 <style>
@@ -46,8 +46,8 @@ main{width:100%;max-width:1120px;margin:0 auto;padding:40px 44px}h1{font-size:cl
 </form></section>
 <p id="message" role="status" aria-live="polite"></p>
 </main></div>
-<script type="module">const SUPABASE_URL='https://bpmvkdblgpnpooxadhjc.supabase.co';
-const KEY='sb_publishable__mZKy1dcx8OjzF1Q2nl0qg_t6I6bkys';
+<script type="module">const SUPABASE_URL='__COALITION_SUPABASE_URL__';
+const KEY='__COALITION_SUPABASE_PUBLISHABLE_KEY__';
 const SESSION_KEY='coalition-membership-session-v1';
 const $=id=>document.getElementById(id);
 let session=null,recoveryMode=false,dashboardReady=false,isAdministrator=false;

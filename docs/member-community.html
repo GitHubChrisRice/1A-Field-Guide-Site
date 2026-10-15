@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Wmyk7OzwLi4A2fhCgu5jNfmWmXKqCNRZTpz4oTDbo3I='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Wmyk7OzwLi4A2fhCgu5jNfmWmXKqCNRZTpz4oTDbo3I='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src __COALITION_SUPABASE_URL__; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Community · Public Oversight Coalition</title>
 <style>
@@ -91,8 +91,8 @@ form{display:grid;gap:13px}label{display:grid;gap:6px;font-weight:650}input,sele
 <p id="message" role="status" aria-live="polite"></p>
 </main>
 <script type="module">
-const SUPABASE_URL='https://bpmvkdblgpnpooxadhjc.supabase.co';
-const KEY='sb_publishable__mZKy1dcx8OjzF1Q2nl0qg_t6I6bkys';
+const SUPABASE_URL='__COALITION_SUPABASE_URL__';
+const KEY='__COALITION_SUPABASE_PUBLISHABLE_KEY__';
 const SESSION_KEY='coalition-membership-session-v1';
 const $=id=>document.getElementById(id);
 let session=null,isAdministrator=false,currentTopicId=null,currentIdentity=null;
