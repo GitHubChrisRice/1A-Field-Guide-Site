@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://cdn.jsdelivr.net 'sha256-TctWIhfEL3PGXf0Nsnv2CPM7/UitrfNkCgpuUtj3rM8='; style-src 'self'; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Import research · Public Oversight Coalition</title>
+<link rel="stylesheet" href="/1A-Field-Guide-Site/stylesheets/member-research.css">
+<script src="https://cdn.jsdelivr.net/npm/exceljs-hardened@5.0.0/dist/exceljs.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<header class="site-header">
+  <div><strong>Public Oversight Coalition</strong><small>Administrator research import · controlled pilot</small></div>
+  <nav class="toplinks" aria-label="Member navigation">
+    <a href="/1A-Field-Guide-Site/member-pilot.html">Workspace</a>
+    <a href="/1A-Field-Guide-Site/member-community.html">Community</a>
+    <a href="/1A-Field-Guide-Site/member-research.html">Research</a>
+  </nav>
+</header>
+<main>
+<a class="back-link" href="/1A-Field-Guide-Site/member-research.html">← Back to research library</a>
+<div class="eyebrow">Administrator</div>
+<h1>Import research</h1>
+<p class="subtitle">Preview and validate existing Coalition research or agency productions before adding them to the review queue. Imported rows are never auto-approved.</p>
+<section id="gate" class="panel" hidden><h2>Administrator access required</h2><p id="gate-copy">Sign in with an active Administrator account to import research.</p></section>
+<div id="workspace" hidden>
+<section class="panel" aria-labelledby="format-title">
+  <div class="section-heading"><div><h2 id="format-title">1. Choose a CSV or XLSX file</h2><p class="muted">Maximum 5 MB and 200 data rows. XLSX parsing uses the pinned security-hardened ExcelJS 5.0.0 browser build.</p></div><button id="template-button" class="secondary" type="button">Download CSV template</button></div>
+  <div class="import-schema" aria-label="Import columns">
+    <p><strong>Required:</strong> <code>source_title</code>, <code>agency</code>, <code>origin</code></p>
+    <p><strong>Optional:</strong> <code>source_type</code>, <code>state_code</code>, <code>city</code>, <code>source_url</code>, <code>checked_on</code>, <code>received_on</code>, <code>notes</code></p>
+    <p class="muted"><code>state_code</code> defaults to <code>US-CA</code>. Dates use YYYY-MM-DD. Source type defaults to <code>record</code>.</p>
+  </div>
+  <label class="file-picker">Research file<input id="import-file" type="file" accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></label>
+</section>
+<section id="preview-panel" class="panel" hidden aria-labelledby="preview-title">
+  <div class="section-heading"><div><h2 id="preview-title">2. Preview and validate</h2><p id="preview-summary" class="muted"></p></div><button id="clear-file" class="secondary" type="button">Choose another file</button></div>
+  <div id="validation-errors" class="validation-errors" role="alert"></div>
+  <div class="table-wrap" tabindex="0" aria-label="Research import preview table"><table class="preview-table"><thead><tr><th>#</th><th>Title</th><th>Agency</th><th>Origin</th><th>Type</th><th>State</th><th>City</th><th>Date</th></tr></thead><tbody id="preview-body"></tbody></table></div>
+  <div class="form-actions"><a class="button-link secondary-link" href="/1A-Field-Guide-Site/member-research.html">Cancel</a><button id="import-button" type="button" disabled>Import to review queue</button></div>
+</section>
+<p id="message" role="status" aria-live="polite"></p>
+</div>
+</main>
+<script type="module">const SUPABASE_URL='https://bpmvkdblgpnpooxadhjc.supabase.co';
+const KEY='sb_publishable__mZKy1dcx8OjzF1Q2nl0qg_t6I6bkys';
+const SESSION_KEY='coalition-membership-session-v1';
+const $=id=>document.getElementById(id);
+const MAX_BYTES=5*1024*1024,MAX_ROWS=200;
+const allowedTypes=new Set(['policy','training','facility_page','public_records_response','incident_data','correspondence','report','statute','regulation','case','record','other']);
+let session=null,rows=[];
+function say(t){$('message').textContent=t}
+function headers(token,extra={}){return{apikey:KEY,...(token?{Authorization:'Bearer '+token}:{}),...extra}}
+async function req(path,{method='GET',token,body}={}){const r=await fetch(SUPABASE_URL+path,{method,headers:headers(token,{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'})}),...(body===undefined?{}:{body:JSON.stringify(body)})});let d=null;try{d=await r.json()}catch{}if(!r.ok){const e=new Error(d?.msg||d?.message||d?.error_description||d?.error||'Request failed ('+r.status+').');e.status=r.status;e.data=d;throw e}return d}
+function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}
+function clearSession(){sessionStorage.removeItem(SESSION_KEY)}
+function load(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}
+async function refreshToken(r){const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:r}});return{...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)}}
+async function current(){let s=load();if(!s)return null;if(!s.expires_at||s.expires_at<=Math.floor(Date.now()/1000)+60){try{s=await refreshToken(s.refresh_token);save(s)}catch{clearSession();return null}}try{return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch(e){if(e.status!==401)throw e;try{s=await refreshToken(s.refresh_token);save(s);return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch{clearSession();return null}}}
+function cleanHeader(v){return String(v||'').trim().toLowerCase().replace(/[\s-]+/g,'_')}
+function parseCsv(text){const out=[];let row=[],field='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(quoted){if(c==='"'&&text[i+1]==='"'){field+='"';i++}else if(c==='"')quoted=false;else field+=c}else if(c==='"')quoted=true;else if(c===','){row.push(field);field=''}else if(c==='\n'){row.push(field);out.push(row);row=[];field=''}else if(c!=='\r')field+=c}row.push(field);if(row.some(v=>String(v).trim()!==''))out.push(row);return out}
+function rowsFromGrid(grid){if(grid.length<2)throw new Error('The file needs a header row and at least one data row.');const headers=grid[0].map(cleanHeader);const data=grid.slice(1).filter(r=>r.some(v=>String(v??'').trim()!==''));if(data.length>MAX_ROWS)throw new Error(`Import files may contain at most ${MAX_ROWS} data rows.`);return data.map(r=>{const obj={};headers.forEach((h,i)=>{if(h)obj[h]=String(r[i]??'').trim()});return normalize(obj)})}
+function normalize(obj){return{source_title:obj.source_title||obj.title||'',agency:obj.agency||obj.source_agency||'',origin:obj.origin||obj.provenance||'',source_type:(obj.source_type||'record').toLowerCase(),state_code:(obj.state_code||'US-CA').toUpperCase(),city:obj.city||'',source_url:obj.source_url||obj.url||'',checked_on:obj.checked_on||'',received_on:obj.received_on||'',notes:obj.notes||''}}
+async function parseFile(file){if(file.size>MAX_BYTES)throw new Error('The import file may not exceed 5 MB.');const ext=file.name.toLowerCase().split('.').pop();if(ext==='csv'){return rowsFromGrid(parseCsv(await file.text()))}if(ext==='xlsx'){if(!globalThis.ExcelJS)throw new Error('The XLSX parser did not load. Refresh and try again.');const workbook=new globalThis.ExcelJS.Workbook();await workbook.xlsx.load(await file.arrayBuffer());const sheet=workbook.worksheets[0];if(!sheet)throw new Error('The workbook has no worksheet.');const grid=[];sheet.eachRow({includeEmpty:false},row=>{const vals=[];for(let i=1;i<=row.cellCount;i++)vals.push(row.getCell(i).text);grid.push(vals)});return rowsFromGrid(grid)}throw new Error('Choose a .csv or .xlsx file.')}
+function validDate(v){return !v||/^\d{4}-\d{2}-\d{2}$/.test(v)}
+function validate(list){const errors=[];list.forEach((r,i)=>{const n=i+2;if(!r.source_title||r.source_title.length>240)errors.push(`Row ${n}: source_title is required and must be 240 characters or fewer.`);if(!r.agency||r.agency.length>200)errors.push(`Row ${n}: agency is required and must be 200 characters or fewer.`);if(!r.origin||r.origin.length>160)errors.push(`Row ${n}: origin is required and must be 160 characters or fewer.`);if(!allowedTypes.has(r.source_type))errors.push(`Row ${n}: source_type “${r.source_type}” is not supported.`);if(r.source_url&&(!/^https:\/\/\S+$/i.test(r.source_url)||r.source_url.length>2048))errors.push(`Row ${n}: source_url must be an HTTPS URL.`);if(!validDate(r.checked_on)||!validDate(r.received_on))errors.push(`Row ${n}: dates must use YYYY-MM-DD.`);if(r.notes.length>2000)errors.push(`Row ${n}: notes may not exceed 2,000 characters.`)});return errors}
+function textCell(tr,value){const td=document.createElement('td');td.textContent=value||'—';tr.append(td)}
+function renderPreview(){const errors=validate(rows),body=$('preview-body');body.textContent='';rows.forEach((r,i)=>{const tr=document.createElement('tr');textCell(tr,String(i+1));textCell(tr,r.source_title);textCell(tr,r.agency);textCell(tr,r.origin);textCell(tr,r.source_type);textCell(tr,r.state_code);textCell(tr,r.city);textCell(tr,r.checked_on||r.received_on);body.append(tr)});$('preview-summary').textContent=`${rows.length} row${rows.length===1?'':'s'} ready for preview.`;const box=$('validation-errors');box.textContent='';if(errors.length){const h=document.createElement('strong');h.textContent=`Fix ${errors.length} validation issue${errors.length===1?'':'s'} before importing.`;box.append(h);const ul=document.createElement('ul');for(const e of errors){const li=document.createElement('li');li.textContent=e;ul.append(li)}box.append(ul)}else{box.textContent='All rows passed client-side validation. The server will validate them again before import.'}$('import-button').disabled=errors.length>0||!rows.length;$('preview-panel').hidden=false}
+$('import-file').addEventListener('change',async()=>{const file=$('import-file').files?.[0];if(!file)return;try{rows=await parseFile(file);renderPreview();say('')}catch(e){rows=[];$('preview-panel').hidden=true;say(e.message||'The file could not be read.')}});
+$('clear-file').addEventListener('click',()=>{rows=[];$('import-file').value='';$('preview-panel').hidden=true;$('import-file').focus();say('')});
+$('template-button').addEventListener('click',()=>{const csv='source_title,agency,origin,source_type,state_code,city,source_url,checked_on,received_on,notes\nExample title,Contra Costa County Library,CCCL CPRA production,public_records_response,US-CA,Concord,,2026-10-15,2026-10-05,Short source-only note\n';const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='research-import-template.csv';document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},0)});
+$('import-button').addEventListener('click',async()=>{if(!rows.length)return;const button=$('import-button');button.disabled=true;try{const d=await req('/functions/v1/manage-research-submissions',{method:'POST',token:session.access_token,body:{action:'admin_import',rows}});say(`${d.imported_count||rows.length} research record${(d.imported_count||rows.length)===1?'':'s'} imported to the review queue.`);rows=[];$('preview-panel').hidden=true;$('import-file').value=''}catch(e){say(e?.data?.error||e.message||'The research import could not be completed.')}finally{button.disabled=false}});
+async function init(){session=await current();if(!session?.user){$('gate').hidden=false;$('workspace').hidden=true;return}try{const status=await req('/rest/v1/rpc/coalition_self_membership_status',{method:'POST',token:session.access_token,body:{}}),m=status?.[0],roles=m?.role_codes||[];if(m?.membership_status!=='approved'||!roles.includes('administrator')){$('gate').hidden=false;$('workspace').hidden=true;return}$('gate').hidden=true;$('workspace').hidden=false}catch{$('gate').hidden=false;$('workspace').hidden=true;$('gate-copy').textContent='Administrator status is temporarily unavailable.'}}
+await init();</script>
+</body>
+</html>
