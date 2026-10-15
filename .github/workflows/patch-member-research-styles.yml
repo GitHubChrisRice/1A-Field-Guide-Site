@@ -1,0 +1,55 @@
+name: Patch member research styles
+
+on:
+  push:
+    branches:
+      - fix/member-research-styles
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: fix/member-research-styles
+
+      - name: Replace inline member research styles
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('docs/member-research.html')
+          text = p.read_text(encoding='utf-8')
+          text, n1 = re.subn(r"style-src 'sha256-[^']+'", "style-src 'self'", text, count=1)
+          if n1 != 1:
+              raise SystemExit('style-src hash not found')
+          text, n2 = re.subn(
+              r'<style>.*?</style>',
+              '<link rel="stylesheet" href="/1A-Field-Guide-Site/stylesheets/member-research.css">',
+              text,
+              count=1,
+              flags=re.S,
+          )
+          if n2 != 1:
+              raise SystemExit('inline style block not found')
+          p.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit page patch
+        shell: bash
+        run: |
+          if git diff --quiet -- docs/member-research.html; then
+            echo "Already patched"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/member-research.html
+          git commit -m "Use stable stylesheet for member research"
+          git push origin HEAD:fix/member-research-styles
