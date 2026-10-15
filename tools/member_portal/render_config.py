@@ -13,9 +13,9 @@ import sys
 
 URL_PLACEHOLDER = "__COALITION_SUPABASE_URL__"
 KEY_PLACEHOLDER = "__COALITION_SUPABASE_PUBLISHABLE_KEY__"
-TARGETS = ("member-pilot.html", "member-community.html", "member-research.html", "member-research-submit.html")
+TARGETS = ("member-pilot.html", "member-community.html", "member-research.html", "member-research-submit.html", "member-research-import.html")
 SCRIPT_RE = re.compile(r'<script type="module">(?P<body>.*?)</script>', re.DOTALL)
-SCRIPT_HASH_RE = re.compile(r"script-src 'sha256-[A-Za-z0-9+/=]+';")
+SCRIPT_HASH_RE = re.compile(r"'sha256-[A-Za-z0-9+/=]+'");
 SUPABASE_URL_RE = re.compile(r"https://[a-z0-9]+\.supabase\.co$")
 
 
@@ -62,7 +62,7 @@ def render(root: Path) -> None:
         if not match:
             fail(f"{path}: inline module script not found")
         digest = base64.b64encode(hashlib.sha256(match.group("body").encode("utf-8")).digest()).decode("ascii")
-        replacement = f"script-src 'sha256-{digest}';"
+        replacement = f"'sha256-{digest}'"
         rendered, count = SCRIPT_HASH_RE.subn(replacement, rendered, count=1)
         if count != 1:
             fail(f"{path}: CSP script hash declaration not found")
