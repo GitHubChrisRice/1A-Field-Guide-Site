@@ -42,6 +42,9 @@ jobs:
           python tools/registry/build_registry.py
           python tools/registry/build_registry.py --check
 
+      - name: Verify member backend config is not committed
+        run: python tools/member_portal/render_config.py check docs
+
       - name: Build MkDocs site
         run: python -m mkdocs build --clean
 
@@ -68,6 +71,12 @@ jobs:
 
       - name: Build MkDocs site
         run: python -m mkdocs build --clean
+
+      - name: Render official member backend configuration
+        env:
+          COALITION_SUPABASE_URL: ${{ vars.COALITION_SUPABASE_URL }}
+          COALITION_SUPABASE_PUBLISHABLE_KEY: ${{ vars.COALITION_SUPABASE_PUBLISHABLE_KEY }}
+        run: python tools/member_portal/render_config.py render site-preview
 
       - name: Publish generated site to gh-pages
         run: |
