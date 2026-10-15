@@ -3,7 +3,17 @@
 **Research status:** Core constitutional architecture needed by the ordinary qualification branches is reviewed across this chapter and the substantive forum, recording, police, meeting, and records chapters. Broader independent California constitutional/shield/remedies questions remain specialized.  
 **Last verified:** September 29, 2026.
 
-This chapter identifies the constitutional provisions that form the legal foundation for peaceful First Amendment auditing in California. It does not by itself answer every facility-access or recording question. Forum doctrine, statutes, regulations, court rules, and facility-specific law can materially change the analysis.
+This chapter is the **California constitutional overlay** for the Field Guide. It begins from the controlling federal constitutional baseline and then identifies California provisions that may add protection, supply an independent state-law rule, or otherwise affect the analysis. It does not by itself answer every facility-access or recording question. Forum doctrine, statutes, regulations, court rules, and facility-specific law can materially change the analysis.
+
+## Federal baseline first
+
+Before applying California law, identify the controlling federal rule. For this project, the recurring federal baseline includes the First Amendment's speech, press, petition, assembly, and newsgathering interests; Fourth Amendment limits on detention, seizure, and search; Fifth and Fourteenth Amendment protections where applicable; and federal public-forum and retaliation doctrine.
+
+Use [Constitution First](../constitution-first.md) for the nationwide framework and the [National core](../national-core/complaint-driven-police-encounter.md) chapters for recurring factual branches. California law enters **after** that baseline is identified.
+
+California may provide additional rights or independent state-law protections, and it may impose state-specific rules in areas where federal law permits them. But a California restriction cannot be treated as controlling merely because it is more restrictive: it still must be compatible with the federal constitutional floor and any applicable federal supremacy or preemption rule.
+
+**Field sequence:** federal constitutional baseline → nationwide doctrine → California overlay → local/facility application.
 
 ## Short field rule
 

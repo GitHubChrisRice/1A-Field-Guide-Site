@@ -63,6 +63,7 @@ nav:
   - State handbooks:
       - California:
           - Overview and active status: california/README.md
+          - Federal baseline and California constitutional overlay: california/constitutional-foundations.md
           - Qualification matrix: california/QUALIFICATION-MATRIX.md
           - Qualification evidence map: california/QUALIFICATION-EVIDENCE-MAP.md
           - County coverage inventory: california/COUNTY-COVERAGE-INVENTORY.md
@@ -70,7 +71,6 @@ nav:
           - Standing scenario: california/standing-scenario.md
           - Facility research and field verification: california/facility-investigation-methodology.md
           - Doctrine:
-              - Constitutional foundations: california/constitutional-foundations.md
               - Public-forum doctrine: california/public-forum-doctrine.md
               - Indoor public common spaces: california/indoor-public-common-spaces.md
               - Restriction audit: california/restriction-audit.md
