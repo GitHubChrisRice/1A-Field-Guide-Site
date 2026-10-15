@@ -13,7 +13,7 @@ import sys
 
 URL_PLACEHOLDER = "__COALITION_SUPABASE_URL__"
 KEY_PLACEHOLDER = "__COALITION_SUPABASE_PUBLISHABLE_KEY__"
-TARGETS = ("member-pilot.html", "member-community.html")
+TARGETS = ("member-pilot.html", "member-community.html", "member-research.html")
 SCRIPT_RE = re.compile(r'<script type="module">(?P<body>.*?)</script>', re.DOTALL)
 SCRIPT_HASH_RE = re.compile(r"script-src 'sha256-[A-Za-z0-9+/=]+';")
 SUPABASE_URL_RE = re.compile(r"https://[a-z0-9]+\.supabase\.co$")
