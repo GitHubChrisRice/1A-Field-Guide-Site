@@ -1,0 +1,51 @@
+name: Template member backend configuration
+
+on:
+  push:
+    branches:
+      - hardening/member-backend-config
+
+permissions:
+  contents: write
+
+jobs:
+  template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out hardening branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: hardening/member-backend-config
+
+      - name: Replace live member backend values with inert placeholders
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          url_placeholder = "__COALITION_SUPABASE_URL__"
+          key_placeholder = "__COALITION_SUPABASE_PUBLISHABLE_KEY__"
+
+          changed = False
+          for relative in ("docs/member-pilot.html", "docs/member-community.html"):
+              path = Path(relative)
+              text = path.read_text(encoding="utf-8")
+              updated = re.sub(r"https://[a-z0-9]+\.supabase\.co", url_placeholder, text)
+              updated = re.sub(r"sb_publishable__[A-Za-z0-9_-]+", key_placeholder, updated)
+              if updated != text:
+                  path.write_text(updated, encoding="utf-8")
+                  changed = True
+
+          print("templated" if changed else "already templated")
+
+      - name: Commit templated member pages
+        run: |
+          if git diff --quiet -- docs/member-pilot.html docs/member-community.html; then
+            echo "Member pages are already templated."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/member-pilot.html docs/member-community.html
+          git commit -m "Template member backend configuration"
+          git push origin HEAD:hardening/member-backend-config
