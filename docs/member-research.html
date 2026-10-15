@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-J+FLgMWWau9bWbgmMe1m/CZVGcVeWOdMFX+Rcjjozgs='; style-src 'sha256-T9E4NlhKfRG/E2EUw6tz7uJpuPVhw8r8AK/s89SDqvs='; connect-src __COALITION_SUPABASE_URL__; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-IA1rGoH31qoRQPWjkUkf1BI/B+li9JEfjBba0qd+i7A='; style-src 'sha256-T9E4NlhKfRG/E2EUw6tz7uJpuPVhw8r8AK/s89SDqvs='; connect-src __COALITION_SUPABASE_URL__; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Research contributions · Public Oversight Coalition</title>
 <style>
@@ -50,6 +50,12 @@ main{max-width:1080px;margin:0 auto;padding:40px 28px}h1{font-size:clamp(30px,4v
 <div id="submissions"></div>
 </section>
 </div>
+<section id="admin-review-panel" class="panel" hidden>
+<h2>Administrator review queue</h2>
+<p class="muted">Review submitted member source checks. Starting review is required before approval or rejection. Approval marks the current immutable revision approved for research use; it does not publish anything.</p>
+<div class="actions"><button id="refresh-admin-queue" class="secondary" type="button">Refresh review queue</button></div>
+<div id="admin-queue"></div>
+</section>
 <p id="message" role="status" aria-live="polite"></p>
 </div>
 </main>
@@ -57,7 +63,7 @@ main{max-width:1080px;margin:0 auto;padding:40px 28px}h1{font-size:clamp(30px,4v
 const KEY='__COALITION_SUPABASE_PUBLISHABLE_KEY__';
 const SESSION_KEY='coalition-membership-session-v1';
 const $=id=>document.getElementById(id);
-let session=null;
+let session=null,isAdministrator=false;
 function say(t){$('message').textContent=t}
 function headers(token,extra={}){return{apikey:KEY,...(token?{Authorization:'Bearer '+token}:{}),...extra}}
 async function req(path,{method='GET',token,body}={}){const r=await fetch(SUPABASE_URL+path,{method,headers:headers(token,{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'})}),...(body===undefined?{}:{body:JSON.stringify(body)})});let d=null;try{d=await r.json()}catch{}if(!r.ok){const e=new Error(d?.msg||d?.message||d?.error_description||d?.error||'Request failed ('+r.status+').');e.status=r.status;e.data=d;throw e}return d}
@@ -78,6 +84,7 @@ function renderSubmissions(rows){
     const link=document.createElement('a');link.href=row.source_url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=row.source_url||'Official source';
     card.append(status,title,meta,link);
     if(row.notes){const notes=document.createElement('p');notes.textContent=row.notes;card.append(notes)}
+    if(row.last_review_reason){const review=document.createElement('p');review.className='muted';review.textContent='Review note: '+row.last_review_reason;card.append(review)}
     box.append(card);
   }
 }
@@ -85,6 +92,45 @@ async function loadSubmissions(){
   const box=$('submissions');box.textContent='Loading your submissions…';
   try{const d=await req('/functions/v1/manage-research-submissions',{method:'POST',token:session.access_token,body:{action:'list'}});renderSubmissions(d?.submissions||[])}
   catch(e){box.textContent=e?.data?.error||'Your submissions are temporarily unavailable.'}
+}
+function adminText(tag,text,className){const el=document.createElement(tag);if(className)el.className=className;el.textContent=text;return el}
+async function runAdminReview(submissionId,reviewAction,reason=''){
+  try{
+    await req('/functions/v1/manage-research-submissions',{method:'POST',token:session.access_token,body:{action:'admin_review',submission_id:submissionId,review_action:reviewAction,reason}});
+    say(reviewAction==='start_review'?'Research submission moved into review.':reviewAction==='approve'?'Research submission approved for research use.':'Research submission rejected.');
+    await Promise.all([loadAdminQueue(),loadSubmissions()]);
+  }catch(e){say(e?.data?.error||'The research review action could not be completed.')}
+}
+function renderAdminQueue(rows){
+  const box=$('admin-queue');box.textContent='';
+  if(!rows.length){box.append(adminText('p','No research submissions are waiting for review.','empty'));return}
+  for(const row of rows){
+    const card=document.createElement('article');card.className='submission';
+    card.append(adminText('div',(row.status||'submitted').replaceAll('_',' '),'status'));
+    card.append(adminText('h3',row.source_title||row.title||'Source verification'));
+    const identity=[row.screen_name||'Member',row.member_code,row.checked_on?'checked '+row.checked_on:null].filter(Boolean).join(' · ');
+    card.append(adminText('p',identity,'muted'));
+    if(row.source_url){const link=document.createElement('a');link.href=row.source_url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=row.source_url;card.append(link)}
+    if(row.notes)card.append(adminText('p',row.notes));
+    if(row.last_review_reason)card.append(adminText('p','Latest review note: '+row.last_review_reason,'muted'));
+    const actions=document.createElement('div');actions.className='actions';
+    if(row.status==='submitted'){
+      const start=adminText('button','Start review');start.type='button';start.addEventListener('click',()=>runAdminReview(row.submission_id,'start_review',''));actions.append(start);
+    }else if(row.status==='in_review'){
+      const label=document.createElement('label');label.className='form';label.append(adminText('span','Decision note'));
+      const reason=document.createElement('textarea');reason.maxLength=1000;reason.placeholder='Optional for approval; required for rejection.';label.append(reason);card.append(label);
+      const approve=adminText('button','Approve');approve.type='button';approve.addEventListener('click',()=>runAdminReview(row.submission_id,'approve',reason.value.trim()));
+      const reject=adminText('button','Reject','secondary');reject.type='button';reject.addEventListener('click',()=>{const value=reason.value.trim();if(!value){say('Enter a rejection reason first.');reason.focus();return}runAdminReview(row.submission_id,'reject',value)});
+      actions.append(approve,reject);
+    }
+    card.append(actions);box.append(card);
+  }
+}
+async function loadAdminQueue(){
+  if(!isAdministrator)return;
+  const box=$('admin-queue');box.textContent='Loading review queue…';
+  try{const d=await req('/functions/v1/manage-research-submissions',{method:'POST',token:session.access_token,body:{action:'admin_list'}});renderAdminQueue(d?.submissions||[])}
+  catch(e){box.textContent=e?.data?.error||'The research review queue is temporarily unavailable.'}
 }
 async function init(){
   $('checked-on').value=localDate();$('checked-on').max=localDate();
@@ -94,7 +140,8 @@ async function init(){
     const rows=await req('/rest/v1/rpc/coalition_self_membership_status',{method:'POST',token:session.access_token,body:{}});
     const m=rows?.[0],roles=m?.role_codes||[];
     if(m?.membership_status!=='approved'||!roles.includes('member')){$('gate').hidden=false;$('workspace').hidden=true;$('gate-copy').textContent='Active Member access is required to use the research workspace.';return}
-    $('gate').hidden=true;$('workspace').hidden=false;await loadSubmissions();
+    isAdministrator=roles.includes('administrator');$('admin-review-panel').hidden=!isAdministrator;
+    $('gate').hidden=true;$('workspace').hidden=false;await Promise.all([loadSubmissions(),...(isAdministrator?[loadAdminQueue()]:[])]);
   }catch{$('gate').hidden=false;$('workspace').hidden=true;$('gate-copy').textContent='Membership status is temporarily unavailable.'}
 }
 $('submission-form').addEventListener('submit',async e=>{
@@ -107,6 +154,7 @@ $('submission-form').addEventListener('submit',async e=>{
   finally{button.disabled=false}
 });
 $('refresh-submissions').addEventListener('click',loadSubmissions);
+$('refresh-admin-queue').addEventListener('click',loadAdminQueue);
 await init();</script>
 </body>
 </html>
