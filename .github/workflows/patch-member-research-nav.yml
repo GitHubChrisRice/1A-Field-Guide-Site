@@ -1,0 +1,54 @@
+name: Patch member research navigation
+
+on:
+  push:
+    branches:
+      - member-research-ui
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: member-research-ui
+
+      - name: Add research links to member workspace
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('docs/member-pilot.html')
+          text = path.read_text(encoding='utf-8')
+
+          old_nav = '<button type="button" data-view="member-area" aria-current="page">Overview</button><button type="button" data-view="account">My account</button><a href="/1A-Field-Guide-Site/member-community.html">Community</a>'
+          new_nav = '<button type="button" data-view="member-area" aria-current="page">Overview</button><button type="button" data-view="account">My account</button><a href="/1A-Field-Guide-Site/member-community.html">Community</a><a href="/1A-Field-Guide-Site/member-research.html">Research contributions</a>'
+          if old_nav in text:
+              text = text.replace(old_nav, new_nav, 1)
+          elif 'member-research.html">Research contributions</a>' not in text:
+              raise SystemExit('workspace nav insertion point not found')
+
+          community_card = '<a class="resource-card" href="/1A-Field-Guide-Site/member-community.html"><h2>Community</h2><p>Talk with other members, ask questions, request guidance, and share project help.</p><span>Open community →</span></a>'
+          research_card = '<a class="resource-card" href="/1A-Field-Guide-Site/member-research.html"><h2>Research contributions</h2><p>Choose optional, bounded source-verification tasks and track what you submit for review.</p><span>Explore contributions →</span></a>'
+          if research_card not in text:
+              if community_card not in text:
+                  raise SystemExit('resource card insertion point not found')
+              text = text.replace(community_card, community_card + research_card, 1)
+
+          path.write_text(text, encoding='utf-8')
+
+      - name: Commit workspace navigation update
+        run: |
+          if git diff --quiet -- docs/member-pilot.html; then
+            echo "Member research navigation already present."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+GitHub-Actions@users.noreply.github.com"
+          git add docs/member-pilot.html
+          git commit -m "Link research contributions from member workspace"
+          git push origin HEAD:member-research-ui
