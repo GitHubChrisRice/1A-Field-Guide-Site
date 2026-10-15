@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-c8irktn3gb8FAxac8OD1FyzuaL6jmwvoiB9h9twaLU8='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Wmyk7OzwLi4A2fhCgu5jNfmWmXKqCNRZTpz4oTDbo3I='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Community · Public Oversight Coalition</title>
 <style>
@@ -82,6 +82,7 @@ form{display:grid;gap:13px}label{display:grid;gap:6px;font-weight:650}input,sele
 <button>Create topic</button>
 </form>
 </section>
+<section id="hidden-topics-panel" class="panel" hidden><h2>Hidden topics</h2><p>Administrator recovery. Restoring a topic requires a reason and is recorded in moderation history.</p><button id="refresh-hidden-topics" type="button" class="secondary">Refresh hidden topics</button><div id="hidden-topic-list" aria-live="polite"></div></section>
 <section class="panel"><h2>Privacy boundary</h2><p>Your login email is not displayed here. Threads use your Screen Name and stable member code. Do not post private contact information or sensitive case material in the community.</p></section>
 </aside>
 </div>
@@ -152,6 +153,35 @@ async function loadTopics(){
   }catch(e){box.textContent=e?.data?.error||'Community topics are unavailable.'}
 }
 
+async function loadHiddenTopics(){
+  if(!isAdministrator)return;
+  const panel=$('hidden-topics-panel'),box=$('hidden-topic-list');panel.hidden=false;box.textContent='Loading hidden topics…';
+  try{
+    const result=await community({action:'list_hidden_topics',limit:50});
+    const topics=result.topics||[];box.textContent='';
+    if(!topics.length){box.textContent='No hidden topics.';return}
+    for(const topic of topics){
+      const card=document.createElement('div');card.className='post';
+      const title=document.createElement('h3');title.textContent=topic.title;
+      const meta=document.createElement('p');meta.className='meta';
+      meta.textContent=categoryLabel(topic.category)+' · '+topic.author_screen_name+' · '+topic.author_member_code+' · '+topic.reply_count+' replies · hidden '+new Date(topic.updated_at).toLocaleString();
+      const label=document.createElement('label');label.textContent='Restore reason';
+      const reason=document.createElement('input');reason.maxLength=2000;reason.placeholder='Required for restore';label.append(reason);
+      const restore=document.createElement('button');restore.type='button';restore.textContent='Restore topic';
+      restore.addEventListener('click',async()=>{
+        const why=reason.value.trim();if(!why)return say('Enter a restore reason first.');
+        restore.disabled=true;
+        try{
+          await community({action:'moderate_topic',topic_id:topic.topic_id,moderation_action:'unhide',reason:why});
+          say('Topic restored.');await Promise.all([loadTopics(),loadHiddenTopics()])
+        }catch(e){say(e?.data?.error||'Topic restore failed.')}
+        finally{restore.disabled=false}
+      });
+      card.append(title,meta,label,restore);box.append(card)
+    }
+  }catch(e){box.textContent=e?.data?.error||'Hidden topics are unavailable.'}
+}
+
 async function openTopic(topicId){
   currentTopicId=topicId;$('topic-detail').hidden=false;$('topic-detail').scrollIntoView({behavior:'smooth',block:'start'});
   $('topic-title').textContent='Loading topic…';$('topic-body').textContent='';$('post-list').textContent='';
@@ -182,7 +212,7 @@ $('identity-form').addEventListener('submit',async e=>{
   try{
     const result=await community({action:'set_identity',screen_name:chosen});currentIdentity=result.identity;
     $('identity-card').hidden=true;$('identity-summary').hidden=false;$('identity-summary').textContent=currentIdentity.screen_name+' · '+currentIdentity.member_code;
-    say('Screen Name saved.');$('community').hidden=false;await loadTopics()
+    say('Screen Name saved.');$('community').hidden=false;await Promise.all([loadTopics(),loadHiddenTopics()])
   }catch(e){say(e?.data?.error||'Screen Name could not be saved.')}
 });
 
@@ -208,10 +238,11 @@ $('moderation-lock').addEventListener('click',async()=>{
 });
 $('moderation-hide').addEventListener('click',async()=>{
   if(!currentTopicId)return;const reason=$('moderation-reason').value.trim();if(!reason)return say('Enter a moderation reason first.');
-  try{await community({action:'moderate_topic',topic_id:currentTopicId,moderation_action:'hide',reason});say('Topic hidden.');currentTopicId=null;$('topic-detail').hidden=true;await loadTopics()}
+  try{await community({action:'moderate_topic',topic_id:currentTopicId,moderation_action:'hide',reason});say('Topic hidden.');currentTopicId=null;$('topic-detail').hidden=true;await Promise.all([loadTopics(),loadHiddenTopics()])}
   catch(e){say(e?.data?.error||'Topic moderation failed.')}
 });
 $('refresh-topics').addEventListener('click',loadTopics);
+$('refresh-hidden-topics').addEventListener('click',loadHiddenTopics);
 
 async function init(){
   session=await currentSession();
@@ -224,7 +255,7 @@ async function init(){
     isAdministrator=roles.includes('administrator');
     const identity=await loadIdentity();
     if(!identity)return;
-    $('community').hidden=false;await loadTopics()
+    $('community').hidden=false;await Promise.all([loadTopics(),loadHiddenTopics()])
   }catch(e){$('auth-needed').hidden=false;$('auth-needed').querySelector('p').textContent=e?.data?.error||'Member access could not be verified.'}
 }
 await init();
