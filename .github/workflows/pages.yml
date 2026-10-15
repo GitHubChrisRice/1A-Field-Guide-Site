@@ -48,6 +48,12 @@ jobs:
       - name: Build MkDocs site
         run: python -m mkdocs build --clean
 
+      - name: Test member backend renderer with inert config
+        env:
+          COALITION_SUPABASE_URL: https://exampleproject.supabase.co
+          COALITION_SUPABASE_PUBLISHABLE_KEY: sb_publishable__example_not_a_real_key_12345
+        run: python tools/member_portal/render_config.py render site-preview
+
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
