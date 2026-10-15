@@ -38,10 +38,6 @@ exclude_docs: |
 
 nav:
   - Home: index.md
-  - Jurisdictions:
-      - Nationwide status: jurisdictions/index.md
-      - California: jurisdictions/california.md
-      - Federal: jurisdictions/federal.md
   - Constitution First: constitution-first.md
   - National core:
       - Complaint-driven police encounter: national-core/complaint-driven-police-encounter.md
@@ -50,32 +46,42 @@ nav:
       - County index: registry/index.md
       - How classifications work: registry/method.md
       - Registry data model: registry/data-model.md
-  - California handbook:
-      - Overview and active status: california/README.md
-      - Qualification matrix: california/QUALIFICATION-MATRIX.md
-      - Qualification evidence map: california/QUALIFICATION-EVIDENCE-MAP.md
-      - County coverage inventory: california/COUNTY-COVERAGE-INVENTORY.md
-      - California activation record: research/CA-GATE-10-CALIFORNIA-ACTIVATION-RECORD.md
-      - Standing scenario: california/standing-scenario.md
-      - Facility research and field verification: california/facility-investigation-methodology.md
-  - Core doctrine:
-      - Constitutional foundations: california/constitutional-foundations.md
-      - Public-forum doctrine: california/public-forum-doctrine.md
-      - Indoor public common spaces: california/indoor-public-common-spaces.md
-      - Restriction audit: california/restriction-audit.md
-      - What can I do in each forum?: california/forum-activity-guide.md
-      - Public libraries: california/public-libraries.md
-      - Recording public officials: california/recording-public-officials.md
-      - Lawful vantage and privacy boundaries: california/lawful-vantage-privacy.md
-      - Police encounters: california/police-encounters.md
-      - Trespass and removal: california/trespass-removal.md
-      - Disorderly conduct: california/disorderly-conduct.md
-      - Assemblies and emergency scenes: california/assembly-emergency-scenes.md
   - Open government:
       - Public records — start here: open-government/public-records.md
-      - Public meetings: california/public-meetings.md
-      - California public records and evidence preservation: california/public-records-evidence-preservation.md
-      - Records requests and retaliation: california/records-request-retaliation.md
-      - Federal FOIA: federal/foia.md
+      - Federal:
+          - FOIA: federal/foia.md
+      - State & local:
+          - California:
+              - Public meetings: california/public-meetings.md
+              - Public records and evidence preservation: california/public-records-evidence-preservation.md
+              - Records requests and retaliation: california/records-request-retaliation.md
+  - Jurisdictions:
+      - Nationwide status: jurisdictions/index.md
+      - Federal: jurisdictions/federal.md
+      - States:
+          - California: jurisdictions/california.md
+  - State handbooks:
+      - California:
+          - Overview and active status: california/README.md
+          - Qualification matrix: california/QUALIFICATION-MATRIX.md
+          - Qualification evidence map: california/QUALIFICATION-EVIDENCE-MAP.md
+          - County coverage inventory: california/COUNTY-COVERAGE-INVENTORY.md
+          - California activation record: research/CA-GATE-10-CALIFORNIA-ACTIVATION-RECORD.md
+          - Standing scenario: california/standing-scenario.md
+          - Facility research and field verification: california/facility-investigation-methodology.md
+          - Doctrine:
+              - Constitutional foundations: california/constitutional-foundations.md
+              - Public-forum doctrine: california/public-forum-doctrine.md
+              - Indoor public common spaces: california/indoor-public-common-spaces.md
+              - Restriction audit: california/restriction-audit.md
+              - What can I do in each forum?: california/forum-activity-guide.md
+              - Public libraries: california/public-libraries.md
+              - Recording public officials: california/recording-public-officials.md
+              - Lawful vantage and privacy boundaries: california/lawful-vantage-privacy.md
+              - Police encounters: california/police-encounters.md
+              - Trespass and removal: california/trespass-removal.md
+              - Disorderly conduct: california/disorderly-conduct.md
+              - Assemblies and emergency scenes: california/assembly-emergency-scenes.md
   - Research map:
-      - California authority index: california/AUTHORITY-INDEX.md
+      - States:
+          - California authority index: california/AUTHORITY-INDEX.md
