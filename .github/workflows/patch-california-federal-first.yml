@@ -1,0 +1,92 @@
+name: Patch California handbook federal-first framing
+
+on:
+  push:
+    branches:
+      - docs/california-federal-first
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: docs/california-federal-first
+
+      - name: Apply federal-first framing
+        shell: python
+        run: |
+          from pathlib import Path
+
+          readme = Path('docs/california/README.md')
+          text = readme.read_text(encoding='utf-8')
+          anchor = "Formal qualification remains traceable through the [California Jurisdiction Qualification Matrix](QUALIFICATION-MATRIX.md) and the [CA-GATE-10 activation record](../research/CA-GATE-10-CALIFORNIA-ACTIVATION-RECORD.md).\n\n"
+          section = """## Federal-first reading order
+
+This handbook is a **California overlay on the nationwide federal baseline**, not a substitute for it. For any field question, use this order:
+
+1. Start with [Constitution First](../constitution-first.md) and the relevant [National core](../national-core/complaint-driven-police-encounter.md) doctrine.
+2. Identify the controlling federal constitutional rule and the facts that make that rule applicable.
+3. Add California constitutional provisions, statutes, regulations, and cases only where they validly supplement the federal baseline, provide additional protection, impose a lawful state-specific restriction, or otherwise change the practical analysis.
+4. Add county, city, agency, facility, or property-specific rules only after the superior federal and state layers are identified.
+
+A state rule that appears more restrictive does **not** automatically control merely because it is state law. The handbook must distinguish a valid state-law overlay from a restriction that would conflict with controlling federal constitutional law, federal preemption, or another superior rule. Likewise, a California rule that provides greater protection should be identified as an additional state protection rather than mistaken for the source of the underlying federal right.
+
+The working sequence is therefore: **federal constitutional baseline → nationwide doctrine → California overlay → local/facility application**.
+
+"""
+          if '## Federal-first reading order' not in text:
+              if anchor not in text:
+                  raise SystemExit('README anchor not found')
+              text = text.replace(anchor, anchor + section, 1)
+              readme.write_text(text, encoding='utf-8')
+
+          foundations = Path('docs/california/constitutional-foundations.md')
+          text = foundations.read_text(encoding='utf-8')
+          old = "This chapter identifies the constitutional provisions that form the legal foundation for peaceful First Amendment auditing in California. It does not by itself answer every facility-access or recording question. Forum doctrine, statutes, regulations, court rules, and facility-specific law can materially change the analysis.\n\n"
+          new = """This chapter is the **California constitutional overlay** for the Field Guide. It begins from the controlling federal constitutional baseline and then identifies California provisions that may add protection, supply an independent state-law rule, or otherwise affect the analysis. It does not by itself answer every facility-access or recording question. Forum doctrine, statutes, regulations, court rules, and facility-specific law can materially change the analysis.
+
+## Federal baseline first
+
+Before applying California law, identify the controlling federal rule. For this project, the recurring federal baseline includes the First Amendment's speech, press, petition, assembly, and newsgathering interests; Fourth Amendment limits on detention, seizure, and search; Fifth and Fourteenth Amendment protections where applicable; and federal public-forum and retaliation doctrine.
+
+Use [Constitution First](../constitution-first.md) for the nationwide framework and the [National core](../national-core/complaint-driven-police-encounter.md) chapters for recurring factual branches. California law enters **after** that baseline is identified.
+
+California may provide additional rights or independent state-law protections, and it may impose state-specific rules in areas where federal law permits them. But a California restriction cannot be treated as controlling merely because it is more restrictive: it still must be compatible with the federal constitutional floor and any applicable federal supremacy or preemption rule.
+
+**Field sequence:** federal constitutional baseline → nationwide doctrine → California overlay → local/facility application.
+
+"""
+          if '## Federal baseline first' not in text:
+              if old not in text:
+                  raise SystemExit('constitutional-foundations intro anchor not found')
+              text = text.replace(old, new, 1)
+              foundations.write_text(text, encoding='utf-8')
+
+          mkdocs = Path('mkdocs.yml')
+          text = mkdocs.read_text(encoding='utf-8')
+          old_nav = """      - California:\n          - Overview and active status: california/README.md\n          - Qualification matrix: california/QUALIFICATION-MATRIX.md\n"""
+          new_nav = """      - California:\n          - Overview and active status: california/README.md\n          - Federal baseline and California constitutional overlay: california/constitutional-foundations.md\n          - Qualification matrix: california/QUALIFICATION-MATRIX.md\n"""
+          if new_nav not in text:
+              if old_nav not in text:
+                  raise SystemExit('mkdocs California handbook anchor not found')
+              text = text.replace(old_nav, new_nav, 1)
+          old_doctrine = "              - Constitutional foundations: california/constitutional-foundations.md\n"
+          text = text.replace(old_doctrine, '', 1)
+          mkdocs.write_text(text, encoding='utf-8')
+
+      - name: Commit handbook framing
+        run: |
+          if git diff --quiet -- docs/california/README.md docs/california/constitutional-foundations.md mkdocs.yml; then
+            echo "Federal-first framing already applied."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+GitHub-Actions@users.noreply.github.com"
+          git add docs/california/README.md docs/california/constitutional-foundations.md mkdocs.yml
+          git commit -m "Frame California handbook federal-first"
+          git push origin HEAD:docs/california-federal-first
