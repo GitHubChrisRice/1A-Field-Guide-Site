@@ -6,6 +6,19 @@ This directory is the California handbook. The goal is to build a rigorous state
 
 California is **Active** as of September 30, 2026. CA-GATE-01 through CA-GATE-10 are met. The qualification record contains **69 Supported / 4 Researched-Unresolved / 0 Gap / 0 Not Applicable** rows. Facility-research maturity is now **Researching** after post-activation reconciliation of the Contra Costa pilot set; the complete 58-county coverage inventory remains the statewide index. Formal qualification remains traceable through the [California Jurisdiction Qualification Matrix](QUALIFICATION-MATRIX.md) and the [CA-GATE-10 activation record](../research/CA-GATE-10-CALIFORNIA-ACTIVATION-RECORD.md).
 
+## Federal-first reading order
+
+This handbook is a **California overlay on the nationwide federal baseline**, not a substitute for it. For any field question, use this order:
+
+1. Start with [Constitution First](../constitution-first.md) and the relevant [National core](../national-core/complaint-driven-police-encounter.md) doctrine.
+2. Identify the controlling federal constitutional rule and the facts that make that rule applicable.
+3. Add California constitutional provisions, statutes, regulations, and cases only where they validly supplement the federal baseline, provide additional protection, impose a lawful state-specific restriction, or otherwise change the practical analysis.
+4. Add county, city, agency, facility, or property-specific rules only after the superior federal and state layers are identified.
+
+A state rule that appears more restrictive does **not** automatically control merely because it is state law. The handbook must distinguish a valid state-law overlay from a restriction that would conflict with controlling federal constitutional law, federal preemption, or another superior rule. Likewise, a California rule that provides greater protection should be identified as an additional state protection rather than mistaken for the source of the underlying federal right.
+
+The working sequence is therefore: **federal constitutional baseline → nationwide doctrine → California overlay → local/facility application**.
+
 ## Standing scenario
 
 The canonical factual baseline is now [NC-STANDING-01 v1](../national-core/standing-scenario.md).
