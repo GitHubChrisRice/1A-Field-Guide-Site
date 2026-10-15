@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-PLACEHOLDER'; style-src 'self'; connect-src __COALITION_SUPABASE_URL__; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Submit research · Public Oversight Coalition</title>
+<link rel="stylesheet" href="/1A-Field-Guide-Site/stylesheets/member-research.css">
+</head>
+<body>
+<header class="site-header">
+  <div><strong>Public Oversight Coalition</strong><small>Member research · controlled pilot</small></div>
+  <nav class="toplinks" aria-label="Member navigation">
+    <a href="/1A-Field-Guide-Site/member-pilot.html">Workspace</a>
+    <a href="/1A-Field-Guide-Site/member-community.html">Community</a>
+    <a href="/1A-Field-Guide-Site/member-research.html">Research</a>
+  </nav>
+</header>
+<main class="narrow-main">
+<a class="back-link" href="/1A-Field-Guide-Site/member-research.html">← Back to research library</a>
+<div class="eyebrow">Submit research</div>
+<h1>Healdsburg Police Department source check</h1>
+<p class="subtitle">Submit one official HTTPS source at a time. Your entry remains internal until reviewed.</p>
+<section id="gate" class="panel" hidden><h2>Member sign-in required</h2><p id="gate-copy">Sign in from the member workspace before submitting research.</p><p><a href="/1A-Field-Guide-Site/member-pilot.html">Return to member workspace →</a></p></section>
+<div id="workspace" hidden>
+<section class="panel task-detail" aria-labelledby="task-title">
+  <span class="badge">Available source check</span>
+  <h2 id="task-title">Healdsburg Police Department policy/source verification</h2>
+  <dl class="facts"><dt>Place</dt><dd>Healdsburg, Sonoma County, California</dd><dt>What to submit</dt><dd>One official HTTPS source, its title, and the date you checked it.</dd><dt>Authority</dt><dd>Your submission is research input only. It does not grant review or publication authority.</dd></dl>
+  <div class="boundary"><strong>Keep this source-focused.</strong> Do not submit encounter facts, allegations, private personal information, or investigation material here. Notes should describe only what the official source contains or why it may be useful.</div>
+  <form id="submission-form" class="form">
+    <label>Official source URL <small>Required · HTTPS</small><input id="source-url" type="url" inputmode="url" maxlength="2048" placeholder="https://…" required aria-describedby="source-url-help"></label>
+    <p id="source-url-help" class="field-help">Use the agency or government source URL whenever possible.</p>
+    <label>Source title <small>Required</small><input id="source-title" maxlength="300" required></label>
+    <label>Date checked <small>Required</small><input id="checked-on" type="date" required></label>
+    <label>Source notes <small>Optional · 2,000 characters maximum</small><textarea id="notes" maxlength="2000" placeholder="What does this official source contain or help verify?"></textarea></label>
+    <div class="form-actions"><a class="button-link secondary-link" href="/1A-Field-Guide-Site/member-research.html">Cancel</a><button id="submit-button" type="submit">Submit for review</button></div>
+  </form>
+</section>
+<p id="message" role="status" aria-live="polite"></p>
+</div>
+</main>
+<script type="module">const SUPABASE_URL='__COALITION_SUPABASE_URL__';
+const KEY='__COALITION_SUPABASE_PUBLISHABLE_KEY__';
+const SESSION_KEY='coalition-membership-session-v1';
+const $=id=>document.getElementById(id);
+let session=null;
+function say(t){$('message').textContent=t}
+function headers(token,extra={}){return{apikey:KEY,...(token?{Authorization:'Bearer '+token}:{}),...extra}}
+async function req(path,{method='GET',token,body}={}){const r=await fetch(SUPABASE_URL+path,{method,headers:headers(token,{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'})}),...(body===undefined?{}:{body:JSON.stringify(body)})});let d=null;try{d=await r.json()}catch{}if(!r.ok){const e=new Error(d?.msg||d?.message||d?.error_description||d?.error||'Request failed ('+r.status+').');e.status=r.status;e.data=d;throw e}return d}
+function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}
+function clear(){sessionStorage.removeItem(SESSION_KEY)}
+function load(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}
+async function refreshToken(r){const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:r}});return{...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)}}
+async function current(){let s=load();if(!s)return null;if(!s.expires_at||s.expires_at<=Math.floor(Date.now()/1000)+60){try{s=await refreshToken(s.refresh_token);save(s)}catch{clear();return null}}try{return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch(e){if(e.status!==401)throw e;try{s=await refreshToken(s.refresh_token);save(s);return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch{clear();return null}}}
+function localDate(){const d=new Date(),off=d.getTimezoneOffset();return new Date(d.getTime()-off*60000).toISOString().slice(0,10)}
+async function init(){$('checked-on').value=localDate();$('checked-on').max=localDate();session=await current();if(!session?.user){$('gate').hidden=false;$('workspace').hidden=true;return}try{const rows=await req('/rest/v1/rpc/coalition_self_membership_status',{method:'POST',token:session.access_token,body:{}}),m=rows?.[0],roles=m?.role_codes||[];if(m?.membership_status!=='approved'||!roles.includes('member')){$('gate').hidden=false;$('workspace').hidden=true;$('gate-copy').textContent='Active Member access is required to submit research.';return}$('gate').hidden=true;$('workspace').hidden=false}catch{$('gate').hidden=false;$('workspace').hidden=true;$('gate-copy').textContent='Membership status is temporarily unavailable.'}}
+$('submission-form').addEventListener('submit',async e=>{e.preventDefault();if(!session?.access_token)return say('Sign in again from the member workspace.');const button=$('submit-button');button.disabled=true;try{await req('/functions/v1/manage-research-submissions',{method:'POST',token:session.access_token,body:{action:'submit',source_url:$('source-url').value.trim(),source_title:$('source-title').value.trim(),checked_on:$('checked-on').value,notes:$('notes').value.trim()}});say('Source verification submitted for review. Returning to the research library…');setTimeout(()=>location.href='/1A-Field-Guide-Site/member-research.html',700)}catch(e){say(e?.data?.error||'The source check could not be submitted.')}finally{button.disabled=false}});
+await init();</script>
+</body>
+</html>
