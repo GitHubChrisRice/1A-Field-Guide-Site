@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-g4/9gDAgizjDcM5hOO9U3aaSAciCrD6N9bVAVrIj4qs='; style-src 'sha256-gJ+KSNJp0yftslYTXrgluIcWKO4MRj5avGmW8sjaMFk='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Community · Public Oversight Coalition</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.6 system-ui,sans-serif;background:#f3f5f8;color:#202e40}
+a{color:#245c76}button,input,select,textarea{font:inherit}button,a,input,select,textarea{touch-action:manipulation}
+button,input,select,textarea{border:1px solid #c9d3df;border-radius:8px;padding:10px 14px}
+button{cursor:pointer;background:#204d66;color:#fff;font-weight:650}button:hover{background:#163d53}button:disabled{opacity:.6;cursor:wait}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #e9ae46;outline-offset:3px}
+header{min-height:72px;background:#fff;border-bottom:1px solid #dce3eb;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header strong{font-size:16px}header small{display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#64748b}
+main{max-width:1120px;margin:0 auto;padding:38px 28px 70px}
+h1{font-size:clamp(28px,4vw,38px);letter-spacing:-.04em;line-height:1.2;margin:8px 0 10px}h2{font-size:21px;margin:0 0 12px}h3{margin:0 0 6px}
+p{margin:8px 0 16px}.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#657487;font-weight:700}.subtitle{color:#607084;max-width:700px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:22px;align-items:start;margin-top:28px}
+.panel,.topic-card,.post{background:#fff;border:1px solid #dce3eb;border-radius:12px;padding:22px}
+.panel{margin-bottom:18px}.topic-card{width:100%;text-align:left;color:#202e40;background:#fff;font-weight:400;margin-bottom:12px}
+.topic-card:hover{background:#f8fbfd;border-color:#7294aa}.topic-card strong{display:block;font-size:17px}.topic-card small,.meta{color:#6b7a8d}
+.badge{display:inline-block;border-radius:999px;padding:3px 9px;font-size:12px;background:#e7eef4;color:#31536b;margin-right:6px}
+form{display:grid;gap:13px}label{display:grid;gap:6px;font-weight:650}input,select,textarea{width:100%;background:#fff;color:#202e40}textarea{min-height:120px;resize:vertical}
+#identity-card{background:#fff8e8;border-color:#ead59c}.identity-line{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.member-code{font-family:ui-monospace,monospace;color:#68778a}
+#topic-detail[hidden],#identity-card[hidden],#community[hidden],#auth-needed[hidden],#moderation[hidden]{display:none}
+.post{margin:12px 0;background:#fbfcfe}.post-head{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.secondary{background:#eaf0f4;color:#204d66}.secondary:hover{background:#dce7ee}
+#message{position:sticky;bottom:16px;background:#e8f2ef;color:#234d43;border-radius:8px;padding:12px 16px;font-weight:600;margin-top:20px}#message:empty{display:none}
+@media(max-width:800px){header{padding:12px 18px}main{padding:24px 18px 60px}.grid{grid-template-columns:1fr}.actions{display:grid}.actions button{width:100%}}
+</style>
+</head>
+<body>
+<header><div><strong>Public Oversight Coalition</strong><small>Members-only community · controlled pilot</small></div><a href="/1A-Field-Guide-Site/member-pilot.html">← Member dashboard</a></header>
+<main>
+<div class="eyebrow">Member community</div>
+<h1>Discussion, questions, and help</h1>
+<p class="subtitle">A private member space for topic threads, general assistance, guidance, and project discussion. Community participation does not grant research, review, or publication authority.</p>
+<p id="identity-summary" class="member-code" hidden></p>
+
+<section id="auth-needed" class="panel" hidden><h2>Member access required</h2><p>Sign in through the member dashboard, then return here.</p><a href="/1A-Field-Guide-Site/member-pilot.html">Open member dashboard</a></section>
+
+<section id="identity-card" class="panel" hidden>
+<h2>Choose your Screen Name</h2>
+<p>This is the name other members will see. Pick your own pseudonym; it must be unique. If someone already has it, you’ll be asked to choose another. Do not use an email address.</p>
+<form id="identity-form"><label>Screen Name<input id="screen-name" maxlength="40" minlength="3" autocomplete="off" required></label><button>Save Screen Name</button></form>
+</section>
+
+<div id="community" hidden>
+<div class="grid">
+<div>
+<section class="panel">
+<div class="actions"><button id="refresh-topics" type="button" class="secondary">Refresh topics</button></div>
+<div id="topic-list" aria-live="polite"></div>
+</section>
+
+<section id="topic-detail" class="panel" hidden>
+<h2 id="topic-title"></h2>
+<p id="topic-meta" class="meta"></p>
+<p id="topic-body"></p>
+<div id="post-list"></div>
+<p id="locked-note" class="meta" hidden>This topic is locked. Existing posts remain visible, but new replies are paused.</p>
+<form id="reply-form"><label>Reply<textarea id="reply-body" maxlength="10000" required></textarea></label><button>Post reply</button></form>
+<section id="moderation" hidden>
+<h3>Administrator moderation</h3>
+<label>Reason<input id="moderation-reason" maxlength="2000" placeholder="Required for moderation"></label>
+<div class="actions"><button id="moderation-lock" type="button" data-action="lock">Lock topic</button><button id="moderation-hide" type="button" class="secondary">Hide topic</button></div>
+</section>
+</section>
+</div>
+
+<aside>
+<section class="panel">
+<h2>Start a topic</h2>
+<form id="topic-form">
+<label>Category<select id="topic-category"><option value="discussion">Discussion</option><option value="question">Question</option><option value="guidance">Guidance</option><option value="project_help">Project help</option></select></label>
+<label>Title<input id="new-topic-title" maxlength="160" minlength="3" required></label>
+<label>Message<textarea id="new-topic-body" maxlength="10000" required></textarea></label>
+<button>Create topic</button>
+</form>
+</section>
+<section class="panel"><h2>Privacy boundary</h2><p>Your login email is not displayed here. Threads use your Screen Name and stable member code. Do not post private contact information or sensitive case material in the community.</p></section>
+</aside>
+</div>
+</div>
+<p id="message" role="status" aria-live="polite"></p>
+</main>
+<script type="module">
+const SUPABASE_URL='https://bpmvkdblgpnpooxadhjc.supabase.co';
+const KEY='sb_publishable__mZKy1dcx8OjzF1Q2nl0qg_t6I6bkys';
+const SESSION_KEY='coalition-membership-session-v1';
+const $=id=>document.getElementById(id);
+let session=null,isAdministrator=false,currentTopicId=null,currentIdentity=null;
+
+function say(text){$('message').textContent=text}
+function headers(token,extra={}){return{apikey:KEY,...(token?{Authorization:'Bearer '+token}:{}),...extra}}
+async function req(path,{method='GET',token,body}={}){
+  const response=await fetch(SUPABASE_URL+path,{method,headers:headers(token,{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'})}),...(body===undefined?{}:{body:JSON.stringify(body)})});
+  let data=null;try{data=await response.json()}catch{}
+  if(!response.ok){const error=new Error(data?.error||data?.message||'Request failed.');error.status=response.status;error.data=data;throw error}
+  return data
+}
+function loadSession(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}
+function saveSession(s){sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}
+async function refreshToken(refresh_token){
+  const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token}});
+  const next={...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)};saveSession(next);return next
+}
+async function currentSession(){
+  let s=loadSession();if(!s)return null;
+  if(!s.expires_at||s.expires_at<=Math.floor(Date.now()/1000)+60){try{s=await refreshToken(s.refresh_token)}catch{return null}}
+  try{return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}
+  catch(e){if(e.status!==401)throw e;try{s=await refreshToken(s.refresh_token);return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch{return null}}
+}
+async function community(body){return req('/functions/v1/manage-member-community',{method:'POST',token:session.access_token,body})}
+function memberLabel(screenName,memberCode){
+  const frag=document.createDocumentFragment();
+  const strong=document.createElement('strong');strong.textContent=screenName||'Member';frag.append(strong);
+  if(memberCode){const code=document.createElement('span');code.className='member-code';code.textContent=memberCode;frag.append(document.createTextNode(' '),code)}
+  return frag
+}
+function categoryLabel(value){return({discussion:'Discussion',question:'Question',guidance:'Guidance',project_help:'Project help'})[value]||value}
+
+async function loadIdentity(){
+  const result=await community({action:'identity'});currentIdentity=result.identity||null;
+  $('identity-card').hidden=!!currentIdentity;
+  if(currentIdentity){
+    $('identity-summary').textContent=currentIdentity.screen_name+' · '+currentIdentity.member_code;
+    $('identity-summary').hidden=false
+  }else{
+    $('identity-summary').hidden=true
+  }
+  return currentIdentity
+}
+
+async function loadTopics(){
+  const box=$('topic-list');box.textContent='Loading topics…';
+  try{
+    const result=await community({action:'list_topics',limit:50});
+    const topics=result.topics||[];box.textContent='';
+    if(!topics.length){box.textContent='No topics yet. Start the first discussion.';return}
+    for(const topic of topics){
+      const button=document.createElement('button');button.type='button';button.className='topic-card';
+      const title=document.createElement('strong');title.textContent=topic.title;button.append(title);
+      const meta=document.createElement('div');meta.className='meta';
+      meta.textContent=categoryLabel(topic.category)+' · '+topic.author_screen_name+' · '+topic.reply_count+' replies · '+new Date(topic.last_activity_at).toLocaleString()+(topic.locked?' · locked':'');
+      button.append(meta);button.addEventListener('click',()=>openTopic(topic.topic_id));box.append(button)
+    }
+  }catch(e){box.textContent=e?.data?.error||'Community topics are unavailable.'}
+}
+
+async function openTopic(topicId){
+  currentTopicId=topicId;$('topic-detail').hidden=false;$('topic-detail').scrollIntoView({behavior:'smooth',block:'start'});
+  $('topic-title').textContent='Loading topic…';$('topic-body').textContent='';$('post-list').textContent='';
+  try{
+    const result=await community({action:'topic',topic_id:topicId}),topic=result.topic;
+    $('topic-title').textContent=topic.title;
+    $('topic-meta').textContent=categoryLabel(topic.category)+' · '+topic.author_screen_name+' · '+topic.author_member_code+' · '+new Date(topic.created_at).toLocaleString()+(topic.locked?' · locked':'');
+    $('topic-body').textContent=topic.body;
+    $('reply-form').hidden=!!topic.locked;
+    $('locked-note').hidden=!topic.locked;
+    const list=$('post-list');list.textContent='';
+    if(!(result.posts||[]).length){list.textContent='No replies yet.'}
+    for(const post of result.posts||[]){
+      const card=document.createElement('div');card.className='post';
+      const head=document.createElement('div');head.className='post-head';head.append(memberLabel(post.author_screen_name,post.author_member_code));
+      const time=document.createElement('small');time.textContent=new Date(post.created_at).toLocaleString();head.append(time);
+      const body=document.createElement('p');body.textContent=post.body;card.append(head,body);list.append(card)
+    }
+    $('moderation').hidden=!isAdministrator;
+    if(isAdministrator){$('moderation-lock').textContent=topic.locked?'Unlock topic':'Lock topic';$('moderation-lock').dataset.action=topic.locked?'unlock':'lock'}
+  }catch(e){$('topic-title').textContent='Topic unavailable';say(e?.data?.error||'The topic could not be loaded.')}
+}
+
+$('identity-form').addEventListener('submit',async e=>{
+  e.preventDefault();const chosen=$('screen-name').value.trim().replace(/\s+/g,' ');
+  if(chosen.length<3||chosen.length>40)return say('Screen Name must be 3-40 characters.');
+  if(chosen.includes('@'))return say('Screen Name cannot contain @.');
+  try{
+    const result=await community({action:'set_identity',screen_name:chosen});currentIdentity=result.identity;
+    $('identity-card').hidden=true;$('identity-summary').hidden=false;$('identity-summary').textContent=currentIdentity.screen_name+' · '+currentIdentity.member_code;
+    say('Screen Name saved.');$('community').hidden=false;await loadTopics()
+  }catch(e){say(e?.data?.error||'Screen Name could not be saved.')}
+});
+
+$('topic-form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  try{
+    const result=await community({action:'create_topic',category:$('topic-category').value,title:$('new-topic-title').value.trim(),body:$('new-topic-body').value.trim()});
+    $('new-topic-title').value='';$('new-topic-body').value='';say('Topic created.');await loadTopics();if(result.topic_id)await openTopic(result.topic_id)
+  }catch(e){say(e?.data?.error||'Topic could not be created.')}
+});
+
+$('reply-form').addEventListener('submit',async e=>{
+  e.preventDefault();if(!currentTopicId)return;
+  try{
+    await community({action:'reply',topic_id:currentTopicId,body:$('reply-body').value.trim()});$('reply-body').value='';say('Reply posted.');await Promise.all([loadTopics(),openTopic(currentTopicId)])
+  }catch(e){say(e?.data?.error||'Reply could not be posted.')}
+});
+
+$('moderation-lock').addEventListener('click',async()=>{
+  if(!currentTopicId)return;const reason=$('moderation-reason').value.trim();if(!reason)return say('Enter a moderation reason first.');
+  try{await community({action:'moderate_topic',topic_id:currentTopicId,moderation_action:$('moderation-lock').dataset.action,reason});say('Topic moderation updated.');await Promise.all([loadTopics(),openTopic(currentTopicId)])}
+  catch(e){say(e?.data?.error||'Topic moderation failed.')}
+});
+$('moderation-hide').addEventListener('click',async()=>{
+  if(!currentTopicId)return;const reason=$('moderation-reason').value.trim();if(!reason)return say('Enter a moderation reason first.');
+  try{await community({action:'moderate_topic',topic_id:currentTopicId,moderation_action:'hide',reason});say('Topic hidden.');currentTopicId=null;$('topic-detail').hidden=true;await loadTopics()}
+  catch(e){say(e?.data?.error||'Topic moderation failed.')}
+});
+$('refresh-topics').addEventListener('click',loadTopics);
+
+async function init(){
+  session=await currentSession();
+  if(!session?.user){$('auth-needed').hidden=false;return}
+  if(!session.user.email_confirmed_at){$('auth-needed').hidden=false;$('auth-needed').querySelector('p').textContent='Confirm your email, then return to the member dashboard and sign in.';return}
+  try{
+    const statusRows=await req('/rest/v1/rpc/coalition_self_membership_status',{method:'POST',token:session.access_token,body:{}});
+    const membership=statusRows?.[0],roles=membership?.role_codes||[];
+    if(membership?.membership_status!=='approved'||!roles.includes('member')){$('auth-needed').hidden=false;$('auth-needed').querySelector('p').textContent=membership?.membership_status==='suspended'?'Membership access is suspended.':'Approved Member access is required.';return}
+    isAdministrator=roles.includes('administrator');
+    const identity=await loadIdentity();
+    if(!identity)return;
+    $('community').hidden=false;await loadTopics()
+  }catch(e){$('auth-needed').hidden=false;$('auth-needed').querySelector('p').textContent=e?.data?.error||'Member access could not be verified.'}
+}
+await init();
+</script>
+</body>
+</html>
