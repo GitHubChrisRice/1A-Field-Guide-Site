@@ -23,6 +23,7 @@ TARGETS = (
 SCRIPT_RE = re.compile(r'<script type="module">(?P<body>.*?)</script>', re.DOTALL)
 SCRIPT_HASH_RE = re.compile(r"'sha256-[A-Za-z0-9+/=]+'");
 SUPABASE_URL_RE = re.compile(r"https://[a-z0-9]+\.supabase\.co$")
+SESSION_DECL_RE = re.compile(r"(const SESSION_KEY='coalition-membership-session-v1';)")
 
 
 def fail(message: str) -> None:
@@ -51,30 +52,74 @@ def check_template(root: Path) -> None:
     print("Member portal source is safely templated.")
 
 
-def normalize_member_session(rendered: str) -> str:
-    """Upgrade legacy tab-only member-session helpers during deployment.
+SESSION_BRIDGE = r"""
+const AUTH_CHANNEL_NAME='coalition-membership-auth-v1';
+let authChannel=null;
+try{authChannel=new BroadcastChannel(AUTH_CHANNEL_NAME)}catch{}
+function storageRead(store){try{return store.getItem(SESSION_KEY)}catch{return null}}
+function storageWrite(store,value){try{store.setItem(SESSION_KEY,value)}catch{}}
+function storageRemove(store){try{store.removeItem(SESSION_KEY)}catch{}}
+function validSession(s){return !!(s?.access_token&&s?.refresh_token)}
+function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite(localStorage,raw);storageWrite(sessionStorage,raw);return s}
+function loadSharedSession(){try{const s=JSON.parse(storageRead(localStorage)||storageRead(sessionStorage)||'null');return validSession(s)?persistSession(s):null}catch{return null}}
+function requestPeerSession(timeout=450){
+  const local=loadSharedSession();if(local)return Promise.resolve(local);
+  if(!authChannel)return Promise.resolve(null);
+  return new Promise(resolve=>{
+    let done=false;
+    const finish=s=>{if(done)return;done=true;clearTimeout(timer);authChannel.removeEventListener('message',onMessage);resolve(s?persistSession(s):null)};
+    const onMessage=e=>{if(e.data?.type==='session-response'&&validSession(e.data.session))finish(e.data.session)};
+    const timer=setTimeout(()=>finish(null),timeout);
+    authChannel.addEventListener('message',onMessage);
+    try{authChannel.postMessage({type:'session-request'})}catch{finish(null)}
+  })
+}
+if(authChannel){authChannel.addEventListener('message',e=>{if(e.data?.type!=='session-request')return;const s=loadSharedSession();if(s){try{authChannel.postMessage({type:'session-response',session:s})}catch{}}})}
+""".strip()
 
-    Older member pages used sessionStorage, which made an authenticated portal
-    look signed out when a member opened another member page in a new tab.
-    Keep sessionStorage as a compatibility fallback while persisting the same
-    Supabase session to same-origin localStorage so all member pages agree.
+
+def normalize_member_session(rendered: str) -> str:
+    """Provide resilient same-origin member session sharing.
+
+    Sessions persist to localStorage when available, retain sessionStorage as a
+    compatibility fallback, and can be handed directly between open same-origin
+    tabs through BroadcastChannel when persistent storage is blocked.
     """
+    rendered, count = SESSION_DECL_RE.subn(r"\1\n" + SESSION_BRIDGE, rendered, count=1)
+    if count != 1:
+        fail("member page session declaration not found")
+
     replacements = {
         "function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}":
-            "function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}",
+            "function save(s){if(!validSession(s))throw new Error('Incomplete session');persistSession(s)}",
+        "function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}":
+            "function save(s){if(!validSession(s))throw new Error('Incomplete session');persistSession(s)}",
         "function clear(){sessionStorage.removeItem(SESSION_KEY)}":
-            "function clear(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}",
+            "function clear(){storageRemove(localStorage);storageRemove(sessionStorage)}",
+        "function clear(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}":
+            "function clear(){storageRemove(localStorage);storageRemove(sessionStorage)}",
         "function clearSession(){sessionStorage.removeItem(SESSION_KEY)}":
-            "function clearSession(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}",
+            "function clearSession(){storageRemove(localStorage);storageRemove(sessionStorage)}",
+        "function clearSession(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}":
+            "function clearSession(){storageRemove(localStorage);storageRemove(sessionStorage)}",
         "function load(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}":
-            "function load(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}",
+            "function load(){return loadSharedSession()}",
+        "function load(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}":
+            "function load(){return loadSharedSession()}",
         "function loadSession(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}":
-            "function loadSession(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}",
+            "function loadSession(){return loadSharedSession()}",
+        "function loadSession(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}":
+            "function loadSession(){return loadSharedSession()}",
         "function saveSession(s){sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}":
-            "function saveSession(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}",
+            "function saveSession(s){if(!validSession(s))throw new Error('Incomplete session');persistSession(s)}",
+        "function saveSession(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}":
+            "function saveSession(s){if(!validSession(s))throw new Error('Incomplete session');persistSession(s)}",
     }
     for old, new in replacements.items():
         rendered = rendered.replace(old, new)
+
+    rendered = rendered.replace("let s=load();if(!s)return null;", "let s=load();if(!s)s=await requestPeerSession();if(!s)return null;")
+    rendered = rendered.replace("let s=loadSession();if(!s)return null;", "let s=loadSession();if(!s)s=await requestPeerSession();if(!s)return null;")
     return rendered
 
 
@@ -92,8 +137,8 @@ def render(root: Path) -> None:
             fail(f"{path}: member backend placeholders are missing")
         rendered = text.replace(URL_PLACEHOLDER, url).replace(KEY_PLACEHOLDER, key)
         rendered = normalize_member_session(rendered)
-        if "localStorage.getItem(SESSION_KEY)" not in rendered:
-            fail(f"{path}: member page is not using the shared cross-tab session store")
+        if "requestPeerSession" not in rendered or "BroadcastChannel" not in rendered:
+            fail(f"{path}: member page is missing resilient cross-tab session handoff")
         match = SCRIPT_RE.search(rendered)
         if not match:
             fail(f"{path}: inline module script not found")
