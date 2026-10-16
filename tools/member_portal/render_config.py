@@ -77,6 +77,73 @@ function requestPeerSession(timeout=450){
 if(authChannel){authChannel.addEventListener('message',e=>{if(e.data?.type!=='session-request')return;const s=loadSharedSession();if(s){try{authChannel.postMessage({type:'session-response',session:s})}catch{}}})}
 """.strip()
 
+FORUM_DIAGNOSTIC_HTML = r"""
+<section id="auth-diagnostics" class="panel" aria-labelledby="auth-diagnostics-title">
+  <div class="section-heading"><div>
+    <div class="eyebrow">Temporary troubleshooting</div>
+    <h2 id="auth-diagnostics-title">Sign-in diagnostics</h2>
+    <p class="muted">This reports only yes/no/error states. It does not display your email, user ID, access token, refresh token, or any secret.</p>
+  </div><button id="run-auth-diagnostics" class="secondary" type="button">Run diagnostics</button></div>
+  <pre id="auth-diagnostics-output" style="white-space:pre-wrap;overflow-wrap:anywhere;margin:0" aria-live="polite">Diagnostics have not run yet.</pre>
+</section>
+""".strip()
+
+FORUM_DIAGNOSTIC_JS = r"""
+function storageProbe(kind){
+  try{
+    const store=window[kind],probe='__coalition_auth_probe__';
+    store.setItem(probe,'1');const roundTrip=store.getItem(probe)==='1';store.removeItem(probe);
+    const raw=store.getItem(SESSION_KEY);
+    let shaped=false;
+    if(raw){try{shaped=validSession(JSON.parse(raw))}catch{}}
+    return{available:true,roundTrip,sessionPresent:!!raw,sessionShaped:shaped,error:null};
+  }catch(e){return{available:false,roundTrip:false,sessionPresent:false,sessionShaped:false,error:e?.name||'Error'}}
+}
+async function peerProbe(timeout=700){
+  if(!authChannel)return{available:false,responded:false};
+  const hadLocal=!!loadSharedSession();
+  if(hadLocal)return{available:true,responded:false,skipped:'local session already present'};
+  const peer=await requestPeerSession(timeout);
+  return{available:true,responded:!!peer};
+}
+async function collectAuthDiagnostics(){
+  const localBefore=storageProbe('localStorage'),tabBefore=storageProbe('sessionStorage');
+  const peer=await peerProbe();
+  const localAfter=storageProbe('localStorage'),tabAfter=storageProbe('sessionStorage');
+  const s=loadSharedSession();
+  let auth='not tested: no session',membership='not tested: no authenticated session';
+  if(s){
+    try{
+      await req('/auth/v1/user',{token:s.access_token});auth='accepted';
+      try{
+        const rows=await req('/rest/v1/rpc/coalition_self_membership_status',{method:'POST',token:s.access_token,body:{}}),m=rows?.[0],roles=m?.role_codes||[];
+        membership=(m?.membership_status==='approved'&&roles.includes('member'))?'approved member':'RPC succeeded, active Member gate not satisfied';
+      }catch(e){membership='RPC failed'+(e?.status?' (HTTP '+e.status+')':'')}
+    }catch(e){auth='rejected'+(e?.status?' (HTTP '+e.status+')':'')}
+  }
+  return{
+    diagnosticVersion:'auth-diag-v1',
+    secureContext:window.isSecureContext,
+    broadcastChannelSupported:'BroadcastChannel' in window,
+    localStorageBefore:localBefore,
+    sessionStorageBefore:tabBefore,
+    peerHandoff:peer,
+    localStorageAfter:localAfter,
+    sessionStorageAfter:tabAfter,
+    sharedSessionAfterProbe:!!s,
+    supabaseAuth:auth,
+    membershipCheck:membership
+  };
+}
+async function renderAuthDiagnostics(){
+  const out=document.getElementById('auth-diagnostics-output');if(!out)return;
+  out.textContent='Running diagnostics…';
+  try{out.textContent=JSON.stringify(await collectAuthDiagnostics(),null,2)}catch(e){out.textContent='Diagnostics failed: '+(e?.name||'Error')}
+}
+const diagnosticsButton=document.getElementById('run-auth-diagnostics');
+if(diagnosticsButton)diagnosticsButton.addEventListener('click',renderAuthDiagnostics);
+""".strip()
+
 
 def normalize_member_session(rendered: str) -> str:
     """Provide resilient same-origin member session sharing.
@@ -123,6 +190,18 @@ def normalize_member_session(rendered: str) -> str:
     return rendered
 
 
+def add_forum_auth_diagnostics(rendered: str) -> str:
+    gate_end = '<div id="workspace" hidden>'
+    if gate_end not in rendered:
+        fail("member-forum-maps.html: workspace marker not found for diagnostics")
+    rendered = rendered.replace(gate_end, FORUM_DIAGNOSTIC_HTML + "\n" + gate_end, 1)
+    init_marker = "await init();</script>"
+    if init_marker not in rendered:
+        fail("member-forum-maps.html: init marker not found for diagnostics")
+    rendered = rendered.replace(init_marker, FORUM_DIAGNOSTIC_JS + "\nawait init();await renderAuthDiagnostics();</script>", 1)
+    return rendered
+
+
 def render(root: Path) -> None:
     url = os.environ.get("COALITION_SUPABASE_URL", "").strip().rstrip("/")
     key = os.environ.get("COALITION_SUPABASE_PUBLISHABLE_KEY", "").strip()
@@ -137,6 +216,10 @@ def render(root: Path) -> None:
             fail(f"{path}: member backend placeholders are missing")
         rendered = text.replace(URL_PLACEHOLDER, url).replace(KEY_PLACEHOLDER, key)
         rendered = normalize_member_session(rendered)
+        if path.name == "member-forum-maps.html":
+            rendered = add_forum_auth_diagnostics(rendered)
+            if "auth-diag-v1" not in rendered or "auth-diagnostics-output" not in rendered:
+                fail(f"{path}: privacy-safe authentication diagnostics were not injected")
         if "requestPeerSession" not in rendered or "BroadcastChannel" not in rendered:
             fail(f"{path}: member page is missing resilient cross-tab session handoff")
         match = SCRIPT_RE.search(rendered)
