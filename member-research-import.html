@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://cdn.jsdelivr.net 'sha256-51VdNMnq0pkrqiwI6XhphEXMYe3zVK7bBrLfTJ57f8w='; style-src 'self'; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://cdn.jsdelivr.net 'sha256-xYo0EvWb4WIK58c/1kCR1OPcvsgon9G9l6eJw7p31Ys='; style-src 'self'; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Import research · Public Oversight Coalition</title>
 <link rel="stylesheet" href="/1A-Field-Guide-Site/stylesheets/member-research.css">
@@ -47,6 +47,28 @@
 <script type="module">const SUPABASE_URL='https://bpmvkdblgpnpooxadhjc.supabase.co';
 const KEY='sb_publishable__mZKy1dcx8OjzF1Q2nl0qg_t6I6bkys';
 const SESSION_KEY='coalition-membership-session-v1';
+const AUTH_CHANNEL_NAME='coalition-membership-auth-v1';
+let authChannel=null;
+try{authChannel=new BroadcastChannel(AUTH_CHANNEL_NAME)}catch{}
+function storageRead(store){try{return store.getItem(SESSION_KEY)}catch{return null}}
+function storageWrite(store,value){try{store.setItem(SESSION_KEY,value)}catch{}}
+function storageRemove(store){try{store.removeItem(SESSION_KEY)}catch{}}
+function validSession(s){return !!(s?.access_token&&s?.refresh_token)}
+function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite(localStorage,raw);storageWrite(sessionStorage,raw);return s}
+function loadSharedSession(){try{const s=JSON.parse(storageRead(localStorage)||storageRead(sessionStorage)||'null');return validSession(s)?persistSession(s):null}catch{return null}}
+function requestPeerSession(timeout=450){
+  const local=loadSharedSession();if(local)return Promise.resolve(local);
+  if(!authChannel)return Promise.resolve(null);
+  return new Promise(resolve=>{
+    let done=false;
+    const finish=s=>{if(done)return;done=true;clearTimeout(timer);authChannel.removeEventListener('message',onMessage);resolve(s?persistSession(s):null)};
+    const onMessage=e=>{if(e.data?.type==='session-response'&&validSession(e.data.session))finish(e.data.session)};
+    const timer=setTimeout(()=>finish(null),timeout);
+    authChannel.addEventListener('message',onMessage);
+    try{authChannel.postMessage({type:'session-request'})}catch{finish(null)}
+  })
+}
+if(authChannel){authChannel.addEventListener('message',e=>{if(e.data?.type!=='session-request')return;const s=loadSharedSession();if(s){try{authChannel.postMessage({type:'session-response',session:s})}catch{}}})}
 const $=id=>document.getElementById(id);
 const MAX_BYTES=5*1024*1024,MAX_ROWS=200;
 const allowedTypes=new Set(['policy','training','facility_page','public_records_response','incident_data','correspondence','report','statute','regulation','case','record','other']);
@@ -54,11 +76,11 @@ let session=null,rows=[];
 function say(t){$('message').textContent=t}
 function headers(token,extra={}){return{apikey:KEY,...(token?{Authorization:'Bearer '+token}:{}),...extra}}
 async function req(path,{method='GET',token,body}={}){const r=await fetch(SUPABASE_URL+path,{method,headers:headers(token,{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'})}),...(body===undefined?{}:{body:JSON.stringify(body)})});let d=null;try{d=await r.json()}catch{}if(!r.ok){const e=new Error(d?.msg||d?.message||d?.error_description||d?.error||'Request failed ('+r.status+').');e.status=r.status;e.data=d;throw e}return d}
-function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}
-function clearSession(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}
-function load(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}
+function save(s){if(!validSession(s))throw new Error('Incomplete session');persistSession(s)}
+function clearSession(){storageRemove(localStorage);storageRemove(sessionStorage)}
+function load(){return loadSharedSession()}
 async function refreshToken(r){const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:r}});return{...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)}}
-async function current(){let s=load();if(!s)return null;if(!s.expires_at||s.expires_at<=Math.floor(Date.now()/1000)+60){try{s=await refreshToken(s.refresh_token);save(s)}catch{clearSession();return null}}try{return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch(e){if(e.status!==401)throw e;try{s=await refreshToken(s.refresh_token);save(s);return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch{clearSession();return null}}}
+async function current(){let s=load();if(!s)s=await requestPeerSession();if(!s)return null;if(!s.expires_at||s.expires_at<=Math.floor(Date.now()/1000)+60){try{s=await refreshToken(s.refresh_token);save(s)}catch{clearSession();return null}}try{return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch(e){if(e.status!==401)throw e;try{s=await refreshToken(s.refresh_token);save(s);return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch{clearSession();return null}}}
 function cleanHeader(v){return String(v||'').trim().toLowerCase().replace(/[\s-]+/g,'_')}
 function parseCsv(text){const out=[];let row=[],field='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(quoted){if(c==='"'&&text[i+1]==='"'){field+='"';i++}else if(c==='"')quoted=false;else field+=c}else if(c==='"')quoted=true;else if(c===','){row.push(field);field=''}else if(c==='\n'){row.push(field);out.push(row);row=[];field=''}else if(c!=='\r')field+=c}row.push(field);if(row.some(v=>String(v).trim()!==''))out.push(row);return out}
 function rowsFromGrid(grid){if(grid.length<2)throw new Error('The file needs a header row and at least one data row.');const headers=grid[0].map(cleanHeader);const data=grid.slice(1).filter(r=>r.some(v=>String(v??'').trim()!==''));if(data.length>MAX_ROWS)throw new Error(`Import files may contain at most ${MAX_ROWS} data rows.`);return data.map(r=>{const obj={};headers.forEach((h,i)=>{if(h)obj[h]=String(r[i]??'').trim()});return normalize(obj)})}

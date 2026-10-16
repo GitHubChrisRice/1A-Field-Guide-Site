@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-9O2zW/15psydqMPSsski0ak/tODYlFkWpz9d+kg53Cw='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-RKuv4CEhxxGFcG18r2eLV/w+dSxyatPQ8PEqOkfD47c='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Community · Public Oversight Coalition</title>
 <style>
@@ -94,6 +94,28 @@ form{display:grid;gap:13px}label{display:grid;gap:6px;font-weight:650}input,sele
 const SUPABASE_URL='https://bpmvkdblgpnpooxadhjc.supabase.co';
 const KEY='sb_publishable__mZKy1dcx8OjzF1Q2nl0qg_t6I6bkys';
 const SESSION_KEY='coalition-membership-session-v1';
+const AUTH_CHANNEL_NAME='coalition-membership-auth-v1';
+let authChannel=null;
+try{authChannel=new BroadcastChannel(AUTH_CHANNEL_NAME)}catch{}
+function storageRead(store){try{return store.getItem(SESSION_KEY)}catch{return null}}
+function storageWrite(store,value){try{store.setItem(SESSION_KEY,value)}catch{}}
+function storageRemove(store){try{store.removeItem(SESSION_KEY)}catch{}}
+function validSession(s){return !!(s?.access_token&&s?.refresh_token)}
+function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite(localStorage,raw);storageWrite(sessionStorage,raw);return s}
+function loadSharedSession(){try{const s=JSON.parse(storageRead(localStorage)||storageRead(sessionStorage)||'null');return validSession(s)?persistSession(s):null}catch{return null}}
+function requestPeerSession(timeout=450){
+  const local=loadSharedSession();if(local)return Promise.resolve(local);
+  if(!authChannel)return Promise.resolve(null);
+  return new Promise(resolve=>{
+    let done=false;
+    const finish=s=>{if(done)return;done=true;clearTimeout(timer);authChannel.removeEventListener('message',onMessage);resolve(s?persistSession(s):null)};
+    const onMessage=e=>{if(e.data?.type==='session-response'&&validSession(e.data.session))finish(e.data.session)};
+    const timer=setTimeout(()=>finish(null),timeout);
+    authChannel.addEventListener('message',onMessage);
+    try{authChannel.postMessage({type:'session-request'})}catch{finish(null)}
+  })
+}
+if(authChannel){authChannel.addEventListener('message',e=>{if(e.data?.type!=='session-request')return;const s=loadSharedSession();if(s){try{authChannel.postMessage({type:'session-response',session:s})}catch{}}})}
 const $=id=>document.getElementById(id);
 let session=null,isAdministrator=false,currentTopicId=null,currentIdentity=null;
 
@@ -105,14 +127,14 @@ async function req(path,{method='GET',token,body}={}){
   if(!response.ok){const error=new Error(data?.error||data?.message||'Request failed.');error.status=response.status;error.data=data;throw error}
   return data
 }
-function loadSession(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}
-function saveSession(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}
+function loadSession(){return loadSharedSession()}
+function saveSession(s){if(!validSession(s))throw new Error('Incomplete session');persistSession(s)}
 async function refreshToken(refresh_token){
   const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token}});
   const next={...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)};saveSession(next);return next
 }
 async function currentSession(){
-  let s=loadSession();if(!s)return null;
+  let s=loadSession();if(!s)s=await requestPeerSession();if(!s)return null;
   if(!s.expires_at||s.expires_at<=Math.floor(Date.now()/1000)+60){try{s=await refreshToken(s.refresh_token)}catch{return null}}
   try{return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}
   catch(e){if(e.status!==401)throw e;try{s=await refreshToken(s.refresh_token);return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch{return null}}
