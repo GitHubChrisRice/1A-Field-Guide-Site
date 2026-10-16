@@ -45,6 +45,7 @@ nav:
   - Facility Registry:
       - County index: registry/index.md
       - How classifications work: registry/method.md
+      - Forum map standard: registry/forum-map-method.md
       - Registry data model: registry/data-model.md
   - Open government:
       - Public records — start here: open-government/public-records.md
