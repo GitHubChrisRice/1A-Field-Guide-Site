@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-X3nl1MBcl0M3intbYBWqEH/LvaxioJ3TLNrucwE0T2c='; style-src 'self'; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-SdkSD8ccPpgGyGCYq8inMUGL+ZSMTNgjucZF93PNYP8='; style-src 'self'; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Facility forum maps · Public Oversight Coalition</title>
 <link rel="stylesheet" href="/1A-Field-Guide-Site/stylesheets/member-research.css">
@@ -16,6 +16,14 @@
 <div class="eyebrow">Facility intelligence</div>
 <div class="page-heading"><div><h1>Facility forum maps</h1><p class="subtitle">Area-by-area First Amendment forum classifications tied to the evidence that supports them. The legal label and the geometric boundary are tracked separately so an uncertain edge does not erase a supported forum determination.</p></div><a class="button-link secondary-link" href="/1A-Field-Guide-Site/member-research.html">Research library</a></div>
 <section id="gate" class="panel" hidden><h2>Member sign-in required</h2><p id="gate-copy">Sign in from the member workspace before opening facility forum maps.</p><p><a href="/1A-Field-Guide-Site/member-pilot.html">Return to member workspace →</a></p></section>
+<section id="auth-diagnostics" class="panel" aria-labelledby="auth-diagnostics-title">
+  <div class="section-heading"><div>
+    <div class="eyebrow">Temporary troubleshooting</div>
+    <h2 id="auth-diagnostics-title">Sign-in diagnostics</h2>
+    <p class="muted">This reports only yes/no/error states. It does not display your email, user ID, access token, refresh token, or any secret.</p>
+  </div><button id="run-auth-diagnostics" class="secondary" type="button">Run diagnostics</button></div>
+  <pre id="auth-diagnostics-output" style="white-space:pre-wrap;overflow-wrap:anywhere;margin:0" aria-live="polite">Diagnostics have not run yet.</pre>
+</section>
 <div id="workspace" hidden>
 <section class="panel map-intro" aria-labelledby="pilot-title"><div class="section-heading"><div><div class="eyebrow">Pilot facility</div><h2 id="pilot-title">Walnut Creek Library</h2><p class="muted">1644 N. Broadway · Contra Costa County Library · CA-013-F0002</p></div><a class="button-link secondary-link" href="/1A-Field-Guide-Site/registry/walnut-creek-library/" target="_blank" rel="noopener noreferrer">Open registry record</a></div><p><strong>Map status:</strong> legal classifications are drawn from the current Registry record. The diagram is a research schematic, not a cadastral survey. Exact parcel/right-of-way geometry is a separate evidence layer and should be hardened before a boundary-dependent field decision.</p></section>
 <section class="forum-map-layout" aria-label="Walnut Creek Library forum map and zone details">
@@ -91,5 +99,58 @@ function selectZone(id){const z=zones[id];if(!z)return;document.querySelectorAll
 function renderZoneList(){const box=$('zone-list');for(const [id,z] of Object.entries(zones)){const b=node('button',undefined,'zone-button');b.type='button';b.dataset.zone=id;b.setAttribute('aria-pressed','false');b.append(node('span',z.name,'zone-button-name'),node('span',`${z.forum} · legal ${pretty(z.confidence)} · boundary ${pretty(z.boundary)}`,'muted'));b.addEventListener('click',()=>selectZone(id));box.append(b)}}
 function wireMap(){document.querySelectorAll('[data-zone]').forEach(el=>{const choose=()=>selectZone(el.dataset.zone);el.addEventListener('click',choose);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose()}})})}
 async function init(){renderZoneList();wireMap();session=await current();if(!session?.user){$('gate').hidden=false;$('workspace').hidden=true;return}try{const rows=await req('/rest/v1/rpc/coalition_self_membership_status',{method:'POST',token:session.access_token,body:{}}),m=rows?.[0],roles=m?.role_codes||[];if(m?.membership_status!=='approved'||!roles.includes('member')){$('gate').hidden=false;$('workspace').hidden=true;$('gate-copy').textContent='Active Member access is required to use facility forum maps.';return}$('gate').hidden=true;$('workspace').hidden=false;selectZone('S001')}catch{$('gate').hidden=false;$('workspace').hidden=true;$('gate-copy').textContent='Membership status is temporarily unavailable.'}}
-await init();</script>
+function storageProbe(kind){
+  try{
+    const store=window[kind],probe='__coalition_auth_probe__';
+    store.setItem(probe,'1');const roundTrip=store.getItem(probe)==='1';store.removeItem(probe);
+    const raw=store.getItem(SESSION_KEY);
+    let shaped=false;
+    if(raw){try{shaped=validSession(JSON.parse(raw))}catch{}}
+    return{available:true,roundTrip,sessionPresent:!!raw,sessionShaped:shaped,error:null};
+  }catch(e){return{available:false,roundTrip:false,sessionPresent:false,sessionShaped:false,error:e?.name||'Error'}}
+}
+async function peerProbe(timeout=700){
+  if(!authChannel)return{available:false,responded:false};
+  const hadLocal=!!loadSharedSession();
+  if(hadLocal)return{available:true,responded:false,skipped:'local session already present'};
+  const peer=await requestPeerSession(timeout);
+  return{available:true,responded:!!peer};
+}
+async function collectAuthDiagnostics(){
+  const localBefore=storageProbe('localStorage'),tabBefore=storageProbe('sessionStorage');
+  const peer=await peerProbe();
+  const localAfter=storageProbe('localStorage'),tabAfter=storageProbe('sessionStorage');
+  const s=loadSharedSession();
+  let auth='not tested: no session',membership='not tested: no authenticated session';
+  if(s){
+    try{
+      await req('/auth/v1/user',{token:s.access_token});auth='accepted';
+      try{
+        const rows=await req('/rest/v1/rpc/coalition_self_membership_status',{method:'POST',token:s.access_token,body:{}}),m=rows?.[0],roles=m?.role_codes||[];
+        membership=(m?.membership_status==='approved'&&roles.includes('member'))?'approved member':'RPC succeeded, active Member gate not satisfied';
+      }catch(e){membership='RPC failed'+(e?.status?' (HTTP '+e.status+')':'')}
+    }catch(e){auth='rejected'+(e?.status?' (HTTP '+e.status+')':'')}
+  }
+  return{
+    diagnosticVersion:'auth-diag-v1',
+    secureContext:window.isSecureContext,
+    broadcastChannelSupported:'BroadcastChannel' in window,
+    localStorageBefore:localBefore,
+    sessionStorageBefore:tabBefore,
+    peerHandoff:peer,
+    localStorageAfter:localAfter,
+    sessionStorageAfter:tabAfter,
+    sharedSessionAfterProbe:!!s,
+    supabaseAuth:auth,
+    membershipCheck:membership
+  };
+}
+async function renderAuthDiagnostics(){
+  const out=document.getElementById('auth-diagnostics-output');if(!out)return;
+  out.textContent='Running diagnostics…';
+  try{out.textContent=JSON.stringify(await collectAuthDiagnostics(),null,2)}catch(e){out.textContent='Diagnostics failed: '+(e?.name||'Error')}
+}
+const diagnosticsButton=document.getElementById('run-auth-diagnostics');
+if(diagnosticsButton)diagnosticsButton.addEventListener('click',renderAuthDiagnostics);
+await init();await renderAuthDiagnostics();</script>
 </body></html>
