@@ -9,11 +9,17 @@ import hashlib
 import os
 from pathlib import Path
 import re
-import sys
 
 URL_PLACEHOLDER = "__COALITION_SUPABASE_URL__"
 KEY_PLACEHOLDER = "__COALITION_SUPABASE_PUBLISHABLE_KEY__"
-TARGETS = ("member-pilot.html", "member-community.html", "member-research.html", "member-research-submit.html", "member-research-import.html", "member-forum-maps.html")
+TARGETS = (
+    "member-pilot.html",
+    "member-community.html",
+    "member-research.html",
+    "member-research-submit.html",
+    "member-research-import.html",
+    "member-forum-maps.html",
+)
 SCRIPT_RE = re.compile(r'<script type="module">(?P<body>.*?)</script>', re.DOTALL)
 SCRIPT_HASH_RE = re.compile(r"'sha256-[A-Za-z0-9+/=]+'");
 SUPABASE_URL_RE = re.compile(r"https://[a-z0-9]+\.supabase\.co$")
@@ -45,6 +51,33 @@ def check_template(root: Path) -> None:
     print("Member portal source is safely templated.")
 
 
+def normalize_member_session(rendered: str) -> str:
+    """Upgrade legacy tab-only member-session helpers during deployment.
+
+    Older member pages used sessionStorage, which made an authenticated portal
+    look signed out when a member opened another member page in a new tab.
+    Keep sessionStorage as a compatibility fallback while persisting the same
+    Supabase session to same-origin localStorage so all member pages agree.
+    """
+    replacements = {
+        "function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}":
+            "function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}",
+        "function clear(){sessionStorage.removeItem(SESSION_KEY)}":
+            "function clear(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}",
+        "function clearSession(){sessionStorage.removeItem(SESSION_KEY)}":
+            "function clearSession(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}",
+        "function load(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}":
+            "function load(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}",
+        "function loadSession(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}":
+            "function loadSession(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}",
+        "function saveSession(s){sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}":
+            "function saveSession(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}",
+    }
+    for old, new in replacements.items():
+        rendered = rendered.replace(old, new)
+    return rendered
+
+
 def render(root: Path) -> None:
     url = os.environ.get("COALITION_SUPABASE_URL", "").strip().rstrip("/")
     key = os.environ.get("COALITION_SUPABASE_PUBLISHABLE_KEY", "").strip()
@@ -58,6 +91,9 @@ def render(root: Path) -> None:
         if URL_PLACEHOLDER not in text or KEY_PLACEHOLDER not in text:
             fail(f"{path}: member backend placeholders are missing")
         rendered = text.replace(URL_PLACEHOLDER, url).replace(KEY_PLACEHOLDER, key)
+        rendered = normalize_member_session(rendered)
+        if "localStorage.getItem(SESSION_KEY)" not in rendered:
+            fail(f"{path}: member page is not using the shared cross-tab session store")
         match = SCRIPT_RE.search(rendered)
         if not match:
             fail(f"{path}: inline module script not found")
