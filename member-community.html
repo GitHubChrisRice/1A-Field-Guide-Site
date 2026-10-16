@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-RKuv4CEhxxGFcG18r2eLV/w+dSxyatPQ8PEqOkfD47c='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-ReA8wce5jDeuS1lhXgUvYc/vTWq5qmXoyuDwLd8SvSs='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Community · Public Oversight Coalition</title>
 <style>
@@ -97,12 +97,12 @@ const SESSION_KEY='coalition-membership-session-v1';
 const AUTH_CHANNEL_NAME='coalition-membership-auth-v1';
 let authChannel=null;
 try{authChannel=new BroadcastChannel(AUTH_CHANNEL_NAME)}catch{}
-function storageRead(store){try{return store.getItem(SESSION_KEY)}catch{return null}}
-function storageWrite(store,value){try{store.setItem(SESSION_KEY,value)}catch{}}
-function storageRemove(store){try{store.removeItem(SESSION_KEY)}catch{}}
+function storageRead(kind){try{return window[kind].getItem(SESSION_KEY)}catch{return null}}
+function storageWrite(kind,value){try{window[kind].setItem(SESSION_KEY,value)}catch{}}
+function storageRemove(kind){try{window[kind].removeItem(SESSION_KEY)}catch{}}
 function validSession(s){return !!(s?.access_token&&s?.refresh_token)}
-function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite(localStorage,raw);storageWrite(sessionStorage,raw);return s}
-function loadSharedSession(){try{const s=JSON.parse(storageRead(localStorage)||storageRead(sessionStorage)||'null');return validSession(s)?persistSession(s):null}catch{return null}}
+function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite('localStorage',raw);storageWrite('sessionStorage',raw);return s}
+function loadSharedSession(){try{const s=JSON.parse(storageRead('localStorage')||storageRead('sessionStorage')||'null');return validSession(s)?persistSession(s):null}catch{return null}}
 function requestPeerSession(timeout=450){
   const local=loadSharedSession();if(local)return Promise.resolve(local);
   if(!authChannel)return Promise.resolve(null);

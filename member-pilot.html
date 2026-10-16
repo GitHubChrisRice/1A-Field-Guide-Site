@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-9rjpHgjq8cRNbcBqPljbDmzI9Cc7+9zYS7xASfA2jog='; style-src 'sha256-pT9NQLmuOWrlIJyVxWgaZGbjHrR9RXQ4w2dOTLfFNgQ='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-yTgNPJg/KhqB6qIxLJTClkiabFmQBTMdm3e0q/MelnY='; style-src 'sha256-pT9NQLmuOWrlIJyVxWgaZGbjHrR9RXQ4w2dOTLfFNgQ='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Join · Public Oversight Coalition</title>
 <style>
@@ -52,12 +52,12 @@ const SESSION_KEY='coalition-membership-session-v1';
 const AUTH_CHANNEL_NAME='coalition-membership-auth-v1';
 let authChannel=null;
 try{authChannel=new BroadcastChannel(AUTH_CHANNEL_NAME)}catch{}
-function storageRead(store){try{return store.getItem(SESSION_KEY)}catch{return null}}
-function storageWrite(store,value){try{store.setItem(SESSION_KEY,value)}catch{}}
-function storageRemove(store){try{store.removeItem(SESSION_KEY)}catch{}}
+function storageRead(kind){try{return window[kind].getItem(SESSION_KEY)}catch{return null}}
+function storageWrite(kind,value){try{window[kind].setItem(SESSION_KEY,value)}catch{}}
+function storageRemove(kind){try{window[kind].removeItem(SESSION_KEY)}catch{}}
 function validSession(s){return !!(s?.access_token&&s?.refresh_token)}
-function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite(localStorage,raw);storageWrite(sessionStorage,raw);return s}
-function loadSharedSession(){try{const s=JSON.parse(storageRead(localStorage)||storageRead(sessionStorage)||'null');return validSession(s)?persistSession(s):null}catch{return null}}
+function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite('localStorage',raw);storageWrite('sessionStorage',raw);return s}
+function loadSharedSession(){try{const s=JSON.parse(storageRead('localStorage')||storageRead('sessionStorage')||'null');return validSession(s)?persistSession(s):null}catch{return null}}
 function requestPeerSession(timeout=450){
   const local=loadSharedSession();if(local)return Promise.resolve(local);
   if(!authChannel)return Promise.resolve(null);
@@ -88,7 +88,7 @@ function clean(){const u=new URL(location.href);u.hash='';u.search='';return u.t
 function headers(token,extra={}){return{apikey:KEY,...(token?{Authorization:'Bearer '+token}:{}),...extra}}
 async function req(path,{method='GET',token,body}={}){const r=await fetch(SUPABASE_URL+path,{method,headers:headers(token,{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'})}),...(body===undefined?{}:{body:JSON.stringify(body)})});let d=null;try{d=await r.json()}catch{}if(!r.ok){const e=new Error(d?.msg||d?.message||d?.error_description||d?.error||'Request failed ('+r.status+').');e.status=r.status;e.data=d;throw e}return d}
 function save(s){if(!validSession(s))throw new Error('Incomplete session');persistSession(s)}
-function clear(){storageRemove(localStorage);storageRemove(sessionStorage)}
+function clear(){storageRemove('localStorage');storageRemove('sessionStorage')}
 function load(){return loadSharedSession()}
 function returned(){const u=new URL(location.href),p=new URLSearchParams(u.hash.startsWith('#')?u.hash.slice(1):u.hash),a=p.get('access_token'),r=p.get('refresh_token');if(!a||!r)return null;return{access_token:a,refresh_token:r,expires_in:Number(p.get('expires_in')||3600),expires_at:Math.floor(Date.now()/1000)+Number(p.get('expires_in')||3600),token_type:p.get('token_type')||'bearer',type:p.get('type')||null}}
 async function refreshToken(r){const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:r}});return{...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)}}
