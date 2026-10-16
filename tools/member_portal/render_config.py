@@ -56,12 +56,12 @@ SESSION_BRIDGE = r"""
 const AUTH_CHANNEL_NAME='coalition-membership-auth-v1';
 let authChannel=null;
 try{authChannel=new BroadcastChannel(AUTH_CHANNEL_NAME)}catch{}
-function storageRead(store){try{return store.getItem(SESSION_KEY)}catch{return null}}
-function storageWrite(store,value){try{store.setItem(SESSION_KEY,value)}catch{}}
-function storageRemove(store){try{store.removeItem(SESSION_KEY)}catch{}}
+function storageRead(kind){try{return window[kind].getItem(SESSION_KEY)}catch{return null}}
+function storageWrite(kind,value){try{window[kind].setItem(SESSION_KEY,value)}catch{}}
+function storageRemove(kind){try{window[kind].removeItem(SESSION_KEY)}catch{}}
 function validSession(s){return !!(s?.access_token&&s?.refresh_token)}
-function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite(localStorage,raw);storageWrite(sessionStorage,raw);return s}
-function loadSharedSession(){try{const s=JSON.parse(storageRead(localStorage)||storageRead(sessionStorage)||'null');return validSession(s)?persistSession(s):null}catch{return null}}
+function persistSession(s){if(!validSession(s))return null;const raw=JSON.stringify(s);storageWrite('localStorage',raw);storageWrite('sessionStorage',raw);return s}
+function loadSharedSession(){try{const s=JSON.parse(storageRead('localStorage')||storageRead('sessionStorage')||'null');return validSession(s)?persistSession(s):null}catch{return null}}
 function requestPeerSession(timeout=450){
   const local=loadSharedSession();if(local)return Promise.resolve(local);
   if(!authChannel)return Promise.resolve(null);
@@ -95,13 +95,13 @@ def normalize_member_session(rendered: str) -> str:
         "function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}":
             "function save(s){if(!validSession(s))throw new Error('Incomplete session');persistSession(s)}",
         "function clear(){sessionStorage.removeItem(SESSION_KEY)}":
-            "function clear(){storageRemove(localStorage);storageRemove(sessionStorage)}",
+            "function clear(){storageRemove('localStorage');storageRemove('sessionStorage')}",
         "function clear(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}":
-            "function clear(){storageRemove(localStorage);storageRemove(sessionStorage)}",
+            "function clear(){storageRemove('localStorage');storageRemove('sessionStorage')}",
         "function clearSession(){sessionStorage.removeItem(SESSION_KEY)}":
-            "function clearSession(){storageRemove(localStorage);storageRemove(sessionStorage)}",
+            "function clearSession(){storageRemove('localStorage');storageRemove('sessionStorage')}",
         "function clearSession(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}":
-            "function clearSession(){storageRemove(localStorage);storageRemove(sessionStorage)}",
+            "function clearSession(){storageRemove('localStorage');storageRemove('sessionStorage')}",
         "function load(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}":
             "function load(){return loadSharedSession()}",
         "function load(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}":
