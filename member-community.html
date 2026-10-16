@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Wmyk7OzwLi4A2fhCgu5jNfmWmXKqCNRZTpz4oTDbo3I='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-9O2zW/15psydqMPSsski0ak/tODYlFkWpz9d+kg53Cw='; style-src 'sha256-O4S3oBe0Mj3Rhr0xlY9Xe89kx4QHIxFepFLf6RuUzII='; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Community · Public Oversight Coalition</title>
 <style>
@@ -105,8 +105,8 @@ async function req(path,{method='GET',token,body}={}){
   if(!response.ok){const error=new Error(data?.error||data?.message||'Request failed.');error.status=response.status;error.data=data;throw error}
   return data
 }
-function loadSession(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}
-function saveSession(s){sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}
+function loadSession(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}
+function saveSession(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}
 async function refreshToken(refresh_token){
   const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token}});
   const next={...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)};saveSession(next);return next

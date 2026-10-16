@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://cdn.jsdelivr.net 'sha256-TctWIhfEL3PGXf0Nsnv2CPM7/UitrfNkCgpuUtj3rM8='; style-src 'self'; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://cdn.jsdelivr.net 'sha256-51VdNMnq0pkrqiwI6XhphEXMYe3zVK7bBrLfTJ57f8w='; style-src 'self'; connect-src https://bpmvkdblgpnpooxadhjc.supabase.co; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Import research · Public Oversight Coalition</title>
 <link rel="stylesheet" href="/1A-Field-Guide-Site/stylesheets/member-research.css">
@@ -54,9 +54,9 @@ let session=null,rows=[];
 function say(t){$('message').textContent=t}
 function headers(token,extra={}){return{apikey:KEY,...(token?{Authorization:'Bearer '+token}:{}),...extra}}
 async function req(path,{method='GET',token,body}={}){const r=await fetch(SUPABASE_URL+path,{method,headers:headers(token,{Accept:'application/json',...(body===undefined?{}:{'Content-Type':'application/json'})}),...(body===undefined?{}:{body:JSON.stringify(body)})});let d=null;try{d=await r.json()}catch{}if(!r.ok){const e=new Error(d?.msg||d?.message||d?.error_description||d?.error||'Request failed ('+r.status+').');e.status=r.status;e.data=d;throw e}return d}
-function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');sessionStorage.setItem(SESSION_KEY,JSON.stringify(s))}
-function clearSession(){sessionStorage.removeItem(SESSION_KEY)}
-function load(){try{const s=JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');return s?.access_token&&s?.refresh_token?s:null}catch{return null}}
+function save(s){if(!s?.access_token||!s?.refresh_token)throw new Error('Incomplete session');const raw=JSON.stringify(s);localStorage.setItem(SESSION_KEY,raw);sessionStorage.setItem(SESSION_KEY,raw)}
+function clearSession(){localStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(SESSION_KEY)}
+function load(){try{const raw=localStorage.getItem(SESSION_KEY)||sessionStorage.getItem(SESSION_KEY);const s=JSON.parse(raw||'null');if(s?.access_token&&s?.refresh_token){const normalized=JSON.stringify(s);localStorage.setItem(SESSION_KEY,normalized);sessionStorage.setItem(SESSION_KEY,normalized);return s}return null}catch{return null}}
 async function refreshToken(r){const s=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:r}});return{...s,expires_at:Math.floor(Date.now()/1000)+Number(s.expires_in||3600)}}
 async function current(){let s=load();if(!s)return null;if(!s.expires_at||s.expires_at<=Math.floor(Date.now()/1000)+60){try{s=await refreshToken(s.refresh_token);save(s)}catch{clearSession();return null}}try{return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch(e){if(e.status!==401)throw e;try{s=await refreshToken(s.refresh_token);save(s);return{...s,user:await req('/auth/v1/user',{token:s.access_token})}}catch{clearSession();return null}}}
 function cleanHeader(v){return String(v||'').trim().toLowerCase().replace(/[\s-]+/g,'_')}
